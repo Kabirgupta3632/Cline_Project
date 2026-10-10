@@ -16,6 +16,75 @@ groups are one of `A+ A- B+ B- AB+ AB- O+ O-`. IDs are UUID strings.
 
 ---
 
+## Matching engine additions (Person 1, Tier 2) - `lib/matching.ts`
+
+`lib/matching.ts` is now the single source of truth for donor matching +
+notification, extracted out of `app/api/sos/_lib/broadcast.ts` (which is kept
+as a thin re-export wrapper for backward compatibility - existing imports of
+`@/app/api/sos/_lib/broadcast` keep working unchanged). It exports:
+
+- `findEligibleDonors(supabase, params)` - wraps the `match_eligible_donors`
+  RPC and applies the two TS-layer rules below.
+- `insertNotifications(supabase, sosId, donors)`
+- `getSosOrThrow(supabase, sosId)` / `updateSosStatus(supabase, sosId, patch)`
+- `notifyNextDonors(supabase, sosId, count?)` - high-level "match + notify up
+  to `count` donors" entry point. **Person 4's `/api/dispatch/cancel` and
+  `/api/dispatch/ghost-sweep` should import this directly (with `count: 1`)
+  instead of re-implementing matching.**
+- `escalateIfNeeded(supabase, sosId)` - high-level "widen radius if critical,
+  re-match, persist" entry point used by `/api/sos/escalate`.
+- `assertHospitalVerified(supabase, hospitalId)` - throws `Error("hospital_not_verified")`
+  if the hospital isn't verified (rule 7, see below).
+
+### Rule 5: Dispatch fatigue guard (anti-spam)
+
+A donor who has already received **>= 3 notifications (for any SOS) in the
+last 24 hours** is excluded from further matching, **unless** the current SOS
+has `urgency: "critical"` (critical always bypasses the fatigue guard - life
+over donor comfort). Implemented in TS (`lib/matching.ts#filterOutFatiguedDonors`)
+on top of the `match_eligible_donors` RPC results, since it depends on
+cross-SOS notification history that's simplest to query directly rather than
+threading through the RPC signature. Fails open (never blocks a broadcast) if
+the fatigue-check query itself errors.
+
+### Rule 6: Smart quiet hours (normal SOS only)
+
+For `urgency: "normal"` SOS, donors are **not notified between 23:00-06:00
+local server time** - the broadcast silently returns zero matches during that
+window (no `notifications` rows are created, nothing to clean up later).
+`urgency: "critical"` SOS **always** broadcasts regardless of the hour.
+Implemented in `lib/matching.ts#isWithinQuietHours` /
+`QUIET_HOURS_START`/`QUIET_HOURS_END` constants (23 / 6). This applies inside
+`findEligibleDonors`, so it's enforced identically for `/api/sos/broadcast`,
+`/api/sos/escalate`, `/api/sos/create`'s critical auto-broadcast path, and
+Person 4's re-match calls via `notifyNextDonors`.
+
+### Rule 7: Hospital verification gate (anti-misuse)
+
+Only hospitals with `hospitals.verified = true` may trigger a civilian donor
+broadcast. This protects against a compromised/fake hospital account spamming
+real donors. Enforcement points:
+
+- `POST /api/sos/broadcast` - returns `apiError("hospital_not_verified")`
+  with HTTP 403 if the owning hospital isn't verified; no donors are notified
+  and the SOS status is left unchanged.
+- `POST /api/sos/create` (critical auto-broadcast path only) - if the
+  hospital isn't verified, the auto-broadcast is skipped (SOS stays in
+  `inventory_check` instead of flipping to `broadcasting`) and the response
+  includes `broadcast_blocked_unverified: true`. The parallel inter-hospital
+  **transfer request is NOT gated** by this check - unverified hospitals can
+  still ask neighbouring hospitals for surplus stock, since that's a
+  hospital-to-hospital transaction, not civilian-facing.
+- `POST /api/sos/escalate` - returns `apiError("hospital_not_verified")` /
+  403 the same way as `/api/sos/broadcast` (escalation is just a re-broadcast
+  at a wider radius).
+
+`hospitals.verified` defaults to `true` in `db/schema.sql` / `db/seed.sql` (no
+real verification workflow exists for the hackathon) - set a hospital row's
+`verified` column to `false` manually to demo this gate.
+
+---
+
 ## /app/api/sos (Person 1)
 
 ### POST /api/sos/create
@@ -33,6 +102,7 @@ Response `data` (richer than the original skeleton - see implementation notes be
   }>;
   auto_transfer_request: TransferRequest | null; // only set for urgency='critical' + a surplus hospital exists
   broadcast: { notified_donor_ids: string[] } | null; // only set for urgency='critical' (auto-broadcasts in parallel with the transfer request); null for 'normal' (hospital calls /api/sos/broadcast explicitly after reviewing mesh_recommendation)
+  broadcast_blocked_unverified?: boolean; // true if urgency='critical' but the hospital isn't verified (rule 7) - auto-broadcast was skipped, transfer request still proceeded
 }
 ```
 Implementation notes (business rules):
@@ -42,7 +112,10 @@ Implementation notes (business rules):
   of urgency - the hospital/UI can surface `mesh_recommendation` as a banner.
 - For `urgency: "critical"`, create ALSO immediately fires a transfer request
   (to the closest surplus hospital, if any) AND broadcasts to eligible donors
-  in parallel (`Promise.all`), then flips status to `broadcasting`.
+  in parallel (`Promise.all`), then flips status to `broadcasting` - UNLESS
+  the hospital fails the rule 7 verification gate, in which case the
+  broadcast half is skipped (`broadcast_blocked_unverified: true`, status
+  stays `inventory_check`) while the transfer request still proceeds.
 - For `urgency: "normal"`, status stays `inventory_check` after create; the
   hospital decides whether to call `/api/inventory/transfer-request` or
   `/api/sos/broadcast` next.
@@ -54,17 +127,23 @@ Response `data`: `SosRequest[]` (newest first; `limit` optional, default 50, max
 Request: `{ "sos_id": "uuid" }` (also auto-triggered by a client timer every
 `DEMO_ESCALATION_SECONDS`).
 Response `data`: `{ sos: SosRequest, newly_notified: number, newly_notified_donor_ids: string[] }`.
-Radius is recomputed via `currentEscalatedRadius(sos.created_at)` from
-`lib/geo.ts` for critical requests (fixed at `NORMAL_RADIUS_KM` for normal
-requests); only donors without an existing `notifications` row for this
-`sos_id` are notified (enforced in the `match_eligible_donors` RPC itself).
+Returns `apiError("hospital_not_verified")` / HTTP 403 if the hospital fails
+rule 7. Delegates to `lib/matching.ts#escalateIfNeeded`: radius is recomputed
+via `currentEscalatedRadius(sos.created_at)` from `lib/geo.ts` for critical
+requests (fixed at `NORMAL_RADIUS_KM` for normal requests); only donors
+without an existing `notifications` row for this `sos_id` are notified
+(enforced in the `match_eligible_donors` RPC), minus any donors excluded by
+the rule 5 fatigue guard or rule 6 quiet hours.
 
 ### POST /api/sos/broadcast
-Request: `{ "sos_id": "uuid" }` — moves status to `broadcasting` and notifies
+Request: `{ "sos_id": "uuid" }` â€” moves status to `broadcasting` and notifies
 eligible donors via `match_eligible_donors` RPC (see db/functions.sql), using
 `getEligibleDonorGroups(blood_group, urgency)` from `lib/compat.ts` to decide
 which blood groups qualify (exact-only for normal, exact + compatible for
-critical).
+critical). Also applies rule 5 (dispatch fatigue) and rule 6 (quiet hours)
+via `lib/matching.ts#findEligibleDonors`.
+Returns `apiError("hospital_not_verified")` / HTTP 403 if the hospital fails
+rule 7 (no donors notified, SOS status unchanged in that case).
 Response `data`: `{ sos: SosRequest, notified_donor_ids: string[] }`.
 
 ### GET /api/sos/[id] (Person 2 - cross-feature read aggregation for Hospital UI)
@@ -153,6 +232,18 @@ Response `data`: `Dispatch`.
 ---
 
 ## /app/api/dispatch (Person 4)
+
+> **Re-matching note (Tier 2, Person 1 -> Person 4 handoff):** `/api/dispatch/cancel`
+> and `/api/dispatch/ghost-sweep` currently use their own
+> `app/api/dispatch/_lib/rematch.ts#rematchAndNotifyNext` helper. Please switch
+> both call sites to `notifyNextDonors(supabase, sosId, 1)` from
+> `lib/matching.ts` instead - it's the same "find next best eligible donor,
+> notify them" behavior but also picks up the rule 5 (fatigue) and rule 6
+> (quiet hours) guards for free, and will stay in sync with any future
+> matching-logic changes automatically. `rematchAndNotifyNext` can then be
+> deleted. Not done in this PR to avoid touching files outside `/app/api/sos`
+> and `/app/api/inventory` - flagging here per the "mock/coordinate via the
+> contract" rule instead.
 
 ### POST /api/dispatch/en-route
 Request: `{ "sos_id": "uuid", "donor_id": "uuid" }` (usually called internally by
