@@ -50,6 +50,7 @@ export async function POST(req: NextRequest) {
 
     return NextResponse.json(apiOk({ warped_minutes: advanceMinutes, affected_count: dispatches?.length || 0 }));
   } catch (err) {
+    console.error(err);
     return NextResponse.json(apiError("Unexpected error in time-warp"), { status: 500 });
   }
 }

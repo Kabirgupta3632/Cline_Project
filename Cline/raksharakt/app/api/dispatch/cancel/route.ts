@@ -47,7 +47,7 @@ export async function POST(req: NextRequest) {
       });
     }
     const dispatch = updated as Dispatch;
-    const donorName = (updated as any).donors?.name || "Unknown Donor";
+    const donorName = (updated as { donors?: { name?: string } }).donors?.name || "Unknown Donor";
 
     // Re-run matching for the next best eligible donor, excluding everyone
     // already notified for this sos_id (enforced inside match_eligible_donors).
