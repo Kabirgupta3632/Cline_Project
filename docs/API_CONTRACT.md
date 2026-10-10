@@ -229,6 +229,44 @@ Response `data`: array of
 en-route screen on initial load before the first location ping arrives.
 Response `data`: `Dispatch`.
 
+### Frontend notes (Tier 2-3 enhancements, no new API surface)
+- **Realtime notifications** (`app/donor/notifications/page.tsx`): subscribes
+  via `getSupabaseBrowserClient()` to `postgres_changes` on the `notifications`
+  table filtered to `donor_id=eq.<id>`, re-running the existing
+  `GET /api/donor/notifications` fetch on any insert/update. Requires the
+  `notifications` table to be added to the project's Realtime publication in
+  Supabase (Person 1 - `db/schema.sql` / dashboard toggle). A 60s poll remains
+  as a fallback in case the Realtime channel never connects.
+- **Simulate movement toggle** (`app/donor/en-route/[dispatchId]/page.tsx`):
+  explicit checkbox that forces simulated GPS movement even when real
+  geolocation permission is granted, so judges can demo the anti-ghost
+  "started moving" check deterministically. Still pings `/api/donor/location`
+  every 12s either way - no API change.
+- **PWA layer**: `public/manifest.json` + `public/sw.js`, registered from
+  `app/donor/layout.tsx`. The notifications page has an "Enable Alerts" button
+  that requests `Notification` permission and fires a local `Notification()`
+  (not server Web Push) for any notification row not seen before, plus a
+  Web Audio siren beep + `animate-pulse` red card border when
+  `urgency === 'critical'`.
+- **Reward popup**: `components/ui/RewardPopup.tsx` fires on
+  `app/donor/profile/page.tsx` when `GET /api/donor/profile` returns a badge
+  id not previously seen (tracked in `localStorage`, key
+  `raksharakt_seen_badge_ids`) - no API change, purely a client-side diff.
+- **i18n**: `app/donor/i18n.ts` is a plain English/Hindi/Assamese dictionary
+  (no library) used only by the notifications page copy; language choice
+  persisted in `localStorage` (`raksharakt_donor_lang`).
+
+### Tier 4 - QR confirmation code (blocked on Person 4)
+Plan: once Person 4's `dispatches.confirmation_code` column /
+`/api/dispatch/confirm-donated` support merges into `main`, the en-route page
+will render a QR code (client-side only, e.g. a small canvas-based QR
+generator - no new dependency added yet) of that code so the hospital can
+scan/enter it to confirm the donation. **As of this PR, no
+`confirmation_code` field exists anywhere in `main`** (confirmed via
+codebase search) - this is intentionally deferred until that schema change
+lands, per the coordination note in the original task breakdown. Will
+`git pull --rebase origin main` and add this once available.
+
 ---
 
 ## /app/api/dispatch (Person 4)

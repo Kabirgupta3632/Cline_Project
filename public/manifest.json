@@ -1,0 +1,25 @@
+{
+  "name": "RakshaRakt - Emergency Blood Donation Network",
+  "short_name": "RakshaRakt",
+  "description": "Hospitals broadcast urgent blood needs, nearby donors respond in minutes.",
+  "start_url": "/donor",
+  "scope": "/donor",
+  "display": "standalone",
+  "background_color": "#fff1f1",
+  "theme_color": "#bc1414",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "maskable"
+    }
+  ]
+}
