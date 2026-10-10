@@ -1,0 +1,5 @@
+
+# Bundled Cline binaries
+Cline/code-sidecar.exe
+Cline/bin/remote-helpers/cline-remote-helper-x86_64-unknown-linux-gnu
+Cline/bin/remote-helpers/cline-remote-helper-aarch64-unknown-linux-gnu
