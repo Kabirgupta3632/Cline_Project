@@ -1,7 +1,7 @@
 // POST /api/demo/reset - wipes all demo-generated activity (SOS requests,
-// notifications, dispatches, rewards ledger, badges, coupon redemptions) and
-// resets donor stats back to a pristine state, so judges can re-run the demo
-// from scratch. Feature: demo panel (Person 4).
+// notifications, dispatches, rewards ledger, badges, coupon redemptions,
+// dispatch events) and resets donor stats back to a pristine state, so judges 
+// can re-run the demo from scratch. Feature: demo panel (Person 4).
 import { NextResponse } from "next/server";
 import { apiOk, apiError } from "@/lib/types";
 import { getSupabaseServiceClient } from "@/lib/supabase";
@@ -10,9 +10,9 @@ export async function POST() {
   try {
     const supabase = getSupabaseServiceClient();
 
-    // sos_requests cascades to notifications + dispatches via FK ON DELETE
-    // CASCADE (see db/schema.sql), so deleting all sos_requests clears those
-    // too. rewards_ledger/badges/coupon_redemptions are cleared explicitly.
+    // sos_requests cascades to notifications + dispatches + dispatch_events via FK ON DELETE
+    // CASCADE (see db/schema.sql and db/dispatch_events.sql), so deleting all sos_requests 
+    // clears those too. rewards_ledger/badges/coupon_redemptions are cleared explicitly.
     const results = await Promise.all([
       supabase.from("sos_requests").delete().neq("id", "00000000-0000-0000-0000-000000000000"),
       supabase.from("rewards_ledger").delete().neq("id", "00000000-0000-0000-0000-000000000000"),
@@ -25,6 +25,8 @@ export async function POST() {
         .from("transfer_requests")
         .delete()
         .neq("id", "00000000-0000-0000-0000-000000000000"),
+      // Just to be safe, explicit clear in case cascade didn't hit (though it should)
+      supabase.from("dispatch_events").delete().neq("id", "00000000-0000-0000-0000-000000000000")
     ]);
 
     const failed = results.find((r) => r.error);
