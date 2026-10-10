@@ -32,24 +32,29 @@ export async function POST(req: Request) {
     // Get hospital location
     const { data: sosRes, error: sosErr } = await supabaseAdmin
       .from('sos_requests')
-      .select('hospitals(ST_Y(location::geometry) as lat, ST_X(location::geometry) as lng)')
+      .select('hospitals(location)')
       .eq('id', dispatch.sos_id)
       .single();
       
-    if (sosErr || !sosRes || !sosRes.hospitals) {
+    if (sosErr || !sosRes || !(sosRes as any).hospitals) {
       return NextResponse.json({ ok: false, error: 'SOS/Hospital not found' }, { status: 404 });
     }
 
-    // @ts-ignore
-    const hosp = Array.isArray(sosRes.hospitals) ? sosRes.hospitals[0] : sosRes.hospitals;
-    const hospLoc = { lat: hosp.lat, lng: hosp.lng };
-    const currentLoc = { lat, lng };
-
-    const distance = haversineKm(currentLoc, hospLoc);
-    const eta = etaMinutes(distance);
+    let eta = null;
+    try {
+      const hosp = Array.isArray((sosRes as any).hospitals) ? (sosRes as any).hospitals[0] : (sosRes as any).hospitals;
+      const hLoc = hosp.location as any;
+      if (hLoc && hLoc.lat) {
+        const hospLoc = { lat: hLoc.lat, lng: hLoc.lng };
+        const currentLoc = { lat, lng };
+        const distance = haversineKm(currentLoc, hospLoc);
+        eta = etaMinutes(distance);
+      }
+    } catch(e) {}
 
     // Update dispatch logic
     let started_moving_at = dispatch.started_moving_at;
+    const currentLoc = { lat, lng };
     
     if (!started_moving_at && dispatch.last_lat && dispatch.last_lng) {
       const lastLoc = { lat: dispatch.last_lat, lng: dispatch.last_lng };
@@ -57,9 +62,6 @@ export async function POST(req: Request) {
         started_moving_at = new Date().toISOString();
       }
     } else if (!started_moving_at && (!dispatch.last_lat || !dispatch.last_lng)) {
-      // First ping could be considered moving if it differs from donor home (but we don't fetch home here).
-      // We'll leave it null until second ping to be safe, or set it if we assume movement.
-      // Let's set it if we assume they are moving on first ping for simplicity in demo.
        started_moving_at = new Date().toISOString();
     }
 

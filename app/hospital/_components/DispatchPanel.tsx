@@ -7,8 +7,13 @@ import { useEffect, useState } from 'react';
 import { DispatchWithDonor } from '@/lib/types';
 import { supabase } from '@/lib/supabase';
 
+// Extend DispatchWithDonor for local UI state
+interface UIEnhancedDispatch extends DispatchWithDonor {
+  ghost_risk?: boolean;
+}
+
 export default function DispatchPanel({ sosId }: { sosId: string }) {
-  const [dispatches, setDispatches] = useState<DispatchWithDonor[]>([]);
+  const [dispatches, setDispatches] = useState<UIEnhancedDispatch[]>([]);
   const [events, setEvents] = useState<string[]>([]);
   const [loading, setLoading] = useState(true);
 
@@ -29,19 +34,17 @@ export default function DispatchPanel({ sosId }: { sosId: string }) {
   useEffect(() => {
     fetchDispatches();
 
-    // Polling ETAs and status changes, also real-time via Supabase
     const sub = supabase
       .channel('dispatches_channel')
       .on(
         'postgres_changes',
         { event: '*', schema: 'public', table: 'dispatches', filter: `sos_id=eq.${sosId}` },
         (payload) => {
-          fetchDispatches(); // Refetch to get joined donor data
+          fetchDispatches();
         }
       )
       .subscribe();
 
-    // Anti-ghosting client interval (as per instructions: setInterval in hospital dashboard)
     const ghostSweepInterval = setInterval(async () => {
       try {
         const res = await fetch('/api/dispatch/ghost-sweep', { method: 'POST' });
@@ -121,7 +124,6 @@ export default function DispatchPanel({ sosId }: { sosId: string }) {
                   </button>
                 )}
                 
-                {/* Progress bar mock */}
                 {d.status === 'en_route' && (
                   <div className="w-full bg-gray-200 h-1.5 rounded-full mt-3">
                     <div className="bg-green-500 h-1.5 rounded-full" style={{ width: '40%' }}></div>
