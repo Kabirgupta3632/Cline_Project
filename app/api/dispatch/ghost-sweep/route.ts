@@ -50,7 +50,7 @@ export async function POST(req: NextRequest) {
 
     let query = supabase
       .from("dispatches")
-      .select("*")
+      .select("*, donors(name)")
       .eq("status", "en_route")
       .is("started_moving_at", null)
       .lt("accepted_at", cutoffIso);
@@ -69,6 +69,8 @@ export async function POST(req: NextRequest) {
     const replacement_notified: string[] = [];
 
     for (const d of staleDispatches ?? []) {
+      const donorName = d.donors?.name || "Unknown Donor";
+      
       // 1. Mark dispatch 'ghosted'.
       const { error: updateErr } = await supabase
         .from("dispatches")
@@ -107,15 +109,29 @@ export async function POST(req: NextRequest) {
       }
 
       // 4. Re-match the next best eligible donor for this sos_id and notify.
+      let replacementName = "No replacement found";
       try {
         const sos = await getSosOrThrow(supabase, d.sos_id as string);
         if (sos.status !== "fulfilled" && sos.status !== "cancelled") {
           const notifiedDonorId = await rematchAndNotifyNext(supabase, sos);
-          if (notifiedDonorId) replacement_notified.push(notifiedDonorId);
+          if (notifiedDonorId) {
+            replacement_notified.push(notifiedDonorId);
+            
+            // Get replacement donor info for timeline message
+            const { data: replData } = await supabase.from("donors").select("name").eq("id", notifiedDonorId).single();
+            if (replData) replacementName = replData.name;
+          }
         }
       } catch (err) {
         console.error("[api/dispatch/ghost-sweep] rematch failed (non-fatal):", err);
       }
+      
+      // 5. Insert event log to timeline
+      await supabase.from("dispatch_events").insert({
+        sos_id: d.sos_id,
+        event_type: "ghosted",
+        message: `${donorName} ghosted -> notified ${replacementName}`
+      });
     }
 
     const response: GhostSweepResponse = { ghosted, replacement_notified };
