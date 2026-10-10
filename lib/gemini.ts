@@ -5,8 +5,16 @@ import type { BloodGroup } from "./types";
 import { BloodGroupEnum } from "./types";
 
 const GEMINI_API_KEY = process.env.GEMINI_API_KEY ?? "";
-const VISION_MODEL = "gemini-1.5-flash";
-const TEXT_MODEL = "gemini-1.5-flash";
+// NOTE: pinned model names (gemini-1.5-flash, then gemini-2.5-flash) were both
+// retired on the live API within the same test session on 2026-10-10 - Google
+// is rapidly cycling flash model versions. Using the "-latest" alias instead
+// of a pinned version avoids needing another code change every time a pinned
+// model gets sunset; Google keeps this alias pointed at whatever the current
+// flash model is (verified live: resolves to Gemini 3.8 Flash as of this
+// writing, multimodal, supports generateContent for both vision OCR and text
+// ranking).
+const VISION_MODEL = "gemini-flash-latest";
+const TEXT_MODEL = "gemini-flash-latest";
 
 function getClient(): GoogleGenerativeAI | null {
   if (!GEMINI_API_KEY) return null;
