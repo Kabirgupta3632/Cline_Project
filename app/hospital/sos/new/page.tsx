@@ -34,6 +34,17 @@ export default function NewSosPage() {
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
+  // Voice input (Tier 3): browser SpeechRecognition dictates into the
+  // patient-note field as an alternative to typing or photo upload.
+  const [isListening, setIsListening] = useState(false);
+  const [voiceSupported, setVoiceSupported] = useState(true);
+
+  // Family/relative request note (Tier 3): purely informational flag - no
+  // schema column exists for this yet, so we fold it into patient_note on
+  // submit rather than block on a Person 1 migration.
+  const [isFamilyRequest, setIsFamilyRequest] = useState(false);
+  const [requestedByName, setRequestedByName] = useState("");
+
   async function handleSlipUpload(file: File) {
     setOcrLoading(true);
     setError(null);
@@ -58,6 +69,50 @@ export default function NewSosPage() {
     }
   }
 
+  /**
+   * Starts the browser's SpeechRecognition API (Web Speech API) and appends
+   * the transcript to the patient-note field as an alternative input method
+   * to photo upload / typing. Falls back silently (voiceSupported=false) on
+   * browsers without support (e.g. Firefox) so the rest of the form still
+   * works - this is a bonus feature, never a blocker.
+   */
+  function handleVoiceInput() {
+    type SpeechRecognitionCtor = new () => {
+      lang: string;
+      interimResults: boolean;
+      maxAlternatives: number;
+      onresult: ((event: { results: ArrayLike<ArrayLike<{ transcript: string }>> }) => void) | null;
+      onerror: (() => void) | null;
+      onend: (() => void) | null;
+      start: () => void;
+      stop: () => void;
+    };
+    const w = window as unknown as {
+      SpeechRecognition?: SpeechRecognitionCtor;
+      webkitSpeechRecognition?: SpeechRecognitionCtor;
+    };
+    const Recognition = w.SpeechRecognition ?? w.webkitSpeechRecognition;
+    if (!Recognition) {
+      setVoiceSupported(false);
+      return;
+    }
+
+    const recognition = new Recognition();
+    recognition.lang = "en-IN";
+    recognition.interimResults = false;
+    recognition.maxAlternatives = 1;
+
+    recognition.onresult = (event) => {
+      const transcript = event.results[0][0].transcript;
+      setPatientNote((prev) => (prev ? `${prev} ${transcript}` : transcript));
+    };
+    recognition.onerror = () => setIsListening(false);
+    recognition.onend = () => setIsListening(false);
+
+    setIsListening(true);
+    recognition.start();
+  }
+
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     const hospitalId = getActiveHospitalId();
@@ -67,6 +122,17 @@ export default function NewSosPage() {
     }
     setSubmitting(true);
     setError(null);
+
+    // Family/relative request: fold into patient_note since no schema column
+    // exists for this yet (coordinate with Person 1 if a dedicated column is
+    // added later). Keeps the hospital-desk-only safety rule visible to staff
+    // reading the note without requiring a backend change to ship this.
+    const fullNote = isFamilyRequest
+      ? `[Requested by family member: ${requestedByName || "name not given"} - via hospital desk]${
+          patientNote ? " " + patientNote : ""
+        }`
+      : patientNote;
+
     // /api/sos/create returns a richer envelope than a bare SosRequest - it
     // also runs the Inventory Mesh check (rule 4) and, for critical urgency,
     // an auto transfer-request + broadcast done in parallel server-side.
@@ -77,7 +143,7 @@ export default function NewSosPage() {
         blood_group: bloodGroup,
         units_needed: unitsNeeded,
         urgency,
-        patient_note: patientNote || undefined,
+        patient_note: fullNote || undefined,
         raw_slip_text: rawSlipText || undefined,
       }
     );
@@ -178,7 +244,22 @@ export default function NewSosPage() {
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">Patient Note (optional)</label>
+            <div className="mb-1 flex items-center justify-between">
+              <label className="block text-sm font-medium text-gray-700">Patient Note (optional)</label>
+              {voiceSupported && (
+                <button
+                  type="button"
+                  onClick={handleVoiceInput}
+                  className={`rounded-full px-3 py-1 text-xs font-semibold ${
+                    isListening
+                      ? "bg-critical text-white animate-pulse"
+                      : "bg-raksha-100 text-raksha-700 hover:bg-raksha-200"
+                  }`}
+                >
+                  {isListening ? "🎙️ Listening…" : "🎙️ Dictate"}
+                </button>
+              )}
+            </div>
             <textarea
               value={patientNote}
               onChange={(e) => setPatientNote(e.target.value)}
@@ -186,6 +267,35 @@ export default function NewSosPage() {
               className="w-full rounded-lg border border-gray-300 px-3 py-3 text-base focus:border-raksha-500 focus:outline-none"
               placeholder="e.g. Ward 4, Dr. Mehta, post-surgical bleed"
             />
+            {!voiceSupported && (
+              <p className="mt-1 text-xs text-gray-400">
+                Voice dictation isn&apos;t supported in this browser - type the note manually.
+              </p>
+            )}
+          </div>
+
+          <div className="rounded-lg border border-gray-200 bg-gray-50 p-3">
+            <label className="flex items-center gap-2 text-sm font-medium text-gray-700">
+              <input
+                type="checkbox"
+                checked={isFamilyRequest}
+                onChange={(e) => setIsFamilyRequest(e.target.checked)}
+                className="h-5 w-5 rounded border-gray-300 text-raksha-600 focus:ring-raksha-500"
+              />
+              Requested by a family member via hospital desk
+            </label>
+            {isFamilyRequest && (
+              <input
+                type="text"
+                value={requestedByName}
+                onChange={(e) => setRequestedByName(e.target.value)}
+                placeholder="Family member's name"
+                className="mt-2 w-full rounded-lg border border-gray-300 px-3 py-2 text-sm focus:border-raksha-500 focus:outline-none"
+              />
+            )}
+            <p className="mt-1 text-xs text-gray-400">
+              Keeps SOS creation hospital-desk-gated even when a relative initiates the request.
+            </p>
           </div>
 
           {error && (

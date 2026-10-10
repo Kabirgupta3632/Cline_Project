@@ -157,7 +157,24 @@ Response `data`:
 {
   sos: SosRequest,
   notifications: Array<{ id, donor_id, distance_km, status, sent_at, donor: DonorPublic | null }>,
-  dispatches: Array<{ id, donor_id, status, eta_minutes, accepted_at, donor: DonorPublic | null }>
+  dispatches: Array<{ id, donor_id, status, eta_minutes, accepted_at, donor: DonorPublic | null }>,
+  hospital_location: LatLng | null // resolved via get_hospital_latlng RPC, used by the mini-map (Tier 2)
+}
+```
+
+### GET /api/sos/impact?hospital_id=uuid (Person 2 - impact dashboard, Tier 3)
+Read-only aggregation for judges: total SOS raised/fulfilled, average donor
+response time (accepted_at - sos.created_at across dispatches), donors
+currently active (en_route/arrived), and total confirmed donations. Omit
+`hospital_id` to aggregate platform-wide.
+Response `data`:
+```ts
+{
+  total_sos: number,
+  total_fulfilled: number,
+  avg_response_minutes: number | null,
+  donors_active_now: number,
+  total_donations_confirmed: number
 }
 ```
 
@@ -297,7 +314,14 @@ Request: `{ "dispatch_id": "uuid", "reason": "string?" }`
 Response `data`: `Dispatch` (status -> `cancelled`).
 
 ### POST /api/dispatch/confirm-donated
-Request: `{ "dispatch_id": "uuid" }` (hospital taps "Confirm donated").
+Request: `{ "dispatch_id": "uuid", "confirmation_code": "string?" }` (hospital taps
+"Confirm donated"). `confirmation_code` is OPTIONAL and PROPOSED by Person 2
+for the Tier 4 QR-handshake flow: the donor's en-route screen shows a short
+code (or QR), the hospital scans/types it here before confirming. Person 4
+(owner of this endpoint) should verify it against `dispatches.confirmation_code`
+when present and return `apiError('code_mismatch')` on a mismatch; if the field
+is omitted (current behavior), confirm proceeds without verification so this
+is purely additive and never blocks the base flow.
 Response `data`: `Dispatch` (status -> `donated`) + triggers `/api/rewards/points`.
 
 ### POST /api/dispatch/ghost-sweep
@@ -329,3 +353,33 @@ Response `data`: `{ redeemed: true, remaining_points: number }` or `apiError("in
 ### GET /api/roles/seed-options
 Response `data`: `{ hospitals: {id,name}[], donors: {id,name,blood_group}[] }`
 used to populate the "Login as" dropdown.
+
+---
+
+## Hospital UI implementation notes (Person 2, this round's Tier 2/3/4 pass)
+
+- **Realtime**: `app/hospital/dashboard/page.tsx` and `app/hospital/sos/[id]/page.tsx`
+  now subscribe to Supabase Realtime (`getSupabaseBrowserClient().channel(...).on('postgres_changes', ...)`)
+  on `sos_requests` / `notifications` / `dispatches` instead of fast polling.
+  A 60s poll remains as a fallback safety net only. Requires Realtime to be
+  enabled on the tables (already done in `db/schema.sql`'s publication setup)
+  and a real `NEXT_PUBLIC_SUPABASE_URL` / `NEXT_PUBLIC_SUPABASE_ANON_KEY` in
+  `.env.local` - against the placeholder client the subscribe call still
+  succeeds locally but never receives events, so the 60s fallback poll is
+  what keeps the UI working in that case.
+- **Mini-map**: `app/hospital/sos/[id]/SosRadiusMap.tsx` (Leaflet + OSM, no API
+  key) renders the hospital pin + a circle sized to `sos.radius_km`, dynamically
+  imported with `ssr:false` since Leaflet touches `window`.
+- **DispatchPanel slot**: `app/hospital/_components/DispatchPanel.tsx` is a
+  TODO stub (owned content-wise by Person 4); the SOS detail page already
+  imports and renders `<DispatchPanel sosId={sos.id} />` above the existing
+  `DispatchesList` fallback, so Person 4's real implementation appears
+  automatically once merged, with zero changes needed on this page.
+- **Voice input + family-request note**: both live client-side only on
+  `app/hospital/sos/new/page.tsx` (browser SpeechRecognition API dictation,
+  and a checkbox that prefixes `patient_note` with "[Requested by family
+  member: ...]"). Neither requires a schema change.
+- **QR handshake (Tier 4, hospital side)**: `handleConfirmDonated` on the SOS
+  detail page now optionally sends `confirmation_code` to
+  `/api/dispatch/confirm-donated` (see that section above) - safe no-op until
+  Person 4 adds server-side verification.

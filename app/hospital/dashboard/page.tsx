@@ -2,10 +2,11 @@
 // to raise a new one. Feature: Hospital UI (Person 2).
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { apiGet } from "@/lib/api-client";
+import { getSupabaseBrowserClient } from "@/lib/supabase";
 import { getActiveHospitalId, getActiveHospitalName, clearActiveHospital } from "../hospital-session";
 import type { SosRequest } from "@/lib/types";
 
@@ -17,23 +18,7 @@ export default function HospitalDashboardPage() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
-  useEffect(() => {
-    const id = getActiveHospitalId();
-    if (!id) {
-      router.replace("/hospital");
-      return;
-    }
-    setHospitalId(id);
-    setHospitalName(getActiveHospitalName());
-    refresh(id);
-    // Poll so newly fulfilled / escalated SOS rows stay fresh without
-    // needing Supabase Realtime wired up in every environment.
-    const interval = setInterval(() => refresh(id), 8000);
-    return () => clearInterval(interval);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-
-  async function refresh(id: string) {
+  const refresh = useCallback(async (id: string) => {
     const { data, error: err } = await apiGet<SosRequest[]>(
       `/api/sos/list?hospital_id=${id}`
     );
@@ -43,7 +28,48 @@ export default function HospitalDashboardPage() {
       setSosList(data ?? []);
     }
     setLoading(false);
-  }
+  }, []);
+
+  useEffect(() => {
+    const id = getActiveHospitalId();
+    if (!id) {
+      router.replace("/hospital");
+      return;
+    }
+    setHospitalId(id);
+    setHospitalName(getActiveHospitalName());
+    refresh(id);
+
+    // Live updates via Supabase Realtime on sos_requests (enabled in the
+    // Realtime publication in db/schema.sql) - new SOS rows, status flips
+    // (inventory_check -> broadcasting -> fulfilled), and radius escalation
+    // all show up instantly without the client needing to poll. We still
+    // keep a slow 60s polling fallback below in case the Realtime channel
+    // silently fails to connect (e.g. Realtime not enabled on the project,
+    // network blip) so the dashboard never goes permanently stale.
+    const supabase = getSupabaseBrowserClient();
+    const channel = supabase
+      .channel(`hospital-dashboard-${id}`)
+      .on(
+        "postgres_changes",
+        {
+          event: "*",
+          schema: "public",
+          table: "sos_requests",
+          filter: `hospital_id=eq.${id}`,
+        },
+        () => refresh(id)
+      )
+      .subscribe();
+
+    // Slow fallback poll - safety net only, not the primary update path.
+    const fallbackInterval = setInterval(() => refresh(id), 60000);
+
+    return () => {
+      supabase.removeChannel(channel);
+      clearInterval(fallbackInterval);
+    };
+  }, [router, refresh]);
 
   function handleLogout() {
     clearActiveHospital();
@@ -57,12 +83,20 @@ export default function HospitalDashboardPage() {
           <h1 className="text-xl font-bold">🏥 {hospitalName ?? "Hospital"}</h1>
           <p className="text-xs text-raksha-100">RakshaRakt Dashboard</p>
         </div>
-        <button
-          onClick={handleLogout}
-          className="rounded-lg bg-raksha-800 px-3 py-2 text-sm hover:bg-raksha-900"
-        >
-          Switch hospital
-        </button>
+        <div className="flex items-center gap-2">
+          <Link
+            href="/hospital/impact"
+            className="rounded-lg bg-raksha-800 px-3 py-2 text-sm hover:bg-raksha-900"
+          >
+            📊 Impact
+          </Link>
+          <button
+            onClick={handleLogout}
+            className="rounded-lg bg-raksha-800 px-3 py-2 text-sm hover:bg-raksha-900"
+          >
+            Switch hospital
+          </button>
+        </div>
       </header>
 
       <div className="mx-auto max-w-4xl px-6 py-8">
