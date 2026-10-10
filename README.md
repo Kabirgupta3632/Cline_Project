@@ -11,6 +11,9 @@ RakshaRakt is an intelligent, real-time emergency broadcast system:
 - **Anti-Ghosting:** Live donor location tracking. If a donor stalls for 10 minutes, the system automatically marks them as ghosted and sweeps for the next available replacement.
 - **Gamification:** Hero points, verifiable badges, and partner coupons to encourage reliability.
 
+### 📱 Offline SMS Fallback (Concept)
+While the current MVP uses web-push simulated via Supabase Realtime, a production deployment would integrate **Twilio SMS** to fallback for donors without data connectivity or smartphones, bridging the digital divide in rural areas.
+
 ## Architecture
 
 ```mermaid
@@ -28,24 +31,28 @@ graph TD
     K --> L[Rewards API / Ledger]
 ```
 
-## Features
-- **SOS Creation & AI Slip OCR:** Gemini parses hand-written requisition slips.
-- **Live Dispatch Dashboard:** Real-time ETAs and progress bars for the hospital.
-- **Anti-Ghosting Engine:** Re-routes automatically if a volunteer isn't moving.
-- **Rewards System:** Point ledger, coupons, and dynamic badges (First Responder, Night Owl).
+## Features Implemented vs Stretch Ideas
+- ✅ **AI Parsing:** Gemini 1.5 parsing handwriting
+- ✅ **Anti-Ghosting:** Geo-tracked sweep & auto-replacement
+- ✅ **Gamification:** Points and coupon ledger
+- ❌ **Web Push / PWA:** Skipped for MVP constraints (using in-app Realtime)
+- ❌ **SMS Twilio:** Mentioned but not built for hackathon
+- ❌ **Hardware SOS Button:** Out of scope
 
 ## Setup
-1. Clone repo, `npm install`
-2. Configure `.env.local` with Supabase keys and Gemini API key.
-3. Run `npm run dev`.
-4. Run `seed.sql` in Supabase SQL Editor.
+1. Clone repo: `git clone https://github.com/Kabirgupta3632/Cline_Project.git`
+2. `cd Cline/raksharakt && npm install`
+3. Configure `.env.local` with Supabase keys and Gemini API key.
+4. Run `npm run dev`.
+5. Run `seed.sql` in Supabase SQL Editor.
 
 ## Demo Flow (3 min)
-1. **Hospital:** Uploads slip -> SOS created.
-2. **Mesh:** System detects surplus O- at a neighbour, but hospital chooses "Broadcast anyway" (Critical).
-3. **Donor:** Receives notification, taps "Yes".
-4. **Demo Panel:** Trigger "Time Warp +11m" -> Donor ghosted, replacement instantly notified.
-5. **Hospital:** Confirm arrival -> Points awarded, Night Owl badge unlocked.
+1. **Hospital:** Uploads handwritten slip -> AI OCR extracts O- Critical -> SOS created.
+2. **Mesh:** System detects surplus O- at a neighbour, but hospital chooses "Broadcast anyway".
+3. **Donor:** Receives notification on simulated phone, taps "Yes".
+4. **Demo Panel:** Operator clicks "Time Warp +11m" -> Donor ghosted, replacement instantly notified on timeline.
+5. **Hospital:** New donor arrives, clicks Confirm -> Points awarded, Night Owl badge unlocked.
+6. **Impact:** Show Rewards tab on donor profile with new coupon available.
 
-## Tech Used
-Next.js 14, Supabase (Postgres, PostGIS, Realtime), Tailwind CSS, Gemini 1.5 API.
+---
+_Built with Cline during the AI Builders Hackathon._
