@@ -1,6 +1,6 @@
 // Root layout for the whole app: loads fonts, global styles, and page metadata.
 // Shared infra - not owned by a single feature.
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 
@@ -19,6 +19,13 @@ export const metadata: Metadata = {
   title: "RakshaRakt - Emergency Blood Donation Network",
   description:
     "Hospitals broadcast urgent blood needs, nearby donors respond in minutes.",
+  // Manifest link for the donor PWA bonus (scope is limited to /donor inside
+  // manifest.json itself) - Feature: Donor PWA (Person 3).
+  manifest: "/manifest.json",
+};
+
+export const viewport: Viewport = {
+  themeColor: "#bc1414",
 };
 
 export default function RootLayout({
