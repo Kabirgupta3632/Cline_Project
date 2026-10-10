@@ -8,7 +8,7 @@ import { z } from "zod";
 import { apiOk, apiError } from "@/lib/types";
 import { getSupabaseServiceClient } from "@/lib/supabase";
 import { getSosOrThrow } from "@/app/api/sos/_lib/broadcast";
-import { rematchAndNotifyNext } from "@/app/api/dispatch/_lib/rematch";
+import { notifyNextDonors } from "@/lib/matching";
 import { awardPoints } from "@/app/api/rewards/_lib/award";
 
 const BodySchema = z.object({
@@ -113,7 +113,7 @@ export async function POST(req: NextRequest) {
       try {
         const sos = await getSosOrThrow(supabase, d.sos_id as string);
         if (sos.status !== "fulfilled" && sos.status !== "cancelled") {
-          const notifiedDonorId = await rematchAndNotifyNext(supabase, sos);
+          const [notifiedDonorId] = await notifyNextDonors(supabase, sos.id, 1);
           if (notifiedDonorId) {
             replacement_notified.push(notifiedDonorId);
             
