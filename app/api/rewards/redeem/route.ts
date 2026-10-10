@@ -1,53 +1,93 @@
-// Rewards Redeem API
-// Feature: Rewards - Deduct points, return coupon
+// POST /api/rewards/redeem - deducts hero points and marks a coupon as
+// redeemed for a donor. Feature: rewards (Person 4).
+import { NextRequest, NextResponse } from "next/server";
+import { z } from "zod";
+import { apiOk, apiError } from "@/lib/types";
+import { getSupabaseServiceClient } from "@/lib/supabase";
 
-import { NextResponse } from 'next/server';
-import { supabaseAdmin } from '@/lib/supabase';
-import { RedeemCouponBody } from '@/lib/types';
+const BodySchema = z.object({
+  donor_id: z.string().uuid("donor_id must be a UUID"),
+  coupon_id: z.string().uuid("coupon_id must be a UUID"),
+});
 
-export async function POST(req: Request) {
+export async function POST(req: NextRequest) {
+  let json: unknown;
   try {
-    const body: RedeemCouponBody = await req.json();
-    const { donor_id, coupon_id } = body;
+    json = await req.json();
+  } catch {
+    return NextResponse.json(apiError("Invalid JSON body"), { status: 400 });
+  }
 
-    if (!donor_id || !coupon_id) {
-      return NextResponse.json({ ok: false, error: 'Missing donor_id or coupon_id' }, { status: 400 });
+  const parsed = BodySchema.safeParse(json);
+  if (!parsed.success) {
+    return NextResponse.json(
+      apiError(parsed.error.issues.map((i) => i.message).join("; ")),
+      { status: 400 }
+    );
+  }
+  const { donor_id, coupon_id } = parsed.data;
+
+  try {
+    const supabase = getSupabaseServiceClient();
+
+    const [{ data: donor, error: donorErr }, { data: coupon, error: couponErr }] =
+      await Promise.all([
+        supabase.from("donors").select("hero_points").eq("id", donor_id).maybeSingle(),
+        supabase.from("coupons").select("*").eq("id", coupon_id).maybeSingle(),
+      ]);
+
+    if (donorErr) {
+      console.error("[api/rewards/redeem] donor fetch error:", donorErr);
+      return NextResponse.json(apiError("Failed to load donor"), { status: 500 });
+    }
+    if (!donor) {
+      return NextResponse.json(apiError("Donor not found"), { status: 404 });
+    }
+    if (couponErr) {
+      console.error("[api/rewards/redeem] coupon fetch error:", couponErr);
+      return NextResponse.json(apiError("Failed to load coupon"), { status: 500 });
+    }
+    if (!coupon) {
+      return NextResponse.json(apiError("Coupon not found"), { status: 404 });
     }
 
-    // Get donor points and coupon cost
-    const [{ data: donor }, { data: coupon }] = await Promise.all([
-      supabaseAdmin.from('donors').select('hero_points').eq('id', donor_id).single(),
-      supabaseAdmin.from('coupons').select('points_cost, code').eq('id', coupon_id).single()
-    ]);
-
-    if (!donor || !coupon) {
-      return NextResponse.json({ ok: false, error: 'Donor or coupon not found' }, { status: 404 });
+    const heroPoints = donor.hero_points as number;
+    const pointsCost = coupon.points_cost as number;
+    if (heroPoints < pointsCost) {
+      return NextResponse.json(apiError("insufficient_points"), { status: 409 });
     }
 
-    if (donor.hero_points < coupon.points_cost) {
-      return NextResponse.json({ ok: false, error: 'Insufficient points' }, { status: 400 });
+    const remaining_points = heroPoints - pointsCost;
+    const { error: updateErr } = await supabase
+      .from("donors")
+      .update({ hero_points: remaining_points })
+      .eq("id", donor_id);
+
+    if (updateErr) {
+      console.error("[api/rewards/redeem] update donor error:", updateErr);
+      return NextResponse.json(apiError("Failed to deduct points"), { status: 500 });
     }
 
-    // Deduct points
-    await supabaseAdmin.from('rewards_ledger').insert({
-      donor_id,
-      points: -coupon.points_cost,
-      reason: 'Redeemed coupon',
-      sos_id: null,
+    const { error: redemptionErr } = await supabase
+      .from("coupon_redemptions")
+      .insert({ donor_id, coupon_id });
+
+    if (redemptionErr) {
+      console.error("[api/rewards/redeem] insert redemption error:", redemptionErr);
+      // Points already deducted - still report success since the coupon
+      // redemption intent happened; a retry of /api/rewards/coupons will
+      // still show the coupon globally (we don't mark coupons as "used up"
+      // globally, only track the donor's own redemption history).
+      return NextResponse.json(apiError("Failed to record coupon redemption"), {
+        status: 500,
+      });
+    }
+
+    return NextResponse.json(apiOk({ redeemed: true, remaining_points }));
+  } catch (err) {
+    console.error("[api/rewards/redeem] unexpected error:", err);
+    return NextResponse.json(apiError("Unexpected error redeeming coupon"), {
+      status: 500,
     });
-    
-    await supabaseAdmin.rpc('increment_hero_points', { donor_id_param: donor_id, pts: -coupon.points_cost });
-
-    return NextResponse.json({
-      ok: true,
-      data: {
-        coupon_code: coupon.code,
-        points_spent: coupon.points_cost,
-        remaining_points: donor.hero_points - coupon.points_cost
-      }
-    });
-  } catch (error: any) {
-    console.error('redeem error', error);
-    return NextResponse.json({ ok: false, error: error.message }, { status: 500 });
   }
 }

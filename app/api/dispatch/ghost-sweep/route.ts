@@ -1,72 +1,145 @@
-// Dispatch Ghost Sweep API
-// Feature: Dispatch - Anti-ghosting job
+// POST /api/dispatch/ghost-sweep - anti-ghosting sweep: finds en_route
+// dispatches that never started moving within GHOST_WINDOW_MIN, marks them
+// 'ghosted', penalizes the donor, and re-matches the next best donor for
+// each affected SOS. Callable from the demo panel button AND a hospital
+// dashboard poll. Feature: dispatch (Person 4).
+import { NextRequest, NextResponse } from "next/server";
+import { z } from "zod";
+import { apiOk, apiError } from "@/lib/types";
+import { getSupabaseServiceClient } from "@/lib/supabase";
+import { getSosOrThrow } from "@/app/api/sos/_lib/broadcast";
+import { rematchAndNotifyNext } from "@/app/api/dispatch/_lib/rematch";
+import { awardPoints } from "@/app/api/rewards/_lib/award";
 
-import { NextResponse } from 'next/server';
-import { supabaseAdmin } from '@/lib/supabase';
+const BodySchema = z.object({
+  sos_id: z.string().uuid("sos_id must be a UUID").optional(),
+});
 
-export async function POST(req: Request) {
+const GHOST_WINDOW_MIN = Number(process.env.GHOST_WINDOW_MIN ?? 10);
+
+export interface GhostSweepResponse {
+  ghosted: string[]; // dispatch ids marked ghosted
+  replacement_notified: string[]; // donor ids notified as replacements
+}
+
+export async function POST(req: NextRequest) {
+  // Body is optional - treat empty body / missing JSON as {} (sweep all).
+  let json: unknown = {};
   try {
-    const GHOST_WINDOW_MIN = Number(process.env.DEMO_GHOST_WINDOW_MIN || process.env.GHOST_WINDOW_MIN || 10);
-    const ghostThresholdMs = GHOST_WINDOW_MIN * 60 * 1000;
-    const now = Date.now();
-    
-    // Find dispatches en_route, started_moving_at IS NULL
-    const { data: dispatches, error } = await supabaseAdmin
-      .from('dispatches')
-      .select('id, donor_id, sos_id, accepted_at')
-      .eq('status', 'en_route')
-      .is('started_moving_at', null);
+    const text = await req.text();
+    if (text) json = JSON.parse(text);
+  } catch {
+    return NextResponse.json(apiError("Invalid JSON body"), { status: 400 });
+  }
 
-    if (error) throw error;
+  const parsed = BodySchema.safeParse(json);
+  if (!parsed.success) {
+    return NextResponse.json(
+      apiError(parsed.error.issues.map((i) => i.message).join("; ")),
+      { status: 400 }
+    );
+  }
+  const { sos_id } = parsed.data;
 
-    const ghosts = dispatches.filter(d => {
-      const acceptedMs = new Date(d.accepted_at).getTime();
-      return (now - acceptedMs) > ghostThresholdMs;
-    });
+  try {
+    const supabase = getSupabaseServiceClient();
 
-    if (ghosts.length === 0) {
-      return NextResponse.json({ ok: true, data: { ghosts_found: 0, replacements_notified: 0, details: [] } });
-    }
+    const cutoffIso = new Date(
+      Date.now() - GHOST_WINDOW_MIN * 60 * 1000
+    ).toISOString();
 
-    const details = [];
+    let query = supabase
+      .from("dispatches")
+      .select("*, donors(name)")
+      .eq("status", "en_route")
+      .is("started_moving_at", null)
+      .lt("accepted_at", cutoffIso);
 
-    for (const ghost of ghosts) {
-      // 1. Mark ghosted
-      await supabaseAdmin.from('dispatches').update({ status: 'ghosted', updated_at: new Date().toISOString() }).eq('id', ghost.id);
-      
-      // 2. Penalize donor
-      await supabaseAdmin.from('rewards_ledger').insert({
-        donor_id: ghost.donor_id,
-        points: -10,
-        reason: 'Ghosted dispatch',
-        sos_id: ghost.sos_id,
-      });
-      await supabaseAdmin.rpc('increment_hero_points', { donor_id_param: ghost.donor_id, pts: -10 });
-      await supabaseAdmin.rpc('increment_ghost_count', { donor_id_param: ghost.donor_id });
-      
-      // 3. Log event (optional, handled by UI if needed, or simple table insert)
-      
-      // 4. Mock notification replacement (Person 1 owns matching, we mock contract)
-      // Call notifyNextDonors via API or internal RPC if available. For this MVP we just mock the result.
-      
-      details.push({
-        dispatch_id: ghost.id,
-        donor_id: ghost.donor_id,
-        sos_id: ghost.sos_id,
-        replacement_donor_id: 'mock-uuid-if-needed'
+    if (sos_id) query = query.eq("sos_id", sos_id);
+
+    const { data: staleDispatches, error: staleErr } = await query;
+    if (staleErr) {
+      console.error("[api/dispatch/ghost-sweep] query error:", staleErr);
+      return NextResponse.json(apiError("Failed to query stale dispatches"), {
+        status: 500,
       });
     }
 
-    return NextResponse.json({
-      ok: true,
-      data: {
-        ghosts_found: ghosts.length,
-        replacements_notified: ghosts.length, // mocked
-        details
+    const ghosted: string[] = [];
+    const replacement_notified: string[] = [];
+
+    for (const d of staleDispatches ?? []) {
+      const donorName = d.donors?.name || "Unknown Donor";
+      
+      // 1. Mark dispatch 'ghosted'.
+      const { error: updateErr } = await supabase
+        .from("dispatches")
+        .update({ status: "ghosted", updated_at: new Date().toISOString() })
+        .eq("id", d.id);
+      if (updateErr) {
+        console.error("[api/dispatch/ghost-sweep] mark ghosted failed:", updateErr);
+        continue;
       }
+      ghosted.push(d.id as string);
+
+      // 2. Increment donor ghost_count.
+      const { data: donorRow, error: donorErr } = await supabase
+        .from("donors")
+        .select("ghost_count")
+        .eq("id", d.donor_id)
+        .single();
+      if (!donorErr && donorRow) {
+        await supabase
+          .from("donors")
+          .update({ ghost_count: (donorRow.ghost_count as number) + 1 })
+          .eq("id", d.donor_id as string);
+      } else {
+        console.error("[api/dispatch/ghost-sweep] donor fetch failed:", donorErr);
+      }
+
+      // 3. Deduct 10 points via rewards ledger (reason='ghosted').
+      try {
+        await awardPoints(supabase, {
+          donor_id: d.donor_id as string,
+          reason: "ghosted",
+          sos_id: d.sos_id as string,
+        });
+      } catch (err) {
+        console.error("[api/dispatch/ghost-sweep] awardPoints(ghosted) failed:", err);
+      }
+
+      // 4. Re-match the next best eligible donor for this sos_id and notify.
+      let replacementName = "No replacement found";
+      try {
+        const sos = await getSosOrThrow(supabase, d.sos_id as string);
+        if (sos.status !== "fulfilled" && sos.status !== "cancelled") {
+          const notifiedDonorId = await rematchAndNotifyNext(supabase, sos);
+          if (notifiedDonorId) {
+            replacement_notified.push(notifiedDonorId);
+            
+            // Get replacement donor info for timeline message
+            const { data: replData } = await supabase.from("donors").select("name").eq("id", notifiedDonorId).single();
+            if (replData) replacementName = replData.name;
+          }
+        }
+      } catch (err) {
+        console.error("[api/dispatch/ghost-sweep] rematch failed (non-fatal):", err);
+      }
+      
+      // 5. Insert event log to timeline
+      await supabase.from("dispatch_events").insert({
+        sos_id: d.sos_id,
+        event_type: "ghosted",
+        message: `${donorName} ghosted -> notified ${replacementName}`
+      });
+    }
+
+    const response: GhostSweepResponse = { ghosted, replacement_notified };
+    return NextResponse.json(apiOk(response));
+  } catch (err) {
+    console.error("[api/dispatch/ghost-sweep] unexpected error:", err);
+    return NextResponse.json(apiError("Unexpected error running ghost sweep"), {
+      status: 500,
     });
-  } catch (error: any) {
-    console.error('ghost-sweep error', error);
-    return NextResponse.json({ ok: false, error: error.message }, { status: 500 });
   }
 }

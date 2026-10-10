@@ -1,179 +1,202 @@
-# RakshaRakt – API Contract
+# RakshaRakt API Contract
 
-> Every endpoint returns `{ ok: boolean, data?: T, error?: string }`.
-> All timestamps are ISO 8601. All IDs are UUIDs.
-> Auth is simulated via `x-role-id` header (seeded hospital/donor ID).
+Every route handler lives under `app/api/**` and returns the shared envelope from
+`lib/types.ts`:
 
----
+```ts
+type ApiResponse<T> = { ok: true; data: T } | { ok: false; error: string };
+```
 
-## AI Routes — Owner: Person 2
+All request bodies are validated with `zod`. Dates are ISO 8601 strings. Blood
+groups are one of `A+ A- B+ B- AB+ AB- O+ O-`. IDs are UUID strings.
 
-### `POST /api/ai/extract-slip`
-Parse a blood requisition slip (image OCR or raw text) using Gemini.
-
-**Request** `{ "text": "string?", "base64Image": "string?", "mimeType": "image/jpeg" }`
-**Response** `{ "blood_group": "A+|null", "units": 2, "urgency": "normal|critical", "hospital_name": "str|null", "patient_note": "str|null", "confidence": 0.92 }`
-
-### `POST /api/ai/rank-donors`
-Rank candidate donors for an SOS. Gemini-assisted, deterministic fallback.
-
-**Request** `{ "sos_id": "uuid", "donor_ids": ["uuid"] }`
-**Response** `[{ "donor_id": "uuid", "score": 87, "reason": "string" }]`
+> Each team member owns a section below. If you need an endpoint that isn't
+> documented yet, add your proposed shape here and implement it - don't block
+> on someone else's section being "finished".
 
 ---
 
-## SOS Routes — Owner: Person 1
+## /app/api/sos (Person 1)
 
-### `POST /api/sos`
-Create SOS. Auto-triggers inventory mesh check. Status starts as `inventory_check`.
+### POST /api/sos/create
+Request:
+```json
+{ "hospital_id": "uuid", "blood_group": "O+", "units_needed": 2, "urgency": "critical", "patient_note": "string?", "raw_slip_text": "string?" }
+```
+Response `data` (richer than the original skeleton - see implementation notes below):
+```ts
+{
+  sos: SosRequest;                      // status starts 'inventory_check'
+  mesh_recommendation: Array<{          // find_surplus_hospitals RPC result, always run BEFORE broadcast
+    hospital_id: string; name: string; distance_km: number;
+    units_available: number; units_reserved: number; surplus_threshold: number;
+  }>;
+  auto_transfer_request: TransferRequest | null; // only set for urgency='critical' + a surplus hospital exists
+  broadcast: { notified_donor_ids: string[] } | null; // only set for urgency='critical' (auto-broadcasts in parallel with the transfer request); null for 'normal' (hospital calls /api/sos/broadcast explicitly after reviewing mesh_recommendation)
+}
+```
+Implementation notes (business rules):
+- `radius_km` is set to `NORMAL_RADIUS_KM` (5km) for normal urgency or
+  `CRITICAL_START_RADIUS_KM` (15km) for critical, per `lib/geo.ts`.
+- Mesh check (rule 4) always runs on create, before any broadcast, regardless
+  of urgency - the hospital/UI can surface `mesh_recommendation` as a banner.
+- For `urgency: "critical"`, create ALSO immediately fires a transfer request
+  (to the closest surplus hospital, if any) AND broadcasts to eligible donors
+  in parallel (`Promise.all`), then flips status to `broadcasting`.
+- For `urgency: "normal"`, status stays `inventory_check` after create; the
+  hospital decides whether to call `/api/inventory/transfer-request` or
+  `/api/sos/broadcast` next.
 
-**Request** `{ "hospital_id": "uuid", "blood_group": "B+", "units_needed": 2, "urgency": "normal|critical", "patient_note?": "str", "raw_slip_text?": "str" }`
-**Response** `{ "sos": { SosRequest }, "inventory_matches": [ InventoryMeshMatch ] }`
+### GET /api/sos/list?hospital_id=uuid&status=broadcasting&limit=50
+Response `data`: `SosRequest[]` (newest first; `limit` optional, default 50, max 200).
 
-### `GET /api/sos/:id`
-Full SOS detail: hospital name, notifications counts, dispatches with ETAs.
+### POST /api/sos/escalate
+Request: `{ "sos_id": "uuid" }` (also auto-triggered by a client timer every
+`DEMO_ESCALATION_SECONDS`).
+Response `data`: `{ sos: SosRequest, newly_notified: number, newly_notified_donor_ids: string[] }`.
+Radius is recomputed via `currentEscalatedRadius(sos.created_at)` from
+`lib/geo.ts` for critical requests (fixed at `NORMAL_RADIUS_KM` for normal
+requests); only donors without an existing `notifications` row for this
+`sos_id` are notified (enforced in the `match_eligible_donors` RPC itself).
 
-**Response** `{ SosDetail }` — see lib/types.ts `SosDetail`
+### POST /api/sos/broadcast
+Request: `{ "sos_id": "uuid" }` — moves status to `broadcasting` and notifies
+eligible donors via `match_eligible_donors` RPC (see db/functions.sql), using
+`getEligibleDonorGroups(blood_group, urgency)` from `lib/compat.ts` to decide
+which blood groups qualify (exact-only for normal, exact + compatible for
+critical).
+Response `data`: `{ sos: SosRequest, notified_donor_ids: string[] }`.
 
-### `POST /api/sos/:id/broadcast`
-Start or continue broadcasting to eligible donors within current radius.
-
-**Request** `{}`  **Response** `{ "donors_notified": 5, "total_notified": 12 }`
-
-### `POST /api/sos/:id/escalate`
-Widen radius +10 km (max 50 km). Notifies newly in-range donors.
-
-**Request** `{}`  **Response** `{ "new_radius_km": 25, "donors_notified": 3 }`
-
----
-
-## Inventory Routes — Owner: Person 1
-
-### `GET /api/inventory/mesh?sos_id=<uuid>`
-Nearby hospitals with surplus stock for the SOS blood group.
-
-**Response** `[ InventoryMeshMatch ]`
-
-### `POST /api/inventory/transfer`
-Create inter-hospital transfer request.
-
-**Request** `{ "sos_id": "uuid", "from_hospital_id": "uuid", "to_hospital_id": "uuid", "blood_group": "O-", "units": 2 }`
-**Response** `{ "id": "uuid", "status": "pending", "created_at": "ISO" }`
-
-### `PATCH /api/inventory/:hospital_id`
-Update blood stock for a group.
-
-**Request** `{ "blood_group": "O-", "units_available": 12, "units_reserved": 2, "surplus_threshold": 3 }`
-**Response** `{ "hospital_id": "uuid", "blood_group": "O-", "units_available": 12, "updated_at": "ISO" }`
-
----
-
-## Donor Routes — Owner: Person 3
-
-### `GET /api/donor/:id/notifications`
-All notifications for a donor (populates in-app notification panel).
-
-**Response** `[{ "id": "uuid", "sos_id": "uuid", "blood_group": "A+", "urgency": "critical", "hospital_name": "str", "distance_km": 2.4, "status": "sent", "sent_at": "ISO", "patient_note": "str|null" }]`
-
-### `POST /api/donor/respond`
-Donor answers Yes or No to an SOS notification.
-
-**Request** `{ "notification_id": "uuid", "answer": "yes|no", "snooze": "1h|4h|24h|today" }`
-**Response** `{ "notification_id": "uuid", "status": "accepted|declined", "dispatch_id": "uuid|null", "snooze_until": "ISO|null" }`
-
-### `POST /api/donor/location`
-Location ping every 10-15 s while donor is en_route.
-
-**Request** `{ "donor_id": "uuid", "lat": 26.1445, "lng": 91.7362 }`
-**Response** `{ "dispatch_id": "uuid", "eta_minutes": 9 }`
-
-### `GET /api/donor/:id/profile`
-Full donor profile with rewards, badges, ledger, coupons.
-
-**Response** `{ DonorProfile }` — see lib/types.ts `DonorProfile`
+### GET /api/sos/[id] (Person 2 - cross-feature read aggregation for Hospital UI)
+Read-only endpoint combining an SOS with its notifications + dispatches, with
+donor fields reduced to the privacy-safe `DonorPublic` shape (name, blood_group,
+hero_points, total_donations, ghost_count, is_available - NEVER location/phone/
+snooze_until). Dispatch rows also omit `last_lat`/`last_lng` in this response -
+only `eta_minutes` and `status` are shown, per privacy rule 9.
+Response `data`:
+```ts
+{
+  sos: SosRequest,
+  notifications: Array<{ id, donor_id, distance_km, status, sent_at, donor: DonorPublic | null }>,
+  dispatches: Array<{ id, donor_id, status, eta_minutes, accepted_at, donor: DonorPublic | null }>
+}
+```
 
 ---
 
-## Dispatch Routes — Owner: Person 4
+## /app/api/inventory (Person 1)
 
-### `POST /api/dispatch/en-route`
-Mark donor en_route. Creates dispatch row.
+### POST /api/inventory/mesh-check
+Request: `{ "hospital_id": "uuid", "blood_group": "O+", "sos_id": "uuid?", "radius_km": 15 }`
+(`sos_id` accepted for future audit logging but not persisted yet; `radius_km` optional, default 15km per rule 4.)
+Response `data`: `{ surplus_hospitals: Array<{ hospital_id, name, distance_km, units_available, units_reserved, surplus_threshold }> }`
+(uses `find_surplus_hospitals` RPC - hospitals within radius, excluding the
+requesting hospital, where `units_available - units_reserved > surplus_threshold`.)
 
-**Request** `{ "donor_id": "uuid", "sos_id": "uuid" }`
-**Response** `{ "dispatch_id": "uuid", "eta_minutes": 14, "status": "en_route" }`
+### POST /api/inventory/transfer-request
+Request: `{ "sos_id": "uuid?", "from_hospital_id": "uuid", "to_hospital_id": "uuid", "blood_group": "O+", "units": 2 }`
+(`from_hospital_id` must differ from `to_hospital_id`.)
+Response `data`: `TransferRequest` (status starts `requested`).
 
-### `POST /api/dispatch/cancel`
-Cancel a dispatch.
-
-**Request** `{ "dispatch_id": "uuid" }`  **Response** `{ "dispatch_id": "uuid", "status": "cancelled" }`
-
-### `POST /api/dispatch/arrived`
-Donor marks arrival at hospital.
-
-**Request** `{ "dispatch_id": "uuid" }`  **Response** `{ "dispatch_id": "uuid", "status": "arrived" }`
-
-### `POST /api/dispatch/donated`
-Hospital confirms donation. Triggers reward points (+50, +25 if critical).
-
-**Request** `{ "dispatch_id": "uuid" }`  **Response** `{ "dispatch_id": "uuid", "status": "donated", "points_awarded": 50 }`
-
-### `GET /api/dispatch?sos_id=<uuid>`
-Live list of dispatches for an SOS with ETAs.
-
-**Response** `[ DispatchWithDonor ]`
-
-### `POST /api/dispatch/ghost-sweep`
-Detect ghosts (no movement within GHOST_WINDOW_MIN), replace with next best donor.
-
-**Request** `{}`
-**Response** `{ "ghosts_found": 1, "replacements_notified": 1, "details": [{ "dispatch_id": "uuid", "donor_id": "uuid", "sos_id": "uuid", "replacement_donor_id": "uuid|null" }] }`
+### POST /api/inventory/update-stock
+Request: `{ "hospital_id": "uuid", "blood_group": "O+", "units_available": 10, "units_reserved": 2, "surplus_threshold": 5 }`
+(upserts on `(hospital_id, blood_group)`; rejects if `units_reserved > units_available`.)
+Response `data`: `HospitalInventory`.
 
 ---
 
-## Rewards Routes — Owner: Person 4
+## /app/api/ai (Person 2)
 
-### `GET /api/rewards/:donor_id`
-Hero points, badges, ledger, available coupons.
+### POST /api/ai/extract-slip
+Request: `{ "image_base64": "string", "mime_type": "image/jpeg" }`
+Response `data`: `SlipExtraction` from `lib/gemini.ts`
+(`{ blood_group, units_needed, patient_note, urgency_hint, raw_text, source }`).
+Always succeeds - falls back to a deterministic mock if `GEMINI_API_KEY` is
+unset or the Gemini call fails.
 
-**Response** `{ "donor_id": "uuid", "hero_points": 185, "badges": [...], "ledger": [...], "available_coupons": [...] }`
-
-### `POST /api/rewards/redeem`
-Redeem a coupon with hero points.
-
-**Request** `{ "donor_id": "uuid", "coupon_id": "uuid" }`
-**Response** `{ "coupon_code": "APOLLO15", "points_spent": 150, "remaining_points": 35 }`
-
----
-
-## Demo Routes — Owner: Person 4
-
-### `POST /api/demo/reset`
-Reset DB to seed state.
-
-**Request** `{}`  **Response** `{ "reset": true }`
-
-### `POST /api/demo/time-warp`
-Advance virtual time for demo.
-
-**Request** `{ "advance_minutes": 60 }`  **Response** `{ "warped_minutes": 60 }`
+### POST /api/ai/rank-donors
+Request: `{ "sos_id": "uuid", "donors": DonorRankInput[] }`
+Response `data`: `DonorRankResult[]` (`{ donor_id, score, reason }[]`, best first).
 
 ---
 
-## Points Reference
+## /app/api/donor (Person 3)
 
-| Event | Δ Points |
-|---|---|
-| Responded Yes | +10 |
-| Donation confirmed | +50 |
-| Critical bonus | +25 |
-| Ghosted | -10 |
+### POST /api/donor/respond
+Request: `{ "notification_id": "uuid", "donor_id": "uuid", "response": "yes" | "no" }`
+Response `data`: `{ notification: SosNotification, dispatch: Dispatch | null }`
+(`dispatch` is populated when `response = "yes"`).
 
-## Badge Reference
+### POST /api/donor/snooze
+Request: `{ "donor_id": "uuid", "option": "1h" | "4h" | "24h" | "today" }`
+Response `data`: `{ donor_id: string, snooze_until: string }`.
 
-| Code | Trigger |
-|---|---|
-| `first_responder` | First Yes response |
-| `life_saver` | 1 confirmed donation |
-| `hero` | 5 confirmed donations |
-| `night_owl` | Responded 22:00–05:00 |
-| `reliable` | 3 arrivals, 0 ghosts |
+### POST /api/donor/location
+Request: `{ "donor_id": "uuid", "dispatch_id": "uuid", "lat": number, "lng": number }`
+Response `data`: `Dispatch` (with recomputed `eta_minutes`, sets `started_moving_at`
+the first time coordinates differ from the accepted location).
+
+### GET /api/donor/profile?donor_id=uuid
+Response `data`: `{ donor: Donor, badges: Badge[], coupons_available: Coupon[], ledger: RewardsLedgerEntry[] }`.
+
+### GET /api/donor/notifications?donor_id=uuid&status=sent
+(Proposed addition - implemented.) Lists this donor's notifications joined
+with the parent SOS + hospital for display in the notification feed.
+Response `data`: array of
+`{ id, sos_id, donor_id, distance_km, status, sent_at, responded_at, sos: { id, blood_group, units_needed, urgency, status, patient_note, created_at, hospital_name, hospital_address } | null }`.
+
+### GET /api/donor/dispatch?dispatch_id=uuid
+(Proposed addition - implemented.) Fetches one raw `Dispatch` row, used by the
+en-route screen on initial load before the first location ping arrives.
+Response `data`: `Dispatch`.
+
+---
+
+## /app/api/dispatch (Person 4)
+
+### POST /api/dispatch/en-route
+Request: `{ "sos_id": "uuid", "donor_id": "uuid" }` (usually called internally by
+`/api/donor/respond` on "yes", exposed too for the demo panel).
+Response `data`: `Dispatch`.
+
+### POST /api/dispatch/eta
+Request: `{ "dispatch_id": "uuid" }`
+Response `data`: `{ dispatch_id: string, eta_minutes: number }`.
+
+### POST /api/dispatch/cancel
+Request: `{ "dispatch_id": "uuid", "reason": "string?" }`
+Response `data`: `Dispatch` (status -> `cancelled`).
+
+### POST /api/dispatch/confirm-donated
+Request: `{ "dispatch_id": "uuid" }` (hospital taps "Confirm donated").
+Response `data`: `Dispatch` (status -> `donated`) + triggers `/api/rewards/points`.
+
+### POST /api/dispatch/ghost-sweep
+Request: `{ "sos_id": "uuid?" }` (omit to sweep all active dispatches).
+Response `data`: `{ ghosted: string[], replacement_notified: string[] }`.
+
+---
+
+## /app/api/rewards (Person 4)
+
+### POST /api/rewards/points
+Request: `{ "donor_id": "uuid", "reason": "yes_response"|"donation_confirmed"|"critical_bonus"|"ghosted", "sos_id": "uuid?" }`
+Response `data`: `{ ledger_entry: RewardsLedgerEntry, new_total: number, new_badges: Badge[] }`.
+
+### GET /api/rewards/badges?donor_id=uuid
+Response `data`: `Badge[]`.
+
+### GET /api/rewards/coupons
+Response `data`: `Coupon[]`.
+
+### POST /api/rewards/redeem
+Request: `{ "donor_id": "uuid", "coupon_id": "uuid" }`
+Response `data`: `{ redeemed: true, remaining_points: number }` or `apiError("insufficient_points")`.
+
+---
+
+## Role switcher (no auth)
+
+### GET /api/roles/seed-options
+Response `data`: `{ hospitals: {id,name}[], donors: {id,name,blood_group}[] }`
+used to populate the "Login as" dropdown.

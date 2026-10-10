@@ -1,93 +1,95 @@
-// Dispatch En-route API
-// Feature: Dispatch - Mark donor en route, compute ETA, award points
+// POST /api/dispatch/en-route - upserts a dispatches row to status='en_route'
+// for (sos_id, donor_id). Idempotent; usually called internally by
+// /api/donor/respond on "yes" but also exposed directly for the demo panel.
+// Feature: dispatch (Person 4).
+import { NextRequest, NextResponse } from "next/server";
+import { z } from "zod";
+import { apiOk, apiError, type Dispatch } from "@/lib/types";
+import { getSupabaseServiceClient } from "@/lib/supabase";
 
-import { NextResponse } from 'next/server';
-import { supabaseAdmin } from '@/lib/supabase';
-import { haversineKm, etaMinutes } from '@/lib/geo';
-import { ApiResponse, DispatchActionBody } from '@/lib/types';
+const BodySchema = z.object({
+  sos_id: z.string().uuid("sos_id must be a UUID"),
+  donor_id: z.string().uuid("donor_id must be a UUID"),
+});
 
-export async function POST(req: Request) {
+export async function POST(req: NextRequest) {
+  let json: unknown;
   try {
-    const body: DispatchActionBody = await req.json();
-    const { donor_id, sos_id } = body;
+    json = await req.json();
+  } catch {
+    return NextResponse.json(apiError("Invalid JSON body"), { status: 400 });
+  }
 
-    if (!donor_id || !sos_id) {
-      return NextResponse.json({ ok: false, error: 'Missing donor_id or sos_id' }, { status: 400 });
+  const parsed = BodySchema.safeParse(json);
+  if (!parsed.success) {
+    return NextResponse.json(
+      apiError(parsed.error.issues.map((i) => i.message).join("; ")),
+      { status: 400 }
+    );
+  }
+  const { sos_id, donor_id } = parsed.data;
+
+  try {
+    const supabase = getSupabaseServiceClient();
+
+    const { data: existing, error: existingErr } = await supabase
+      .from("dispatches")
+      .select("*")
+      .eq("sos_id", sos_id)
+      .eq("donor_id", donor_id)
+      .maybeSingle();
+
+    if (existingErr) {
+      console.error("[api/dispatch/en-route] lookup error:", existingErr);
+      return NextResponse.json(apiError("Failed to check existing dispatch"), {
+        status: 500,
+      });
     }
 
-    // Get donor location and hospital location
-    const [donorRes, sosRes] = await Promise.all([
-      supabaseAdmin.from('donors').select('location').eq('id', donor_id).single(),
-      supabaseAdmin.from('sos_requests')
-        .select('hospital_id, hospitals(location)')
-        .eq('id', sos_id).single()
-    ]);
-
-    let eta = null;
-    let distance = null;
-    let lastLat = null;
-    let lastLng = null;
-    
-    // We are trusting the returned location object since postgis might return different formats, but as per our lib/types.ts GeoPoint is {lat, lng} after RPC, or string if raw. Since we fetch raw, it could be GeoJSON. Let's gracefully handle missing parsing by extracting manually or bypassing strictly if missing.
-    // For MVP, if it fails, eta stays null.
-    try {
-      if (donorRes.data && sosRes.data && (sosRes.data as any).hospitals) {
-        // Mock parsing for PostGIS Point if needed, or assume RPC handles it.
-        const donorLocStr = (donorRes.data as any).location;
-        const hospStr = Array.isArray((sosRes.data as any).hospitals) ? (sosRes.data as any).hospitals[0].location : (sosRes.data as any).hospitals.location;
-        
-        // This is a rough workaround if data comes back raw string from PostGIS
-        // A better approach is writing a custom view or RPC, but we work with what we have.
-        
-        // In this implementation we will just leave ETA null if we can't parse it easily to keep it simple, or mock it.
-        // Or if location is already GeoPoint:
-        const dLoc = donorLocStr as any;
-        const hLoc = hospStr as any;
-        if (dLoc && dLoc.lat && hLoc && hLoc.lat) {
-           distance = haversineKm(dLoc, hLoc);
-           eta = etaMinutes(distance);
-           lastLat = dLoc.lat;
-           lastLng = dLoc.lng;
-        }
+    let dispatch: Dispatch;
+    if (existing) {
+      const { data: updated, error: updateErr } = await supabase
+        .from("dispatches")
+        .update({
+          status: "en_route",
+          accepted_at: new Date().toISOString(),
+          updated_at: new Date().toISOString(),
+        })
+        .eq("id", existing.id)
+        .select("*")
+        .single();
+      if (updateErr || !updated) {
+        console.error("[api/dispatch/en-route] update error:", updateErr);
+        return NextResponse.json(apiError("Failed to update dispatch"), {
+          status: 500,
+        });
       }
-    } catch(e) {}
-
-    // Create dispatch
-    const { data: dispatch, error: dispatchErr } = await supabaseAdmin
-      .from('dispatches')
-      .insert({
-        sos_id,
-        donor_id,
-        status: 'en_route',
-        eta_minutes: eta,
-        last_lat: lastLat,
-        last_lng: lastLng,
-      })
-      .select('id, eta_minutes, status')
-      .single();
-
-    if (dispatchErr) throw dispatchErr;
-
-    // Award +10 points for accepting
-    await supabaseAdmin.from('rewards_ledger').insert({
-      donor_id,
-      points: 10,
-      reason: 'Responded Yes to SOS',
-      sos_id,
-    });
-    
-    await supabaseAdmin.rpc('increment_hero_points', { donor_id_param: donor_id, pts: 10 });
-
-    return NextResponse.json({
-      ok: true,
-      data: {
-        dispatch_id: dispatch.id,
-        eta_minutes: dispatch.eta_minutes,
-        status: dispatch.status
+      dispatch = updated as Dispatch;
+    } else {
+      const { data: created, error: insertErr } = await supabase
+        .from("dispatches")
+        .insert({
+          sos_id,
+          donor_id,
+          status: "en_route",
+          accepted_at: new Date().toISOString(),
+        })
+        .select("*")
+        .single();
+      if (insertErr || !created) {
+        console.error("[api/dispatch/en-route] insert error:", insertErr);
+        return NextResponse.json(apiError("Failed to create dispatch"), {
+          status: 500,
+        });
       }
+      dispatch = created as Dispatch;
+    }
+
+    return NextResponse.json(apiOk(dispatch));
+  } catch (err) {
+    console.error("[api/dispatch/en-route] unexpected error:", err);
+    return NextResponse.json(apiError("Unexpected error creating dispatch"), {
+      status: 500,
     });
-  } catch (error: any) {
-    console.error('en-route error', error);
-    return NextResponse.json({ ok: false, error: error.message }, { status: 500 });
   }
 }

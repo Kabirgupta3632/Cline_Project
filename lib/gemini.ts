@@ -1,99 +1,125 @@
-// Google Gemini API wrapper with deterministic fallback
-// Feature: AI – used by /api/ai/extract-slip and /api/ai/rank-donors
+// Google Gemini client wrapper: OCR of requisition slips + donor ranking text
+// prompts. Belongs to the AI feature (app/api/ai/**); always has a mock fallback.
+import { GoogleGenerativeAI } from "@google/generative-ai";
+import type { BloodGroup } from "./types";
+import { BloodGroupEnum } from "./types";
 
-import { GoogleGenerativeAI } from '@google/generative-ai';
-import type { BloodGroup, SlipExtraction, Urgency } from './types';
+const GEMINI_API_KEY = process.env.GEMINI_API_KEY ?? "";
+const VISION_MODEL = "gemini-1.5-flash";
+const TEXT_MODEL = "gemini-1.5-flash";
 
-const MODEL_ID = process.env.GEMINI_MODEL ?? 'gemini-1.5-flash';
-
-function getClient() {
-  const key = process.env.GEMINI_API_KEY;
-  if (!key) return null;
-  return new GoogleGenerativeAI(key);
-}
-
-// ─── Slip Extraction ─────────────────────────────────────────────────────────
-
-const SLIP_PROMPT = `
-You are a medical requisition parser for an emergency blood bank system.
-Extract the following fields from the blood requisition slip text or image:
-- blood_group: one of A+, A-, B+, B-, AB+, AB-, O+, O- (null if not found)
-- units: integer number of units needed (null if not found)
-- urgency: "critical" if the slip says urgent/critical/emergency, else "normal"
-- hospital_name: name of the requesting hospital (null if not found)
-- patient_note: brief clinical note or reason (null if not found)
-- confidence: float 0-1 representing your confidence in the extraction
-
-Respond with valid JSON only, no markdown fences.
-`;
-
-/**
- * Extracts blood requisition info from a base64 image or plain text.
- * Falls back to a mock response if GEMINI_API_KEY is not set or the call fails.
- */
-export async function extractSlip(
-  input: { base64Image?: string; mimeType?: string; text?: string },
-): Promise<SlipExtraction> {
-  const client = getClient();
-
-  if (client) {
-    try {
-      const model = client.getGenerativeModel({ model: MODEL_ID });
-      const parts: Parameters<typeof model.generateContent>[0] extends { contents: infer C } ? never : any[] = [];
-
-      if (input.base64Image && input.mimeType) {
-        const contents: any = [
-          { text: SLIP_PROMPT },
-          {
-            inlineData: {
-              mimeType: input.mimeType,
-              data: input.base64Image,
-            },
-          },
-        ];
-        const result = await model.generateContent(contents);
-        const text = result.response.text().trim();
-        return JSON.parse(text) as SlipExtraction;
-      } else if (input.text) {
-        const result = await model.generateContent(SLIP_PROMPT + '\n\nSlip text:\n' + input.text);
-        const text = result.response.text().trim();
-        return JSON.parse(text) as SlipExtraction;
-      }
-    } catch (err) {
-      console.error('[gemini] extractSlip failed, using fallback:', err);
-    }
+function getClient(): GoogleGenerativeAI | null {
+  if (!GEMINI_API_KEY) return null;
+  try {
+    return new GoogleGenerativeAI(GEMINI_API_KEY);
+  } catch {
+    return null;
   }
-
-  // ── Deterministic fallback ──
-  return mockExtractSlip(input.text ?? '');
 }
 
-function mockExtractSlip(text: string): SlipExtraction {
-  const lower = text.toLowerCase();
-  const bloodGroups: BloodGroup[] = ['AB+', 'AB-', 'A+', 'A-', 'B+', 'B-', 'O+', 'O-'];
-  const found = bloodGroups.find((g) => text.includes(g)) ?? null;
-  const unitsMatch = text.match(/(\d+)\s*(unit|pint|bag)/i);
-  const urgency: Urgency =
-    lower.includes('urgent') || lower.includes('critical') || lower.includes('emergency')
-      ? 'critical'
-      : 'normal';
+// ---------------------------------------------------------------------------
+// Feature 1: OCR a hospital requisition slip photo -> structured fields.
+// ---------------------------------------------------------------------------
+export interface SlipExtraction {
+  blood_group: BloodGroup | null;
+  units_needed: number | null;
+  patient_note: string | null;
+  urgency_hint: "normal" | "critical" | null;
+  raw_text: string;
+  source: "gemini" | "mock";
+}
+
+const BLOOD_GROUP_REGEX = /\b(AB|A|B|O)\s?([+-]|positive|negative)\b/i;
+
+/** Deterministic fallback used when no API key is set or the Gemini call fails. */
+function mockSlipExtraction(hintText?: string): SlipExtraction {
+  const text = hintText ?? "";
+  let blood_group: BloodGroup | null = null;
+  const match = text.match(BLOOD_GROUP_REGEX);
+  if (match) {
+    const letters = match[1].toUpperCase();
+    const sign = /pos/i.test(match[2])
+      ? "+"
+      : /neg/i.test(match[2])
+      ? "-"
+      : match[2];
+    const candidate = `${letters}${sign}`;
+    const parsed = BloodGroupEnum.safeParse(candidate);
+    if (parsed.success) blood_group = parsed.data;
+  }
+  const unitsMatch = text.match(/(\d+)\s*unit/i);
+  const critical = /critical|emergency|urgent|stat\b/i.test(text);
+
   return {
-    blood_group: found,
-    units: unitsMatch ? parseInt(unitsMatch[1], 10) : 2,
-    urgency,
-    hospital_name: null,
-    patient_note: text.slice(0, 120) || null,
-    confidence: found ? 0.75 : 0.3,
+    blood_group: blood_group ?? "O+", // safe demo default (common group)
+    units_needed: unitsMatch ? parseInt(unitsMatch[1], 10) : 2,
+    patient_note: text ? text.slice(0, 200) : "Mock extraction: no slip text provided.",
+    urgency_hint: critical ? "critical" : "normal",
+    raw_text: text || "(no OCR text - mock fallback used)",
+    source: "mock",
   };
 }
 
-// ─── Donor Ranking ───────────────────────────────────────────────────────────
+/**
+ * Extracts blood group / units / urgency from a requisition slip image.
+ * `imageBase64` should be a base64-encoded JPEG/PNG without the data: prefix.
+ * Falls back to a deterministic mock if GEMINI_API_KEY is missing or the API
+ * call throws, so the demo never breaks on network/quota issues.
+ */
+export async function extractSlipFromImage(
+  imageBase64: string,
+  mimeType: string = "image/jpeg"
+): Promise<SlipExtraction> {
+  const client = getClient();
+  if (!client) return mockSlipExtraction();
 
+  try {
+    const model = client.getGenerativeModel({ model: VISION_MODEL });
+    const prompt = `You are reading a hospital blood requisition slip. Extract:
+- blood_group (one of A+, A-, B+, B-, AB+, AB-, O+, O-)
+- units_needed (integer)
+- urgency_hint ("critical" if the slip mentions emergency/urgent/STAT/life-threatening, else "normal")
+- patient_note (short free text, e.g. reason, ward, doctor)
+Respond ONLY with compact JSON: {"blood_group":"...","units_needed":N,"urgency_hint":"...","patient_note":"..."}`;
+
+    const result = await model.generateContent([
+      prompt,
+      { inlineData: { data: imageBase64, mimeType } },
+    ]);
+    const text = result.response.text();
+    const jsonMatch = text.match(/\{[\s\S]*\}/);
+    if (!jsonMatch) return mockSlipExtraction(text);
+
+    const parsed = JSON.parse(jsonMatch[0]);
+    const groupParsed = BloodGroupEnum.safeParse(parsed.blood_group);
+    return {
+      blood_group: groupParsed.success ? groupParsed.data : null,
+      units_needed:
+        typeof parsed.units_needed === "number" ? parsed.units_needed : null,
+      patient_note: parsed.patient_note ?? null,
+      urgency_hint:
+        parsed.urgency_hint === "critical" || parsed.urgency_hint === "normal"
+          ? parsed.urgency_hint
+          : null,
+      raw_text: text,
+      source: "gemini",
+    };
+  } catch (err) {
+    console.error("[gemini] extractSlipFromImage failed, using mock:", err);
+    return mockSlipExtraction();
+  }
+}
+
+// ---------------------------------------------------------------------------
+// Feature 2: Rank candidate donors using an LLM pass on top of deterministic
+// distance/eligibility scoring (the DB RPC already filters eligibility; this
+// just re-orders/annotates for display, e.g. "closest + most reliable first").
+// ---------------------------------------------------------------------------
 export interface DonorRankInput {
   donor_id: string;
+  name: string;
   blood_group: BloodGroup;
   distance_km: number;
-  last_donated_at: string | null;
   total_donations: number;
   ghost_count: number;
 }
@@ -104,58 +130,51 @@ export interface DonorRankResult {
   reason: string;
 }
 
-const RANK_PROMPT = (donors: DonorRankInput[], neededGroup: BloodGroup) => `
-You are ranking blood donors for an emergency SOS request needing ${neededGroup}.
-Score each donor 0-100 based on: distance (closer = better), recency of last donation,
-total donations (experience), and ghost history (fewer ghosts = better).
-Return a JSON array: [{donor_id, score, reason}] sorted by score descending.
-Donors: ${JSON.stringify(donors)}
-Respond with valid JSON only.
-`;
-
-/**
- * Ranks donors using Gemini. Falls back to a deterministic scoring formula.
- */
-export async function rankDonors(
-  donors: DonorRankInput[],
-  neededGroup: BloodGroup,
-): Promise<DonorRankResult[]> {
-  const client = getClient();
-
-  if (client && donors.length > 0) {
-    try {
-      const model = client.getGenerativeModel({ model: MODEL_ID });
-      const result = await model.generateContent(RANK_PROMPT(donors, neededGroup));
-      const text = result.response.text().trim();
-      return JSON.parse(text) as DonorRankResult[];
-    } catch (err) {
-      console.error('[gemini] rankDonors failed, using fallback:', err);
-    }
-  }
-
-  return deterministicRank(donors, neededGroup);
-}
-
-function deterministicRank(
-  donors: DonorRankInput[],
-  neededGroup: BloodGroup,
-): DonorRankResult[] {
-  return donors
+/** Deterministic fallback ranking: closer + more reliable (fewer ghosts, more donations) first. */
+function mockRankDonors(donors: DonorRankInput[]): DonorRankResult[] {
+  return [...donors]
     .map((d) => {
-      // Distance score: 0 km = 40 pts, 50 km = 0 pts
-      const distScore = Math.max(0, 40 - d.distance_km * 0.8);
-      // Exact match bonus
-      const matchBonus = d.blood_group === neededGroup ? 20 : 0;
-      // Experience score (capped at 20)
-      const expScore = Math.min(20, d.total_donations * 4);
-      // Ghost penalty
-      const ghostPenalty = d.ghost_count * 5;
-      const score = Math.max(0, distScore + matchBonus + expScore - ghostPenalty);
+      const reliability = d.total_donations - d.ghost_count * 2;
+      const score = Math.round((100 - d.distance_km * 2 + reliability * 3) * 100) / 100;
       return {
         donor_id: d.donor_id,
-        score: Math.round(score),
-        reason: `dist=${d.distance_km.toFixed(1)}km match=${matchBonus > 0} donations=${d.total_donations}`,
+        score,
+        reason: `Mock score: ${d.distance_km.toFixed(1)}km away, ${d.total_donations} past donations, ${d.ghost_count} ghosts.`,
       };
     })
     .sort((a, b) => b.score - a.score);
+}
+
+/**
+ * Ranks donors for a given SOS using Gemini text generation, with a
+ * deterministic fallback (distance + reliability heuristic) if no API key
+ * is set or the call fails.
+ */
+export async function rankDonorsWithGemini(
+  donors: DonorRankInput[],
+  context: { blood_group: BloodGroup; urgency: "normal" | "critical" }
+): Promise<DonorRankResult[]> {
+  if (donors.length === 0) return [];
+  const client = getClient();
+  if (!client) return mockRankDonors(donors);
+
+  try {
+    const model = client.getGenerativeModel({ model: TEXT_MODEL });
+    const prompt = `Rank these blood donors for a ${context.urgency} request needing ${context.blood_group}.
+Prioritize closer distance and higher reliability (more past donations, fewer ghosts).
+Donors JSON: ${JSON.stringify(donors)}
+Respond ONLY with a JSON array: [{"donor_id":"...","score":0-100,"reason":"short reason"}], sorted best first.`;
+
+    const result = await model.generateContent(prompt);
+    const text = result.response.text();
+    const jsonMatch = text.match(/\[[\s\S]*\]/);
+    if (!jsonMatch) return mockRankDonors(donors);
+
+    const parsed = JSON.parse(jsonMatch[0]) as DonorRankResult[];
+    if (!Array.isArray(parsed) || parsed.length === 0) return mockRankDonors(donors);
+    return parsed;
+  } catch (err) {
+    console.error("[gemini] rankDonorsWithGemini failed, using mock:", err);
+    return mockRankDonors(donors);
+  }
 }

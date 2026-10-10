@@ -1,43 +1,69 @@
-// Shared TypeScript types and enums for RakshaRakt
-// Feature: Global – frozen after hour 1; all teammates import from here
+// Shared domain types & API response contract for RakshaRakt. FROZEN after hour 1 -
+// every feature area (sos, inventory, donor, dispatch, rewards, ai) imports from here.
+import { z } from "zod";
 
-// ─── Enums ────────────────────────────────────────────────────────────────────
+// ---------- Enums (as zod enums so route handlers can reuse for validation) ----------
+export const BloodGroupEnum = z.enum([
+  "A+", "A-", "B+", "B-", "AB+", "AB-", "O+", "O-",
+]);
+export type BloodGroup = z.infer<typeof BloodGroupEnum>;
 
-export type BloodGroup = 'A+' | 'A-' | 'B+' | 'B-' | 'AB+' | 'AB-' | 'O+' | 'O-';
+export const UrgencyEnum = z.enum(["normal", "critical"]);
+export type Urgency = z.infer<typeof UrgencyEnum>;
 
-export type Urgency = 'normal' | 'critical';
+export const SosStatusEnum = z.enum([
+  "inventory_check",
+  "broadcasting",
+  "fulfilled",
+  "cancelled",
+]);
+export type SosStatus = z.infer<typeof SosStatusEnum>;
 
-export type SosStatus =
-  | 'inventory_check'
-  | 'broadcasting'
-  | 'fulfilled'
-  | 'cancelled';
+export const NotificationStatusEnum = z.enum([
+  "sent",
+  "accepted",
+  "declined",
+  "expired",
+]);
+export type NotificationStatus = z.infer<typeof NotificationStatusEnum>;
 
-export type NotificationStatus = 'sent' | 'accepted' | 'declined' | 'expired';
+export const DispatchStatusEnum = z.enum([
+  "en_route",
+  "arrived",
+  "donated",
+  "cancelled",
+  "ghosted",
+]);
+export type DispatchStatus = z.infer<typeof DispatchStatusEnum>;
 
-export type DispatchStatus =
-  | 'en_route'
-  | 'arrived'
-  | 'donated'
-  | 'cancelled'
-  | 'ghosted';
+export const TransferStatusEnum = z.enum([
+  "requested",
+  "accepted",
+  "rejected",
+  "completed",
+]);
+export type TransferStatus = z.infer<typeof TransferStatusEnum>;
 
-export type TransferStatus =
-  | 'pending'
-  | 'accepted'
-  | 'rejected'
-  | 'completed'
-  | 'cancelled';
+export const SnoozeOptionEnum = z.enum(["1h", "4h", "24h", "today"]);
+export type SnoozeOption = z.infer<typeof SnoozeOptionEnum>;
 
-export type SnoozeOption = '1h' | '4h' | '24h' | 'today';
+// Role switcher - no real auth for the hackathon, just a "Login as" dropdown.
+export const RoleEnum = z.enum(["hospital", "donor", "demo"]);
+export type Role = z.infer<typeof RoleEnum>;
 
-// ─── Database Row Types ───────────────────────────────────────────────────────
+// ---------- Geo helper shape ----------
+// Plain lat/lng pair used at the API boundary. PostGIS geography columns are
+// stored server-side; we never leak raw geometry types to the client.
+export interface LatLng {
+  lat: number;
+  lng: number;
+}
 
+// ---------- Core entities (mirrors db/schema.sql) ----------
 export interface Hospital {
   id: string;
   name: string;
-  /** PostGIS geography stored as {lat, lng} after RPC transform */
-  location: GeoPoint;
+  location: LatLng;
   address: string;
   phone: string;
   verified: boolean;
@@ -47,15 +73,19 @@ export interface Donor {
   id: string;
   name: string;
   blood_group: BloodGroup;
-  location: GeoPoint;
+  location: LatLng;
   phone: string;
-  last_donated_at: string | null; // ISO timestamp
+  last_donated_at: string | null;
   is_available: boolean;
-  snooze_until: string | null;    // ISO timestamp
+  snooze_until: string | null;
   hero_points: number;
   total_donations: number;
   ghost_count: number;
 }
+
+// Donor record with location/phone stripped - what hospitals are allowed to see
+// (privacy rule: hospital never sees donor exact location, only name/group/eta/status).
+export type DonorPublic = Omit<Donor, "location" | "phone" | "snooze_until">;
 
 export interface SosRequest {
   id: string;
@@ -71,7 +101,7 @@ export interface SosRequest {
   created_at: string;
 }
 
-export interface Notification {
+export interface SosNotification {
   id: string;
   sos_id: string;
   donor_id: string;
@@ -86,7 +116,7 @@ export interface Dispatch {
   sos_id: string;
   donor_id: string;
   status: DispatchStatus;
-  accepted_at: string;
+  accepted_at: string | null;
   started_moving_at: string | null;
   last_lat: number | null;
   last_lng: number | null;
@@ -124,19 +154,21 @@ export interface RewardsLedgerEntry {
   created_at: string;
 }
 
+export const BadgeCodeEnum = z.enum([
+  "first_responder",
+  "life_saver",
+  "hero",
+  "night_owl",
+  "reliable",
+]);
+export type BadgeCode = z.infer<typeof BadgeCodeEnum>;
+
 export interface Badge {
   id: string;
   donor_id: string;
   badge_code: BadgeCode;
   earned_at: string;
 }
-
-export type BadgeCode =
-  | 'first_responder'  // First Yes response
-  | 'life_saver'       // 1 donation confirmed
-  | 'hero'             // 5 donations
-  | 'night_owl'        // Responded between 22:00-05:00
-  | 'reliable';        // 3 arrivals with no ghost
 
 export interface Coupon {
   id: string;
@@ -146,109 +178,15 @@ export interface Coupon {
   code: string;
 }
 
-// ─── API Shapes ───────────────────────────────────────────────────────────────
+// ---------- API response envelope used by EVERY route handler ----------
+export type ApiResponse<T> =
+  | { ok: true; data: T }
+  | { ok: false; error: string };
 
-/** Standard envelope returned by every API route */
-export interface ApiResponse<T = unknown> {
-  ok: boolean;
-  data?: T;
-  error?: string;
+export function apiOk<T>(data: T): ApiResponse<T> {
+  return { ok: true, data };
 }
 
-/** Lightweight geo point used across the app */
-export interface GeoPoint {
-  lat: number;
-  lng: number;
-}
-
-/** AI slip extraction result */
-export interface SlipExtraction {
-  blood_group: BloodGroup | null;
-  units: number | null;
-  urgency: Urgency;
-  hospital_name: string | null;
-  patient_note: string | null;
-  confidence: number; // 0-1
-}
-
-/** Inventory mesh match (nearby hospital with surplus) */
-export interface InventoryMeshMatch {
-  hospital_id: string;
-  hospital_name: string;
-  distance_km: number;
-  units_available: number;
-  units_reserved: number;
-  surplus: number; // units_available - units_reserved - surplus_threshold
-}
-
-/** Donor profile with enriched fields for UI */
-export interface DonorProfile extends Donor {
-  badges: Badge[];
-  ledger: RewardsLedgerEntry[];
-  available_coupons: Coupon[];
-}
-
-/** Dispatch with donor info for hospital dashboard */
-export interface DispatchWithDonor extends Dispatch {
-  donor_name: string;
-  donor_blood_group: BloodGroup;
-  // NOTE: exact donor location is never returned to hospital UI (privacy rule #9)
-}
-
-/** SOS detail for hospital dashboard */
-export interface SosDetail extends SosRequest {
-  hospital_name: string;
-  notifications_sent: number;
-  notifications_accepted: number;
-  dispatches: DispatchWithDonor[];
-  inventory_matches: InventoryMeshMatch[];
-}
-
-// ─── Request Body Types (used by Zod schemas in API routes) ──────────────────
-
-export interface CreateSosBody {
-  hospital_id: string;
-  blood_group: BloodGroup;
-  units_needed: number;
-  urgency: Urgency;
-  patient_note?: string;
-  raw_slip_text?: string;
-}
-
-export interface DonorRespondBody {
-  notification_id: string;
-  answer: 'yes' | 'no';
-  snooze?: SnoozeOption;
-}
-
-export interface DonorLocationBody {
-  donor_id: string;
-  lat: number;
-  lng: number;
-}
-
-export interface InventoryUpdateBody {
-  blood_group: BloodGroup;
-  units_available: number;
-  units_reserved?: number;
-  surplus_threshold?: number;
-}
-
-export interface TransferRequestBody {
-  sos_id: string;
-  from_hospital_id: string;
-  to_hospital_id: string;
-  blood_group: BloodGroup;
-  units: number;
-}
-
-export interface RedeemCouponBody {
-  donor_id: string;
-  coupon_id: string;
-}
-
-export interface DispatchActionBody {
-  dispatch_id?: string;
-  donor_id?: string;
-  sos_id?: string;
+export function apiError(error: string): ApiResponse<never> {
+  return { ok: false, error };
 }
