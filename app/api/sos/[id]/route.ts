@@ -3,7 +3,7 @@
 // (privacy rule 9: hospital never sees donor exact location). Feature: Hospital UI (Person 2).
 import { NextRequest, NextResponse } from "next/server";
 import { apiOk, apiError } from "@/lib/types";
-import type { DonorPublic } from "@/lib/types";
+import type { DonorPublic, LatLng } from "@/lib/types";
 import { getSupabaseServiceClient } from "@/lib/supabase";
 
 // Narrows a raw donors row down to the privacy-safe public shape.
@@ -96,7 +96,25 @@ export async function GET(
       ),
     }));
 
-    return NextResponse.json(apiOk({ sos, notifications, dispatches }));
+    // Resolve the hospital's plain lat/lng (for the mini-map) via the shared
+    // get_hospital_latlng RPC - never select the raw PostGIS geography column
+    // directly over PostgREST. Non-fatal if it fails (map just hides).
+    let hospital_location: LatLng | null = null;
+    try {
+      const { data: hospitalLoc, error: hospitalLocErr } = await supabase.rpc(
+        "get_hospital_latlng",
+        { p_hospital_id: sos.hospital_id }
+      );
+      if (!hospitalLocErr && hospitalLoc && hospitalLoc[0]) {
+        hospital_location = { lat: hospitalLoc[0].lat, lng: hospitalLoc[0].lng };
+      }
+    } catch (err) {
+      console.error("[api/sos/[id]] get_hospital_latlng failed (non-fatal):", err);
+    }
+
+    return NextResponse.json(
+      apiOk({ sos, notifications, dispatches, hospital_location })
+    );
   } catch (err) {
     console.error("[api/sos/[id]] unexpected error:", err);
     return NextResponse.json(apiError("Unexpected error loading SOS detail"), {

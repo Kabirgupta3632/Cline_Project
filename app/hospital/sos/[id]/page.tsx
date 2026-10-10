@@ -2,12 +2,30 @@
 // lets hospital broadcast to donors, tracks dispatches/notifications with
 // privacy-safe donor info, and "Confirm donated". Feature: Hospital UI (Person 2).
 "use client";
-import DispatchPanel from "@/app/hospital/_components/DispatchPanel";
-
 import { useEffect, useState, useCallback } from "react";
 import { useParams } from "next/navigation";
+import dynamic from "next/dynamic";
 import { apiGet, apiPost } from "@/lib/api-client";
-import type { SosRequest, DonorPublic, TransferRequest, DispatchStatus } from "@/lib/types";
+import { getSupabaseBrowserClient } from "@/lib/supabase";
+import type { SosRequest, DonorPublic, TransferRequest, DispatchStatus, LatLng } from "@/lib/types";
+
+// Leaflet touches `window` at import time, so it must be loaded client-only -
+// dynamic() with ssr:false keeps the Next.js server render from crashing.
+const SosRadiusMap = dynamic(() => import("./SosRadiusMap"), {
+  ssr: false,
+  loading: () => (
+    <div className="flex h-64 w-full items-center justify-center rounded-xl border border-gray-200 bg-gray-100 text-sm text-gray-400">
+      Loading map…
+    </div>
+  ),
+});
+
+// Person 4's Live Dispatch Dashboard (ticking ETA cards, status chips, event
+// timeline, ghost-sweep interval). Loaded client-only: it drives setInterval
+// tickers and browser-only state, so SSR would just render an empty shell.
+const DispatchPanel = dynamic(() => import("../../_components/DispatchPanel"), {
+  ssr: false,
+});
 
 interface SurplusHospital {
   hospital_id: string;
@@ -45,6 +63,7 @@ export default function SosDetailPage() {
   const [surplus, setSurplus] = useState<SurplusHospital[]>([]);
   const [notifications, setNotifications] = useState<NotificationRow[]>([]);
   const [dispatches, setDispatches] = useState<DispatchRow[]>([]);
+  const [hospitalLocation, setHospitalLocation] = useState<LatLng | null>(null);
   const [loading, setLoading] = useState(true);
   const [actionMsg, setActionMsg] = useState<string | null>(null);
   const [actionErr, setActionErr] = useState<string | null>(null);
@@ -53,6 +72,7 @@ export default function SosDetailPage() {
     sos: SosRequest;
     notifications: NotificationRow[];
     dispatches: DispatchRow[];
+    hospital_location: LatLng | null;
   }
 
   const refresh = useCallback(async () => {
@@ -61,17 +81,46 @@ export default function SosDetailPage() {
       setSos(data.sos);
       setNotifications(data.notifications);
       setDispatches(data.dispatches);
+      setHospitalLocation(data.hospital_location ?? null);
     }
     setLoading(false);
   }, [sosId]);
 
   useEffect(() => {
     refresh();
-    // Poll every 5s so the dashboard reflects donor responses / escalation /
-    // ghost-sweep replacements without needing Supabase Realtime wired here.
-    const interval = setInterval(refresh, 5000);
-    return () => clearInterval(interval);
-  }, [refresh]);
+
+    // Live updates via Supabase Realtime (enabled in the Realtime publication
+    // in db/schema.sql) on notifications/dispatches/sos_requests for this
+    // sos_id - donor Yes/No responses, new en-route dispatches, ghost-sweep
+    // replacements, and radius escalation all reflect instantly. A slow 60s
+    // fallback poll stays as a safety net in case the Realtime channel fails
+    // to connect so the page never goes permanently stale.
+    const supabase = getSupabaseBrowserClient();
+    const channel = supabase
+      .channel(`sos-detail-${sosId}`)
+      .on(
+        "postgres_changes",
+        { event: "*", schema: "public", table: "notifications", filter: `sos_id=eq.${sosId}` },
+        () => refresh()
+      )
+      .on(
+        "postgres_changes",
+        { event: "*", schema: "public", table: "dispatches", filter: `sos_id=eq.${sosId}` },
+        () => refresh()
+      )
+      .on(
+        "postgres_changes",
+        { event: "*", schema: "public", table: "sos_requests", filter: `id=eq.${sosId}` },
+        () => refresh()
+      )
+      .subscribe();
+
+    const fallbackInterval = setInterval(refresh, 60000);
+    return () => {
+      supabase.removeChannel(channel);
+      clearInterval(fallbackInterval);
+    };
+  }, [refresh, sosId]);
 
   // Anti-ghosting rule 6: hospital dashboard also triggers ghost-sweep on an
   // interval (in addition to the manual demo-panel button) so stalled donors
@@ -144,10 +193,16 @@ export default function SosDetailPage() {
     setActionMsg("Inter-hospital transfer requested.");
   }
 
-  async function handleConfirmDonated(dispatchId: string) {
+  async function handleConfirmDonated(dispatchId: string, confirmationCode?: string) {
     setActionErr(null);
+    // confirmation_code is sent optionally for the QR handshake flow (Tier 4):
+    // hospital scans/enters the donor's code shown on their en-route screen.
+    // Safe to send even before Person 4's backend supports it - zod's default
+    // .object() parsing silently ignores unrecognized keys, so this starts
+    // working automatically once their confirmation_code support merges.
     const { error } = await apiPost<DispatchRow>("/api/dispatch/confirm-donated", {
       dispatch_id: dispatchId,
+      ...(confirmationCode ? { confirmation_code: confirmationCode } : {}),
     });
     if (error) {
       setActionErr(error);
@@ -175,6 +230,7 @@ export default function SosDetailPage() {
       surplus={surplus}
       notifications={notifications}
       dispatches={dispatches}
+      hospitalLocation={hospitalLocation}
       actionMsg={actionMsg}
       actionErr={actionErr}
       onBroadcast={handleBroadcast}
@@ -193,6 +249,7 @@ function SosDetailBody({
   surplus,
   notifications,
   dispatches,
+  hospitalLocation,
   actionMsg,
   actionErr,
   onBroadcast,
@@ -203,6 +260,7 @@ function SosDetailBody({
   surplus: SurplusHospital[];
   notifications: NotificationRow[];
   dispatches: DispatchRow[];
+  hospitalLocation: LatLng | null;
   actionMsg: string | null;
   actionErr: string | null;
   onBroadcast: () => void;
@@ -241,6 +299,16 @@ function SosDetailBody({
             </p>
           )}
         </div>
+
+        {/* Mini-map: hospital pin + a radius circle that grows as the SOS
+            escalates (critical cases widen radius_km every escalate tick). */}
+        {hospitalLocation && (
+          <SosRadiusMap
+            hospitalLocation={hospitalLocation}
+            radiusKm={sos.radius_km}
+            urgency={sos.urgency}
+          />
+        )}
 
         {(actionMsg || actionErr) && (
           <div
