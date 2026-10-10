@@ -37,7 +37,7 @@ export async function POST(req: NextRequest) {
       .from("dispatches")
       .update({ status: "cancelled", updated_at: new Date().toISOString() })
       .eq("id", dispatch_id)
-      .select("*")
+      .select("*, donors(name)")
       .single();
 
     if (updateErr || !updated) {
@@ -47,18 +47,31 @@ export async function POST(req: NextRequest) {
       });
     }
     const dispatch = updated as Dispatch;
+    const donorName = (updated as any).donors?.name || "Unknown Donor";
 
     // Re-run matching for the next best eligible donor, excluding everyone
     // already notified for this sos_id (enforced inside match_eligible_donors).
     let replacement_notified: string | null = null;
+    let replacementName = "No replacement found";
     try {
       const sos = await getSosOrThrow(supabase, dispatch.sos_id);
       if (sos.status !== "fulfilled" && sos.status !== "cancelled") {
         replacement_notified = await rematchAndNotifyNext(supabase, sos);
+        if (replacement_notified) {
+          const { data: replData } = await supabase.from("donors").select("name").eq("id", replacement_notified).single();
+          if (replData) replacementName = replData.name;
+        }
       }
     } catch (err) {
       console.error("[api/dispatch/cancel] rematch failed (non-fatal):", err);
     }
+    
+    // Log to dispatch_events
+    await supabase.from("dispatch_events").insert({
+      sos_id: dispatch.sos_id,
+      event_type: "cancelled",
+      message: `${donorName} cancelled -> notified ${replacementName}`
+    });
 
     return NextResponse.json(apiOk({ dispatch, replacement_notified }));
   } catch (err) {
