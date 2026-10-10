@@ -1,5 +1,38 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
-# Bundled Cline binaries
-Cline/code-sidecar.exe
-Cline/bin/remote-helpers/cline-remote-helper-x86_64-unknown-linux-gnu
-Cline/bin/remote-helpers/cline-remote-helper-aarch64-unknown-linux-gnu
+# dependencies
+/node_modules
+/.pnp
+.pnp.js
+.yarn/install-state.gz
+
+# testing
+/coverage
+
+# next.js
+/.next/
+/out/
+
+# production
+/build
+
+# misc
+.DS_Store
+*.pem
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+dev.log
+build.log
+
+# local env files
+.env*.local
+
+# vercel
+.vercel
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts
