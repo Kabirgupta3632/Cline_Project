@@ -9,7 +9,8 @@ import {
   insertNotifications,
   getSosOrThrow,
   updateSosStatus,
-} from "@/app/api/sos/_lib/broadcast";
+  assertHospitalVerified,
+} from "@/lib/matching";
 
 const BodySchema = z.object({
   sos_id: z.string().uuid("sos_id must be a UUID"),
@@ -46,6 +47,16 @@ export async function POST(req: NextRequest) {
         apiError(`Cannot broadcast a ${sos.status} SOS request`),
         { status: 409 }
       );
+    }
+
+    // Rule 7 (anti-misuse / hospital verification gate): only verified
+    // hospitals may notify civilian donors. Documented in docs/API_CONTRACT.md.
+    try {
+      await assertHospitalVerified(supabase, sos.hospital_id);
+    } catch {
+      return NextResponse.json(apiError("hospital_not_verified"), {
+        status: 403,
+      });
     }
 
     const donors = await findEligibleDonors(supabase, {

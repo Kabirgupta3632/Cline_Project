@@ -14,7 +14,11 @@ import {
 import { getSupabaseServiceClient } from "@/lib/supabase";
 import { NORMAL_RADIUS_KM, CRITICAL_START_RADIUS_KM } from "@/lib/geo";
 import { findSurplusHospitals, type SurplusHospitalRow } from "@/app/api/inventory/_lib/mesh";
-import { findEligibleDonors, insertNotifications } from "@/app/api/sos/_lib/broadcast";
+import {
+  findEligibleDonors,
+  insertNotifications,
+  assertHospitalVerified,
+} from "@/lib/matching";
 
 const BodySchema = z.object({
   hospital_id: z.string().uuid("hospital_id must be a UUID"),
@@ -30,6 +34,10 @@ export interface SosCreateResponse {
   mesh_recommendation: SurplusHospitalRow[];
   auto_transfer_request: TransferRequest | null;
   broadcast: { notified_donor_ids: string[] } | null;
+  // Rule 7 (anti-misuse): true when the critical auto-broadcast was skipped
+  // because the requesting hospital isn't verified yet. The transfer request
+  // (inter-hospital, not civilian-facing) still proceeds normally either way.
+  broadcast_blocked_unverified?: boolean;
 }
 
 export async function POST(req: NextRequest) {
@@ -93,8 +101,25 @@ export async function POST(req: NextRequest) {
 
     let auto_transfer_request: TransferRequest | null = null;
     let broadcast: { notified_donor_ids: string[] } | null = null;
+    let broadcast_blocked_unverified = false;
 
     if (sos.urgency === "critical") {
+      // Rule 7 (anti-misuse / hospital verification gate): the critical
+      // auto-broadcast-to-donors path requires hospitals.verified = true.
+      // The transfer-request side (inter-hospital, never civilian-facing)
+      // is NOT gated by this check - unverified hospitals can still ask
+      // neighbouring hospitals for surplus stock.
+      let hospitalVerified = true;
+      try {
+        await assertHospitalVerified(supabase, sos.hospital_id);
+      } catch (err) {
+        hospitalVerified = false;
+        console.warn(
+          "[api/sos/create] critical auto-broadcast skipped (hospital_not_verified):",
+          err instanceof Error ? err.message : err
+        );
+      }
+
       // CRITICAL: do a transfer request (if surplus exists) AND broadcast to
       // donors in parallel - we never wait on inter-hospital negotiation when
       // life is at risk.
@@ -129,31 +154,41 @@ export async function POST(req: NextRequest) {
         : Promise.resolve(null);
 
       const broadcastPromise: Promise<{ notified_donor_ids: string[] }> =
-        (async () => {
-          const donors = await findEligibleDonors(supabase, {
-            sosId: sos.id,
-            hospitalId: sos.hospital_id,
-            bloodGroup: sos.blood_group,
-            urgency: sos.urgency,
-            radiusKm: sos.radius_km,
-          });
-          const notified = await insertNotifications(supabase, sos.id, donors);
-          return { notified_donor_ids: notified };
-        })();
+        hospitalVerified
+          ? (async () => {
+              const donors = await findEligibleDonors(supabase, {
+                sosId: sos.id,
+                hospitalId: sos.hospital_id,
+                bloodGroup: sos.blood_group,
+                urgency: sos.urgency,
+                radiusKm: sos.radius_km,
+              });
+              const notified = await insertNotifications(supabase, sos.id, donors);
+              return { notified_donor_ids: notified };
+            })()
+          : Promise.resolve({ notified_donor_ids: [] });
+
+      broadcast_blocked_unverified = !hospitalVerified;
 
       [auto_transfer_request, broadcast] = await Promise.all([
         transferPromise,
         broadcastPromise,
       ]);
 
-      const { data: updatedSos, error: updateErr } = await supabase
-        .from("sos_requests")
-        .update({ status: "broadcasting" })
-        .eq("id", sos.id)
-        .select("*")
-        .single();
-      if (!updateErr && updatedSos) {
-        Object.assign(sos, updatedSos);
+      // Only flip to 'broadcasting' if we actually notified donors - an
+      // unverified hospital's SOS stays 'inventory_check' so the dashboard
+      // correctly reflects that civilians were never alerted (the transfer
+      // request, if any, can still proceed independently).
+      if (hospitalVerified) {
+        const { data: updatedSos, error: updateErr } = await supabase
+          .from("sos_requests")
+          .update({ status: "broadcasting" })
+          .eq("id", sos.id)
+          .select("*")
+          .single();
+        if (!updateErr && updatedSos) {
+          Object.assign(sos, updatedSos);
+        }
       }
     }
     // NORMAL urgency: status stays 'inventory_check'. The hospital sees
@@ -166,6 +201,7 @@ export async function POST(req: NextRequest) {
       mesh_recommendation,
       auto_transfer_request,
       broadcast,
+      broadcast_blocked_unverified,
     };
     return NextResponse.json(apiOk(response), { status: 201 });
   } catch (err) {
