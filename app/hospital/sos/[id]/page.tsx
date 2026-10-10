@@ -265,7 +265,7 @@ function SosDetailBody({
   actionErr: string | null;
   onBroadcast: () => void;
   onRequestTransfer: (fromHospitalId: string) => void;
-  onConfirmDonated: (dispatchId: string) => void;
+  onConfirmDonated: (dispatchId: string, confirmationCode?: string) => void;
 }) {
   const canBroadcast = sos.status === "inventory_check";
 

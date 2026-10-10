@@ -13,8 +13,13 @@ export interface DispatchRow {
   _simulated_seconds_remaining?: number;
 }
 
-export default function DispatchPanel({ sosId, initialDispatches, onConfirmDonated }: { sosId: string, initialDispatches: DispatchRow[], onConfirmDonated: (dispatchId: string) => void }) {
+export default function DispatchPanel({ sosId, initialDispatches, onConfirmDonated }: { sosId: string, initialDispatches: DispatchRow[], onConfirmDonated: (dispatchId: string, confirmationCode?: string) => void }) {
   const [dispatches, setDispatches] = useState<DispatchRow[]>(initialDispatches);
+  // Tier 4 QR handshake: optional donor confirmation code input per dispatch
+  // row, keyed by dispatch id. Sent through to onConfirmDonated only if the
+  // hospital typed/scanned one - plain one-click confirm still works either way.
+  const [codeInputs, setCodeInputs] = useState<Record<string, string>>({});
+  const [showCodeFor, setShowCodeFor] = useState<string | null>(null);
   
   useEffect(() => {
     setDispatches(initialDispatches.map(d => ({
@@ -100,15 +105,39 @@ export default function DispatchPanel({ sosId, initialDispatches, onConfirmDonat
                       {statusLabel.replace("_", " ")}
                     </span>
                     {(d.status === "en_route" || d.status === "arrived") && (
-                      <button
-                        onClick={() => onConfirmDonated(d.id)}
-                        className="rounded-lg bg-green-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-green-700 transition"
-                      >
-                        ✅ Confirm donated
-                      </button>
+                      <>
+                        <button
+                          onClick={() => setShowCodeFor((prev) => (prev === d.id ? null : d.id))}
+                          className="rounded-lg border border-gray-300 px-2 py-1.5 text-xs font-semibold text-gray-600 hover:bg-gray-100 transition"
+                          title="Scan/enter donor confirmation code (optional)"
+                        >
+                          🔳
+                        </button>
+                        <button
+                          onClick={() => onConfirmDonated(d.id, codeInputs[d.id] || undefined)}
+                          className="rounded-lg bg-green-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-green-700 transition"
+                        >
+                          ✅ Confirm donated
+                        </button>
+                      </>
                     )}
                   </div>
                 </div>
+
+                {(d.status === "en_route" || d.status === "arrived") && showCodeFor === d.id && (
+                  <div className="mt-1 flex items-center gap-2">
+                    <input
+                      type="text"
+                      value={codeInputs[d.id] ?? ""}
+                      onChange={(e) =>
+                        setCodeInputs((prev) => ({ ...prev, [d.id]: e.target.value }))
+                      }
+                      placeholder="Donor confirmation code (optional)"
+                      className="flex-1 rounded-lg border border-gray-300 px-3 py-1.5 text-xs focus:border-raksha-500 focus:outline-none"
+                    />
+                    <span className="text-xs text-gray-400">code from donor&apos;s phone</span>
+                  </div>
+                )}
                 
                 {d.status === "en_route" && d.eta_minutes && (
                   <div className="w-full bg-gray-200 h-1.5 rounded-full mt-1">

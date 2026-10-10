@@ -273,16 +273,19 @@ Response `data`: `Dispatch`.
   (no library) used only by the notifications page copy; language choice
   persisted in `localStorage` (`raksharakt_donor_lang`).
 
-### Tier 4 - QR confirmation code (blocked on Person 4)
-Plan: once Person 4's `dispatches.confirmation_code` column /
-`/api/dispatch/confirm-donated` support merges into `main`, the en-route page
-will render a QR code (client-side only, e.g. a small canvas-based QR
-generator - no new dependency added yet) of that code so the hospital can
-scan/enter it to confirm the donation. **As of this PR, no
-`confirmation_code` field exists anywhere in `main`** (confirmed via
-codebase search) - this is intentionally deferred until that schema change
-lands, per the coordination note in the original task breakdown. Will
-`git pull --rebase origin main` and add this once available.
+### Tier 4 - QR confirmation code (status update)
+- **Hospital side: COMPLETE.** `app/hospital/_components/DispatchPanel.tsx`
+  now has an optional 🔳 code input per dispatch row; typed/scanned codes flow
+  through `handleConfirmDonated` into `POST /api/dispatch/confirm-donated` as
+  an optional `confirmation_code` key (see the dispatch section below). The
+  plain one-click confirm still works with no code, so the demo never blocks.
+- **Donor side: PENDING Person 4's schema.** The donor en-route screen will
+  render the code (as a QR + human-readable text) once
+  `dispatches.confirmation_code` exists to fetch it from - confirmed still
+  absent from `db/*.sql` as of this update. Zod's default `.object()` parsing
+  silently drops the extra key today, so nothing breaks in the meantime.
+  Whoever adds the column: ping Person 3 (or drop the fetch in
+  `app/donor/en-route/[dispatchId]/page.tsx` yourself) and it plugs straight in.
 
 ---
 
@@ -328,6 +331,14 @@ Response `data`: `Dispatch` (status -> `donated`) + triggers `/api/rewards/point
 Request: `{ "sos_id": "uuid?" }` (omit to sweep all active dispatches).
 Response `data`: `{ ghosted: string[], replacement_notified: string[] }`.
 
+### dispatch_events timeline (Person 4, db/dispatch_events.sql)
+`cancel` and `ghost-sweep` append rows to the `dispatch_events` table
+(`sos_id`, `event_type`, human-readable `message`) so the demo panel /
+dashboard can show a chronological event log for an SOS. **Not yet surfaced
+in any API response** - if a UI needs it, query the table directly or ask
+Person 4 to add it to `GET /api/sos/[id]`. Reset cleans it up best-effort
+(missing table tolerated since `db/dispatch_events.sql` is optional).
+
 ---
 
 ## /app/api/rewards (Person 4)
@@ -345,6 +356,27 @@ Response `data`: `Coupon[]`.
 ### POST /api/rewards/redeem
 Request: `{ "donor_id": "uuid", "coupon_id": "uuid" }`
 Response `data`: `{ redeemed: true, remaining_points: number }` or `apiError("insufficient_points")`.
+
+---
+
+## /app/api/demo (Person 4)
+
+Control-panel endpoints used by `/demo` during the recorded demo.
+
+### POST /api/demo/reset
+No body. Wipes all demo-generated activity (`sos_requests` -> cascades to
+notifications/dispatches/dispatch_events, plus `rewards_ledger`, `badges`,
+`coupon_redemptions`, `transfer_requests` explicitly) and resets donor stats
+(hero_points/total_donations/ghost_count/snooze/availability) to a pristine
+state. Tolerates tables that don't exist yet (optional SQL files).
+Response `data`: `{ reset: true }`.
+
+### POST /api/demo/time-warp
+Request: `{ "dispatch_id": "uuid?", "advance_minutes": "number?" }` - shifts
+`accepted_at` backwards in time (defaults to `GHOST_WINDOW_MIN + 1` minutes)
+on en_route dispatches (all of them if `dispatch_id` is omitted) so the
+anti-ghosting sweep can be demoed instantly instead of waiting in real time.
+Response `data`: `{ warped_minutes: number, affected_count: number }`.
 
 ---
 
