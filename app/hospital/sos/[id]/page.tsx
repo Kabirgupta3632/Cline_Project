@@ -2,6 +2,7 @@
 // lets hospital broadcast to donors, tracks dispatches/notifications with
 // privacy-safe donor info, and "Confirm donated". Feature: Hospital UI (Person 2).
 "use client";
+import DispatchPanel from "@/app/hospital/_components/DispatchPanel";
 
 import { useEffect, useState, useCallback } from "react";
 import { useParams } from "next/navigation";
@@ -308,7 +309,7 @@ function SosDetailBody({
         </div>
 
         <NotificationsList notifications={notifications} />
-        <DispatchesList dispatches={dispatches} onConfirmDonated={onConfirmDonated} />
+        <DispatchPanel sosId={sos.id} initialDispatches={dispatches} onConfirmDonated={onConfirmDonated} />
       </div>
     </main>
   );
@@ -347,53 +348,3 @@ function NotificationsList({ notifications }: { notifications: NotificationRow[]
   );
 }
 
-function DispatchesList({
-  dispatches,
-  onConfirmDonated,
-}: {
-  dispatches: DispatchRow[];
-  onConfirmDonated: (dispatchId: string) => void;
-}) {
-  if (dispatches.length === 0) return null;
-  const statusColor: Record<string, string> = {
-    en_route: "bg-blue-100 text-blue-700",
-    arrived: "bg-amber-100 text-amber-700",
-    donated: "bg-green-100 text-success",
-    cancelled: "bg-gray-100 text-gray-500",
-    ghosted: "bg-red-100 text-critical",
-  };
-  return (
-    <div className="rounded-xl bg-white p-5 shadow-card border border-gray-200">
-      <h2 className="font-semibold text-gray-800 mb-3">
-        En Route Donors ({dispatches.length})
-      </h2>
-      <ul className="divide-y">
-        {dispatches.map((d) => (
-          <li key={d.id} className="flex items-center justify-between py-3">
-            <div>
-              <p className="text-sm font-medium text-gray-700">
-                {d.donor?.name ?? "Unknown donor"} ({d.donor?.blood_group})
-              </p>
-              <p className="text-xs text-gray-400">
-                ETA: {d.eta_minutes != null ? `${d.eta_minutes} min` : "—"}
-              </p>
-            </div>
-            <div className="flex items-center gap-2">
-              <span className={`rounded-full px-2 py-1 text-xs font-semibold ${statusColor[d.status]}`}>
-                {d.status.replace("_", " ")}
-              </span>
-              {(d.status === "en_route" || d.status === "arrived") && (
-                <button
-                  onClick={() => onConfirmDonated(d.id)}
-                  className="rounded-lg bg-success px-3 py-2 text-xs font-semibold text-white hover:opacity-90"
-                >
-                  ✅ Confirm donated
-                </button>
-              )}
-            </div>
-          </li>
-        ))}
-      </ul>
-    </div>
-  );
-}
