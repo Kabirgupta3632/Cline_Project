@@ -2,10 +2,11 @@
 // No opens the snooze modal; Yes starts the en-route flow. Feature: Donor UI (Person 3).
 "use client";
 
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { apiGet, apiPost } from "@/lib/api-client";
+import { getSupabaseBrowserClient } from "@/lib/supabase";
 import {
   getActiveDonorId,
   getActiveDonorName,
@@ -81,11 +82,34 @@ export default function DonorNotificationsPage() {
     setDonorId(id);
     setDonorName(getActiveDonorName());
     refresh(id);
-    // Poll so newly broadcast SOS requests show up without Realtime wired here.
-    const interval = setInterval(() => refresh(id), 6000);
-    return () => clearInterval(interval);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+
+    // Live updates via Supabase Realtime on notifications filtered to this
+    // donor (enabled in the Realtime publication in db/schema.sql) - new SOS
+    // broadcasts appear instantly without a manual refresh or fast poll. A
+    // slow 60s fallback poll remains as a safety net in case the Realtime
+    // channel fails to connect (e.g. not enabled on the project, network
+    // blip), so the feed never goes permanently stale.
+    const supabase = getSupabaseBrowserClient();
+    const channel = supabase
+      .channel(`donor-notifications-${id}`)
+      .on(
+        "postgres_changes",
+        {
+          event: "*",
+          schema: "public",
+          table: "notifications",
+          filter: `donor_id=eq.${id}`,
+        },
+        () => refresh(id)
+      )
+      .subscribe();
+
+    const fallbackInterval = setInterval(() => refresh(id), 60000);
+    return () => {
+      supabase.removeChannel(channel);
+      clearInterval(fallbackInterval);
+    };
+  }, [router, refresh]);
 
   async function handleYes(notification: NotificationRow) {
     if (!donorId) return;
