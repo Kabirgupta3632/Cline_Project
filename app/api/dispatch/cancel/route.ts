@@ -6,7 +6,7 @@ import { z } from "zod";
 import { apiOk, apiError, type Dispatch } from "@/lib/types";
 import { getSupabaseServiceClient } from "@/lib/supabase";
 import { getSosOrThrow } from "@/app/api/sos/_lib/broadcast";
-import { rematchAndNotifyNext } from "@/app/api/dispatch/_lib/rematch";
+import { notifyNextDonors } from "@/lib/matching";
 
 const BodySchema = z.object({
   dispatch_id: z.string().uuid("dispatch_id must be a UUID"),
@@ -56,7 +56,8 @@ export async function POST(req: NextRequest) {
     try {
       const sos = await getSosOrThrow(supabase, dispatch.sos_id);
       if (sos.status !== "fulfilled" && sos.status !== "cancelled") {
-        replacement_notified = await rematchAndNotifyNext(supabase, sos);
+        const [next] = await notifyNextDonors(supabase, sos.id, 1);
+        if (next) replacement_notified = next;
         if (replacement_notified) {
           const { data: replData } = await supabase.from("donors").select("name").eq("id", replacement_notified).single();
           if (replData) replacementName = replData.name;

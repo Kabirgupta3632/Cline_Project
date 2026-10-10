@@ -50,6 +50,9 @@ export async function POST(req: NextRequest) {
         status: 500,
       });
     }
+    if (existing.status === "donated") {
+      return NextResponse.json(apiError("Dispatch already confirmed"), { status: 409 });
+    }
     if (!existing) {
       return NextResponse.json(apiError("Dispatch not found"), { status: 404 });
     }
