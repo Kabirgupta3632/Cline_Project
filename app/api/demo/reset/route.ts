@@ -14,7 +14,9 @@ export async function POST() {
     // from it might crash the whole reset for them. Let's make it optional.
     try {
       await supabase.from("dispatch_events").delete().neq("id", "00000000-0000-0000-0000-000000000000");
-    } catch(e) {}
+    } catch {
+      // table missing - fine, nothing to clear
+    }
 
     // sos_requests cascades to notifications + dispatches + dispatch_events via FK ON DELETE
     // CASCADE (see db/schema.sql and db/dispatch_events.sql), so deleting all sos_requests 
@@ -62,9 +64,10 @@ export async function POST() {
     }
 
     return NextResponse.json(apiOk({ reset: true }));
-  } catch (err: any) {
+  } catch (err) {
     console.error("[api/demo/reset] unexpected error:", err);
-    return NextResponse.json(apiError(`Unexpected error resetting demo data: ${err.message}`), {
+    const message = err instanceof Error ? err.message : String(err);
+    return NextResponse.json(apiError(`Unexpected error resetting demo data: ${message}`), {
       status: 500,
     });
   }
