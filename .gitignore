@@ -29,6 +29,9 @@ build.log
 install.log
 install2.log
 push.log
+push2.log
+push_main.log
+push_feat.log
 
 # local env files
 .env*.local
