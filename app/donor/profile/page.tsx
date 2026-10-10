@@ -10,7 +10,30 @@ import { Card } from "@/components/ui/Card";
 import { Button } from "@/components/ui/Button";
 import { Badge } from "@/components/ui/Badge";
 import { BloodGroupTag } from "@/components/ui/BloodGroupTag";
+import { RewardPopup } from "@/components/ui/RewardPopup";
 import type { Badge as BadgeRow, BadgeCode, Coupon, Donor, RewardsLedgerEntry } from "@/lib/types";
+
+// localStorage key tracking which badge ids this donor has already seen the
+// celebration popup for, so refreshing the page doesn't re-fire it endlessly.
+const SEEN_BADGES_KEY = "raksharakt_seen_badge_ids";
+
+/** Returns [seenIds, isFirstVisitEver] - first visit seeds silently so a
+ * donor who already had badges before ever opening this browser doesn't get
+ * a false "new badge!" popup for things they've long since earned. */
+function getSeenBadgeIds(): [Set<string>, boolean] {
+  if (typeof window === "undefined") return [new Set(), false];
+  try {
+    const raw = window.localStorage.getItem(SEEN_BADGES_KEY);
+    if (raw === null) return [new Set(), true];
+    return [new Set(JSON.parse(raw) as string[]), false];
+  } catch {
+    return [new Set(), false];
+  }
+}
+
+function saveSeenBadgeIds(ids: Set<string>): void {
+  window.localStorage.setItem(SEEN_BADGES_KEY, JSON.stringify(Array.from(ids)));
+}
 
 interface ProfileResponse {
   donor: Donor;
@@ -35,6 +58,7 @@ export default function DonorProfilePage() {
   const [error, setError] = useState<string | null>(null);
   const [redeemingId, setRedeemingId] = useState<string | null>(null);
   const [redeemMsg, setRedeemMsg] = useState<string | null>(null);
+  const [newBadge, setNewBadge] = useState<BadgeRow | null>(null);
 
   const refresh = useCallback(async (id: string) => {
     const { data, error: err } = await apiGet<ProfileResponse>(
@@ -44,6 +68,19 @@ export default function DonorProfilePage() {
     else {
       setError(null);
       setProfile(data);
+
+      // New-badge detection: compare against ids already celebrated for this
+      // browser (localStorage) so a page refresh doesn't re-fire the popup.
+      if (data) {
+        const [seen, isFirstVisit] = getSeenBadgeIds();
+        if (!isFirstVisit) {
+          const unseen = data.badges.filter((b) => !seen.has(b.id));
+          if (unseen.length > 0) setNewBadge(unseen[0]);
+        }
+        const updatedSeen = new Set(seen);
+        data.badges.forEach((b) => updatedSeen.add(b.id));
+        saveSeenBadgeIds(updatedSeen);
+      }
     }
     setLoading(false);
   }, []);
@@ -185,6 +222,18 @@ export default function DonorProfilePage() {
           </>
         )}
       </div>
+
+      <RewardPopup
+        open={newBadge !== null}
+        onClose={() => setNewBadge(null)}
+        emoji={newBadge ? BADGE_LABELS[newBadge.badge_code]?.emoji ?? "🏅" : "🏅"}
+        title="New badge earned!"
+        subtitle={
+          newBadge
+            ? BADGE_LABELS[newBadge.badge_code]?.label ?? newBadge.badge_code
+            : undefined
+        }
+      />
     </main>
   );
 }

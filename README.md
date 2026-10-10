@@ -41,10 +41,10 @@ graph TD
 
 ## Setup
 1. Clone repo: `git clone https://github.com/Kabirgupta3632/Cline_Project.git`
-2. `cd Cline/raksharakt && npm install`
+2. `cd Cline_Project && npm install`
 3. Configure `.env.local` with Supabase keys and Gemini API key.
 4. Run `npm run dev`.
-5. Run `seed.sql` in Supabase SQL Editor.
+5. Run `db/seed.sql` in Supabase SQL Editor.
 
 ## Demo Flow (3 min)
 1. **Hospital:** Uploads handwritten slip -> AI OCR extracts O- Critical -> SOS created.

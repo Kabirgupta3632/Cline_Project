@@ -3,7 +3,6 @@ import { useEffect, useState, useRef } from "react";
 import { apiPost } from "@/lib/api-client";
 import type { DispatchStatus, DonorPublic } from "@/lib/types";
 
-// Extracted from the API response
 export interface DispatchRow {
   id: string;
   donor_id: string;
@@ -11,14 +10,12 @@ export interface DispatchRow {
   eta_minutes: number | null;
   accepted_at: string | null;
   donor: DonorPublic | null;
-  // added locally for simulated ticking
   _simulated_seconds_remaining?: number;
 }
 
 export default function DispatchPanel({ sosId, initialDispatches, onConfirmDonated }: { sosId: string, initialDispatches: DispatchRow[], onConfirmDonated: (dispatchId: string) => void }) {
   const [dispatches, setDispatches] = useState<DispatchRow[]>(initialDispatches);
   
-  // Realtime ticking logic
   useEffect(() => {
     setDispatches(initialDispatches.map(d => ({
       ...d,
@@ -38,14 +35,12 @@ export default function DispatchPanel({ sosId, initialDispatches, onConfirmDonat
     return () => clearInterval(ticker);
   }, []);
 
-  // Anti-ghosting rule 6: hospital dashboard triggers ghost-sweep on an interval
   const [events, setEvents] = useState<{id: number, text: string}[]>([]);
   const nextEventId = useRef(1);
   
   useEffect(() => {
     if (!sosId) return;
     
-    // Check for ghost-sweep periodically
     const sweep = async () => {
       try {
         const { data, error } = await apiPost<{ ghosted: string[], replacement_notified: string[] }>("/api/dispatch/ghost-sweep", { sos_id: sosId });
@@ -60,7 +55,6 @@ export default function DispatchPanel({ sosId, initialDispatches, onConfirmDonat
       }
     };
     
-    // We'll run it every 15s per requirements
     const interval = setInterval(sweep, 15000);
     return () => clearInterval(interval);
   }, [sosId]);
@@ -84,7 +78,7 @@ export default function DispatchPanel({ sosId, initialDispatches, onConfirmDonat
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         <div className="md:col-span-2 space-y-4">
           {dispatches.map((d) => {
-            const isDelayed = d.status === "en_route" && d.eta_minutes !== null && (d._simulated_seconds_remaining || 0) < (d.eta_minutes * 60) * 0.2; // simulate delay logic
+            const isDelayed = d.status === "en_route" && d.eta_minutes !== null && (d._simulated_seconds_remaining || 0) < (d.eta_minutes * 60) * 0.2;
             const statusLabel = d.status === "en_route" && isDelayed ? "delayed" : d.status;
             const currentStatusColor = statusLabel === "delayed" ? "bg-amber-100 text-amber-700" : statusColor[d.status];
 

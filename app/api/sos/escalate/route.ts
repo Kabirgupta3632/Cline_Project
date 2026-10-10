@@ -4,13 +4,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { z } from "zod";
 import { apiOk, apiError, type SosRequest } from "@/lib/types";
 import { getSupabaseServiceClient } from "@/lib/supabase";
-import { currentEscalatedRadius, NORMAL_RADIUS_KM } from "@/lib/geo";
-import {
-  findEligibleDonors,
-  insertNotifications,
-  getSosOrThrow,
-  updateSosStatus,
-} from "@/app/api/sos/_lib/broadcast";
+import { getSosOrThrow, escalateIfNeeded } from "@/lib/matching";
 
 const BodySchema = z.object({
   sos_id: z.string().uuid("sos_id must be a UUID"),
@@ -50,40 +44,26 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    // Only "critical" SOS requests have an escalation ladder (rule 3); normal
-    // requests stay fixed at NORMAL_RADIUS_KM but we still re-run matching at
-    // that radius so donors who recently became eligible (snooze expired,
-    // 90-day cooldown lapsed) get caught on each escalate tick.
-    const newRadiusKm =
-      sos.urgency === "critical"
-        ? currentEscalatedRadius(sos.created_at).radiusKm
-        : NORMAL_RADIUS_KM;
-
-    const donors = await findEligibleDonors(supabase, {
-      sosId: sos.id,
-      hospitalId: sos.hospital_id,
-      bloodGroup: sos.blood_group,
-      urgency: sos.urgency,
-      radiusKm: newRadiusKm,
-    });
-    // findEligibleDonors already excludes donors with an existing
-    // notifications row for this sos_id (NOT EXISTS clause in the RPC), so
-    // every row returned here is, by construction, newly eligible.
-    const newly_notified_donor_ids = await insertNotifications(
-      supabase,
-      sos.id,
-      donors
-    );
-
-    const updatedSos = await updateSosStatus(supabase, sos.id, {
-      status: sos.status === "inventory_check" ? "broadcasting" : sos.status,
-      radius_km: newRadiusKm,
-    });
+    // escalateIfNeeded (lib/matching.ts) handles: rule 3 radius widening for
+    // critical (fixed radius re-match for normal), rule 5 fatigue guard,
+    // rule 6 quiet hours, and rule 7 hospital verification (throws
+    // "hospital_not_verified" if the hospital isn't verified - caught below).
+    let escalated;
+    try {
+      escalated = await escalateIfNeeded(supabase, sos.id);
+    } catch (err) {
+      if (err instanceof Error && err.message === "hospital_not_verified") {
+        return NextResponse.json(apiError("hospital_not_verified"), {
+          status: 403,
+        });
+      }
+      throw err;
+    }
 
     const response: SosEscalateResponse = {
-      sos: updatedSos,
-      newly_notified: newly_notified_donor_ids.length,
-      newly_notified_donor_ids,
+      sos: escalated.sos,
+      newly_notified: escalated.newlyNotifiedDonorIds.length,
+      newly_notified_donor_ids: escalated.newlyNotifiedDonorIds,
     };
     return NextResponse.json(apiOk(response));
   } catch (err) {
@@ -94,3 +74,4 @@ export async function POST(req: NextRequest) {
     );
   }
 }
+

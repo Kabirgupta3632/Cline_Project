@@ -5,40 +5,18 @@
 -- lib/geo.ts#haversineKm, which needs plain {lat,lng} numbers. Hospital
 -- location is stored as geography(Point,4326) and supabase-js cannot parse
 -- PostGIS WKB directly, so this tiny RPC extracts lat/lng server-side.
--- Run this file AFTER db/schema.sql (and alongside db/functions.sql) against
--- the same Supabase project.
--- NOTE: Person 3's /app/api/donor/location/route.ts already calls RPCs named
--- get_hospital_latlng(p_hospital_id) and get_donor_latlng(p_donor_id) - we
--- define both here (under the same names) so that route works, and reuse
--- get_hospital_latlng ourselves in /app/api/dispatch/eta.
-create or replace function get_hospital_latlng(p_hospital_id uuid)
-returns table (
-  lat double precision,
-  lng double precision
-)
-language sql
-stable
-as $$
-  select ST_Y(location::geometry) as lat, ST_X(location::geometry) as lng
-  from hospitals
-  where id = p_hospital_id;
-$$;
-
-grant execute on function get_hospital_latlng(uuid)
-  to anon, authenticated, service_role;
-
-create or replace function get_donor_latlng(p_donor_id uuid)
-returns table (
-  lat double precision,
-  lng double precision
-)
-language sql
-stable
-as $$
-  select ST_Y(location::geometry) as lat, ST_X(location::geometry) as lng
-  from donors
-  where id = p_donor_id;
-$$;
-
-grant execute on function get_donor_latlng(uuid)
-  to anon, authenticated, service_role;
+-- Run this file AFTER db/schema.sql and db/functions.sql against the same
+-- Supabase project.
+--
+-- DEDUPE NOTE (Person 1, Tier 1 cleanup): get_hospital_latlng(uuid) and
+-- get_donor_latlng(uuid) were PREVIOUSLY defined identically in BOTH this
+-- file and db/functions.sql. `create or replace function` doesn't error on
+-- re-declaration with the same signature, so this wasn't a hard SQL failure,
+-- but it violated the "single source of truth per RPC" convention the rest
+-- of the schema follows (see db/functions.sql's own header note about
+-- getEligibleDonorGroups being the one place compat logic lives). Both
+-- functions are now defined ONLY in db/functions.sql; this file intentionally
+-- defines nothing of its own anymore. Keep running schema.sql -> functions.sql
+-- -> dispatch_functions.sql -> seed.sql in that order; this file is a no-op
+-- placeholder today but is kept so future dispatch-only RPCs have a home
+-- without needing to touch Person 1's functions.sql.

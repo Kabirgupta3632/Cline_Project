@@ -50,6 +50,12 @@ export default function EnRoutePage() {
   const [lastPingAt, setLastPingAt] = useState<Date | null>(null);
   const simulatedPosRef = useRef<{ lat: number; lng: number } | null>(null);
 
+  // Explicit demo toggle (Tier 2 #4): judges can force simulated movement on
+  // even when real geolocation permission is granted, so the anti-ghost
+  // "moved" check + ETA recompute can be demoed reliably without physically
+  // walking around. Also a manual "Ping now" to not wait for the 12s timer.
+  const [forceSimulate, setForceSimulate] = useState(false);
+
   useEffect(() => {
     const id = getActiveDonorId();
     if (!id) {
@@ -91,27 +97,32 @@ export default function EnRoutePage() {
 
     const hasGeo = typeof navigator !== "undefined" && "geolocation" in navigator;
 
+    function simulateOnce() {
+      setGeoStatus("simulated");
+      const next = nextSimulatedPosition(simulatedPosRef.current);
+      simulatedPosRef.current = next;
+      sendPing(next.lat, next.lng);
+    }
+
     function pingOnce() {
-      if (hasGeo) {
-        navigator.geolocation.getCurrentPosition(
-          (pos) => {
-            setGeoStatus("live");
-            sendPing(pos.coords.latitude, pos.coords.longitude);
-          },
-          () => {
-            setGeoStatus("simulated");
-            const next = nextSimulatedPosition(simulatedPosRef.current);
-            simulatedPosRef.current = next;
-            sendPing(next.lat, next.lng);
-          },
-          { enableHighAccuracy: true, timeout: 5000 }
-        );
-      } else {
-        setGeoStatus("simulated");
-        const next = nextSimulatedPosition(simulatedPosRef.current);
-        simulatedPosRef.current = next;
-        sendPing(next.lat, next.lng);
+      // The "Simulate movement" toggle always wins, even when real
+      // geolocation is available/granted - lets judges demo anti-ghosting
+      // deterministically without needing to physically move.
+      if (forceSimulate || !hasGeo) {
+        simulateOnce();
+        return;
       }
+      navigator.geolocation.getCurrentPosition(
+        (pos) => {
+          setGeoStatus("live");
+          sendPing(pos.coords.latitude, pos.coords.longitude);
+        },
+        () => {
+          setGeoStatus("denied");
+          simulateOnce();
+        },
+        { enableHighAccuracy: true, timeout: 5000 }
+      );
     }
 
     pingOnce();
@@ -120,7 +131,7 @@ export default function EnRoutePage() {
     // Intentionally depend only on dispatch?.status (not the whole `dispatch`
     // object) - we just need to stop pinging once status leaves "en_route".
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [donorId, dispatchId, dispatch?.status, sendPing]);
+  }, [donorId, dispatchId, dispatch?.status, sendPing, forceSimulate]);
 
   async function handleCancel() {
     if (!dispatchId) return;
@@ -195,6 +206,22 @@ export default function EnRoutePage() {
                 Last ping: {lastPingAt.toLocaleTimeString()}
               </p>
             )}
+
+            <label className="mt-3 flex min-h-12 items-center justify-between rounded-lg border border-gray-200 px-3 py-2">
+              <span className="text-sm text-gray-600">
+                🎬 Simulate movement (demo mode)
+              </span>
+              <input
+                type="checkbox"
+                className="h-5 w-5 accent-raksha-600"
+                checked={forceSimulate}
+                onChange={(e) => setForceSimulate(e.target.checked)}
+              />
+            </label>
+            <p className="mt-1 text-xs text-gray-400">
+              Forces simulated GPS movement even if real location is granted -
+              handy for demoing anti-ghosting without walking around.
+            </p>
           </Card>
 
           <Button variant="secondary" size="lg" fullWidth onClick={handleCancel}>
