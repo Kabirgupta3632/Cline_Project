@@ -20,7 +20,7 @@ def build():
 
     rows = [("cs_in", "addr[11:3] == 9'h000", "P1/P2_INPUT_REG 0x00,0x04 (read-only: no write enable)", False, 280),
             ("cs_tmr", "addr[11:3] == 9'h002", "TIMER_STATUS/TRIGGER 0x10,0x14", True, 390),
-            ("cs_col", "addr[11:4] == 8'h02", "COLLISION_FLAG 0x20 (W1C), WALL/BB/TANK_MASK 0x24..0x2C", True, 500)]
+            ("cs_col", "addr[11:4] == 8'h02", "COLLISION_FLAG 0x20 (W1C), WALL/BB/HIT_MASK 0x24..0x2C", True, 500)]
     for nm, lab, note, we, y in rows:
         decode_row(f, A, M, WE, y, nm, lab, note, we)
     # sprite: two ranges ORed

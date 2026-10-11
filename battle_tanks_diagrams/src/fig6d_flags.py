@@ -44,7 +44,7 @@ def build():
         f.wire([(630, y + 45), (880 + 20 * i, y + 45), (880 + 20 * i, yy), mux[str(i)]], "rd", bus="32", seg=0, lpos=0.5, ldy=-2)
     f.text(60, 560, "0x20 bits come from three 8-input OR reductions of the sticky registers:", 11, anchor="start", weight="bold")
     for k, (src, dst) in enumerate([("wall_q[7:0]", "wall_any"), ("bb_q[7:0]", "bb_any"), ("btk_q[7:0]", "tank_hit_any")]):
-        x0 = 130 + k * 200
+        x0 = 90 + k * 330
         p = port(f, x0, 1235, src, 9, color="#a35c00")
         g = f.gate("or", x0 + p["w"] + 30, 1215, 40, 40)
         f.wire([p["r"], g["in1"]][:1] + [(p["r"][0] + 15, 1235), (p["r"][0] + 15, g["in1"][1]), g["in1"]], "reg", bus="8")

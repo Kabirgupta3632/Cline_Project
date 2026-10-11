@@ -1,0 +1,106 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1900" height="1250" viewBox="0 0 1900 1250"><defs><marker id="a009a9a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#009a9a"/></marker><marker id="a111111" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#111111"/></marker><marker id="a1f6fe0" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#1f6fe0"/></marker><marker id="a2e9d3a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#2e9d3a"/></marker><marker id="a9b3fd6" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#9b3fd6"/></marker></defs><rect width="100%" height="100%" fill="#fff"/>
+<rect x="20.0" y="90.0" width="1860.0" height="520.0" rx="10" fill="none" stroke="#7a2fa8" stroke-width="2" stroke-dasharray="10 6"/>
+<text x="32.0" y="110.0" font-family="DejaVu Sans" font-size="15" font-weight="bold" fill="#7a2fa8" text-anchor="start">COPY V  (display)</text>
+<rect x="20.0" y="640.0" width="1860.0" height="520.0" rx="10" fill="none" stroke="#7a2fa8" stroke-width="2" stroke-dasharray="10 6"/>
+<text x="32.0" y="660.0" font-family="DejaVu Sans" font-size="15" font-weight="bold" fill="#7a2fa8" text-anchor="start">COPY C  (collision)</text>
+<path d="M215.2,220.0 L300.0,219.0" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a111111)"/>
+<path d="M178.0,160.0 L520.0,160.0 L520.0,159.7 L540.0,159.7" fill="none" stroke="#2e9d3a" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a2e9d3a)"/>
+<path d="M270.0,220.0 L270.0,137.0 L300.0,137.0" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a111111)"/>
+<path d="M470.0,137.0 L520.0,137.0 L520.0,176.3 L540.0,176.3" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a111111)"/>
+<path d="M576.0,168.0 L640.0,168.0" fill="none" stroke="#2e9d3a" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a2e9d3a)"/>
+<path d="M802.8,168.0 L900.0,168.0" fill="none" stroke="#2e9d3a" stroke-width="1.8" stroke-linejoin="round"/>
+<path d="M430.0,219.0 L930.0,219.0" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round"/>
+<path d="M128.4,280.0 L960.0,280.0" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round"/>
+<line x1="900" y1="168" x2="900" y2="820" stroke="#2e9d3a" stroke-width="2"/>
+<line x1="930" y1="220" x2="930" y2="893" stroke="#111111" stroke-width="2"/>
+<line x1="960" y1="280" x2="960" y2="965" stroke="#111111" stroke-width="2"/>
+<path d="M900.0,270.0 L1100.0,270.0" fill="none" stroke="#2e9d3a" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a2e9d3a)"/>
+<path d="M930.0,342.7 L1100.0,342.7" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a111111)"/>
+<path d="M960.0,415.3 L1100.0,415.3" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a111111)"/>
+<path d="M1420.0,270.0 L1560.0,270.0" fill="none" stroke="#1f6fe0" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a1f6fe0)"/>
+<path d="M887.6,488.0 L1100.0,488.0" fill="none" stroke="#009a9a" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a009a9a)"/>
+<path d="M1420.0,488.0 L1560.0,488.0" fill="none" stroke="#009a9a" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a009a9a)"/>
+<path d="M900.0,820.0 L1100.0,820.0" fill="none" stroke="#2e9d3a" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a2e9d3a)"/>
+<path d="M930.0,892.7 L1100.0,892.7" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a111111)"/>
+<path d="M960.0,965.3 L1100.0,965.3" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a111111)"/>
+<path d="M844.2,1038.0 L1100.0,1038.0" fill="none" stroke="#9b3fd6" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a9b3fd6)"/>
+<path d="M1420.0,1038.0 L1560.0,1038.0" fill="none" stroke="#9b3fd6" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a9b3fd6)"/>
+<rect x="40.0" y="149.0" width="138.0" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<rect x="40.0" y="209.0" width="175.2" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<rect x="40.0" y="269.0" width="88.4" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<rect x="300.0" y="202.0" width="130.0" height="36.0" rx="18" fill="#fff3c4" stroke="#000" stroke-width="2"/>
+<rect x="300.0" y="120.0" width="170.0" height="36.0" rx="18" fill="#fff3c4" stroke="#000" stroke-width="2"/>
+<path d="M540,150 H558.0 A18.0,18.0 0 0 1 558.0,186 H540 Z" fill="#fff" stroke="#000" stroke-width="1.9"/>
+<rect x="640.0" y="157.0" width="162.8" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<rect x="1100.0" y="170.0" width="320.0" height="330.0" rx="4" fill="#efdcfa" stroke="#000" stroke-width="2"/>
+<rect x="1560.0" y="259.0" width="200.0" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<rect x="700.0" y="477.0" width="187.6" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<rect x="1560.0" y="477.0" width="181.4" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<rect x="1100.0" y="720.0" width="320.0" height="330.0" rx="4" fill="#efdcfa" stroke="#000" stroke-width="2"/>
+<rect x="700.0" y="1027.0" width="144.2" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<rect x="1560.0" y="1027.0" width="231.0" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<text x="950.0" y="36.0" font-family="DejaVu Sans" font-size="26" font-weight="bold" fill="#000" text-anchor="middle">Fig 7 - Maze Tile RAM: Two Mirrored True-Dual-Port BRAMs (20 x 20 tiles, 2 bits each)</text>
+<text x="950.0" y="60.0" font-family="DejaVu Sans" font-size="14" font-weight="normal" fill="#444" text-anchor="middle">FPGA BRAM has only 2 ports, but 3 users need it (CPU, VGA, collision).  Fix: two identical RAMs; the CPU writes BOTH with the same data, VGA reads copy V on port B, collision reads copy C on port B, CPU reads back copy V on port A (copy C port A is write-only).</text>
+<text x="109.0" y="164.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#2e9d3a" text-anchor="middle">wr_en_maze  (Fig 2a)</text>
+<text x="127.6" y="224.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#000" text-anchor="middle">d_addr[10:2]  (word index)</text>
+<text x="84.2" y="284.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#000" text-anchor="middle">d_wdata[1:0]</text>
+<text x="365.0" y="222.0" font-family="DejaVu Sans" font-size="12" font-weight="bold" fill="#000" text-anchor="middle">idx - 64</text>
+<line x1="253.6" y1="225.5" x2="261.6" y2="213.5" stroke="#111111" stroke-width="1.8"/>
+<text x="257.6" y="210.5" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#222" text-anchor="middle" stroke="#fff" stroke-width="4" paint-order="stroke" stroke-linejoin="round">[9]</text>
+<text x="385.0" y="140.0" font-family="DejaVu Sans" font-size="10" font-weight="bold" fill="#000" text-anchor="middle">idx in 64..463</text>
+<circle cx="270.0" cy="220.0" r="3.8" fill="#111111"/>
+<text x="721.4" y="172.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#2e9d3a" text-anchor="middle">we_cpu  (in-range write)</text>
+<line x1="676.0" y1="225.0" x2="684.0" y2="213.0" stroke="#111111" stroke-width="1.8"/>
+<text x="680.0" y="210.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#222" text-anchor="middle" stroke="#fff" stroke-width="4" paint-order="stroke" stroke-linejoin="round">a_addr [9]</text>
+<line x1="540.2" y1="286.0" x2="548.2" y2="274.0" stroke="#111111" stroke-width="1.8"/>
+<text x="544.2" y="271.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#222" text-anchor="middle" stroke="#fff" stroke-width="4" paint-order="stroke" stroke-linejoin="round">[2]</text>
+<circle cx="900.0" cy="168.0" r="3.8" fill="#2e9d3a"/>
+<circle cx="930.0" cy="220.0" r="3.8" fill="#111111"/>
+<circle cx="960.0" cy="280.0" r="3.8" fill="#111111"/>
+<text x="1260.0" y="190.0" font-family="DejaVu Sans" font-size="14" font-weight="bold" fill="#000" text-anchor="middle">Maze RAM copy V</text>
+<text x="1260.0" y="205.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#444" text-anchor="middle" font-style="italic">400 x 2 bit  true dual-port BRAM</text>
+<text x="1260.0" y="218.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#444" text-anchor="middle" font-style="italic">(synchronous read, 1-clk latency)</text>
+<text x="1106.0" y="274.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#222" text-anchor="start">A.we</text>
+<text x="1106.0" y="346.7" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#222" text-anchor="start">A.addr</text>
+<text x="1106.0" y="419.3" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#222" text-anchor="start">A.wdata</text>
+<text x="1106.0" y="492.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#222" text-anchor="start">B.addr</text>
+<text x="1414.0" y="274.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#222" text-anchor="end">A.rdata</text>
+<text x="1414.0" y="492.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#222" text-anchor="end">B.rdata</text>
+<circle cx="900.0" cy="270.0" r="3.8" fill="#2e9d3a"/>
+<circle cx="930.0" cy="342.7" r="3.8" fill="#111111"/>
+<circle cx="960.0" cy="415.3" r="3.8" fill="#111111"/>
+<text x="1660.0" y="274.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#1f6fe0" text-anchor="middle">rd_maze[1:0]  (zero-extend 32)</text>
+<line x1="1486.0" y1="276.0" x2="1494.0" y2="264.0" stroke="#1f6fe0" stroke-width="1.8"/>
+<text x="1490.0" y="261.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#1f6fe0" text-anchor="middle" stroke="#fff" stroke-width="4" paint-order="stroke" stroke-linejoin="round">[2]</text>
+<text x="1560.0" y="300.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#333" text-anchor="start">-&gt; Fig 2b read mux (cs_maze_q)</text>
+<text x="793.8" y="492.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#008a8a" text-anchor="middle">vga_tile_addr[8:0]  (Fig 11)</text>
+<line x1="989.8" y1="494.0" x2="997.8" y2="482.0" stroke="#009a9a" stroke-width="1.8"/>
+<text x="993.8" y="479.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#009a9a" text-anchor="middle" stroke="#fff" stroke-width="4" paint-order="stroke" stroke-linejoin="round">[9]</text>
+<text x="1650.7" y="492.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#008a8a" text-anchor="middle">vga_tile_data[1:0] (Fig 11)</text>
+<line x1="1486.0" y1="494.0" x2="1494.0" y2="482.0" stroke="#009a9a" stroke-width="1.8"/>
+<text x="1490.0" y="479.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#009a9a" text-anchor="middle" stroke="#fff" stroke-width="4" paint-order="stroke" stroke-linejoin="round">[2]</text>
+<text x="1260.0" y="740.0" font-family="DejaVu Sans" font-size="14" font-weight="bold" fill="#000" text-anchor="middle">Maze RAM copy C</text>
+<text x="1260.0" y="755.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#444" text-anchor="middle" font-style="italic">400 x 2 bit  true dual-port BRAM</text>
+<text x="1260.0" y="768.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#444" text-anchor="middle" font-style="italic">(synchronous read, 1-clk latency)</text>
+<text x="1106.0" y="824.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#222" text-anchor="start">A.we</text>
+<text x="1106.0" y="896.7" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#222" text-anchor="start">A.addr</text>
+<text x="1106.0" y="969.3" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#222" text-anchor="start">A.wdata</text>
+<text x="1106.0" y="1042.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#222" text-anchor="start">B.addr</text>
+<text x="1414.0" y="824.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#222" text-anchor="end">A.rdata</text>
+<text x="1414.0" y="1042.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#222" text-anchor="end">B.rdata</text>
+<circle cx="900.0" cy="820.0" r="3.8" fill="#2e9d3a"/>
+<circle cx="930.0" cy="892.7" r="3.8" fill="#111111"/>
+<circle cx="960.0" cy="965.3" r="3.8" fill="#111111"/>
+<text x="772.1" y="1042.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#8a6d00" text-anchor="middle">addr_q[8:0]  (Fig 6b)</text>
+<line x1="968.1" y1="1044.0" x2="976.1" y2="1032.0" stroke="#9b3fd6" stroke-width="1.8"/>
+<text x="972.1" y="1029.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#9b3fd6" text-anchor="middle" stroke="#fff" stroke-width="4" paint-order="stroke" stroke-linejoin="round">[9]</text>
+<text x="1675.5" y="1042.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#8a6d00" text-anchor="middle">tile[1:0] -&gt; wall = tile[1]|tile[0]</text>
+<line x1="1486.0" y1="1044.0" x2="1494.0" y2="1032.0" stroke="#9b3fd6" stroke-width="1.8"/>
+<text x="1490.0" y="1029.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#9b3fd6" text-anchor="middle" stroke="#fff" stroke-width="4" paint-order="stroke" stroke-linejoin="round">[2]</text>
+<text x="1560.0" y="824.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#777" text-anchor="start">(copy C port A read-data unused)</text>
+<text x="60.0" y="400.0" font-family="DejaVu Sans" font-size="11" font-weight="normal" fill="#333" text-anchor="start">Port A (CPU):  write with sw to 0x8000_0100 + 4*(20*row+col), read with lw.</text>
+<text x="60.0" y="414.0" font-family="DejaVu Sans" font-size="11" font-weight="normal" fill="#333" text-anchor="start">Port B (read-only): one reader per copy -&gt; no arbitration, no stalls.</text>
+<text x="60.0" y="428.0" font-family="DejaVu Sans" font-size="11" font-weight="normal" fill="#333" text-anchor="start">Copy C only needs reading; port A on both copies is write-enabled by the same we_cpu.</text>
+<text x="60.0" y="442.0" font-family="DejaVu Sans" font-size="11" font-weight="normal" fill="#333" text-anchor="start">Tile code: 0 floor  1 wall  2 breakable  3 unused.</text>
+<text x="60.0" y="456.0" font-family="DejaVu Sans" font-size="11" font-weight="normal" fill="#333" text-anchor="start">Software loads the maze once per round: 400 stores.</text>
+</svg>
