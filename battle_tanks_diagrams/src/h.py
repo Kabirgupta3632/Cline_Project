@@ -88,3 +88,16 @@ def mux8(f, x, y, src_text, sel_text="scan_q[2:0]", h=160, ins=8, w=40, bus="8x1
     sp = port(f, x + w / 2 - 36, y + h + 36, sel_text, 9, color="#2e9d3a", w=72)
     f.wire([(x + w / 2, y + h + 25), m["sel"]], "ctrl")
     return m
+
+
+def cport(f, cx, y, text, size=9, color="#000"):
+    """port box centred on cx"""
+    w = tw(text, size)
+    return port(f, cx - w / 2, y, text, size, color=color)
+
+
+def ffq(f, x, y, label, w=110, h=44, ts=11):
+    b = f.seq(x, y, w, h, label, ts=ts)
+    pin(f, b, "D", "L", h / 2, show=False)
+    pin(f, b, "Q", "R", h / 2, show=False)
+    return b

@@ -69,13 +69,13 @@ def build():
     f.note(40, 1130, "in_hud = in_x & (in_p1 | in_p2);  1 FF delay = ROM latency", 10)
     # ROM
     rom = f.mem(740, 930, 330, 180, "Heart Sprite ROM", sub="8 x 8 x 1 bit, one shape for both players\nsync read: shape bit 1 clk later", L=("py[2:0]", "px[2:0]"), R=("shape",), pad=100)
-    r1 = port(f, 520, rom["py[2:0]"][1], "py[2:0]", 10, color="#008a8a"); r2 = port(f, 520, rom["px[2:0]"][1], "px[2:0]", 10, color="#008a8a")
+    r1 = port(f, 630, rom["py[2:0]"][1], "py[2:0]", 10, color="#008a8a"); r2 = port(f, 630, rom["px[2:0]"][1], "px[2:0]", 10, color="#008a8a")
     f.wire([r1["r"], (700, r1["r"][1]), (700, rom["py[2:0]"][1]), rom["py[2:0]"]], "vid") if False else f.wire([r1["r"], rom["py[2:0]"]], "vid", bus="3")
     f.wire([r2["r"], rom["px[2:0]"]], "vid", bus="3")
     # valid and colour
     va = f.gate("and", 1260, 1000, 40, 36)
     f.wire([hf["Q"], (1180, hf["Q"][1])][:0] + [rom["shape"], (1180, rom["shape"][1]), (1180, va["in2"][1]), va["in2"]], label="shape", seg=0, ldy=-2)
-    f.wire([hf["Q"], (620, hf["Q"][1]), (620, 1190), (1210, 1190), (1210, va["in1"][1]), va["in1"]], label="in_hud_d", seg=2, ldy=-2, lpos=0.8)
+    f.wire([hf["Q"], (600, hf["Q"][1]), (600, 1190), (1210, 1190), (1210, va["in1"][1]), va["in1"]], label="in_hud_d", seg=2, ldy=-2, lpos=0.8)
     vf = f.seq(1380, 998, 130, 44, "hud_valid_q", ts=11); pin(f, vf, "D", "L", 22, show=False); pin(f, vf, "Q", "R", 22, show=False)
     f.wire([va["out"], vf["D"]])
     vo = port(f, 1580, vf["Q"][1], "hud_valid -> Fig 10", 10, color="#008a8a"); f.wire([vf["Q"], vo["l"]], "vid")

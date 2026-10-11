@@ -1,0 +1,195 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2100" height="1700" viewBox="0 0 2100 1700"><defs><marker id="a111111" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#111111"/></marker><marker id="a2e9d3a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#2e9d3a"/></marker></defs><rect width="100%" height="100%" fill="#fff"/>
+<rect x="20.0" y="90.0" width="2060.0" height="640.0" rx="10" fill="none" stroke="#3b5bdb" stroke-width="2" stroke-dasharray="10 6"/>
+<text x="32.0" y="110.0" font-family="DejaVu Sans" font-size="15" font-weight="bold" fill="#3b5bdb" text-anchor="start">PART A - immediate generator: one mux selected by instruction_i[6:0] (opcode)</text>
+<path d="M730.0,158.5 L1500.0,158.5" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a111111)"/>
+<path d="M730.0,215.5 L1500.0,215.5" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a111111)"/>
+<path d="M730.0,272.5 L1500.0,272.5" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a111111)"/>
+<path d="M730.0,329.5 L1500.0,329.5" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a111111)"/>
+<path d="M730.0,443.5 L1500.0,443.5" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a111111)"/>
+<path d="M730.0,500.5 L1500.0,500.5" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a111111)"/>
+<path d="M730.0,557.5 L1500.0,557.5" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a111111)"/>
+<path d="M730.0,614.5 L1500.0,614.5" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a111111)"/>
+<path d="M730.0,671.5 L1500.0,671.5" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a111111)"/>
+<path d="M550.0,366.5 L1100.0,366.5" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a111111)"/>
+<path d="M550.0,406.5 L1100.0,406.5" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a111111)"/>
+<path d="M1140.0,386.5 L1500.0,386.5" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a111111)"/>
+<path d="M273.6,497.5 L290.0,497.5 L290.0,472.0 L330.0,472.0" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a111111)"/>
+<path d="M290.0,497.5 L290.0,520.0 L330.0,520.0" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a111111)"/>
+<path d="M550.0,472.0 L600.0,472.0 L600.0,487.3 L640.0,487.3" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a111111)"/>
+<path d="M550.0,520.0 L610.0,520.0 L610.0,505.7 L640.0,505.7" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a111111)"/>
+<path d="M680.0,496.5 L700.0,496.5 L700.0,546.5 L740.0,546.5" fill="none" stroke="#2e9d3a" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a2e9d3a)"/>
+<path d="M821.0,546.5 L1140.0,546.5 L1140.0,421.5" fill="none" stroke="#2e9d3a" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a2e9d3a)"/>
+<path d="M1487.6,750.0 L1535.0,750.0" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round"/>
+<path d="M1535.0,750.0 L1535.0,694.0" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a111111)"/>
+<path d="M1570.0,415.0 L1700.0,415.0" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a111111)"/>
+<rect x="20.0" y="760.0" width="2060.0" height="920.0" rx="10" fill="none" stroke="#3b5bdb" stroke-width="2" stroke-dasharray="10 6"/>
+<text x="32.0" y="780.0" font-family="DejaVu Sans" font-size="15" font-weight="bold" fill="#3b5bdb" text-anchor="start">PART B - control decoder, register fields, exception logic, ID/EX pipeline register</text>
+<path d="M171.8,850.0 L300.0,850.0" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a111111)"/>
+<path d="M680.0,880.0 L720.0,880.0" fill="none" stroke="#2e9d3a" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a2e9d3a)"/>
+<path d="M680.0,908.0 L720.0,908.0" fill="none" stroke="#2e9d3a" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a2e9d3a)"/>
+<path d="M680.0,936.0 L720.0,936.0" fill="none" stroke="#2e9d3a" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a2e9d3a)"/>
+<path d="M680.0,964.0 L720.0,964.0" fill="none" stroke="#2e9d3a" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a2e9d3a)"/>
+<path d="M680.0,992.0 L720.0,992.0" fill="none" stroke="#2e9d3a" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a2e9d3a)"/>
+<path d="M680.0,1020.0 L720.0,1020.0" fill="none" stroke="#2e9d3a" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a2e9d3a)"/>
+<path d="M680.0,1048.0 L720.0,1048.0" fill="none" stroke="#2e9d3a" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a2e9d3a)"/>
+<path d="M680.0,1076.0 L720.0,1076.0" fill="none" stroke="#2e9d3a" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a2e9d3a)"/>
+<path d="M680.0,1104.0 L720.0,1104.0" fill="none" stroke="#2e9d3a" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a2e9d3a)"/>
+<path d="M141.0,1380.0 L290.0,1380.0 L290.0,1400.8 L330.0,1400.8" fill="none" stroke="#2e9d3a" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a2e9d3a)"/>
+<path d="M174.4,1420.0 L300.0,1420.0 L300.0,1419.2 L330.0,1419.2" fill="none" stroke="#2e9d3a" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a2e9d3a)"/>
+<path d="M370.0,1410.0 L440.0,1410.0 L440.0,1410.8 L470.0,1410.8" fill="none" stroke="#2e9d3a" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a2e9d3a)"/>
+<path d="M383.1,1470.0 L450.0,1470.0 L450.0,1429.2 L470.0,1429.2" fill="none" stroke="#2e9d3a" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a2e9d3a)"/>
+<path d="M510.0,1420.0 L620.0,1420.0" fill="none" stroke="#2e9d3a" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a2e9d3a)"/>
+<path d="M1500,130 L1570,209.8 L1570,620.2 L1500,700 Z" fill="#fff" stroke="#000" stroke-width="1.9"/>
+<rect x="330.0" y="147.5" width="400.0" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<rect x="330.0" y="204.5" width="400.0" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<rect x="330.0" y="261.5" width="400.0" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<rect x="330.0" y="318.5" width="400.0" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<rect x="330.0" y="432.5" width="400.0" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<rect x="330.0" y="489.5" width="400.0" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<rect x="330.0" y="546.5" width="400.0" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<rect x="330.0" y="603.5" width="400.0" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<rect x="330.0" y="660.5" width="400.0" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<path d="M1100,346.5 L1140,357.7 L1140,415.3 L1100,426.5 Z" fill="#fff" stroke="#000" stroke-width="1.9"/>
+<rect x="330.0" y="355.5" width="220.0" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<rect x="330.0" y="395.5" width="220.0" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<rect x="330.0" y="456.5" width="220.0" height="34.0" rx="18" fill="#fff3c4" stroke="#000" stroke-width="2"/>
+<rect x="330.0" y="504.5" width="220.0" height="34.0" rx="18" fill="#fff3c4" stroke="#000" stroke-width="2"/>
+<rect x="215.0" y="486.5" width="58.6" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<path d="M640,476.5 Q666.0,476.5 680,496.5 Q666.0,516.5 640,516.5 Q652.0,496.5 640,476.5 Z" fill="#fff" stroke="#000" stroke-width="1.9"/>
+<rect x="740.0" y="535.5" width="81.0" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<rect x="1300.0" y="739.0" width="187.6" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<rect x="1700.0" y="404.0" width="205.0" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<rect x="40.0" y="839.0" width="131.8" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<rect x="300.0" y="800.0" width="380.0" height="340.0" rx="4" fill="#fff3c4" stroke="#000" stroke-width="2"/>
+<rect x="720.0" y="869.0" width="75.4" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<rect x="720.0" y="897.0" width="86.5" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<rect x="720.0" y="925.0" width="64.2" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<rect x="720.0" y="953.0" width="69.8" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<rect x="720.0" y="981.0" width="47.5" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<rect x="720.0" y="1009.0" width="108.9" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<rect x="720.0" y="1037.0" width="108.9" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<rect x="720.0" y="1065.0" width="64.2" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<rect x="720.0" y="1093.0" width="41.9" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<rect x="60.0" y="1189.0" width="218.6" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<rect x="60.0" y="1223.0" width="218.6" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<rect x="60.0" y="1257.0" width="218.6" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<rect x="60.0" y="1369.0" width="81.0" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<rect x="60.0" y="1409.0" width="114.4" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<path d="M330,1390 Q356.0,1390 370,1410.0 Q356.0,1430 330,1430 Q342.0,1410.0 330,1390 Z" fill="#fff" stroke="#000" stroke-width="1.9"/>
+<rect x="330.0" y="1459.0" width="53.1" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<path d="M470,1400 H490.0 A20.0,20.0 0 0 1 490.0,1440 H470 Z" fill="#fff" stroke="#000" stroke-width="1.9"/>
+<rect x="620.0" y="1409.0" width="69.8" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<rect x="1150.0" y="800.0" width="440.0" height="760.0" rx="4" fill="#d9f2d9" stroke="#000" stroke-width="2"/>
+<text x="1050.0" y="36.0" font-family="DejaVu Sans" font-size="26" font-weight="bold" fill="#000" text-anchor="middle">Fig P2 - Pipeline Stage 1 (ID): immediate generator, decoder, exception logic</text>
+<text x="1050.0" y="60.0" font-family="DejaVu Sans" font-size="14" font-weight="normal" fill="#444" text-anchor="middle">Follows your 'I-D stage' immediate-mux notebook page and the ID/EX block sketch.  RV32M adds one decode line (funct7 = 0000001, red).</text>
+<text x="1505.0" y="162.5" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#333" text-anchor="start">JALR</text>
+<text x="1505.0" y="219.5" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#333" text-anchor="start">BRANCH</text>
+<text x="1505.0" y="276.5" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#333" text-anchor="start">LOAD</text>
+<text x="1505.0" y="333.5" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#333" text-anchor="start">STORE</text>
+<text x="1505.0" y="390.5" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#333" text-anchor="start">ARITH-I</text>
+<text x="1505.0" y="447.5" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#333" text-anchor="start">ARITH-R</text>
+<text x="1505.0" y="504.5" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#333" text-anchor="start">LUI</text>
+<text x="1505.0" y="561.5" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#333" text-anchor="start">AUIPC</text>
+<text x="1505.0" y="618.5" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#333" text-anchor="start">JAL</text>
+<text x="1505.0" y="675.5" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#333" text-anchor="start">default</text>
+<text x="60.0" y="162.5" font-family="DejaVu Sans" font-size="10" font-weight="bold" fill="#000" text-anchor="start">JALR</text>
+<text x="160.0" y="162.5" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#444" text-anchor="start">7'b1100111</text>
+<text x="530.0" y="162.5" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#000" text-anchor="middle">{ {20{i[31]}}, i[31:20] }</text>
+<text x="60.0" y="219.5" font-family="DejaVu Sans" font-size="10" font-weight="bold" fill="#000" text-anchor="start">BRANCH</text>
+<text x="160.0" y="219.5" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#444" text-anchor="start">7'b1100011</text>
+<text x="530.0" y="219.5" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#000" text-anchor="middle">{ {20{i[31]}}, i[7], i[30:25], i[11:8], 1'b0 }</text>
+<text x="60.0" y="276.5" font-family="DejaVu Sans" font-size="10" font-weight="bold" fill="#000" text-anchor="start">LOAD</text>
+<text x="160.0" y="276.5" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#444" text-anchor="start">7'b0000011</text>
+<text x="530.0" y="276.5" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#000" text-anchor="middle">{ {20{i[31]}}, i[31:20] }</text>
+<text x="60.0" y="333.5" font-family="DejaVu Sans" font-size="10" font-weight="bold" fill="#000" text-anchor="start">STORE</text>
+<text x="160.0" y="333.5" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#444" text-anchor="start">7'b0100011</text>
+<text x="530.0" y="333.5" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#000" text-anchor="middle">{ {20{i[31]}}, i[31:25], i[11:7] }</text>
+<text x="60.0" y="390.5" font-family="DejaVu Sans" font-size="10" font-weight="bold" fill="#000" text-anchor="start">ARITH-I</text>
+<text x="160.0" y="390.5" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#444" text-anchor="start">7'b0010011</text>
+<text x="60.0" y="447.5" font-family="DejaVu Sans" font-size="10" font-weight="bold" fill="#000" text-anchor="start">ARITH-R</text>
+<text x="160.0" y="447.5" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#444" text-anchor="start">7'b0110011</text>
+<text x="530.0" y="447.5" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#000" text-anchor="middle">32'h0</text>
+<text x="60.0" y="504.5" font-family="DejaVu Sans" font-size="10" font-weight="bold" fill="#000" text-anchor="start">LUI</text>
+<text x="160.0" y="504.5" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#444" text-anchor="start">7'b0110111</text>
+<text x="530.0" y="504.5" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#000" text-anchor="middle">{ i[31:12], 12'b0 }</text>
+<text x="60.0" y="561.5" font-family="DejaVu Sans" font-size="10" font-weight="bold" fill="#000" text-anchor="start">AUIPC</text>
+<text x="160.0" y="561.5" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#444" text-anchor="start">7'b0010111</text>
+<text x="530.0" y="561.5" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#000" text-anchor="middle">{ i[31:12], 12'b0 }</text>
+<text x="60.0" y="618.5" font-family="DejaVu Sans" font-size="10" font-weight="bold" fill="#000" text-anchor="start">JAL</text>
+<text x="160.0" y="618.5" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#444" text-anchor="start">7'b1101111</text>
+<text x="530.0" y="618.5" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#000" text-anchor="middle">{ {12{i[31]}}, i[19:12], i[20], i[30:21], 1'b0 }</text>
+<text x="60.0" y="675.5" font-family="DejaVu Sans" font-size="10" font-weight="bold" fill="#000" text-anchor="start">default</text>
+<text x="160.0" y="675.5" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#444" text-anchor="start">others</text>
+<text x="530.0" y="675.5" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#000" text-anchor="middle">32'h0</text>
+<text x="1105.0" y="370.5" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#333" text-anchor="start">0</text>
+<text x="1105.0" y="410.5" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#333" text-anchor="start">1</text>
+<text x="440.0" y="370.5" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#000" text-anchor="middle">{ {20{i[31]}}, i[31:20] }</text>
+<text x="440.0" y="410.5" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#000" text-anchor="middle">{ 27'b0, i[24:20] }  (shamt)</text>
+<text x="440.0" y="476.5" font-family="DejaVu Sans" font-size="10" font-weight="bold" fill="#000" text-anchor="middle">funct3 == 3'b001  (SLLI)</text>
+<text x="440.0" y="524.5" font-family="DejaVu Sans" font-size="10" font-weight="bold" fill="#000" text-anchor="middle">funct3 == 3'b101  (SRLI/SRAI)</text>
+<text x="244.3" y="501.5" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#000" text-anchor="middle">i[14:12]</text>
+<circle cx="290.0" cy="497.5" r="3.8" fill="#111111"/>
+<text x="780.5" y="550.5" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#2e9d3a" text-anchor="middle">is_shift_imm</text>
+<text x="1393.8" y="754.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#000" text-anchor="middle">instruction_i[6:0]  (opcode)</text>
+<line x1="1529.0" y1="726.0" x2="1541.0" y2="718.0" stroke="#111111" stroke-width="1.8"/>
+<text x="1544.0" y="726.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#222" text-anchor="start" stroke="#fff" stroke-width="4" paint-order="stroke" stroke-linejoin="round">[7]</text>
+<text x="1802.5" y="419.0" font-family="DejaVu Sans" font-size="11" font-weight="normal" fill="#3b5bdb" text-anchor="middle">ex_immediate[31:0]  -&gt; ID/EX</text>
+<line x1="1631.0" y1="421.0" x2="1639.0" y2="409.0" stroke="#111111" stroke-width="1.8"/>
+<text x="1635.0" y="406.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#222" text-anchor="middle" stroke="#fff" stroke-width="4" paint-order="stroke" stroke-linejoin="round">[32]</text>
+<text x="60.0" y="715.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#333" text-anchor="start" font-style="italic">The mux picks the input whose opcode label matches (left column).  'i' = instruction_i.</text>
+<text x="105.9" y="854.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#3b5bdb" text-anchor="middle">instruction_i[31:0]</text>
+<text x="490.0" y="820.0" font-family="DejaVu Sans" font-size="15" font-weight="bold" fill="#000" text-anchor="middle">Control Decoder</text>
+<text x="490.0" y="836.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#444" text-anchor="middle" font-style="italic">case on opcode / funct3 / funct7</text>
+<line x1="231.9" y1="856.0" x2="239.9" y2="844.0" stroke="#111111" stroke-width="1.8"/>
+<text x="235.9" y="841.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#222" text-anchor="middle" stroke="#fff" stroke-width="4" paint-order="stroke" stroke-linejoin="round">[32]</text>
+<text x="757.7" y="884.0" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#2e9d3a" text-anchor="middle">alu_op[2:0]</text>
+<text x="805.4" y="884.0" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#555" text-anchor="start">ADD SUB SLL SLT SLTU XOR SRL SRA OR AND</text>
+<text x="763.3" y="912.0" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#2e9d3a" text-anchor="middle">immediate_sel</text>
+<text x="816.5" y="912.0" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#555" text-anchor="start">operand 2 = immediate?</text>
+<text x="752.1" y="940.0" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#2e9d3a" text-anchor="middle">mem_write</text>
+<text x="794.2" y="940.0" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#555" text-anchor="start">store</text>
+<text x="754.9" y="968.0" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#2e9d3a" text-anchor="middle">mem_to_reg</text>
+<text x="799.8" y="968.0" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#555" text-anchor="start">load result goes to register</text>
+<text x="743.7" y="996.0" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#2e9d3a" text-anchor="middle">branch</text>
+<text x="777.5" y="996.0" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#555" text-anchor="start">branch / jal / jalr: PC redirect</text>
+<text x="774.4" y="1024.0" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#2e9d3a" text-anchor="middle">width_select[1:0]</text>
+<text x="838.9" y="1024.0" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#555" text-anchor="start">byte / half / word</text>
+<text x="774.4" y="1052.0" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#2e9d3a" text-anchor="middle">dst_reg_sel_valid</text>
+<text x="838.9" y="1052.0" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#555" text-anchor="start">instruction writes a register</text>
+<text x="752.1" y="1080.0" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#2e9d3a" text-anchor="middle">lui_auipc</text>
+<text x="794.2" y="1080.0" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#555" text-anchor="start">special ALU paths</text>
+<text x="741.0" y="1108.0" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#c0392b" text-anchor="middle">m_ext</text>
+<text x="771.9" y="1108.0" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#555" text-anchor="start">funct7 = 0000001 : MUL / DIV / REM (RV32M)</text>
+<text x="60.0" y="1170.0" font-family="DejaVu Sans" font-size="11" font-weight="bold" fill="#000" text-anchor="start">Register fields are plain bit slices (no logic):</text>
+<text x="169.3" y="1204.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#000" text-anchor="middle">rs1_select = instruction_i[19:15]</text>
+<text x="169.3" y="1238.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#000" text-anchor="middle">rs2_select = instruction_i[24:20]</text>
+<text x="169.3" y="1272.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#000" text-anchor="middle">dst_reg_sel = instruction_i[11:7]</text>
+<text x="60.0" y="1340.0" font-family="DejaVu Sans" font-size="11" font-weight="bold" fill="#000" text-anchor="start">Exception logic (ID/EX sketch):</text>
+<text x="100.5" y="1384.0" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#c0392b" text-anchor="middle">illegal_inst</text>
+<text x="117.2" y="1424.0" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#c0392b" text-anchor="middle">instruction_i == 0</text>
+<text x="356.5" y="1474.0" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#2e9d3a" text-anchor="middle">reset_n</text>
+<text x="654.9" y="1424.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#c0392b" text-anchor="middle">exception</text>
+<text x="60.0" y="1530.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#555" text-anchor="start">PC_w[31:0] from the sketch goes to the exception logic block that raises exception_pc</text>
+<text x="60.0" y="1543.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#555" text-anchor="start">(shown in the sketch as the OR-ed PC path into the ID/EX register).</text>
+<text x="1370.0" y="820.0" font-family="DejaVu Sans" font-size="14" font-weight="bold" fill="#000" text-anchor="middle">ID -&gt; EX Pipeline Register</text>
+<text x="1370.0" y="835.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#444" text-anchor="middle" font-style="italic">captures on clk;  holds on stall;</text>
+<text x="1370.0" y="848.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#444" text-anchor="middle" font-style="italic">sync clear to NOP on reset / flush</text>
+<text x="1156.0" y="924.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#222" text-anchor="start">ctrl signals</text>
+<text x="1156.0" y="1013.7" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#222" text-anchor="start">ex_immediate</text>
+<text x="1156.0" y="1103.4" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#222" text-anchor="start">pc</text>
+<text x="1156.0" y="1193.1" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#222" text-anchor="start">rs1_select</text>
+<text x="1156.0" y="1282.9" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#222" text-anchor="start">rs2_select</text>
+<text x="1156.0" y="1372.6" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#222" text-anchor="start">dst_reg_sel</text>
+<text x="1156.0" y="1462.3" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#222" text-anchor="start">exception</text>
+<text x="1156.0" y="1552.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#222" text-anchor="start">m_ext</text>
+<text x="1584.0" y="924.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#222" text-anchor="end">ctrl_ex</text>
+<text x="1584.0" y="1013.7" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#222" text-anchor="end">imm_ex</text>
+<text x="1584.0" y="1103.4" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#222" text-anchor="end">pc_ex</text>
+<text x="1584.0" y="1193.1" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#222" text-anchor="end">rs1_ex</text>
+<text x="1584.0" y="1282.9" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#222" text-anchor="end">rs2_ex</text>
+<text x="1584.0" y="1372.6" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#222" text-anchor="end">rd_ex</text>
+<text x="1584.0" y="1462.3" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#222" text-anchor="end">exception_ex</text>
+<text x="1584.0" y="1552.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#222" text-anchor="end">m_ext_ex</text>
+<path d="M1150,1538 L1161,1549 L1150,1560" fill="none" stroke="#000" stroke-width="1.5"/>
+<text x="1150.0" y="1590.0" font-family="DejaVu Sans" font-size="11" font-weight="normal" fill="#333" text-anchor="start">All outputs go to Fig P3 (operand select + ALU).  Reads of rs1/rs2 use the register file (Fig P4).</text>
+</svg>
