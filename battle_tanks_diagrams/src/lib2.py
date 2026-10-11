@@ -61,7 +61,7 @@ class Fig(_Fig):
         k.setdefault("fill", "#dde8ff")
         return s.block(*a, **k)
 
-    def mux(s, x, y, h, ins=("0", "1"), sel="sel", w=36, selc="ctrl", label=None, selpos=None):
+    def mux(s, x, y, h, ins=("0", "1"), sel="sel", w=36, selc="ctrl", label=None, selpos=None, top=False):
         """Trapezoid mux. pins: each input name, 'out' (right), 'sel' (bottom)."""
         k = h * 0.14
         s.m.append(f'<path d="M{x},{y} L{x+w},{y+k:.1f} L{x+w},{y+h-k:.1f} L{x},{y+h} Z" fill="#fff" stroke="#000" stroke-width="1.9"/>')
@@ -72,9 +72,9 @@ class Fig(_Fig):
             b.p[nm] = (x, yy)
             s.text(x + 5, yy + 4, nm, 10, anchor="start", color="#333")
         b.p["out"] = (x + w, y + h / 2)
-        b.p["sel"] = (x + w / 2, y + h - k / 2)
+        b.p["sel"] = (x + w / 2, (y + k / 2) if top else (y + h - k / 2))
         if sel:
-            s.text(x + w / 2, y + h + 14, sel, 10, color=C[selc], halo=True)
+            s.text(x + w / 2, (y - 6) if top else (y + h + 14), sel, 10, color=C[selc], halo=True)
         if label:
             s.text(x + w / 2, y - 7, label, 10, color="#555")
         return b
@@ -84,6 +84,9 @@ class Fig(_Fig):
         bub = kind in ("nand", "not", "nor")
         if kind in ("and", "nand"):
             d = f"M{x},{y} H{x+w/2} A{w/2},{h/2} 0 0 1 {x+w/2},{y+h} H{x} Z"
+        elif kind == "xor":
+            d = f"M{x+6},{y} Q{x+w*0.65},{y} {x+w},{y+h/2} Q{x+w*0.65},{y+h} {x+6},{y+h} Q{x+w*0.3+6},{y+h/2} {x+6},{y} Z"
+            s.m.append(f'<path d="M{x},{y} Q{x+w*0.3},{y+h/2} {x},{y+h}" fill="none" stroke="#000" stroke-width="1.8"/>')
         elif kind in ("or", "nor"):
             d = f"M{x},{y} Q{x+w*0.65},{y} {x+w},{y+h/2} Q{x+w*0.65},{y+h} {x},{y+h} Q{x+w*0.3},{y+h/2} {x},{y} Z"
         else:  # not

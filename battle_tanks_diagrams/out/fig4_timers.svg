@@ -1,0 +1,184 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="1230" viewBox="0 0 1500 1230"><defs><marker id="a111111" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#111111"/></marker><marker id="a1f6fe0" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#1f6fe0"/></marker><marker id="a2e9d3a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#2e9d3a"/></marker></defs><rect width="100%" height="100%" fill="#fff"/>
+<rect x="20.0" y="90.0" width="1460.0" height="220.0" rx="10" fill="none" stroke="#2b7a2b" stroke-width="2" stroke-dasharray="10 6"/>
+<text x="32.0" y="110.0" font-family="DejaVu Sans" font-size="15" font-weight="bold" fill="#2b7a2b" text-anchor="start">PART A - 1 ms prescaler (shared by all four counters)</text>
+<path d="M486.0,215.0 L560.0,215.0" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a111111)"/>
+<path d="M384.0,237.5 L450.0,237.5" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a111111)"/>
+<path d="M380.0,212.0 L415.0,212.0 L415.0,192.5 L450.0,192.5" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a111111)"/>
+<path d="M700.0,215.0 L740.0,215.0" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round"/>
+<path d="M740.0,215.0 L740.0,285.0 L200.0,285.0 L200.0,212.0 L250.0,212.0" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a111111)"/>
+<path d="M740.0,215.0 L840.0,214.0" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a111111)"/>
+<path d="M1090.0,214.0 L1200.0,214.0" fill="none" stroke="#2e9d3a" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a2e9d3a)"/>
+<path d="M1150.0,214.0 L1150.0,138.0 L468.0,138.0 L468.0,176.3" fill="none" stroke="#2e9d3a" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a2e9d3a)"/>
+<rect x="20.0" y="340.0" width="1460.0" height="450.0" rx="10" fill="none" stroke="#2b7a2b" stroke-width="2" stroke-dasharray="10 6"/>
+<text x="32.0" y="360.0" font-family="DejaVu Sans" font-size="15" font-weight="bold" fill="#2b7a2b" text-anchor="start">PART B - one cooldown channel  (instantiate 4x: P1 shoot, P1 special, P2 shoot, P2 special)</text>
+<path d="M756.0,480.0 L830.0,480.0 L830.0,460.0 L900.0,460.0" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a111111)"/>
+<path d="M936.0,480.0 L1000.0,480.0" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a111111)"/>
+<path d="M670.0,500.0 L720.0,500.0" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a111111)"/>
+<path d="M857.4,535.0 L870.0,535.0 L870.0,500.0 L900.0,500.0" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a111111)"/>
+<path d="M1140.0,480.0 L1180.0,480.0" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round"/>
+<path d="M1180.0,480.0 L1180.0,410.0 L700.0,410.0 L700.0,460.0 L720.0,460.0" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a111111)"/>
+<path d="M1180.0,480.0 L1180.0,600.0 L500.0,600.0" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round"/>
+<path d="M500.0,600.0 L500.0,500.0 L540.0,500.0" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a111111)"/>
+<path d="M500.0,600.0 L500.0,657.0 L540.0,657.0" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a111111)"/>
+<path d="M690.0,657.0 L740.0,657.0" fill="none" stroke="#1f6fe0" stroke-width="1.8" stroke-linejoin="round"/>
+<path d="M740.0,657.0 L740.0,745.0 L790.0,745.0" fill="none" stroke="#1f6fe0" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a1f6fe0)"/>
+<path d="M740.0,657.0 L780.0,657.0" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a111111)"/>
+<path d="M814.0,657.0 L850.0,657.0 L850.0,649.7 L880.0,649.7" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a111111)"/>
+<path d="M1000.0,700.0 L860.0,700.0 L860.0,666.3 L880.0,666.3" fill="none" stroke="#2e9d3a" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a2e9d3a)"/>
+<path d="M916.0,658.0 L960.0,658.0 L960.0,570.0 L738.0,570.0 L738.0,514.4" fill="none" stroke="#2e9d3a" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a2e9d3a)"/>
+<path d="M1020.0,545.0 L918.0,545.0 L918.0,514.4" fill="none" stroke="#2e9d3a" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a2e9d3a)"/>
+<rect x="20.0" y="820.0" width="1460.0" height="390.0" rx="10" fill="none" stroke="#2b7a2b" stroke-width="2" stroke-dasharray="10 6"/>
+<text x="32.0" y="840.0" font-family="DejaVu Sans" font-size="15" font-weight="bold" fill="#2b7a2b" text-anchor="start">PART C - MMIO write decode (TIMER_TRIGGER) and read (TIMER_STATUS)</text>
+<path d="M183.6,900.0 L350.0,900.0 L350.0,924.7 L380.0,924.7" fill="none" stroke="#2e9d3a" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a2e9d3a)"/>
+<path d="M251.8,950.0 L370.0,950.0 L370.0,941.3 L380.0,941.3" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a111111)"/>
+<path d="M135.8,1000.0 L150.0,1000.0" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round"/>
+<path d="M416.0,933.0 L436.0,933.0" fill="none" stroke="#2e9d3a" stroke-width="1.8" stroke-linejoin="round"/>
+<line x1="436" y1="933.0" x2="436" y2="1171" stroke="#2e9d3a" stroke-width="2"/>
+<line x1="170" y1="1000" x2="170" y2="1185" stroke="#111111" stroke-width="2"/>
+<path d="M436.0,1019.2 L480.0,1019.2" fill="none" stroke="#2e9d3a" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a2e9d3a)"/>
+<path d="M170.0,1034.8 L480.0,1034.8" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a111111)"/>
+<path d="M516.0,1027.0 L600.0,1027.0" fill="none" stroke="#2e9d3a" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a2e9d3a)"/>
+<path d="M436.0,1069.2 L480.0,1069.2" fill="none" stroke="#2e9d3a" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a2e9d3a)"/>
+<path d="M170.0,1084.8 L480.0,1084.8" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a111111)"/>
+<path d="M516.0,1077.0 L600.0,1077.0" fill="none" stroke="#2e9d3a" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a2e9d3a)"/>
+<path d="M436.0,1119.2 L480.0,1119.2" fill="none" stroke="#2e9d3a" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a2e9d3a)"/>
+<path d="M170.0,1134.8 L480.0,1134.8" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a111111)"/>
+<path d="M516.0,1127.0 L600.0,1127.0" fill="none" stroke="#2e9d3a" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a2e9d3a)"/>
+<path d="M436.0,1169.2 L480.0,1169.2" fill="none" stroke="#2e9d3a" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a2e9d3a)"/>
+<path d="M170.0,1184.8 L480.0,1184.8" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a111111)"/>
+<path d="M516.0,1177.0 L600.0,1177.0" fill="none" stroke="#2e9d3a" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a2e9d3a)"/>
+<path d="M860.8,895.0 L1000.0,895.0" fill="none" stroke="#1f6fe0" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a1f6fe0)"/>
+<path d="M854.6,921.0 L1000.0,921.0" fill="none" stroke="#1f6fe0" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a1f6fe0)"/>
+<path d="M860.8,947.0 L1000.0,947.0" fill="none" stroke="#1f6fe0" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a1f6fe0)"/>
+<path d="M854.6,973.0 L1000.0,973.0" fill="none" stroke="#1f6fe0" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a1f6fe0)"/>
+<path d="M1330.0,940.0 L1380.0,940.0" fill="none" stroke="#1f6fe0" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a1f6fe0)"/>
+<rect x="250.0" y="195.0" width="130.0" height="36.0" rx="18" fill="#fff3c4" stroke="#000" stroke-width="2"/>
+<path d="M450,170 L486,182.6 L486,247.4 L450,260 Z" fill="#fff" stroke="#000" stroke-width="1.9"/>
+<rect x="340.0" y="226.5" width="44.0" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<rect x="560.0" y="190.0" width="140.0" height="50.0" rx="4" fill="#d9f2d9" stroke="#000" stroke-width="2"/>
+<rect x="840.0" y="197.0" width="250.0" height="36.0" rx="18" fill="#fff3c4" stroke="#000" stroke-width="2"/>
+<rect x="1200.0" y="203.0" width="177.7" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<path d="M720,440 L756,451.2 L756,508.8 L720,520 Z" fill="#fff" stroke="#000" stroke-width="1.9"/>
+<path d="M900,440 L936,451.2 L936,508.8 L900,520 Z" fill="#fff" stroke="#000" stroke-width="1.9"/>
+<rect x="1000.0" y="455.0" width="140.0" height="50.0" rx="4" fill="#d9f2d9" stroke="#000" stroke-width="2"/>
+<rect x="540.0" y="483.0" width="130.0" height="36.0" rx="18" fill="#fff3c4" stroke="#000" stroke-width="2"/>
+<rect x="800.0" y="524.0" width="57.4" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<rect x="540.0" y="640.0" width="150.0" height="36.0" rx="18" fill="#fff3c4" stroke="#000" stroke-width="2"/>
+<rect x="790.0" y="734.0" width="218.6" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<path d="M780,643.0 L806,657.0 L780,671.0 Z" fill="#fff" stroke="#000" stroke-width="1.9"/>
+<circle cx="810.0" cy="657.0" r="4" fill="#fff" stroke="#000" stroke-width="1.6"/>
+<path d="M880,640 H898.0 A18.0,18.0 0 0 1 898.0,676 H880 Z" fill="#fff" stroke="#000" stroke-width="1.9"/>
+<rect x="1000.0" y="689.0" width="131.8" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<rect x="1020.0" y="534.0" width="144.2" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<rect x="40.0" y="889.0" width="143.6" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<rect x="40.0" y="939.0" width="211.8" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<path d="M380,915 H398.0 A18.0,18.0 0 0 1 398.0,951 H380 Z" fill="#fff" stroke="#000" stroke-width="1.9"/>
+<rect x="40.0" y="989.0" width="95.8" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<path d="M480,1010 H498.0 A18.0,17.0 0 0 1 498.0,1044 H480 Z" fill="#fff" stroke="#000" stroke-width="1.9"/>
+<rect x="600.0" y="1016.0" width="94.6" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<path d="M480,1060 H498.0 A18.0,17.0 0 0 1 498.0,1094 H480 Z" fill="#fff" stroke="#000" stroke-width="1.9"/>
+<rect x="600.0" y="1066.0" width="88.4" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<path d="M480,1110 H498.0 A18.0,17.0 0 0 1 498.0,1144 H480 Z" fill="#fff" stroke="#000" stroke-width="1.9"/>
+<rect x="600.0" y="1116.0" width="94.6" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<path d="M480,1160 H498.0 A18.0,17.0 0 0 1 498.0,1194 H480 Z" fill="#fff" stroke="#000" stroke-width="1.9"/>
+<rect x="600.0" y="1166.0" width="88.4" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<rect x="1000.0" y="880.0" width="330.0" height="120.0" rx="4" fill="#fff3c4" stroke="#000" stroke-width="2"/>
+<rect x="760.0" y="884.0" width="100.8" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<rect x="760.0" y="910.0" width="94.6" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<rect x="760.0" y="936.0" width="100.8" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<rect x="760.0" y="962.0" width="94.6" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<rect x="1380.0" y="929.0" width="54.9" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<text x="750.0" y="36.0" font-family="DejaVu Sans" font-size="26" font-weight="bold" fill="#000" text-anchor="middle">Fig 4 - Hardware Cooldown Timers (TIMER_STATUS 0x8000_0010 / TIMER_TRIGGER 0x8000_0014)</text>
+<text x="750.0" y="60.0" font-family="DejaVu Sans" font-size="14" font-weight="normal" fill="#444" text-anchor="middle">Part A: shared 1 ms tick.  Part B: one down-counter (x4).  Part C: trigger decode + status read.   All registers: sync reset to 0.</text>
+<text x="315.0" y="215.0" font-family="DejaVu Sans" font-size="12" font-weight="bold" fill="#000" text-anchor="middle">ms_cnt + 1</text>
+<text x="455.0" y="196.5" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#333" text-anchor="start">0</text>
+<text x="455.0" y="241.5" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#333" text-anchor="start">1</text>
+<text x="468.0" y="164.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#2e9d3a" text-anchor="middle" stroke="#fff" stroke-width="4" paint-order="stroke" stroke-linejoin="round">tick</text>
+<text x="362.0" y="241.5" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#000" text-anchor="middle">17'd0</text>
+<text x="630.0" y="210.0" font-family="DejaVu Sans" font-size="12" font-weight="bold" fill="#000" text-anchor="middle">ms_cnt[16:0]</text>
+<path d="M560,218.0 L571,229.0 L560,240.0" fill="none" stroke="#000" stroke-width="1.5"/>
+<text x="965.0" y="217.0" font-family="DejaVu Sans" font-size="11" font-weight="bold" fill="#000" text-anchor="middle">ms_cnt == CLK_PER_MS-1</text>
+<line x1="519.0" y1="221.0" x2="527.0" y2="209.0" stroke="#111111" stroke-width="1.8"/>
+<text x="523.0" y="206.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#222" text-anchor="middle" stroke="#fff" stroke-width="4" paint-order="stroke" stroke-linejoin="round">[17]</text>
+<line x1="393.5" y1="218.0" x2="401.5" y2="206.0" stroke="#111111" stroke-width="1.8"/>
+<text x="397.5" y="203.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#222" text-anchor="middle" stroke="#fff" stroke-width="4" paint-order="stroke" stroke-linejoin="round">[17]</text>
+<circle cx="740.0" cy="215.0" r="3.8" fill="#111111"/>
+<text x="470.0" y="274.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#222" text-anchor="middle" stroke="#fff" stroke-width="4" paint-order="stroke" stroke-linejoin="round">ms_cnt_q</text>
+<text x="1288.8" y="218.0" font-family="DejaVu Sans" font-size="11" font-weight="normal" fill="#2e9d3a" text-anchor="middle">tick  (1 clk pulse / ms)</text>
+<text x="809.0" y="127.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#2e9d3a" text-anchor="middle" stroke="#fff" stroke-width="4" paint-order="stroke" stroke-linejoin="round">tick</text>
+<circle cx="1150.0" cy="214.0" r="3.8" fill="#2e9d3a"/>
+<text x="250.0" y="300.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#333" text-anchor="start" font-style="italic">tick = 1 also restarts the prescaler at 0, so tick period = CLK_PER_MS clocks (50_000 @ 50 MHz)</text>
+<text x="725.0" y="464.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#333" text-anchor="start">0</text>
+<text x="725.0" y="504.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#333" text-anchor="start">1</text>
+<text x="738.0" y="534.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#2e9d3a" text-anchor="middle" stroke="#fff" stroke-width="4" paint-order="stroke" stroke-linejoin="round">dec_en</text>
+<text x="905.0" y="464.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#333" text-anchor="start">0</text>
+<text x="905.0" y="504.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#333" text-anchor="start">1</text>
+<text x="918.0" y="534.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#2e9d3a" text-anchor="middle" stroke="#fff" stroke-width="4" paint-order="stroke" stroke-linejoin="round">trig_i</text>
+<text x="1070.0" y="475.0" font-family="DejaVu Sans" font-size="12" font-weight="bold" fill="#000" text-anchor="middle">cd_cnt[14:0]</text>
+<path d="M1000,483 L1011,494 L1000,505" fill="none" stroke="#000" stroke-width="1.5"/>
+<text x="605.0" y="503.0" font-family="DejaVu Sans" font-size="12" font-weight="bold" fill="#000" text-anchor="middle">cd_cnt - 1</text>
+<line x1="789.0" y1="486.0" x2="797.0" y2="474.0" stroke="#111111" stroke-width="1.8"/>
+<text x="793.0" y="471.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#222" text-anchor="middle" stroke="#fff" stroke-width="4" paint-order="stroke" stroke-linejoin="round">[15]</text>
+<line x1="964.0" y1="486.0" x2="972.0" y2="474.0" stroke="#111111" stroke-width="1.8"/>
+<text x="968.0" y="471.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#222" text-anchor="middle" stroke="#fff" stroke-width="4" paint-order="stroke" stroke-linejoin="round">[15]</text>
+<line x1="691.0" y1="506.0" x2="699.0" y2="494.0" stroke="#111111" stroke-width="1.8"/>
+<text x="695.0" y="491.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#222" text-anchor="middle" stroke="#fff" stroke-width="4" paint-order="stroke" stroke-linejoin="round">[15]</text>
+<text x="828.7" y="539.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#8a6d00" text-anchor="middle">LOAD_MS</text>
+<text x="40.0" y="700.0" font-family="DejaVu Sans" font-size="11" font-weight="normal" fill="#333" text-anchor="start">LOAD_MS (per channel):</text>
+<text x="40.0" y="714.0" font-family="DejaVu Sans" font-size="11" font-weight="normal" fill="#333" text-anchor="start">  shoot  = 500    (0.5 s)</text>
+<text x="40.0" y="728.0" font-family="DejaVu Sans" font-size="11" font-weight="normal" fill="#333" text-anchor="start">  special = 20000 (20 s)</text>
+<circle cx="1180.0" cy="480.0" r="3.8" fill="#111111"/>
+<line x1="936.0" y1="416.0" x2="944.0" y2="404.0" stroke="#111111" stroke-width="1.8"/>
+<text x="940.0" y="399.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#222" text-anchor="middle" stroke="#fff" stroke-width="4" paint-order="stroke" stroke-linejoin="round">hold [15]</text>
+<text x="840.0" y="589.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#222" text-anchor="middle" stroke="#fff" stroke-width="4" paint-order="stroke" stroke-linejoin="round">cd_cnt_q</text>
+<text x="615.0" y="660.0" font-family="DejaVu Sans" font-size="12" font-weight="bold" fill="#000" text-anchor="middle">cd_cnt_q == 0</text>
+<circle cx="500.0" cy="600.0" r="3.8" fill="#111111"/>
+<circle cx="740.0" cy="657.0" r="3.8" fill="#1f6fe0"/>
+<text x="899.3" y="749.0" font-family="DejaVu Sans" font-size="11" font-weight="normal" fill="#1f6fe0" text-anchor="middle">ready_i  (-&gt; TIMER_STATUS bit)</text>
+<text x="1065.9" y="704.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#2e9d3a" text-anchor="middle">tick  (from Part A)</text>
+<text x="969.0" y="632.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#2e9d3a" text-anchor="start" stroke="#fff" stroke-width="4" paint-order="stroke" stroke-linejoin="round">dec_en = tick &amp; ~ready</text>
+<text x="1092.1" y="549.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#2e9d3a" text-anchor="middle">trig_i  (from Part C)</text>
+<text x="40.0" y="400.0" font-family="DejaVu Sans" font-size="11" font-weight="normal" fill="#333" text-anchor="start">Behaviour per channel:</text>
+<text x="40.0" y="414.0" font-family="DejaVu Sans" font-size="11" font-weight="normal" fill="#333" text-anchor="start">trig_i = 1 : reload cd_cnt = LOAD_MS (restart cooldown)</text>
+<text x="40.0" y="428.0" font-family="DejaVu Sans" font-size="11" font-weight="normal" fill="#333" text-anchor="start">tick &amp; cd_cnt != 0 : cd_cnt - 1 (counts down 1 ms)</text>
+<text x="40.0" y="442.0" font-family="DejaVu Sans" font-size="11" font-weight="normal" fill="#333" text-anchor="start">cd_cnt == 0 : ready = 1, counter holds</text>
+<text x="40.0" y="456.0" font-family="DejaVu Sans" font-size="11" font-weight="normal" fill="#333" text-anchor="start">(reset value 0 -&gt; ready after reset)</text>
+<text x="111.8" y="904.0" font-family="DejaVu Sans" font-size="11" font-weight="normal" fill="#2e9d3a" text-anchor="middle">wr_en_tmr  (Fig 2a)</text>
+<text x="145.9" y="954.0" font-family="DejaVu Sans" font-size="11" font-weight="normal" fill="#000" text-anchor="middle">d_addr[2]  (1 = 0x14 TRIGGER)</text>
+<circle cx="436.0" cy="933.0" r="3.8" fill="#2e9d3a"/>
+<text x="87.9" y="1004.0" font-family="DejaVu Sans" font-size="11" font-weight="normal" fill="#000" text-anchor="middle">d_wdata[3:0]</text>
+<line x1="138.9" y1="1006.0" x2="146.9" y2="994.0" stroke="#111111" stroke-width="1.8"/>
+<text x="142.9" y="991.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#222" text-anchor="middle" stroke="#fff" stroke-width="4" paint-order="stroke" stroke-linejoin="round">[4]</text>
+<circle cx="436.0" cy="1019.2" r="3.8" fill="#2e9d3a"/>
+<circle cx="170.0" cy="1034.8" r="3.8" fill="#111111"/>
+<text x="190.0" y="1030.8" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#000" text-anchor="start" stroke="#fff" stroke-width="4" paint-order="stroke" stroke-linejoin="round">d_wdata[0]</text>
+<text x="647.3" y="1031.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#2e9d3a" text-anchor="middle">trig_p1_shoot</text>
+<circle cx="436.0" cy="1069.2" r="3.8" fill="#2e9d3a"/>
+<circle cx="170.0" cy="1084.8" r="3.8" fill="#111111"/>
+<text x="190.0" y="1080.8" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#000" text-anchor="start" stroke="#fff" stroke-width="4" paint-order="stroke" stroke-linejoin="round">d_wdata[1]</text>
+<text x="644.2" y="1081.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#2e9d3a" text-anchor="middle">trig_p1_spec</text>
+<circle cx="436.0" cy="1119.2" r="3.8" fill="#2e9d3a"/>
+<circle cx="170.0" cy="1134.8" r="3.8" fill="#111111"/>
+<text x="190.0" y="1130.8" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#000" text-anchor="start" stroke="#fff" stroke-width="4" paint-order="stroke" stroke-linejoin="round">d_wdata[2]</text>
+<text x="647.3" y="1131.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#2e9d3a" text-anchor="middle">trig_p2_shoot</text>
+<circle cx="436.0" cy="1169.2" r="3.8" fill="#2e9d3a"/>
+<circle cx="170.0" cy="1184.8" r="3.8" fill="#111111"/>
+<text x="190.0" y="1180.8" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#000" text-anchor="start" stroke="#fff" stroke-width="4" paint-order="stroke" stroke-linejoin="round">d_wdata[3]</text>
+<text x="644.2" y="1181.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#2e9d3a" text-anchor="middle">trig_p2_spec</text>
+<text x="780.0" y="1050.0" font-family="DejaVu Sans" font-size="11" font-weight="normal" fill="#333" text-anchor="start">trig_p1_shoot -&gt; channel 0 (trig_i)</text>
+<text x="780.0" y="1064.0" font-family="DejaVu Sans" font-size="11" font-weight="normal" fill="#333" text-anchor="start">trig_p1_spec  -&gt; channel 1</text>
+<text x="780.0" y="1078.0" font-family="DejaVu Sans" font-size="11" font-weight="normal" fill="#333" text-anchor="start">trig_p2_shoot -&gt; channel 2</text>
+<text x="780.0" y="1092.0" font-family="DejaVu Sans" font-size="11" font-weight="normal" fill="#333" text-anchor="start">trig_p2_spec  -&gt; channel 3</text>
+<text x="1165.0" y="900.0" font-family="DejaVu Sans" font-size="12" font-weight="bold" fill="#000" text-anchor="middle">rd_tmr[31:0] = {28'b0, ready[3:0]}</text>
+<text x="1165.0" y="913.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#444" text-anchor="middle" font-style="italic">bit0 P1 shoot  bit1 P1 special</text>
+<text x="1165.0" y="926.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#444" text-anchor="middle" font-style="italic">bit2 P2 shoot  bit3 P2 special</text>
+<text x="810.4" y="899.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#1f6fe0" text-anchor="middle">ready_p1_shoot</text>
+<text x="807.3" y="925.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#1f6fe0" text-anchor="middle">ready_p1_spec</text>
+<text x="810.4" y="951.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#1f6fe0" text-anchor="middle">ready_p2_shoot</text>
+<text x="807.3" y="977.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#1f6fe0" text-anchor="middle">ready_p2_spec</text>
+<text x="1407.5" y="944.0" font-family="DejaVu Sans" font-size="11" font-weight="normal" fill="#1f6fe0" text-anchor="middle">rd_tmr</text>
+<line x1="1351.0" y1="946.0" x2="1359.0" y2="934.0" stroke="#1f6fe0" stroke-width="1.8"/>
+<text x="1355.0" y="931.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#1f6fe0" text-anchor="middle" stroke="#fff" stroke-width="4" paint-order="stroke" stroke-linejoin="round">[32]</text>
+<text x="1000.0" y="1030.0" font-family="DejaVu Sans" font-size="11" font-weight="normal" fill="#333" text-anchor="start">-&gt; Fig 2b read mux (cs_tmr_q).  C code: if (TIMER_STATUS &amp; 1) fire();</text>
+<text x="1000.0" y="1044.0" font-family="DejaVu Sans" font-size="11" font-weight="normal" fill="#333" text-anchor="start">no busy-wait loop; the CPU only samples ready bits once per frame.</text>
+</svg>

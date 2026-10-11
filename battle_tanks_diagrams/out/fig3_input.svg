@@ -1,0 +1,160 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1650" height="1250" viewBox="0 0 1650 1250"><defs><marker id="a111111" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#111111"/></marker><marker id="a1f6fe0" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#1f6fe0"/></marker><marker id="a2e9d3a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#2e9d3a"/></marker></defs><rect width="100%" height="100%" fill="#fff"/>
+<rect x="20.0" y="90.0" width="1610.0" height="650.0" rx="10" fill="none" stroke="#b35900" stroke-width="2" stroke-dasharray="10 6"/>
+<text x="32.0" y="110.0" font-family="DejaVu Sans" font-size="15" font-weight="bold" fill="#b35900" text-anchor="start">PART A - one button channel   btn_i  -&gt;  stable_q   (instantiate 12x: p1_btn[5:0], p2_btn[5:0])</text>
+<path d="M142.7,188.0 L190.0,188.0" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a111111)"/>
+<path d="M270.0,188.0 L320.0,188.0" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a111111)"/>
+<path d="M400.0,188.0 L430.0,188.0" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round"/>
+<path d="M430.0,188.0 L430.0,239.2 L500.0,239.2" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a111111)"/>
+<path d="M363.6,254.8 L500.0,254.8" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a111111)"/>
+<path d="M684.0,322.5 L760.0,322.5" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a111111)"/>
+<path d="M796.0,345.0 L850.0,345.0" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a111111)"/>
+<path d="M544.0,247.0 L560.0,247.0 L560.0,470.0 L778.0,470.0 L778.0,383.7" fill="none" stroke="#2e9d3a" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a2e9d3a)"/>
+<path d="M700.0,417.0 L730.0,417.0 L730.0,367.5 L760.0,367.5" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a111111)"/>
+<path d="M950.0,345.0 L960.0,345.0" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round"/>
+<path d="M960.0,345.0 L960.0,290.0 L570.0,290.0 L570.0,417.0 L600.0,417.0" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a111111)"/>
+<path d="M960.0,345.0 L960.0,440.0 L1000.0,440.0" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a111111)"/>
+<path d="M1230.0,440.0 L1348.0,440.0 L1348.0,506.3" fill="none" stroke="#2e9d3a" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a2e9d3a)"/>
+<path d="M1237.4,567.5 L1330.0,567.5" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a111111)"/>
+<path d="M1366.0,545.0 L1410.0,545.0" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a111111)"/>
+<path d="M1510.0,545.0 L1560.0,545.0" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round"/>
+<path d="M1540.0,545.0 L1540.0,640.0 L1300.0,640.0 L1300.0,522.5 L1330.0,522.5" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a111111)"/>
+<rect x="20.0" y="770.0" width="1610.0" height="460.0" rx="10" fill="none" stroke="#b35900" stroke-width="2" stroke-dasharray="10 6"/>
+<text x="32.0" y="790.0" font-family="DejaVu Sans" font-size="15" font-weight="bold" fill="#b35900" text-anchor="start">PART B - register packing and MMIO read   (stable_q of all 12 channels  -&gt;  rd_in)</text>
+<path d="M134.6,870.0 L300.0,870.0" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a111111)"/>
+<path d="M134.6,889.6 L300.0,889.6" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a111111)"/>
+<path d="M140.8,909.2 L300.0,909.2" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a111111)"/>
+<path d="M147.0,928.8 L300.0,928.8" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a111111)"/>
+<path d="M147.0,948.4 L300.0,948.4" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a111111)"/>
+<path d="M140.8,968.0 L300.0,968.0" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a111111)"/>
+<path d="M134.6,1050.0 L300.0,1050.0" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a111111)"/>
+<path d="M134.6,1069.6 L300.0,1069.6" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a111111)"/>
+<path d="M140.8,1089.2 L300.0,1089.2" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a111111)"/>
+<path d="M147.0,1108.8 L300.0,1108.8" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a111111)"/>
+<path d="M147.0,1128.4 L300.0,1128.4" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a111111)"/>
+<path d="M140.8,1148.0 L300.0,1148.0" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a111111)"/>
+<rect x="20.0" y="1180.0" width="0.0" height="0.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.8"/>
+<path d="M630.0,895.0 L730.0,895.0 L730.0,1055.0 L820.0,1055.0" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a111111)"/>
+<path d="M630.0,1075.0 L760.0,1075.0 L760.0,1105.0 L820.0,1105.0" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a111111)"/>
+<path d="M860.0,1080.0 L960.0,1080.0" fill="none" stroke="#1f6fe0" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a1f6fe0)"/>
+<rect x="40.0" y="177.0" width="102.7" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<rect x="190.0" y="163.0" width="80.0" height="50.0" rx="4" fill="#d9f2d9" stroke="#000" stroke-width="2"/>
+<rect x="320.0" y="163.0" width="80.0" height="50.0" rx="4" fill="#d9f2d9" stroke="#000" stroke-width="2"/>
+<path d="M500,230 Q513.2,247.0 500,264" fill="none" stroke="#000" stroke-width="1.8"/>
+<path d="M506,230 Q528.6,230 544,247.0 Q528.6,264 506,264 Q519.2,247.0 506,230 Z" fill="#fff" stroke="#000" stroke-width="1.9"/>
+<rect x="300.0" y="243.8" width="63.6" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<path d="M760,300 L796,312.6 L796,377.4 L760,390 Z" fill="#fff" stroke="#000" stroke-width="1.9"/>
+<rect x="640.0" y="311.5" width="44.0" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<rect x="600.0" y="400.0" width="100.0" height="36.0" rx="18" fill="#fff3c4" stroke="#000" stroke-width="2"/>
+<rect x="850.0" y="320.0" width="100.0" height="50.0" rx="4" fill="#d9f2d9" stroke="#000" stroke-width="2"/>
+<rect x="1000.0" y="420.0" width="230.0" height="40.0" rx="18" fill="#fff3c4" stroke="#000" stroke-width="2"/>
+<path d="M1330,500 L1366,512.6 L1366,577.4 L1330,590 Z" fill="#fff" stroke="#000" stroke-width="1.9"/>
+<rect x="1180.0" y="556.5" width="57.4" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<rect x="1410.0" y="520.0" width="100.0" height="50.0" rx="4" fill="#d9f2d9" stroke="#000" stroke-width="2"/>
+<rect x="1560.0" y="534.0" width="63.6" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<rect x="300.0" y="810.0" width="330.0" height="170.0" rx="4" fill="#fff3c4" stroke="#000" stroke-width="2"/>
+<rect x="40.0" y="859.0" width="94.6" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<rect x="40.0" y="878.6" width="94.6" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<rect x="40.0" y="898.2" width="100.8" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<rect x="40.0" y="917.8" width="107.0" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<rect x="40.0" y="937.4" width="107.0" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<rect x="40.0" y="957.0" width="100.8" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<rect x="300.0" y="990.0" width="330.0" height="170.0" rx="4" fill="#fff3c4" stroke="#000" stroke-width="2"/>
+<rect x="40.0" y="1039.0" width="94.6" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<rect x="40.0" y="1058.6" width="94.6" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<rect x="40.0" y="1078.2" width="100.8" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<rect x="40.0" y="1097.8" width="107.0" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<rect x="40.0" y="1117.4" width="107.0" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<rect x="40.0" y="1137.0" width="100.8" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<path d="M820,1030 L860,1044.0 L860,1116.0 L820,1130 Z" fill="#fff" stroke="#000" stroke-width="1.9"/>
+<rect x="960.0" y="1069.0" width="89.0" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<text x="825.0" y="36.0" font-family="DejaVu Sans" font-size="26" font-weight="bold" fill="#000" text-anchor="middle">Fig 3 - Input Controller: 2-FF Synchroniser + Debouncer (x12) and MMIO Input Registers</text>
+<text x="825.0" y="60.0" font-family="DejaVu Sans" font-size="14" font-weight="normal" fill="#444" text-anchor="middle">Part A: one button channel (replicated 12x).  Part B: stable bits packed into P1_INPUT_REG / P2_INPUT_REG and read through a 2:1 mux.  All FFs: sync reset to 0 on rst_n.</text>
+<text x="91.3" y="192.0" font-family="DejaVu Sans" font-size="11" font-weight="normal" fill="#a00" text-anchor="middle">btn_i (async)</text>
+<text x="230.0" y="183.0" font-family="DejaVu Sans" font-size="12" font-weight="bold" fill="#000" text-anchor="middle">sync1</text>
+<path d="M190,191 L201,202 L190,213" fill="none" stroke="#000" stroke-width="1.5"/>
+<text x="360.0" y="183.0" font-family="DejaVu Sans" font-size="12" font-weight="bold" fill="#000" text-anchor="middle">sync2</text>
+<path d="M320,191 L331,202 L320,213" fill="none" stroke="#000" stroke-width="1.5"/>
+<text x="190.0" y="150.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#333" text-anchor="start" font-style="italic">2-FF synchroniser (metastability)</text>
+<text x="415.0" y="177.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#222" text-anchor="middle" stroke="#fff" stroke-width="4" paint-order="stroke" stroke-linejoin="round">sync2_q</text>
+<circle cx="430.0" cy="188.0" r="3.8" fill="#111111"/>
+<text x="331.8" y="258.8" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#000" text-anchor="middle">stable_q</text>
+<text x="520.0" y="285.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#333" text-anchor="middle">diff = sync2_q ^ stable_q</text>
+<text x="765.0" y="326.5" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#333" text-anchor="start">0</text>
+<text x="765.0" y="371.5" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#333" text-anchor="start">1</text>
+<text x="778.0" y="404.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#2e9d3a" text-anchor="middle" stroke="#fff" stroke-width="4" paint-order="stroke" stroke-linejoin="round">diff</text>
+<text x="662.0" y="326.5" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#000" text-anchor="middle">20'd0</text>
+<text x="650.0" y="420.0" font-family="DejaVu Sans" font-size="12" font-weight="bold" fill="#000" text-anchor="middle">cnt + 1</text>
+<text x="900.0" y="340.0" font-family="DejaVu Sans" font-size="12" font-weight="bold" fill="#000" text-anchor="middle">cnt[19:0]</text>
+<path d="M850,348 L861,359 L850,370" fill="none" stroke="#000" stroke-width="1.5"/>
+<line x1="819.0" y1="351.0" x2="827.0" y2="339.0" stroke="#111111" stroke-width="1.8"/>
+<text x="823.0" y="336.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#222" text-anchor="middle" stroke="#fff" stroke-width="4" paint-order="stroke" stroke-linejoin="round">[20]</text>
+<line x1="724.0" y1="396.2" x2="736.0" y2="388.2" stroke="#111111" stroke-width="1.8"/>
+<text x="739.0" y="396.2" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#222" text-anchor="start" stroke="#fff" stroke-width="4" paint-order="stroke" stroke-linejoin="round">[20]</text>
+<circle cx="960.0" cy="345.0" r="3.8" fill="#111111"/>
+<text x="765.0" y="280.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#222" text-anchor="middle" stroke="#fff" stroke-width="4" paint-order="stroke" stroke-linejoin="round">cnt_q</text>
+<text x="1115.0" y="440.0" font-family="DejaVu Sans" font-size="11" font-weight="bold" fill="#000" text-anchor="middle">cnt_q == DEBOUNCE_MAX</text>
+<text x="1000.0" y="410.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#333" text-anchor="start" font-style="italic">DEBOUNCE_MAX = 10 ms x f_clk  (500_000 @ 50 MHz)</text>
+<text x="1335.0" y="526.5" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#333" text-anchor="start">0</text>
+<text x="1335.0" y="571.5" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#333" text-anchor="start">1</text>
+<text x="1348.0" y="494.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#2e9d3a" text-anchor="middle" stroke="#fff" stroke-width="4" paint-order="stroke" stroke-linejoin="round">done</text>
+<text x="1289.0" y="430.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#2e9d3a" text-anchor="middle" stroke="#fff" stroke-width="4" paint-order="stroke" stroke-linejoin="round">done</text>
+<text x="1208.7" y="571.5" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#000" text-anchor="middle">sync2_q</text>
+<text x="1460.0" y="540.0" font-family="DejaVu Sans" font-size="12" font-weight="bold" fill="#000" text-anchor="middle">stable</text>
+<path d="M1410,548 L1421,559 L1410,570" fill="none" stroke="#000" stroke-width="1.5"/>
+<circle cx="1540.0" cy="545.0" r="3.8" fill="#111111"/>
+<text x="1591.8" y="549.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#a35c00" text-anchor="middle">stable_q</text>
+<text x="1420.0" y="653.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#222" text-anchor="middle" stroke="#fff" stroke-width="4" paint-order="stroke" stroke-linejoin="round">stable_q (hold)</text>
+<text x="1180.0" y="680.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#333" text-anchor="start" font-style="italic">stable_q changes only after the raw input has been</text>
+<text x="1180.0" y="693.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#333" text-anchor="start" font-style="italic">continuously different for DEBOUNCE_MAX clocks</text>
+<text x="600.0" y="515.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#333" text-anchor="start" font-style="italic">cnt counts only while diff=1;</text>
+<text x="600.0" y="528.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#333" text-anchor="start" font-style="italic">any glitch (diff=0) clears it to 0</text>
+<text x="465.0" y="830.0" font-family="DejaVu Sans" font-size="12" font-weight="bold" fill="#000" text-anchor="middle">{26'b0, p1_spec ... p1_fwd}</text>
+<text x="465.0" y="843.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#444" text-anchor="middle" font-style="italic">bit0=FWD bit1=BWD bit2=LEFT</text>
+<text x="465.0" y="856.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#444" text-anchor="middle" font-style="italic">bit3=RIGHT bit4=SHOOT bit5=SPECIAL</text>
+<text x="306.0" y="874.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#222" text-anchor="start">FWD</text>
+<text x="306.0" y="893.6" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#222" text-anchor="start">BWD</text>
+<text x="306.0" y="913.2" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#222" text-anchor="start">LEFT</text>
+<text x="306.0" y="932.8" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#222" text-anchor="start">RIGHT</text>
+<text x="306.0" y="952.4" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#222" text-anchor="start">SHOOT</text>
+<text x="306.0" y="972.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#222" text-anchor="start">SPEC</text>
+<text x="87.3" y="874.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#000" text-anchor="middle">p1_fwd_stable</text>
+<text x="87.3" y="893.6" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#000" text-anchor="middle">p1_bwd_stable</text>
+<text x="90.4" y="913.2" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#000" text-anchor="middle">p1_left_stable</text>
+<text x="93.5" y="932.8" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#000" text-anchor="middle">p1_right_stable</text>
+<text x="93.5" y="952.4" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#000" text-anchor="middle">p1_shoot_stable</text>
+<text x="90.4" y="972.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#000" text-anchor="middle">p1_spec_stable</text>
+<text x="465.0" y="1010.0" font-family="DejaVu Sans" font-size="12" font-weight="bold" fill="#000" text-anchor="middle">{26'b0, p2_spec ... p2_fwd}</text>
+<text x="465.0" y="1023.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#444" text-anchor="middle" font-style="italic">bit0=FWD bit1=BWD bit2=LEFT</text>
+<text x="465.0" y="1036.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#444" text-anchor="middle" font-style="italic">bit3=RIGHT bit4=SHOOT bit5=SPECIAL</text>
+<text x="306.0" y="1054.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#222" text-anchor="start">FWD</text>
+<text x="306.0" y="1073.6" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#222" text-anchor="start">BWD</text>
+<text x="306.0" y="1093.2" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#222" text-anchor="start">LEFT</text>
+<text x="306.0" y="1112.8" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#222" text-anchor="start">RIGHT</text>
+<text x="306.0" y="1132.4" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#222" text-anchor="start">SHOOT</text>
+<text x="306.0" y="1152.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#222" text-anchor="start">SPEC</text>
+<text x="87.3" y="1054.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#000" text-anchor="middle">p2_fwd_stable</text>
+<text x="87.3" y="1073.6" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#000" text-anchor="middle">p2_bwd_stable</text>
+<text x="90.4" y="1093.2" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#000" text-anchor="middle">p2_left_stable</text>
+<text x="93.5" y="1112.8" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#000" text-anchor="middle">p2_right_stable</text>
+<text x="93.5" y="1132.4" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#000" text-anchor="middle">p2_shoot_stable</text>
+<text x="90.4" y="1152.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#000" text-anchor="middle">p2_spec_stable</text>
+<text x="825.0" y="1059.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#333" text-anchor="start">0</text>
+<text x="825.0" y="1109.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#333" text-anchor="start">1</text>
+<text x="840.0" y="1144.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#2e9d3a" text-anchor="middle" stroke="#fff" stroke-width="4" paint-order="stroke" stroke-linejoin="round">d_addr[2]</text>
+<line x1="676.0" y1="901.0" x2="684.0" y2="889.0" stroke="#111111" stroke-width="1.8"/>
+<text x="680.0" y="885.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#222" text-anchor="middle" stroke="#fff" stroke-width="4" paint-order="stroke" stroke-linejoin="round">P1_INPUT_REG  0x8000_0000 [32]</text>
+<line x1="691.0" y1="1081.0" x2="699.0" y2="1069.0" stroke="#111111" stroke-width="1.8"/>
+<text x="695.0" y="1065.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#222" text-anchor="middle" stroke="#fff" stroke-width="4" paint-order="stroke" stroke-linejoin="round">P2_INPUT_REG  0x8000_0004 [32]</text>
+<text x="1004.5" y="1084.0" font-family="DejaVu Sans" font-size="11" font-weight="normal" fill="#1f6fe0" text-anchor="middle">rd_in[31:0]</text>
+<line x1="906.0" y1="1086.0" x2="914.0" y2="1074.0" stroke="#1f6fe0" stroke-width="1.8"/>
+<text x="910.0" y="1071.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#1f6fe0" text-anchor="middle" stroke="#fff" stroke-width="4" paint-order="stroke" stroke-linejoin="round">[32]</text>
+<text x="1090.0" y="1084.0" font-family="DejaVu Sans" font-size="11" font-weight="normal" fill="#333" text-anchor="start">-&gt; Fig 2b AND-OR read mux (gated by cs_in_q)</text>
+<text x="1000.0" y="860.0" font-family="DejaVu Sans" font-size="11" font-weight="normal" fill="#333" text-anchor="start">Read-only: the CPU never writes these.</text>
+<text x="1000.0" y="874.0" font-family="DejaVu Sans" font-size="11" font-weight="normal" fill="#333" text-anchor="start">Word loads only (lw). Bits [31:6] read 0.</text>
+<text x="1000.0" y="888.0" font-family="DejaVu Sans" font-size="11" font-weight="normal" fill="#333" text-anchor="start">Polling cost = 1 lw per player per frame.</text>
+<text x="1000.0" y="902.0" font-family="DejaVu Sans" font-size="11" font-weight="normal" fill="#333" text-anchor="start"></text>
+<text x="1000.0" y="916.0" font-family="DejaVu Sans" font-size="11" font-weight="normal" fill="#333" text-anchor="start">One register read returns the *debounced*</text>
+<text x="1000.0" y="930.0" font-family="DejaVu Sans" font-size="11" font-weight="normal" fill="#333" text-anchor="start">level; edge detection (e.g. 'shoot just</text>
+<text x="1000.0" y="944.0" font-family="DejaVu Sans" font-size="11" font-weight="normal" fill="#333" text-anchor="start">pressed') is done in C by comparing with the</text>
+<text x="1000.0" y="958.0" font-family="DejaVu Sans" font-size="11" font-weight="normal" fill="#333" text-anchor="start">previous frame's value.</text>
+</svg>

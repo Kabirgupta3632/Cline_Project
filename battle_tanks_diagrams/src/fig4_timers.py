@@ -1,0 +1,93 @@
+from h import *
+
+
+def build():
+    f = Fig(1500, 1230, "Fig 4 - Hardware Cooldown Timers (TIMER_STATUS 0x8000_0010 / TIMER_TRIGGER 0x8000_0014)",
+            "Part A: shared 1 ms tick.  Part B: one down-counter (x4).  Part C: trigger decode + status read.   All registers: sync reset to 0.")
+    # ---------------------------------------------------------------- A
+    f.region(20, 90, 1460, 220, "PART A - 1 ms prescaler (shared by all four counters)", "#2b7a2b")
+    ad = f.op(250, 195, "ms_cnt + 1", w=130, h=36, ins=("a",))
+    mx = f.mux(450, 170, 90, ins=("0", "1"), sel="tick", w=36, top=True)
+    z = port(f, 340, mx["1"][1], "17'd0", 9, w=44)
+    rg = f.seq(560, mx["out"][1] - 25, 140, 50, "ms_cnt[16:0]", ts=12); pin(f, rg, "D", "L", 25, show=False); pin(f, rg, "Q", "R", 25, show=False)
+    cp = f.op(840, mx["out"][1] - 18, "ms_cnt == CLK_PER_MS-1", w=250, h=36, ins=("a",), ts=11)
+    f.wire([mx["out"], rg["D"]], bus="17")
+    f.wire([z["r"], mx["1"]])
+    f.wire([ad["y"], (415, ad["y"][1]), (415, mx["0"][1]), mx["0"]], bus="17", seg=0, lpos=0.5)
+    q = rg["Q"]; dq = (q[0] + 40, q[1])
+    f.wire([q, dq], arrow=False); f.dot(dq)
+    f.wire([dq, (dq[0], 285), (200, 285), (200, ad["a"][1]), ad["a"]], label="ms_cnt_q", seg=1, ldy=-2)
+    f.wire([dq, cp["a"]])
+    tk = port(f, 1200, cp["y"][1], "tick  (1 clk pulse / ms)", color="#2e9d3a")
+    f.wire([cp["y"], tk["l"]], "ctrl")
+    f.wire([(1150, cp["y"][1]), (1150, 138), (468, 138), mx["sel"]], "ctrl", label="tick", seg=1, ldy=-2)
+    f.dot((1150, cp["y"][1]), "ctrl")
+    f.note(250, 300, "tick = 1 also restarts the prescaler at 0, so tick period = CLK_PER_MS clocks (50_000 @ 50 MHz)", 10)
+    # ---------------------------------------------------------------- B
+    f.region(20, 340, 1460, 450, "PART B - one cooldown channel  (instantiate 4x: P1 shoot, P1 special, P2 shoot, P2 special)", "#2b7a2b")
+    mA = f.mux(720, 440, 80, ins=("0", "1"), sel="dec_en", w=36)
+    mB = f.mux(900, 440, 80, ins=("0", "1"), sel="trig_i", w=36)
+    rg2 = f.seq(1000, 455, 140, 50, "cd_cnt[14:0]", ts=12); pin(f, rg2, "D", "L", 25, show=False); pin(f, rg2, "Q", "R", 25, show=False)
+    dc = f.op(540, 483, "cd_cnt - 1", w=130, h=36, ins=("a",))
+    f.wire([mA["out"], (830, 480), (830, 460), mB["0"]], bus="15", seg=0, lpos=0.5)
+    f.wire([mB["out"], rg2["D"]], bus="15")
+    f.wire([dc["y"], mA["1"]], bus="15")
+    ld = port(f, 800, 535, "LOAD_MS", 10, color="#8a6d00")
+    f.wire([ld["r"], (870, 535), (870, 500), mB["1"]])
+    f.text(40, 700, "LOAD_MS (per channel):\n  shoot  = 500    (0.5 s)\n  special = 20000 (20 s)", 11, anchor="start", color="#333")
+    q2 = rg2["Q"]; d2 = (q2[0] + 40, q2[1])
+    f.wire([q2, d2], arrow=False); f.dot(d2)
+    f.wire([d2, (d2[0], 410), (700, 410), (700, 460), mA["0"]], bus="15", label="hold", seg=1, ldy=-2)
+    f.wire([d2, (d2[0], 600), (500, 600)], arrow=False, label="cd_cnt_q", seg=1, ldy=-2)
+    cz = f.op(540, 640, "cd_cnt_q == 0", w=150, h=36, ins=("a",))
+    f.wire([(500, 600), (500, dc["a"][1]), dc["a"]]); f.dot((500, 600))
+    f.wire([(500, 600), (500, cz["a"][1]), cz["a"]])
+    rp = (740, cz["y"][1])
+    f.wire([cz["y"], rp], "rd", arrow=False); f.dot(rp, "rd")
+    rd = port(f, 790, 745, "ready_i  (-> TIMER_STATUS bit)", color="#1f6fe0")
+    f.wire([rp, (740, 745), rd["l"]], "rd")
+    nt = f.gate("not", 780, rp[1] - 14, 34, 28)
+    f.wire([rp, nt["in"]])
+    an = f.gate("and", 880, 640, 36, 36)
+    f.wire([nt["out"], (850, nt["out"][1]), (850, an["in1"][1]), an["in1"]])
+    tg = port(f, 1000, 700, "tick  (from Part A)", 10, color="#2e9d3a")
+    f.wire([tg["l"], (860, 700), (860, an["in2"][1]), an["in2"]], "ctrl")
+    f.wire([an["out"], (960, an["out"][1]), (960, 570), (738, 570), mA["sel"]], "ctrl", label="dec_en = tick & ~ready", seg=1, ldy=14)
+    tr = port(f, 1020, 545, "trig_i  (from Part C)", 10, color="#2e9d3a")
+    f.wire([tr["l"], (918, 545), mB["sel"]], "ctrl")
+    f.text(40, 400, "Behaviour per channel:\ntrig_i = 1 : reload cd_cnt = LOAD_MS (restart cooldown)\ntick & cd_cnt != 0 : cd_cnt - 1 (counts down 1 ms)\ncd_cnt == 0 : ready = 1, counter holds\n(reset value 0 -> ready after reset)", 11, anchor="start", color="#333")
+    # ---------------------------------------------------------------- C
+    f.region(20, 820, 1460, 390, "PART C - MMIO write decode (TIMER_TRIGGER) and read (TIMER_STATUS)", "#2b7a2b")
+    w1 = port(f, 40, 900, "wr_en_tmr  (Fig 2a)", 11, color="#2e9d3a")
+    w2 = port(f, 40, 950, "d_addr[2]  (1 = 0x14 TRIGGER)", 11)
+    a1 = f.gate("and", 380, 915, 36, 36)
+    link(f, w1["r"], a1["in1"], xm=340, kw=None) if False else f.wire([w1["r"], (350, 900), (350, a1["in1"][1]), a1["in1"]], "ctrl")
+    f.wire([w2["r"], (350, 950), (350, a1["in2"][1]), a1["in2"]]) if False else f.wire([w2["r"], (370, 950), (370, a1["in2"][1]), a1["in2"]])
+    f.dot((a1["out"][0] + 20, a1["out"][1]), "ctrl")
+    trg = port(f, 40, 1000, "d_wdata[3:0]", 11)
+    f.wire([trg["r"], (150, 1000)], arrow=False, bus="4")
+    names = ["trig_p1_shoot", "trig_p1_spec", "trig_p2_shoot", "trig_p2_spec"]
+    sx = a1["out"][0] + 20
+    f.wire([a1["out"], (sx, a1["out"][1])], "ctrl", arrow=False)
+    busline(f, sx, a1["out"][1], 1171, "ctrl", 2)
+    busline(f, 170, 1000, 1185, "data", 2)
+    for i, nm in enumerate(names):
+        y = 1010 + i * 50
+        g = f.gate("and", 480, y, 36, 34)
+        f.wire([(sx, g["in1"][1]), g["in1"]], "ctrl"); f.dot((sx, g["in1"][1]), "ctrl")
+        f.wire([(170, g["in2"][1]), g["in2"]]); f.dot((170, g["in2"][1]))
+        f.text(190, g["in2"][1] - 4, "d_wdata[%d]" % i, 10, anchor="start", halo=True)
+        o = port(f, 600, y + 17, nm, 10, color="#2e9d3a")
+        f.wire([g["out"], o["l"]], "ctrl")
+    f.text(780, 1050, "trig_p1_shoot -> channel 0 (trig_i)\ntrig_p1_spec  -> channel 1\ntrig_p2_shoot -> channel 2\ntrig_p2_spec  -> channel 3", 11, anchor="start", color="#333")
+    # read
+    rb = f.comb(1000, 880, 330, 120, "rd_tmr[31:0] = {28'b0, ready[3:0]}", L=("r0", "r1", "r2", "r3"), ts=12,
+                sub="bit0 P1 shoot  bit1 P1 special\nbit2 P2 shoot  bit3 P2 special", showpins=False)
+    for i, nm in enumerate(["ready_p1_shoot", "ready_p1_spec", "ready_p2_shoot", "ready_p2_spec"]):
+        y = 895 + i * 26
+        p = port(f, 760, y, nm, 10, color="#1f6fe0")
+        f.wire([p["r"], (1000, y)], "rd")
+    o = port(f, 1380, 940, "rd_tmr", 11, color="#1f6fe0")
+    f.wire([(1330, 940), o["l"]], "rd", bus="32")
+    f.text(1000, 1030, "-> Fig 2b read mux (cs_tmr_q).  C code: if (TIMER_STATUS & 1) fire();\nno busy-wait loop; the CPU only samples ready bits once per frame.", 11, anchor="start", color="#333")
+    return f

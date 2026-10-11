@@ -36,3 +36,11 @@ def reg(f, x, y, label, w=100, h=70, sub=None, ins=("D",), outs=("Q",), en=None)
     for i, n in enumerate(outs):
         pin(f, b, n, "R", 28 + i * 18, size=9)
     return b
+
+
+def link(f, a, b, xm=None, **kw):
+    """orthogonal H-V-H wire a -> b"""
+    if abs(a[1] - b[1]) < 0.5:
+        return f.wire([a, b], **kw)
+    xm = (a[0] + b[0]) / 2 if xm is None else xm
+    return f.wire([a, (xm, a[1]), (xm, b[1]), b], **kw)
