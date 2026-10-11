@@ -1,0 +1,90 @@
+from h import *
+
+
+def cport(f, cx, y, text, size=9, color="#000"):
+    w = tw(text, size)
+    return port(f, cx - w / 2, y, text, size, color=color)
+
+
+def build():
+    f = Fig(2100, 1260, "Fig 12 - Health HUD: 2 x 20 hearts in the 160 px strip right of the maze",
+            "Hearts are 8 x 8 px, so slot = dx[7:3] and pixel-in-heart = dx[2:0] are pure wiring (no divider).  P1 row at y = 32..39, P2 row at y = 432..439, strip x = 480..639.")
+    f.region(20, 90, 2060, 560, "PART A - which heart (slot) and which pixel of it is the scan beam on?", "#008a8a")
+    # ---- x
+    px = port(f, 40, 160, "x[9:0]  (Fig 8)", 10, color="#008a8a")
+    sx = f.op(260, 140, "x - 480", w=120, h=40, ins=("a",))
+    f.wire([px["r"], sx["a"]])
+    f.wire([sx["y"], (420, sx["y"][1])], arrow=False, label="dx[9:0]", ldy=-2); f.dot((420, sx["y"][1]))
+    cx = f.op(480, 140, "dx < 160", w=120, h=40, ins=("a",))
+    f.wire([(420, 160), cx["a"]])
+    t1 = port(f, 660, 160, "in_x", 10, color="#2e9d3a"); f.wire([cx["y"], t1["l"]], "ctrl")
+    p1 = port(f, 480, 230, "slot[4:0] = dx[7:3]", 10, color="#008a8a"); f.wire([(420, 160), (420, 230), p1["l"]], "vid", bus="5")
+    p2 = port(f, 480, 280, "px[2:0] = dx[2:0]", 10, color="#008a8a"); f.wire([(420, 230), (420, 280), p2["l"]], "vid", bus="3")
+    f.dot((420, 230))
+    # ---- y
+    py = port(f, 40, 380, "y[9:0]  (Fig 8)", 10, color="#008a8a")
+    s1 = f.op(260, 360, "y - 32", w=120, h=40, ins=("a",)); s2 = f.op(260, 460, "y - 432", w=120, h=40, ins=("a",))
+    f.wire([py["r"], (210, 380), (210, s1["a"][1]), s1["a"]]); f.wire([(210, 380), (210, s2["a"][1]), s2["a"]]); f.dot((210, 380))
+    DY1, DY2 = 420, 450
+    f.wire([s1["y"], (DY1, s1["y"][1])], arrow=False); f.dot((DY1, s1["y"][1]))
+    f.wire([s2["y"], (DY2, s2["y"][1])], arrow=False); f.dot((DY2, s2["y"][1]))
+    c1 = f.op(500, 360, "dy1 < 8", w=120, h=40, ins=("a",)); c2 = f.op(500, 460, "dy2 < 8", w=120, h=40, ins=("a",))
+    f.wire([(DY1, 380), c1["a"]]); f.wire([(DY2, 480), c2["a"]])
+    q1 = port(f, 680, 380, "in_p1", 10, color="#2e9d3a"); f.wire([c1["y"], q1["l"]], "ctrl")
+    q2 = port(f, 680, 480, "in_p2", 10, color="#2e9d3a"); f.wire([c2["y"], q2["l"]], "ctrl")
+    pm = f.mux(900, 440, 100, ins=("0", "1"), sel=None, w=40)
+    f.wire([(DY1, 380), (DY1, 400), (870, 400), (870, pm["0"][1]), pm["0"]][:2] + [(870, 400), (870, pm["0"][1]), pm["0"]], bus="3", label="dy1[2:0]", seg=2, ldx=-40, ldy=-2) if False else None
+    f.wire([(DY1, 380), (DY1, 560), (880, 560), (880, pm["0"][1]), pm["0"]], bus="3", label="dy1[2:0]", seg=1, ldy=-2)
+    f.wire([(DY2, 480), (DY2, 590), (870, 590), (870, pm["1"][1]), pm["1"]][:1] + [(DY2, 590), (870, 590), (870, pm["1"][1]), pm["1"]], bus="3", label="dy2[2:0]", seg=1, ldy=-2)
+    pp = cport(f, pm["sel"][0], 625, "in_p2", 10, "#2e9d3a")
+    f.wire([pp["t"], pm["sel"]], "ctrl")
+    po = port(f, 1060, pm["out"][1], "py[2:0]  (row inside heart)", 10, color="#008a8a")
+    f.wire([pm["out"], po["l"]], "vid", bus="3")
+    f.text(1300, 160, "HUD geometry  (change constants to move it)\n  strip   x = 480 .. 639   (160 px = 20 slots x 8 px)\n  P1 row  y =  32 ..  39   (top of screen)\n  P2 row  y = 432 .. 439   (bottom of screen)\nunsigned subtract + one '<' compare tests both edges (as in Fig 9).", 11, anchor="start", color="#333")
+    f.text(1300, 330, "Tags in_x / in_p1 / in_p2 / slot / px / py are the same nets in Part B.\n(Drawn as labels to avoid long crossing wires.)", 10, anchor="start", color="#555")
+    # ============================================================ B
+    f.region(20, 680, 2060, 560, "PART B - heart lit?  shape ROM,  colour,  output registers", "#008a8a")
+    h1 = port(f, 40, 760, "hp1[7:0]  (HEALTH_BAR_REG, Fig 5)", 10, color="#a35c00")
+    h2 = port(f, 40, 820, "hp2[7:0]", 10, color="#a35c00")
+    hm = f.mux(360, 740, 100, ins=("0", "1"), sel=None, w=40)
+    f.wire([h1["r"], (320, 760), (320, hm["0"][1]), hm["0"]], "reg"); f.wire([h2["r"], (330, 820), (330, hm["1"][1]), hm["1"]], "reg")
+    sq = cport(f, hm["sel"][0], 880, "in_p2", 10, "#2e9d3a"); f.wire([sq["t"], hm["sel"]], "ctrl")
+    sl = port(f, 380, 730, "slot[4:0]", 10, color="#008a8a")
+    cm = f.op(540, 770, "slot < hp", w=130, h=50, ins=("a", "b"), ts=11)
+    f.wire([sl["r"], (490, 730), (490, cm["a"][1]), cm["a"]], "vid", bus="5", seg=0, lpos=0.5, ldy=-2)
+    f.wire([hm["out"], (510, hm["out"][1]), (510, cm["b"][1]), cm["b"]], bus="8")
+    lf = f.seq(740, 780, 110, 44, "lit_d", ts=11); pin(f, lf, "D", "L", 22, show=False); pin(f, lf, "Q", "R", 22, show=False)
+    f.wire([cm["y"], (700, cm["y"][1]), (700, lf["D"][1]), lf["D"]])
+    f.note(540, 850, "hearts lit = first hp slots (hp = 20 -> all lit)", 10)
+    f.note(540, 868, "hp > 20 would light all 20: harmless", 10)
+    # in_hud
+    a = port(f, 40, 970, "in_p1", 10, color="#2e9d3a"); b = port(f, 40, 1010, "in_p2", 10, color="#2e9d3a"); c = port(f, 40, 1070, "in_x", 10, color="#2e9d3a")
+    og = f.gate("or", 200, 980, 40, 36)
+    f.wire([a["r"], (150, 970), (150, og["in1"][1]), og["in1"]], "ctrl"); f.wire([b["r"], (160, 1010), (160, og["in2"][1]), og["in2"]], "ctrl")
+    ag = f.gate("and", 340, 1010, 40, 36)
+    f.wire([og["out"], (300, og["out"][1]), (300, ag["in1"][1]), ag["in1"]])
+    f.wire([c["r"], (310, 1070), (310, ag["in2"][1]), ag["in2"]], "ctrl")
+    hf = f.seq(460, 1008, 120, 44, "in_hud_d", ts=11); pin(f, hf, "D", "L", 22, show=False); pin(f, hf, "Q", "R", 22, show=False)
+    f.wire([ag["out"], hf["D"]], label="in_hud", ldy=-2, lsize=9)
+    f.note(40, 1130, "in_hud = in_x & (in_p1 | in_p2);  1 FF delay = ROM latency", 10)
+    # ROM
+    rom = f.mem(740, 930, 330, 180, "Heart Sprite ROM", sub="8 x 8 x 1 bit, one shape for both players\nsync read: shape bit 1 clk later", L=("py[2:0]", "px[2:0]"), R=("shape",), pad=100)
+    r1 = port(f, 520, rom["py[2:0]"][1], "py[2:0]", 10, color="#008a8a"); r2 = port(f, 520, rom["px[2:0]"][1], "px[2:0]", 10, color="#008a8a")
+    f.wire([r1["r"], (700, r1["r"][1]), (700, rom["py[2:0]"][1]), rom["py[2:0]"]], "vid") if False else f.wire([r1["r"], rom["py[2:0]"]], "vid", bus="3")
+    f.wire([r2["r"], rom["px[2:0]"]], "vid", bus="3")
+    # valid and colour
+    va = f.gate("and", 1260, 1000, 40, 36)
+    f.wire([hf["Q"], (1180, hf["Q"][1])][:0] + [rom["shape"], (1180, rom["shape"][1]), (1180, va["in2"][1]), va["in2"]], label="shape", seg=0, ldy=-2)
+    f.wire([hf["Q"], (620, hf["Q"][1]), (620, 1190), (1210, 1190), (1210, va["in1"][1]), va["in1"]], label="in_hud_d", seg=2, ldy=-2, lpos=0.8)
+    vf = f.seq(1380, 998, 130, 44, "hud_valid_q", ts=11); pin(f, vf, "D", "L", 22, show=False); pin(f, vf, "Q", "R", 22, show=False)
+    f.wire([va["out"], vf["D"]])
+    vo = port(f, 1580, vf["Q"][1], "hud_valid -> Fig 10", 10, color="#008a8a"); f.wire([vf["Q"], vo["l"]], "vid")
+    cmx = f.mux(1140, 740, 100, ins=("0", "1"), sel=None, w=40)
+    c0 = port(f, 940, cmx["0"][1], "12'h444  empty heart", 9, w=130); c1_ = port(f, 940, cmx["1"][1], "12'hF00  full heart", 9, w=130)
+    f.wire([c0["r"], cmx["0"]]); f.wire([c1_["r"], cmx["1"]])
+    f.wire([lf["Q"], (870, lf["Q"][1]), (870, 890), (1160, 890), (1160, 833)], label="lit_d", seg=2, ldy=-2)
+    cf = f.seq(1380, 768, 140, 44, "hud_rgb_q[11:0]", ts=11); pin(f, cf, "D", "L", 22, show=False); pin(f, cf, "Q", "R", 22, show=False)
+    f.wire([cmx["out"], cf["D"]], bus="12")
+    co = port(f, 1580, cf["Q"][1], "hud_rgb[11:0] -> Fig 10", 10, color="#008a8a"); f.wire([cf["Q"], co["l"]], "vid", bus="12")
+    f.text(1300, 1100, "A slot inside the strip always draws (empty = grey heart), so the player sees the lost health.\nPriority in the mixer: HUD is the highest (Fig 10), so hearts are never covered.", 11, anchor="start", color="#333")
+    return f
