@@ -3,7 +3,7 @@ import fs from 'fs';
 const d = '/tmp/r/node_modules/dejavu-fonts-ttf/ttf/';
 const fonts = ['DejaVuSans.ttf', 'DejaVuSans-Bold.ttf', 'DejaVuSans-Oblique.ttf', 'DejaVuSans-BoldOblique.ttf'].map(f => d + f);
 for (const f of process.argv.slice(2)) {
-  const r = new Resvg(fs.readFileSync(f), { font: { fontFiles: fonts, loadSystemFonts: false, defaultFontFamily: 'DejaVu Sans' }, fitTo: { mode: 'zoom', value: parseFloat(process.env.ZOOM || '1') } });
+  const r = new Resvg(fs.readFileSync(f), { font: { fontFiles: fonts, loadSystemFonts: false, defaultFontFamily: 'DejaVu Sans' }, fitTo: process.env.WIDTH ? { mode: 'width', value: parseInt(process.env.WIDTH) } : { mode: 'zoom', value: parseFloat(process.env.ZOOM || '1') } });
   fs.writeFileSync(f.replace(/\.svg$/, '.png'), r.render().asPng());
   console.log('ok', f);
 }

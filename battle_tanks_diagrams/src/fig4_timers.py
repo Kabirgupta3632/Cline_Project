@@ -79,7 +79,7 @@ def build():
         f.text(190, g["in2"][1] - 4, "d_wdata[%d]" % i, 10, anchor="start", halo=True)
         o = port(f, 600, y + 17, nm, 10, color="#2e9d3a")
         f.wire([g["out"], o["l"]], "ctrl")
-    f.text(780, 1050, "trig_p1_shoot -> channel 0 (trig_i)\ntrig_p1_spec  -> channel 1\ntrig_p2_shoot -> channel 2\ntrig_p2_spec  -> channel 3", 11, anchor="start", color="#333")
+    f.text(780, 1120, "trig_p1_shoot -> channel 0 (trig_i)\ntrig_p1_spec  -> channel 1\ntrig_p2_shoot -> channel 2\ntrig_p2_spec  -> channel 3", 11, anchor="start", color="#333")
     # read
     rb = f.comb(1000, 880, 330, 120, "rd_tmr[31:0] = {28'b0, ready[3:0]}", L=("r0", "r1", "r2", "r3"), ts=12,
                 sub="bit0 P1 shoot  bit1 P1 special\nbit2 P2 shoot  bit3 P2 special", showpins=False)
@@ -89,5 +89,5 @@ def build():
         f.wire([p["r"], (1000, y)], "rd")
     o = port(f, 1380, 940, "rd_tmr", 11, color="#1f6fe0")
     f.wire([(1330, 940), o["l"]], "rd", bus="32")
-    f.text(1000, 1030, "-> Fig 2b read mux (cs_tmr_q).  C code: if (TIMER_STATUS & 1) fire();\nno busy-wait loop; the CPU only samples ready bits once per frame.", 11, anchor="start", color="#333")
+    f.text(1000, 1020, "-> Fig 2b read mux (cs_tmr_q).  C code: if (TIMER_STATUS & 1) fire();\nno busy-wait loop; the CPU only samples ready bits once per frame.", 11, anchor="start", color="#333")
     return f

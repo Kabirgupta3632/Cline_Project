@@ -20,7 +20,7 @@ def build():
     f.wire([N, (430, xr["in1"][1]), xr["in1"]])
     t = port(f, 300, xr["in2"][1], "stable_q", 10)
     f.wire([t["r"], xr["in2"]])
-    f.text(520, 285, "diff = sync2_q ^ stable_q", 10, color="#333")
+    f.text(600, 232, "diff = sync2_q ^ stable_q", 10, anchor="start", color="#333")
     # counter
     cm = f.mux(760, 300, 90, ins=("0", "1"), sel="diff", w=36)
     z = port(f, 640, cm["0"][1], "20'd0", 9, w=44)

@@ -2,7 +2,7 @@ from h import *
 
 
 def build():
-    f = Fig(1500, 880, "Fig 2b - MMIO Interconnect (2/2): Read-Data Path (registered select, AND-OR mux)",
+    f = Fig(1640, 880, "Fig 2b - MMIO Interconnect (2/2): Read-Data Path (registered select, AND-OR mux)",
             "No shared / tri-state bus: every peripheral drives its own rdata; one-hot registered chip-selects gate them into d_rdata.")
     names = [("cs_in", "rd_in[31:0]", "Input Ctrl (Fig 3)"), ("cs_tmr", "rd_tmr[31:0]", "Timers (Fig 4)"),
              ("cs_col", "rd_col[31:0]", "Collision (Fig 6)"), ("cs_maze", "rd_maze[31:0]", "Maze RAM CPU port (Fig 7)"),

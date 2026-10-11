@@ -16,7 +16,7 @@ def reduce_or(f, x, y, names, out, color="#008a8a"):
 
 def build():
     f = Fig(1900, 1640, "Fig 9 - Sprite Engine: Per-Pixel Tank and Bullet Hit Test (x, y from the VGA timing generator)",
-            "offset = (x - sprite_x, y - sprite_y).  Unsigned subtract makes 'negative' offsets huge, so ONE compare (offset < size) tests both edges.  "
+            "offset = (x - sprite_x, y - sprite_y).  Unsigned subtract makes 'negative' offsets huge, so ONE compare (offset < size) tests both edges.\n"
             "If inside the box, a small ROM gives the shape bit (1 clk latency, so the in-box flag is delayed 1 FF).")
     # ============================================================ A  tank cell
     f.region(20, 90, 1860, 570, "PART A - tank cell  (instantiate 2x:  T = P1 / P2)", "#008a8a")
@@ -55,7 +55,7 @@ def build():
     f.wire([a2["out"], tv["l"]], "vid")
     cc = port(f, 1300, 450, "tank_rgb_T[11:0] = constant", 10, color="#008a8a")
     f.text(1300, 485, "P1: 12'h0F0 (green)    P2: 12'h00F (blue)   - fixed per instance", 10, anchor="start", color="#444")
-    f.text(1000, 560, "Both tanks run in parallel; the two {rgb, valid} pairs are combined in Part C.", 11, anchor="start", color="#333")
+    f.text(1100, 585, "Both tanks run in parallel; the two {rgb, valid} pairs are combined in Part C.", 11, anchor="start", color="#333")
     # ============================================================ B  bullet cell
     f.region(20, 690, 1860, 520, "PART B - bullet cell  (instantiate 8x:  N = 0..7)", "#008a8a")
     bx = port(f, 40, 750, "x[9:0]", 10, color="#008a8a"); bbx = port(f, 40, 800, "bN_x[9:0]  (Fig 5)", 10, color="#a35c00")
@@ -92,7 +92,7 @@ def build():
     g2 = f.gate("and", 1100, 880, 40, 40)
     f.wire([d2["Q"], (1050, d2["Q"][1]), (1050, g2["in1"][1]), g2["in1"]])
     f.wire([rom2["shape"], (1030, rom2["shape"][1]), (1030, g2["in2"][1]), g2["in2"]], label="shape", seg=0, ldy=-2)
-    ba = port(f, 960, 1060, "bN_act  (Fig 5)", 10, color="#a35c00")
+    ba = port(f, 905, 1060, "bN_act  (Fig 5)", 10, color="#a35c00")
     d3 = f.seq(1120, 1040, 100, 40, "act_d", ts=10); pin(f, d3, "D", "L", 20, show=False); pin(f, d3, "Q", "R", 20, show=False)
     f.wire([ba["r"], d3["D"]], "reg")
     g3 = f.gate("and", 1280, 910, 40, 40)

@@ -18,9 +18,9 @@ def build():
     f.dot((A, 100)); f.dot((M, 140))
     f.note(36, 215, "slices of the core data-bus address / strobes", 10)
 
-    rows = [("cs_in", "addr[11:3] == 9'h000", "P1/P2_INPUT_REG 0x00,0x04 (read-only: no write enable)", False, 280),
-            ("cs_tmr", "addr[11:3] == 9'h002", "TIMER_STATUS/TRIGGER 0x10,0x14", True, 390),
-            ("cs_col", "addr[11:4] == 8'h02", "COLLISION_FLAG 0x20 (W1C), WALL/BB/HIT_MASK 0x24..0x2C", True, 500)]
+    rows = [("cs_in", "addr[11:3] == 9'h000", "INPUT_REGs 0x00,0x04 (read-only)", False, 280),
+            ("cs_tmr", "addr[11:3] == 9'h002", "TIMER regs 0x10,0x14", True, 390),
+            ("cs_col", "addr[11:4] == 8'h02", "collision regs 0x20..0x2C", True, 500)]
     for nm, lab, note, we, y in rows:
         decode_row(f, A, M, WE, y, nm, lab, note, we)
     # sprite: two ranges ORed
@@ -35,7 +35,7 @@ def build():
     f.wire([c1["y"], (520, c1["y"][1]), (520, og["in1"][1]), og["in1"]])
     f.wire([c2["y"], (520, c2["y"][1]), (520, og["in2"][1]), og["in2"]])
     f.note(345, ys - 62, "0x40..0x7F : TANK_POS, BULLET_REG_0..7", 10)
-    f.note(345, ys + 62, "0x80..0x87 : HEALTH_BAR_REG, TANK_ANGLE_REG", 10)
+    f.note(345, ys + 62, "0x80..0x87 : HEALTH, ANGLE", 10)
     ag = f.gate("and", 600, ys - 12, 34, 36)
     f.wire([og["out"], (592, og["out"][1]), (592, ag["in1"][1]), ag["in1"]])
     ty = ys + 80

@@ -3,7 +3,7 @@ from h import *
 
 def build():
     f = Fig(1900, 1250, "Fig 7 - Maze Tile RAM: Two Mirrored True-Dual-Port BRAMs (20 x 20 tiles, 2 bits each)",
-            "FPGA BRAM has only 2 ports, but 3 users need it (CPU, VGA, collision).  Fix: two identical RAMs; the CPU writes BOTH with the same data, "
+            "FPGA BRAM has only 2 ports, but 3 users need it (CPU, VGA, collision).  Fix: two identical RAMs;\nthe CPU writes BOTH with the same data, "
             "VGA reads copy V on port B, collision reads copy C on port B, CPU reads back copy V on port A (copy C port A is write-only).")
     f.region(20, 90, 1860, 520, "COPY V  (display)", "#7a2fa8")
     f.region(20, 640, 1860, 520, "COPY C  (collision)", "#7a2fa8")

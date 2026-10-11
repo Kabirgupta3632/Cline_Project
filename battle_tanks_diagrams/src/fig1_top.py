@@ -28,7 +28,7 @@ def cpu_part(f):
     f.wire([osc["o"], (215, osc["o"][1]), (215, ck["clk_in"][1]), ck["clk_in"]], "clk")
     f.wire([rst["o"], (215, rst["o"][1]), (215, ck["rst_btn"][1]), ck["rst_btn"]], "ctrl")
     f.wire([ck["clk_sys, rst_n"], (520, ck["clk_sys, rst_n"][1])], "clk")
-    f.text(528, ck["clk_sys, rst_n"][1] + 4, "clk_sys, rst_n -> every clocked block\n(wires omitted for clarity)", 11, anchor="start", color="#555")
+    f.text(250, 278, "clk_sys, rst_n -> every clocked block (wires omitted)", 11, anchor="start", color="#555")
     f.PIXCE = ck["pix_ce"]
 
     f.region(30, 290, 570, 340, "RV32IM CPU SUBSYSTEM", "#3b5bdb")
@@ -190,7 +190,7 @@ def vga_part(f):
     f.wire([(RR, co["regs"][1]), co["regs"]], "reg")
 
     # mixer + sync
-    sd = f.vid(2270, 240, 190, 150, "Sync / Blank\nDelay Line", sub="align with mixer latency")
+    sd = f.vid(2270, 240, 190, 150, "Sync / Blank\nDelay Line", sub="latency match")
     pin(f, sd, "sync", "L", 50)
     pin(f, sd, "hs", "R", 100)
     pin(f, sd, "vs", "R", 130)
