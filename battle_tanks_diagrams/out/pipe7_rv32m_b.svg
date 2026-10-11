@@ -1,0 +1,330 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2000" height="2300" viewBox="0 0 2000 2300"><defs><marker id="a111111" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#111111"/></marker><marker id="a2e9d3a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#2e9d3a"/></marker></defs><rect width="100%" height="100%" fill="#fff"/>
+<rect x="20.0" y="90.0" width="1960.0" height="420.0" rx="10" fill="none" stroke="#c0392b" stroke-width="2" stroke-dasharray="10 6"/>
+<text x="32.0" y="110.0" font-family="DejaVu Sans" font-size="15" font-weight="bold" fill="#c0392b" text-anchor="start">PART A - input conditioning: absolute values and result-sign flags</text>
+<path d="M406.0,130.0 L480.0,130.0 L480.0,139.7 L520.0,139.7" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a111111)"/>
+<path d="M420.0,170.0 L490.0,170.0 L490.0,156.3 L520.0,156.3" fill="none" stroke="#2e9d3a" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a2e9d3a)"/>
+<path d="M406.0,290.0 L480.0,290.0 L480.0,299.7 L520.0,299.7" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a111111)"/>
+<path d="M420.0,330.0 L490.0,330.0 L490.0,316.3 L520.0,316.3" fill="none" stroke="#2e9d3a" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a2e9d3a)"/>
+<path d="M560.0,148.0 L640.0,148.0" fill="none" stroke="#2e9d3a" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a2e9d3a)"/>
+<path d="M560.0,308.0 L640.0,308.0" fill="none" stroke="#2e9d3a" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a2e9d3a)"/>
+<path d="M904.0,152.5 L1000.0,152.5" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a111111)"/>
+<path d="M960.0,207.0 L990.0,207.0 L990.0,197.5 L1000.0,197.5" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a111111)"/>
+<path d="M764.0,207.0 L850.0,207.0" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a111111)"/>
+<path d="M1020.0,252.7 L1020.0,213.7" fill="none" stroke="#2e9d3a" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a2e9d3a)"/>
+<path d="M1040.0,175.0 L1160.0,175.0" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a111111)"/>
+<path d="M904.0,322.5 L1000.0,322.5" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a111111)"/>
+<path d="M960.0,377.0 L990.0,377.0 L990.0,367.5 L1000.0,367.5" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a111111)"/>
+<path d="M764.0,377.0 L850.0,377.0" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a111111)"/>
+<path d="M1020.0,422.7 L1020.0,383.7" fill="none" stroke="#2e9d3a" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a2e9d3a)"/>
+<path d="M1040.0,345.0 L1160.0,345.0" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a111111)"/>
+<path d="M1346.0,150.0 L1410.0,150.0 L1410.0,169.7 L1440.0,169.7" fill="none" stroke="#2e9d3a" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a2e9d3a)"/>
+<path d="M1346.0,200.0 L1420.0,200.0 L1420.0,186.3 L1440.0,186.3" fill="none" stroke="#2e9d3a" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a2e9d3a)"/>
+<path d="M1484.0,178.0 L1560.0,178.0" fill="none" stroke="#2e9d3a" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a2e9d3a)"/>
+<rect x="20.0" y="540.0" width="1960.0" height="640.0" rx="10" fill="none" stroke="#c0392b" stroke-width="2" stroke-dasharray="10 6"/>
+<text x="32.0" y="560.0" font-family="DejaVu Sans" font-size="15" font-weight="bold" fill="#c0392b" text-anchor="start">PART B - the 32-clock restoring divider: remainder / quotient shift registers, subtract, restore, counter</text>
+<path d="M570.0,780.0 L620.0,780.0 L620.0,782.0 L660.0,782.0" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a111111)"/>
+<path d="M252.4,1000.0 L600.0,1000.0 L600.0,808.0 L660.0,808.0" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a111111)"/>
+<path d="M810.0,800.0 L820.0,800.0 L820.0,830.0 L830.0,830.0" fill="none" stroke="#2e9d3a" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a2e9d3a)"/>
+<path d="M810.0,780.0 L950.0,780.0 L950.0,815.0 L1020.0,815.0" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a111111)"/>
+<path d="M570.0,780.0 L620.0,780.0 L620.0,700.0 L980.0,700.0 L980.0,765.0 L1020.0,765.0" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a111111)"/>
+<path d="M1045.0,872.0 L1045.0,833.0" fill="none" stroke="#2e9d3a" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a2e9d3a)"/>
+<path d="M1070.0,790.0 L1200.0,815.0" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a111111)"/>
+<path d="M1180.0,765.0 L1200.0,765.0" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a111111)"/>
+<path d="M1225.0,872.0 L1225.0,833.0" fill="none" stroke="#2e9d3a" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a2e9d3a)"/>
+<path d="M1250.0,790.0 L1380.0,770.0" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a111111)"/>
+<path d="M1540.0,770.0 L1580.0,770.0" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round"/>
+<path d="M1580.0,770.0 L1580.0,680.0 L360.0,680.0 L360.0,780.0 L380.0,780.0" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a111111)"/>
+<path d="M1580.0,770.0 L1660.0,770.0" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a111111)"/>
+<path d="M820.0,977.0 L960.0,977.0" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a111111)"/>
+<path d="M1160.0,977.0 L1180.0,977.0 L1180.0,1007.5 L1200.0,1007.5" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a111111)"/>
+<path d="M1190.0,962.5 L1200.0,962.5" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a111111)"/>
+<path d="M1225.0,1062.7 L1225.0,1023.7" fill="none" stroke="#2e9d3a" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a2e9d3a)"/>
+<path d="M1250.0,985.0 L1380.0,970.0" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a111111)"/>
+<path d="M1540.0,970.0 L1660.0,970.0" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a111111)"/>
+<rect x="20.0" y="1210.0" width="1960.0" height="360.0" rx="10" fill="none" stroke="#c0392b" stroke-width="2" stroke-dasharray="10 6"/>
+<text x="32.0" y="1230.0" font-family="DejaVu Sans" font-size="15" font-weight="bold" fill="#c0392b" text-anchor="start">PART C - control: IDLE / BUSY state, 5-bit counter, stall</text>
+<path d="M78.8,1420.0 L300.0,1420.0" fill="none" stroke="#2e9d3a" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a2e9d3a)"/>
+<path d="M233.8,1290.0 L380.0,1290.0 L380.0,1300.8 L420.0,1300.8" fill="none" stroke="#2e9d3a" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a2e9d3a)"/>
+<path d="M330.0,1420.0 L390.0,1420.0 L390.0,1319.2 L420.0,1319.2" fill="none" stroke="#2e9d3a" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a2e9d3a)"/>
+<path d="M460.0,1310.0 L540.0,1310.0" fill="none" stroke="#2e9d3a" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a2e9d3a)"/>
+<path d="M1090.0,1282.5 L1160.0,1282.5" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a111111)"/>
+<path d="M1080.0,1297.0 L1120.0,1297.0 L1120.0,1327.5 L1160.0,1327.5" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a111111)"/>
+<path d="M1180.0,1382.7 L1180.0,1343.7" fill="none" stroke="#2e9d3a" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a2e9d3a)"/>
+<path d="M1200.0,1305.0 L1300.0,1290.0" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a111111)"/>
+<path d="M1450.0,1290.0 L1490.0,1290.0" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round"/>
+<path d="M1490.0,1290.0 L1490.0,1360.0 L940.0,1360.0 L940.0,1297.0 L980.0,1297.0" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a111111)"/>
+<path d="M1490.0,1290.0 L1560.0,1297.0" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a111111)"/>
+<path d="M1700.0,1297.0 L1760.0,1297.0" fill="none" stroke="#2e9d3a" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a2e9d3a)"/>
+<rect x="20.0" y="1600.0" width="1960.0" height="680.0" rx="10" fill="none" stroke="#c0392b" stroke-width="2" stroke-dasharray="10 6"/>
+<text x="32.0" y="1620.0" font-family="DejaVu Sans" font-size="15" font-weight="bold" fill="#c0392b" text-anchor="start">PART D - sign fix, divide-by-zero / overflow special cases, final selection</text>
+<path d="M165.6,1680.0 L260.0,1680.0 L260.0,1682.0 L300.0,1682.0" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a111111)"/>
+<path d="M171.8,1860.0 L260.0,1860.0 L260.0,1862.0 L300.0,1862.0" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a111111)"/>
+<path d="M260.0,1680.0 L260.0,1680.0 L260.0,1650.0 L520.0,1650.0 L520.0,1675.0 L560.0,1675.0" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a111111)"/>
+<path d="M410.0,1682.0 L470.0,1682.0 L470.0,1725.0 L560.0,1725.0" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a111111)"/>
+<path d="M260.0,1860.0 L260.0,1830.0 L520.0,1830.0 L520.0,1855.0 L560.0,1855.0" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a111111)"/>
+<path d="M410.0,1862.0 L470.0,1862.0 L470.0,1905.0 L560.0,1905.0" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a111111)"/>
+<path d="M580.0,1782.0 L580.0,1743.0" fill="none" stroke="#2e9d3a" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a2e9d3a)"/>
+<path d="M580.0,1962.0 L580.0,1923.0" fill="none" stroke="#2e9d3a" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a2e9d3a)"/>
+<path d="M115.4,2030.0 L200.0,2027.0" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a111111)"/>
+<path d="M350.0,2027.0 L400.0,2027.0" fill="none" stroke="#2e9d3a" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a2e9d3a)"/>
+<path d="M137.7,2098.0 L200.0,2097.0" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a111111)"/>
+<path d="M480.0,2097.0 L520.0,2097.0" fill="none" stroke="#2e9d3a" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a2e9d3a)"/>
+<path d="M600.0,1700.0 L700.0,1700.0 L700.0,1675.0 L900.0,1675.0" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a111111)"/>
+<path d="M600.0,1880.0 L700.0,1880.0 L700.0,1875.0 L900.0,1875.0" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a111111)"/>
+<path d="M890.0,1725.0 L900.0,1725.0" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a111111)"/>
+<path d="M890.0,1775.0 L900.0,1775.0" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a111111)"/>
+<path d="M890.0,1925.0 L900.0,1925.0" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a111111)"/>
+<path d="M890.0,1975.0 L900.0,1975.0" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a111111)"/>
+<path d="M925.0,1828.5 L925.0,1789.5" fill="none" stroke="#2e9d3a" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a2e9d3a)"/>
+<path d="M925.0,2028.5 L925.0,1989.5" fill="none" stroke="#2e9d3a" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a2e9d3a)"/>
+<path d="M950.0,1725.0 L1130.0,1725.0 L1130.0,1785.0 L1200.0,1785.0" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a111111)"/>
+<path d="M950.0,1925.0 L1150.0,1925.0 L1150.0,1835.0 L1200.0,1835.0" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a111111)"/>
+<path d="M1225.0,1892.0 L1225.0,1853.0" fill="none" stroke="#2e9d3a" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a2e9d3a)"/>
+<path d="M1250.0,1810.0 L1380.0,1810.0" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a111111)"/>
+<rect x="40.0" y="159.0" width="200.0" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<rect x="40.0" y="319.0" width="193.8" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<rect x="40.0" y="439.0" width="175.2" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<path d="M520,130 H540.0 A20.0,18.0 0 0 1 540.0,166 H520 Z" fill="#fff" stroke="#000" stroke-width="1.9"/>
+<path d="M520,290 H540.0 A20.0,18.0 0 0 1 540.0,326 H520 Z" fill="#fff" stroke="#000" stroke-width="1.9"/>
+<rect x="360.0" y="119.0" width="46.0" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<rect x="360.0" y="279.0" width="46.0" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<rect x="360.0" y="159.0" width="60.0" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<rect x="360.0" y="319.0" width="60.0" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<rect x="640.0" y="137.0" width="159.1" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<rect x="640.0" y="297.0" width="153.5" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<path d="M1000,130 L1040,142.6 L1040,207.4 L1000,220 Z" fill="#fff" stroke="#000" stroke-width="1.9"/>
+<rect x="880.0" y="141.5" width="24.0" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<rect x="850.0" y="190.0" width="110.0" height="36.0" rx="18" fill="#fff3c4" stroke="#000" stroke-width="2"/>
+<rect x="740.0" y="196.0" width="24.0" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<rect x="999.0" y="252.7" width="41.9" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<rect x="1160.0" y="164.0" width="82.2" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<path d="M1000,300 L1040,312.6 L1040,377.4 L1000,390 Z" fill="#fff" stroke="#000" stroke-width="1.9"/>
+<rect x="880.0" y="311.5" width="24.0" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<rect x="850.0" y="360.0" width="110.0" height="36.0" rx="18" fill="#fff3c4" stroke="#000" stroke-width="2"/>
+<rect x="740.0" y="366.0" width="24.0" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<rect x="999.0" y="422.7" width="41.9" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<rect x="1160.0" y="334.0" width="82.2" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<path d="M1440,160 Q1453.2,178.0 1440,196" fill="none" stroke="#000" stroke-width="1.8"/>
+<path d="M1446,160 Q1468.6,160 1484,178.0 Q1468.6,196 1446,196 Q1459.2,178.0 1446,160 Z" fill="#fff" stroke="#000" stroke-width="1.9"/>
+<rect x="1300.0" y="139.0" width="46.0" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<rect x="1300.0" y="189.0" width="46.0" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<rect x="1560.0" y="167.0" width="162.8" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<rect x="1560.0" y="249.0" width="107.0" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<rect x="40.0" y="609.0" width="243.4" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<rect x="40.0" y="989.0" width="212.4" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<rect x="40.0" y="689.0" width="45.0" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<rect x="380.0" y="760.0" width="190.0" height="40.0" rx="18" fill="#fff3c4" stroke="#000" stroke-width="2"/>
+<rect x="330.0" y="849.0" width="82.2" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<rect x="330.0" y="899.0" width="82.2" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<rect x="660.0" y="760.0" width="150.0" height="60.0" rx="18" fill="#fff3c4" stroke="#000" stroke-width="2"/>
+<rect x="830.0" y="819.0" width="131.2" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<path d="M1020,740 L1070,754.0 L1070,826.0 L1020,840 Z" fill="#fff" stroke="#000" stroke-width="1.9"/>
+<rect x="1012.9" y="872.0" width="64.2" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<path d="M1200,740 L1250,754.0 L1250,826.0 L1200,840 Z" fill="#fff" stroke="#000" stroke-width="1.9"/>
+<rect x="1110.0" y="754.0" width="70.0" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<rect x="1206.8" y="872.0" width="36.3" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<rect x="1380.0" y="745.0" width="160.0" height="50.0" rx="4" fill="#d9f2d9" stroke="#000" stroke-width="2"/>
+<rect x="1660.0" y="759.0" width="131.8" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<path d="M1200,940 L1250,952.6 L1250,1017.4 L1200,1030 Z" fill="#fff" stroke="#000" stroke-width="1.9"/>
+<rect x="960.0" y="960.0" width="200.0" height="36.0" rx="18" fill="#fff3c4" stroke="#000" stroke-width="2"/>
+<rect x="760.0" y="966.0" width="60.0" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<rect x="1020.0" y="951.5" width="170.0" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<rect x="1206.8" y="1062.7" width="36.3" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<rect x="1380.0" y="945.0" width="160.0" height="50.0" rx="4" fill="#d9f2d9" stroke="#000" stroke-width="2"/>
+<rect x="1660.0" y="959.0" width="125.6" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<rect x="40.0" y="1279.0" width="193.8" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<rect x="40.0" y="1409.0" width="38.8" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<path d="M300,1406 L322,1420.0 L300,1434 Z" fill="#fff" stroke="#000" stroke-width="1.9"/>
+<circle cx="326.0" cy="1420.0" r="4" fill="#fff" stroke="#000" stroke-width="1.6"/>
+<path d="M420,1290 H440.0 A20.0,20.0 0 0 1 440.0,1330 H420 Z" fill="#fff" stroke="#000" stroke-width="1.9"/>
+<rect x="540.0" y="1299.0" width="224.8" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<rect x="980.0" y="1280.0" width="100.0" height="36.0" rx="18" fill="#fff3c4" stroke="#000" stroke-width="2"/>
+<path d="M1160,1260 L1200,1272.6 L1200,1337.4 L1160,1350 Z" fill="#fff" stroke="#000" stroke-width="1.9"/>
+<rect x="1050.0" y="1271.5" width="40.0" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<rect x="1161.8" y="1382.7" width="36.3" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<rect x="1300.0" y="1265.0" width="150.0" height="50.0" rx="4" fill="#d9f2d9" stroke="#000" stroke-width="2"/>
+<rect x="1560.0" y="1280.0" width="140.0" height="36.0" rx="18" fill="#fff3c4" stroke="#000" stroke-width="2"/>
+<rect x="1760.0" y="1286.0" width="76.0" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<rect x="40.0" y="1669.0" width="125.6" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<rect x="40.0" y="1849.0" width="131.8" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<rect x="300.0" y="1665.0" width="110.0" height="36.0" rx="18" fill="#fff3c4" stroke="#000" stroke-width="2"/>
+<rect x="300.0" y="1845.0" width="110.0" height="36.0" rx="18" fill="#fff3c4" stroke="#000" stroke-width="2"/>
+<path d="M560,1650 L600,1664.0 L600,1736.0 L560,1750 Z" fill="#fff" stroke="#000" stroke-width="1.9"/>
+<path d="M560,1830 L600,1844.0 L600,1916.0 L560,1930 Z" fill="#fff" stroke="#000" stroke-width="1.9"/>
+<rect x="550.7" y="1782.0" width="58.6" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<rect x="553.5" y="1962.0" width="53.1" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<rect x="40.0" y="2019.0" width="75.4" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<rect x="200.0" y="2010.0" width="150.0" height="36.0" rx="18" fill="#fff3c4" stroke="#000" stroke-width="2"/>
+<rect x="400.0" y="2016.0" width="75.4" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<rect x="200.0" y="2080.0" width="280.0" height="36.0" rx="18" fill="#fff3c4" stroke="#000" stroke-width="2"/>
+<rect x="40.0" y="2087.0" width="97.7" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<rect x="520.0" y="2086.0" width="58.6" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<path d="M900,1650 L950,1671.0 L950,1779.0 L900,1800 Z" fill="#fff" stroke="#000" stroke-width="1.9"/>
+<path d="M900,1850 L950,1871.0 L950,1979.0 L900,2000 Z" fill="#fff" stroke="#000" stroke-width="1.9"/>
+<rect x="760.0" y="1714.0" width="130.0" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<rect x="760.0" y="1764.0" width="130.0" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<rect x="760.0" y="1914.0" width="130.0" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<rect x="760.0" y="1964.0" width="130.0" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<rect x="853.8" y="1828.5" width="142.3" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<rect x="853.8" y="2028.5" width="142.3" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<path d="M1200,1760 L1250,1774.0 L1250,1846.0 L1200,1860 Z" fill="#fff" stroke="#000" stroke-width="1.9"/>
+<rect x="1192.9" y="1892.0" width="64.2" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<rect x="1380.0" y="1799.0" width="300.4" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<text x="1000.0" y="36.0" font-family="DejaVu Sans" font-size="26" font-weight="bold" fill="#000" text-anchor="middle">Fig P7b - RV32M (2/2): iterative divider (DIV / DIVU / REM / REMU), special cases and pipeline stall</text>
+<text x="1000.0" y="60.0" font-family="DejaVu Sans" font-size="14" font-weight="normal" fill="#444" text-anchor="middle">Radix-2 restoring divider on magnitudes: 32 clocks.  Signs are fixed before / after.  Divide-by-zero and overflow follow the RISC-V spec (no trap).</text>
+<text x="140.0" y="174.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#3b5bdb" text-anchor="middle">alu_operand1[31:0]  (dividend)</text>
+<text x="136.9" y="334.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#3b5bdb" text-anchor="middle">alu_operand2[31:0]  (divisor)</text>
+<text x="127.6" y="454.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#2e9d3a" text-anchor="middle">is_signed_div = ~funct3[0]</text>
+<text x="383.0" y="134.0" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#000" text-anchor="middle">A[31]</text>
+<text x="383.0" y="294.0" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#000" text-anchor="middle">B[31]</text>
+<text x="390.0" y="174.0" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#2e9d3a" text-anchor="middle">is_signed</text>
+<text x="390.0" y="334.0" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#2e9d3a" text-anchor="middle">is_signed</text>
+<text x="719.5" y="152.0" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#2e9d3a" text-anchor="middle">neg_a  (dividend negative)</text>
+<text x="716.8" y="312.0" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#2e9d3a" text-anchor="middle">neg_b  (divisor negative)</text>
+<text x="1005.0" y="156.5" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#333" text-anchor="start">0</text>
+<text x="1005.0" y="201.5" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#333" text-anchor="start">1</text>
+<text x="892.0" y="156.5" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#000" text-anchor="middle">A</text>
+<text x="905.0" y="210.0" font-family="DejaVu Sans" font-size="11" font-weight="bold" fill="#000" text-anchor="middle">0 - A</text>
+<text x="752.0" y="211.0" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#000" text-anchor="middle">A</text>
+<text x="1020.0" y="267.7" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#2e9d3a" text-anchor="middle">neg_a</text>
+<text x="1201.1" y="179.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#c0392b" text-anchor="middle">abs_a[31:0]</text>
+<line x1="1096.0" y1="181.0" x2="1104.0" y2="169.0" stroke="#111111" stroke-width="1.8"/>
+<text x="1100.0" y="166.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#222" text-anchor="middle" stroke="#fff" stroke-width="4" paint-order="stroke" stroke-linejoin="round">[32]</text>
+<text x="1005.0" y="326.5" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#333" text-anchor="start">0</text>
+<text x="1005.0" y="371.5" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#333" text-anchor="start">1</text>
+<text x="892.0" y="326.5" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#000" text-anchor="middle">B</text>
+<text x="905.0" y="380.0" font-family="DejaVu Sans" font-size="11" font-weight="bold" fill="#000" text-anchor="middle">0 - B</text>
+<text x="752.0" y="381.0" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#000" text-anchor="middle">B</text>
+<text x="1020.0" y="437.7" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#2e9d3a" text-anchor="middle">neg_b</text>
+<text x="1201.1" y="349.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#c0392b" text-anchor="middle">abs_b[31:0]</text>
+<line x1="1096.0" y1="351.0" x2="1104.0" y2="339.0" stroke="#111111" stroke-width="1.8"/>
+<text x="1100.0" y="336.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#222" text-anchor="middle" stroke="#fff" stroke-width="4" paint-order="stroke" stroke-linejoin="round">[32]</text>
+<text x="1323.0" y="154.0" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#2e9d3a" text-anchor="middle">neg_a</text>
+<text x="1323.0" y="204.0" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#2e9d3a" text-anchor="middle">neg_b</text>
+<text x="1641.4" y="182.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#2e9d3a" text-anchor="middle">quot_neg = neg_a ^ neg_b</text>
+<text x="1613.5" y="264.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#2e9d3a" text-anchor="middle">rem_neg = neg_a</text>
+<text x="1300.0" y="330.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#333" text-anchor="start" font-style="italic">Quotient is negative if the signs differ; the remainder takes the dividend's sign (RISC-V).</text>
+<text x="1300.0" y="350.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#333" text-anchor="start" font-style="italic">Unsigned DIVU / REMU: is_signed = 0, so neg_a = neg_b = 0 and nothing is negated.</text>
+<text x="161.7" y="624.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#c0392b" text-anchor="middle">abs_a[31:0]  (load into quotient reg)</text>
+<text x="146.2" y="1004.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#c0392b" text-anchor="middle">abs_b[31:0]  (divisor reg, held)</text>
+<text x="62.5" y="704.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#2e9d3a" text-anchor="middle">start</text>
+<text x="475.0" y="780.0" font-family="DejaVu Sans" font-size="10" font-weight="bold" fill="#000" text-anchor="middle">{ rem[30:0], quo[31] }</text>
+<text x="371.1" y="864.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#c0392b" text-anchor="middle">rem_q[31:0]</text>
+<text x="371.1" y="914.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#c0392b" text-anchor="middle">quo_q[31:0]</text>
+<text x="735.0" y="780.0" font-family="DejaVu Sans" font-size="11" font-weight="bold" fill="#000" text-anchor="middle">trial - div</text>
+<text x="666.0" y="786.0" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#222" text-anchor="start">a</text>
+<text x="666.0" y="812.0" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#222" text-anchor="start">b</text>
+<text x="804.0" y="799.0" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#222" text-anchor="end">y</text>
+<line x1="591.0" y1="786.0" x2="599.0" y2="774.0" stroke="#111111" stroke-width="1.8"/>
+<text x="595.0" y="771.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#222" text-anchor="middle" stroke="#fff" stroke-width="4" paint-order="stroke" stroke-linejoin="round">[32]</text>
+<line x1="422.2" y1="1006.0" x2="430.2" y2="994.0" stroke="#111111" stroke-width="1.8"/>
+<text x="426.2" y="991.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#222" text-anchor="middle" stroke="#fff" stroke-width="4" paint-order="stroke" stroke-linejoin="round">[32]</text>
+<text x="895.6" y="834.0" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#2e9d3a" text-anchor="middle">diff_ge_0 = no borrow</text>
+<text x="1025.0" y="769.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#333" text-anchor="start">0 restore</text>
+<text x="1025.0" y="819.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#333" text-anchor="start">1 keep diff</text>
+<line x1="876.0" y1="786.0" x2="884.0" y2="774.0" stroke="#111111" stroke-width="1.8"/>
+<text x="880.0" y="771.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#222" text-anchor="middle" stroke="#fff" stroke-width="4" paint-order="stroke" stroke-linejoin="round">[32]</text>
+<line x1="796.0" y1="706.0" x2="804.0" y2="694.0" stroke="#111111" stroke-width="1.8"/>
+<text x="800.0" y="689.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#222" text-anchor="middle" stroke="#fff" stroke-width="4" paint-order="stroke" stroke-linejoin="round">trial (restore) [32]</text>
+<text x="1045.0" y="887.0" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#2e9d3a" text-anchor="middle">diff_ge_0</text>
+<text x="1205.0" y="769.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#333" text-anchor="start">0</text>
+<text x="1205.0" y="819.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#333" text-anchor="start">1</text>
+<line x1="1131.0" y1="808.5" x2="1139.0" y2="796.5" stroke="#111111" stroke-width="1.8"/>
+<text x="1135.0" y="793.5" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#222" text-anchor="middle" stroke="#fff" stroke-width="4" paint-order="stroke" stroke-linejoin="round">[32]</text>
+<text x="1145.0" y="769.0" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#000" text-anchor="middle">0 (clear)</text>
+<text x="1225.0" y="887.0" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#2e9d3a" text-anchor="middle">busy</text>
+<text x="1460.0" y="765.0" font-family="DejaVu Sans" font-size="11" font-weight="bold" fill="#000" text-anchor="middle">rem_q[31:0]</text>
+<path d="M1380,773 L1391,784 L1380,795" fill="none" stroke="#000" stroke-width="1.5"/>
+<line x1="1311.0" y1="786.0" x2="1319.0" y2="774.0" stroke="#111111" stroke-width="1.8"/>
+<text x="1315.0" y="771.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#222" text-anchor="middle" stroke="#fff" stroke-width="4" paint-order="stroke" stroke-linejoin="round">[32]</text>
+<circle cx="1580.0" cy="770.0" r="3.8" fill="#111111"/>
+<line x1="966.0" y1="686.0" x2="974.0" y2="674.0" stroke="#111111" stroke-width="1.8"/>
+<text x="970.0" y="669.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#222" text-anchor="middle" stroke="#fff" stroke-width="4" paint-order="stroke" stroke-linejoin="round">rem_q (feeds shift) [32]</text>
+<text x="1725.9" y="774.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#c0392b" text-anchor="middle">remainder_abs[31:0]</text>
+<line x1="1616.0" y1="776.0" x2="1624.0" y2="764.0" stroke="#111111" stroke-width="1.8"/>
+<text x="1620.0" y="761.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#222" text-anchor="middle" stroke="#fff" stroke-width="4" paint-order="stroke" stroke-linejoin="round">[32]</text>
+<text x="1205.0" y="966.5" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#333" text-anchor="start">0</text>
+<text x="1205.0" y="1011.5" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#333" text-anchor="start">1</text>
+<text x="1060.0" y="980.0" font-family="DejaVu Sans" font-size="10" font-weight="bold" fill="#000" text-anchor="middle">{ quo[30:0], diff_ge_0 }</text>
+<text x="790.0" y="981.0" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#000" text-anchor="middle">quo_q</text>
+<line x1="1174.0" y1="996.2" x2="1186.0" y2="988.2" stroke="#111111" stroke-width="1.8"/>
+<text x="1189.0" y="996.2" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#222" text-anchor="start" stroke="#fff" stroke-width="4" paint-order="stroke" stroke-linejoin="round">[32]</text>
+<text x="1105.0" y="966.5" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#c0392b" text-anchor="middle">abs_a  (start: load dividend)</text>
+<text x="1225.0" y="1077.7" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#2e9d3a" text-anchor="middle">busy</text>
+<text x="1460.0" y="965.0" font-family="DejaVu Sans" font-size="11" font-weight="bold" fill="#000" text-anchor="middle">quo_q[31:0]</text>
+<path d="M1380,973 L1391,984 L1380,995" fill="none" stroke="#000" stroke-width="1.5"/>
+<line x1="1311.0" y1="983.5" x2="1319.0" y2="971.5" stroke="#111111" stroke-width="1.8"/>
+<text x="1315.0" y="968.5" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#222" text-anchor="middle" stroke="#fff" stroke-width="4" paint-order="stroke" stroke-linejoin="round">[32]</text>
+<text x="1722.8" y="974.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#c0392b" text-anchor="middle">quotient_abs[31:0]</text>
+<line x1="1596.0" y1="976.0" x2="1604.0" y2="964.0" stroke="#111111" stroke-width="1.8"/>
+<text x="1600.0" y="961.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#222" text-anchor="middle" stroke="#fff" stroke-width="4" paint-order="stroke" stroke-linejoin="round">[32]</text>
+<text x="60.0" y="1100.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#333" text-anchor="start">Each clock while busy:  trial = { rem[30:0], quo[31] };  diff = trial - divisor;  if no borrow  rem &lt;- diff,  quo &lt;- { quo[30:0], 1 }  else  rem &lt;- trial,  quo &lt;- { quo[30:0], 0 }.</text>
+<text x="60.0" y="1125.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#555" text-anchor="start">(The mux inputs 'restore' / 'keep diff' implement the restoring step; start loads abs_a into the quotient register and clears the remainder.)</text>
+<text x="136.9" y="1294.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#2e9d3a" text-anchor="middle">is_div_op = m_ext &amp; funct3[2]</text>
+<text x="59.4" y="1424.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#2e9d3a" text-anchor="middle">done</text>
+<text x="652.4" y="1314.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#c0392b" text-anchor="middle">pipeline_stall = is_div_op &amp; ~done</text>
+<text x="40.0" y="1470.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#555" text-anchor="start">pipeline_stall = 1 freezes IF/ID (PC hold, Fig P1) and inserts NOP bubbles toward WB until done = 1; the result is then written once.</text>
+<text x="1030.0" y="1300.0" font-family="DejaVu Sans" font-size="12" font-weight="bold" fill="#000" text-anchor="middle">cnt + 1</text>
+<text x="1165.0" y="1286.5" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#333" text-anchor="start">0</text>
+<text x="1165.0" y="1331.5" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#333" text-anchor="start">1</text>
+<text x="1070.0" y="1286.5" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#000" text-anchor="middle">5'd0</text>
+<line x1="1096.0" y1="1303.0" x2="1104.0" y2="1291.0" stroke="#111111" stroke-width="1.8"/>
+<text x="1100.0" y="1288.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#222" text-anchor="middle" stroke="#fff" stroke-width="4" paint-order="stroke" stroke-linejoin="round">[5]</text>
+<text x="1180.0" y="1397.7" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#2e9d3a" text-anchor="middle">busy</text>
+<text x="1375.0" y="1285.0" font-family="DejaVu Sans" font-size="11" font-weight="bold" fill="#000" text-anchor="middle">cnt[4:0]</text>
+<path d="M1300,1293 L1311,1304 L1300,1315" fill="none" stroke="#000" stroke-width="1.5"/>
+<line x1="1246.0" y1="1303.5" x2="1254.0" y2="1291.5" stroke="#111111" stroke-width="1.8"/>
+<text x="1250.0" y="1288.5" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#222" text-anchor="middle" stroke="#fff" stroke-width="4" paint-order="stroke" stroke-linejoin="round">[5]</text>
+<circle cx="1490.0" cy="1290.0" r="3.8" fill="#111111"/>
+<text x="1215.0" y="1349.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#222" text-anchor="middle" stroke="#fff" stroke-width="4" paint-order="stroke" stroke-linejoin="round">cnt_q</text>
+<text x="1630.0" y="1300.0" font-family="DejaVu Sans" font-size="11" font-weight="bold" fill="#000" text-anchor="middle">cnt_q == 31</text>
+<text x="1798.0" y="1301.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#2e9d3a" text-anchor="middle">last_cycle</text>
+<text x="600.0" y="1520.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#555" text-anchor="start">busy: set by 'start' (first cycle of a DIV/REM in EX), cleared by last_cycle.  done = last_cycle (registered) or special-case bypass.</text>
+<text x="102.8" y="1684.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#c0392b" text-anchor="middle">quotient_abs[31:0]</text>
+<text x="105.9" y="1864.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#c0392b" text-anchor="middle">remainder_abs[31:0]</text>
+<text x="355.0" y="1685.0" font-family="DejaVu Sans" font-size="11" font-weight="bold" fill="#000" text-anchor="middle">0 - quo</text>
+<text x="355.0" y="1865.0" font-family="DejaVu Sans" font-size="11" font-weight="bold" fill="#000" text-anchor="middle">0 - rem</text>
+<text x="565.0" y="1679.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#333" text-anchor="start">0</text>
+<text x="565.0" y="1729.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#333" text-anchor="start">1</text>
+<text x="565.0" y="1859.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#333" text-anchor="start">0</text>
+<text x="565.0" y="1909.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#333" text-anchor="start">1</text>
+<circle cx="260.0" cy="1680.0" r="3.8" fill="#111111"/>
+<circle cx="260.0" cy="1860.0" r="3.8" fill="#111111"/>
+<text x="580.0" y="1797.0" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#2e9d3a" text-anchor="middle">quot_neg</text>
+<text x="580.0" y="1977.0" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#2e9d3a" text-anchor="middle">rem_neg</text>
+<text x="77.7" y="2034.0" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#c0392b" text-anchor="middle">abs_b[31:0]</text>
+<text x="275.0" y="2030.0" font-family="DejaVu Sans" font-size="11" font-weight="bold" fill="#000" text-anchor="middle">abs_b == 0</text>
+<text x="437.7" y="2031.0" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#2e9d3a" text-anchor="middle">div_by_zero</text>
+<text x="340.0" y="2100.0" font-family="DejaVu Sans" font-size="10" font-weight="bold" fill="#000" text-anchor="middle">signed &amp; A == INT_MIN &amp; B == -1</text>
+<text x="88.8" y="2102.0" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#3b5bdb" text-anchor="middle">A, B, is_signed</text>
+<text x="549.3" y="2101.0" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#2e9d3a" text-anchor="middle">overflow</text>
+<text x="905.0" y="1679.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#333" text-anchor="start">0 normal</text>
+<text x="905.0" y="1729.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#333" text-anchor="start">1 B==0</text>
+<text x="905.0" y="1779.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#333" text-anchor="start">2 overflow</text>
+<text x="905.0" y="1879.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#333" text-anchor="start">0 normal</text>
+<text x="905.0" y="1929.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#333" text-anchor="start">1 B==0</text>
+<text x="905.0" y="1979.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#333" text-anchor="start">2 overflow</text>
+<line x1="796.0" y1="1681.0" x2="804.0" y2="1669.0" stroke="#111111" stroke-width="1.8"/>
+<text x="800.0" y="1666.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#222" text-anchor="middle" stroke="#fff" stroke-width="4" paint-order="stroke" stroke-linejoin="round">[32]</text>
+<line x1="796.0" y1="1881.0" x2="804.0" y2="1869.0" stroke="#111111" stroke-width="1.8"/>
+<text x="800.0" y="1866.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#222" text-anchor="middle" stroke="#fff" stroke-width="4" paint-order="stroke" stroke-linejoin="round">[32]</text>
+<text x="825.0" y="1729.0" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#000" text-anchor="middle">32'hFFFF_FFFF</text>
+<text x="825.0" y="1779.0" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#000" text-anchor="middle">32'h8000_0000</text>
+<text x="825.0" y="1929.0" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#000" text-anchor="middle">A  (dividend)</text>
+<text x="825.0" y="1979.0" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#000" text-anchor="middle">32'h0000_0000</text>
+<text x="925.0" y="1843.5" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#2e9d3a" text-anchor="middle">{overflow, div_by_zero}</text>
+<text x="925.0" y="2043.5" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#2e9d3a" text-anchor="middle">{overflow, div_by_zero}</text>
+<text x="1205.0" y="1789.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#333" text-anchor="start">0 DIV</text>
+<text x="1205.0" y="1839.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#333" text-anchor="start">1 REM</text>
+<line x1="1036.0" y1="1731.0" x2="1044.0" y2="1719.0" stroke="#111111" stroke-width="1.8"/>
+<text x="1040.0" y="1716.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#222" text-anchor="middle" stroke="#fff" stroke-width="4" paint-order="stroke" stroke-linejoin="round">[32]</text>
+<line x1="1046.0" y1="1931.0" x2="1054.0" y2="1919.0" stroke="#111111" stroke-width="1.8"/>
+<text x="1050.0" y="1916.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#222" text-anchor="middle" stroke="#fff" stroke-width="4" paint-order="stroke" stroke-linejoin="round">[32]</text>
+<text x="1225.0" y="1907.0" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#2e9d3a" text-anchor="middle">funct3[1]</text>
+<text x="1530.2" y="1814.0" font-family="DejaVu Sans" font-size="11" font-weight="normal" fill="#c0392b" text-anchor="middle">div_result[31:0]  -&gt; Fig P7c result select</text>
+<line x1="1311.0" y1="1816.0" x2="1319.0" y2="1804.0" stroke="#111111" stroke-width="1.8"/>
+<text x="1315.0" y="1801.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#222" text-anchor="middle" stroke="#fff" stroke-width="4" paint-order="stroke" stroke-linejoin="round">[32]</text>
+<text x="1000.0" y="2010.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#555" text-anchor="start">div_by_zero: DIV / DIVU -&gt; all ones, REM / REMU -&gt; the dividend.   overflow (signed INT_MIN / -1): DIV -&gt; INT_MIN, REM -&gt; 0.   No trap, as the RISC-V spec requires.</text>
+<text x="1000.0" y="2040.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#555" text-anchor="start">{overflow, div_by_zero} encodes the mux select: 00 normal, 01 divide by zero, 10 overflow.  DIV / DIVU use funct3[1]=0, REM / REMU use funct3[1]=1.</text>
+<text x="1000.0" y="2070.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#555" text-anchor="start">In the special cases the divider is bypassed: done is asserted at once, so there is no 32-clock wait.</text>
+</svg>

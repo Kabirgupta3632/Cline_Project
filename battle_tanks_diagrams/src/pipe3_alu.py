@@ -54,6 +54,9 @@ def build():
         key = list(rm.p.keys())[i]
         w0 = tw(n + "[31:0]", 10)
         f.wire([(1060 + w0, ys[i]), (1200 + i * 25, ys[i]), (1200 + i * 25, rm[key][1]), rm[key]], bus="32", seg=0, lpos=0.5) if False else f.wire([(1060 + w0, ys[i]), (1230 + i * 22, ys[i]), (1230 + i * 22, rm[key][1]), rm[key]])
+    for k in ("6 spare", "7 spare"):
+        zp = port(f, 1380, rm[k][1], "32'h0", 9, w=44)
+        f.wire([zp["r"], rm[k]])
     dc = f.comb(1450, 1300, 200, 120, "ALU Operation Decoder", sub="alu_op[2:0] + lui / auipc /\njal / jalr / mem_write", ts=11, showpins=False)
     f.wire([(1550, 1300), (1535, 1080 + 0), (1535, 1075)][:1] + [(1535, 1075 + 0)][:0] + [(1535, 1300 - 0)][:0] + [(1535, 1300)], "ctrl", arrow=False) if False else None
     f.wire([(1535, 1300), (1535, 1078)], "ctrl", label="select[2:0]", seg=0, ldx=14)

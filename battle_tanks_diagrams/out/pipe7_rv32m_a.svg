@@ -1,0 +1,116 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2000" height="1420" viewBox="0 0 2000 1420"><defs><marker id="a111111" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#111111"/></marker><marker id="a2e9d3a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#2e9d3a"/></marker></defs><rect width="100%" height="100%" fill="#fff"/>
+<rect x="20.0" y="90.0" width="1960.0" height="400.0" rx="10" fill="none" stroke="#c0392b" stroke-width="2" stroke-dasharray="10 6"/>
+<text x="32.0" y="110.0" font-family="DejaVu Sans" font-size="15" font-weight="bold" fill="#c0392b" text-anchor="start">PART A - which operands are signed?  (funct3 decode)</text>
+<path d="M109.8,170.0 L160.0,170.0" fill="none" stroke="#2e9d3a" stroke-width="1.8" stroke-linejoin="round"/>
+<path d="M160.0,170.0 L260.0,170.0" fill="none" stroke="#2e9d3a" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a2e9d3a)"/>
+<path d="M290.0,170.0 L420.0,170.0" fill="none" stroke="#2e9d3a" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a2e9d3a)"/>
+<path d="M160.0,170.0 L160.0,250.8 L260.0,250.8" fill="none" stroke="#2e9d3a" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a2e9d3a)"/>
+<path d="M109.8,270.0 L230.0,270.0 L230.0,269.2 L260.0,269.2" fill="none" stroke="#2e9d3a" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a2e9d3a)"/>
+<path d="M308.0,260.0 L420.0,260.0" fill="none" stroke="#2e9d3a" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a2e9d3a)"/>
+<rect x="20.0" y="510.0" width="1960.0" height="520.0" rx="10" fill="none" stroke="#c0392b" stroke-width="2" stroke-dasharray="10 6"/>
+<text x="32.0" y="530.0" font-family="DejaVu Sans" font-size="15" font-weight="bold" fill="#c0392b" text-anchor="start">PART B - extend both operands to 33 bits and multiply</text>
+<path d="M306.0,640.0 L420.0,640.0 L420.0,660.8 L460.0,660.8" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a111111)"/>
+<path d="M320.0,690.0 L430.0,690.0 L430.0,679.2 L460.0,679.2" fill="none" stroke="#2e9d3a" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a2e9d3a)"/>
+<path d="M306.0,860.0 L420.0,860.0 L420.0,880.8 L460.0,880.8" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a111111)"/>
+<path d="M320.0,910.0 L430.0,910.0 L430.0,899.2 L460.0,899.2" fill="none" stroke="#2e9d3a" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a2e9d3a)"/>
+<path d="M500.0,670.0 L590.0,670.0 L590.0,660.0 L620.0,660.0" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a111111)"/>
+<path d="M165.6,600.0 L560.0,600.0 L560.0,708.0 L620.0,708.0" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a111111)"/>
+<path d="M500.0,890.0 L590.0,890.0 L590.0,880.0 L620.0,880.0" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a111111)"/>
+<path d="M165.6,820.0 L560.0,820.0 L560.0,928.0 L620.0,928.0" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a111111)"/>
+<path d="M820.0,684.0 L860.0,684.0 L860.0,690.0 L900.0,690.0" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a111111)"/>
+<path d="M820.0,904.0 L870.0,904.0 L870.0,878.0 L900.0,878.0" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a111111)"/>
+<path d="M1240.0,784.0 L1320.0,784.0" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a111111)"/>
+<rect x="20.0" y="1050.0" width="1960.0" height="340.0" rx="10" fill="none" stroke="#c0392b" stroke-width="2" stroke-dasharray="10 6"/>
+<text x="32.0" y="1070.0" font-family="DejaVu Sans" font-size="15" font-weight="bold" fill="#c0392b" text-anchor="start">PART C - pick low / high half  (funct3[1:0] = 00 -&gt; MUL low word;  01, 10, 11 -&gt; high word)</text>
+<path d="M430.0,1125.0 L560.0,1125.0" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a111111)"/>
+<path d="M440.0,1175.0 L560.0,1175.0" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a111111)"/>
+<path d="M134.6,1130.0 L200.0,1130.0" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round"/>
+<path d="M104.2,1250.0 L230.0,1250.0 L230.0,1249.7 L260.0,1249.7" fill="none" stroke="#2e9d3a" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a2e9d3a)"/>
+<path d="M104.2,1290.0 L240.0,1290.0 L240.0,1266.3 L260.0,1266.3" fill="none" stroke="#2e9d3a" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a2e9d3a)"/>
+<path d="M300.0,1258.0 L360.0,1258.0" fill="none" stroke="#2e9d3a" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a2e9d3a)"/>
+<path d="M552.6,1258.0 L585.0,1258.0 L585.0,1193.0" fill="none" stroke="#2e9d3a" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a2e9d3a)"/>
+<path d="M610.0,1150.0 L760.0,1150.0" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a111111)"/>
+<rect x="40.0" y="159.0" width="69.8" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<rect x="40.0" y="259.0" width="69.8" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<path d="M260,156 L282,170.0 L260,184 Z" fill="#fff" stroke="#000" stroke-width="1.9"/>
+<circle cx="286.0" cy="170.0" r="4" fill="#fff" stroke="#000" stroke-width="1.6"/>
+<rect x="420.0" y="159.0" width="138.0" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<path d="M260,240 H280.0 A20.0,20.0 0 0 1 280.0,280 H260 Z" fill="#fff" stroke="#000" stroke-width="1.9"/>
+<circle cx="304.0" cy="260.0" r="4" fill="#fff" stroke="#000" stroke-width="1.6"/>
+<rect x="420.0" y="249.0" width="224.8" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<rect x="900.0" y="560.0" width="340.0" height="330.0" rx="4" fill="#fff3c4" stroke="#000" stroke-width="2"/>
+<rect x="40.0" y="589.0" width="125.6" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<rect x="40.0" y="809.0" width="125.6" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<rect x="260.0" y="629.0" width="46.0" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<rect x="260.0" y="849.0" width="46.0" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<rect x="260.0" y="679.0" width="60.0" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<rect x="260.0" y="899.0" width="60.0" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<path d="M460,650 H480.0 A20.0,20.0 0 0 1 480.0,690 H460 Z" fill="#fff" stroke="#000" stroke-width="1.9"/>
+<path d="M460,870 H480.0 A20.0,20.0 0 0 1 480.0,910 H460 Z" fill="#fff" stroke="#000" stroke-width="1.9"/>
+<rect x="620.0" y="600.0" width="200.0" height="120.0" rx="4" fill="#fff3c4" stroke="#000" stroke-width="2"/>
+<rect x="620.0" y="820.0" width="200.0" height="120.0" rx="4" fill="#fff3c4" stroke="#000" stroke-width="2"/>
+<rect x="1320.0" y="773.0" width="94.6" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<rect x="40.0" y="1119.0" width="94.6" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<path d="M560,1100 L610,1114.0 L610,1186.0 L560,1200 Z" fill="#fff" stroke="#000" stroke-width="1.9"/>
+<rect x="330.0" y="1114.0" width="100.0" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<rect x="330.0" y="1164.0" width="110.0" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<path d="M260,1240 Q286.0,1240 300,1258.0 Q286.0,1276 260,1276 Q272.0,1258.0 260,1240 Z" fill="#fff" stroke="#000" stroke-width="1.9"/>
+<rect x="40.0" y="1239.0" width="64.2" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<rect x="40.0" y="1279.0" width="64.2" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<rect x="360.0" y="1247.0" width="192.6" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<rect x="760.0" y="1139.0" width="300.4" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<text x="1000.0" y="36.0" font-family="DejaVu Sans" font-size="26" font-weight="bold" fill="#000" text-anchor="middle">Fig P7a - RV32M (1/2): multiplier unit (MUL / MULH / MULHSU / MULHU)</text>
+<text x="1000.0" y="60.0" font-family="DejaVu Sans" font-size="14" font-weight="normal" fill="#444" text-anchor="middle">One 33 x 33 signed multiplier covers all four variants: bit 32 of each operand = operand[31] AND 'operand is signed'.  Maps onto DSP48 slices.</text>
+<text x="74.9" y="174.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#2e9d3a" text-anchor="middle">funct3[1]</text>
+<text x="74.9" y="274.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#2e9d3a" text-anchor="middle">funct3[0]</text>
+<circle cx="160.0" cy="170.0" r="3.8" fill="#2e9d3a"/>
+<text x="489.0" y="174.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#2e9d3a" text-anchor="middle">signedB = ~funct3[1]</text>
+<text x="532.4" y="264.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#2e9d3a" text-anchor="middle">signedA = ~(funct3[1] &amp; funct3[0])</text>
+<text x="40.0" y="350.0" font-family="DejaVu Sans" font-size="11" font-weight="normal" fill="#333" text-anchor="start">funct3:  000 MUL   001 MULH (signed x signed)   010 MULHSU (signed x unsigned)   011 MULHU (unsigned x unsigned)</text>
+<text x="40.0" y="375.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#555" text-anchor="start">MUL returns the low 32 bits, identical for signed and unsigned, so its sign choice is irrelevant.</text>
+<text x="40.0" y="400.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#555" text-anchor="start">signedA = 0 only for MULHU;   signedB = 0 for MULHSU and MULHU.</text>
+<text x="1070.0" y="580.0" font-family="DejaVu Sans" font-size="13" font-weight="bold" fill="#000" text-anchor="middle">33 x 33 signed multiplier</text>
+<text x="1070.0" y="594.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#444" text-anchor="middle" font-style="italic">product = A33 * B33  (66 bits)</text>
+<text x="1070.0" y="607.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#444" text-anchor="middle" font-style="italic">1 clk (DSP48) or 2-clk pipelined</text>
+<text x="906.0" y="694.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#222" text-anchor="start">A33[32:0]</text>
+<text x="906.0" y="882.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#222" text-anchor="start">B33[32:0]</text>
+<text x="1234.0" y="788.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#222" text-anchor="end">product[65:0]</text>
+<text x="102.8" y="604.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#3b5bdb" text-anchor="middle">alu_operand1[31:0]</text>
+<text x="102.8" y="824.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#3b5bdb" text-anchor="middle">alu_operand2[31:0]</text>
+<text x="283.0" y="644.0" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#000" text-anchor="middle">A[31]</text>
+<text x="283.0" y="864.0" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#000" text-anchor="middle">B[31]</text>
+<text x="290.0" y="694.0" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#2e9d3a" text-anchor="middle">signedA</text>
+<text x="290.0" y="914.0" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#2e9d3a" text-anchor="middle">signedB</text>
+<text x="720.0" y="620.0" font-family="DejaVu Sans" font-size="11" font-weight="bold" fill="#000" text-anchor="middle">{ ext, A[31:0] }</text>
+<text x="720.0" y="632.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#444" text-anchor="middle" font-style="italic">bit 32 = A[31]&amp;signedA</text>
+<text x="626.0" y="664.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#222" text-anchor="start">ext</text>
+<text x="626.0" y="712.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#222" text-anchor="start">A</text>
+<text x="814.0" y="688.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#222" text-anchor="end">A33</text>
+<text x="720.0" y="840.0" font-family="DejaVu Sans" font-size="11" font-weight="bold" fill="#000" text-anchor="middle">{ ext, B[31:0] }</text>
+<text x="720.0" y="852.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#444" text-anchor="middle" font-style="italic">bit 32 = B[31]&amp;signedB</text>
+<text x="626.0" y="884.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#222" text-anchor="start">ext</text>
+<text x="626.0" y="932.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#222" text-anchor="start">B</text>
+<text x="814.0" y="908.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#222" text-anchor="end">B33</text>
+<line x1="358.8" y1="606.0" x2="366.8" y2="594.0" stroke="#111111" stroke-width="1.8"/>
+<text x="362.8" y="591.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#222" text-anchor="middle" stroke="#fff" stroke-width="4" paint-order="stroke" stroke-linejoin="round">[32]</text>
+<line x1="358.8" y1="826.0" x2="366.8" y2="814.0" stroke="#111111" stroke-width="1.8"/>
+<text x="362.8" y="811.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#222" text-anchor="middle" stroke="#fff" stroke-width="4" paint-order="stroke" stroke-linejoin="round">[32]</text>
+<line x1="836.0" y1="690.0" x2="844.0" y2="678.0" stroke="#111111" stroke-width="1.8"/>
+<text x="840.0" y="675.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#222" text-anchor="middle" stroke="#fff" stroke-width="4" paint-order="stroke" stroke-linejoin="round">[33]</text>
+<line x1="841.0" y1="910.0" x2="849.0" y2="898.0" stroke="#111111" stroke-width="1.8"/>
+<text x="845.0" y="895.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#222" text-anchor="middle" stroke="#fff" stroke-width="4" paint-order="stroke" stroke-linejoin="round">[33]</text>
+<text x="1367.3" y="788.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#c0392b" text-anchor="middle">product[65:0]</text>
+<line x1="1276.0" y1="790.0" x2="1284.0" y2="778.0" stroke="#111111" stroke-width="1.8"/>
+<text x="1280.0" y="775.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#222" text-anchor="middle" stroke="#fff" stroke-width="4" paint-order="stroke" stroke-linejoin="round">[66]</text>
+<text x="87.3" y="1134.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#c0392b" text-anchor="middle">product[65:0]</text>
+<text x="565.0" y="1129.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#333" text-anchor="start">0 low</text>
+<text x="565.0" y="1179.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#333" text-anchor="start">1 high</text>
+<text x="380.0" y="1129.0" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#000" text-anchor="middle">product[31:0]</text>
+<text x="385.0" y="1179.0" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#000" text-anchor="middle">product[63:32]</text>
+<text x="72.1" y="1254.0" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#2e9d3a" text-anchor="middle">funct3[1]</text>
+<text x="72.1" y="1294.0" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#2e9d3a" text-anchor="middle">funct3[0]</text>
+<text x="456.3" y="1262.0" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#2e9d3a" text-anchor="middle">high_sel = funct3[1] | funct3[0]</text>
+<text x="910.2" y="1154.0" font-family="DejaVu Sans" font-size="11" font-weight="normal" fill="#c0392b" text-anchor="middle">mul_result[31:0]  -&gt; Fig P7b result select</text>
+<line x1="681.0" y1="1156.0" x2="689.0" y2="1144.0" stroke="#111111" stroke-width="1.8"/>
+<text x="685.0" y="1141.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#222" text-anchor="middle" stroke="#fff" stroke-width="4" paint-order="stroke" stroke-linejoin="round">[32]</text>
+</svg>

@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2000" height="1100" viewBox="0 0 2000 1100"><defs><marker id="a111111" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#111111"/></marker><marker id="a2e9d3a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#2e9d3a"/></marker></defs><rect width="100%" height="100%" fill="#fff"/>
+<rect x="20.0" y="90.0" width="1960.0" height="400.0" rx="10" fill="none" stroke="#c0392b" stroke-width="2" stroke-dasharray="10 6"/>
+<text x="32.0" y="110.0" font-family="DejaVu Sans" font-size="15" font-weight="bold" fill="#c0392b" text-anchor="start">PART A - M-unit result select and ALU result-mux input 4</text>
+<path d="M221.4,170.0 L360.0,170.0 L360.0,182.5 L460.0,182.5" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a111111)"/>
+<path d="M221.4,250.0 L380.0,250.0 L380.0,247.5 L460.0,247.5" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a111111)"/>
+<path d="M485.0,309.9 L485.0,270.9" fill="none" stroke="#2e9d3a" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a2e9d3a)"/>
+<path d="M510.0,215.0 L700.0,215.0" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a111111)"/>
+<rect x="20.0" y="520.0" width="1960.0" height="540.0" rx="10" fill="none" stroke="#c0392b" stroke-width="2" stroke-dasharray="10 6"/>
+<text x="32.0" y="540.0" font-family="DejaVu Sans" font-size="15" font-weight="bold" fill="#c0392b" text-anchor="start">PART B - stall: hold IF/ID, bubble into EX/WB until done</text>
+<path d="M209.0,600.0 L300.0,600.0" fill="none" stroke="#2e9d3a" stroke-width="1.8" stroke-linejoin="round"/>
+<path d="M300.0,660.0 L520.0,660.0" fill="none" stroke="#2e9d3a" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a2e9d3a)"/>
+<path d="M300.0,740.0 L520.0,740.0" fill="none" stroke="#2e9d3a" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a2e9d3a)"/>
+<path d="M300.0,820.0 L520.0,820.0" fill="none" stroke="#2e9d3a" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a2e9d3a)"/>
+<line x1="300" y1="600" x2="300" y2="820" stroke="#2e9d3a" stroke-width="2"/>
+<path d="M584.2,890.0 L760.0,890.0 L760.0,910.8 L800.0,910.8" fill="none" stroke="#2e9d3a" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a2e9d3a)"/>
+<path d="M560.0,934.0 L620.0,934.0" fill="none" stroke="#2e9d3a" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a2e9d3a)"/>
+<path d="M650.0,934.0 L730.0,934.0 L730.0,929.2 L800.0,929.2" fill="none" stroke="#2e9d3a" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a2e9d3a)"/>
+<path d="M840.0,920.0 L920.0,920.0" fill="none" stroke="#2e9d3a" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a2e9d3a)"/>
+<rect x="40.0" y="159.0" width="181.4" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<rect x="40.0" y="239.0" width="181.4" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<path d="M460,150 L510,168.2 L510,261.8 L460,280 Z" fill="#fff" stroke="#000" stroke-width="1.9"/>
+<rect x="411.0" y="309.9" width="147.9" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<rect x="700.0" y="204.0" width="100.8" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<rect x="40.0" y="589.0" width="169.0" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<rect x="520.0" y="649.0" width="125.6" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<rect x="520.0" y="729.0" width="224.8" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<rect x="520.0" y="809.0" width="76.0" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<path d="M800,900 H820.0 A20.0,20.0 0 0 1 820.0,940 H800 Z" fill="#fff" stroke="#000" stroke-width="1.9"/>
+<rect x="520.0" y="879.0" width="64.2" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<path d="M620,920 L642,934.0 L620,948 Z" fill="#fff" stroke="#000" stroke-width="1.9"/>
+<circle cx="646.0" cy="934.0" r="4" fill="#fff" stroke="#000" stroke-width="1.6"/>
+<rect x="460.0" y="923.0" width="100.0" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<rect x="920.0" y="909.0" width="305.4" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<text x="1000.0" y="36.0" font-family="DejaVu Sans" font-size="26" font-weight="bold" fill="#000" text-anchor="middle">Fig P7c - RV32M integration: result select into the ALU and pipeline stall / bubble control</text>
+<text x="1000.0" y="60.0" font-family="DejaVu Sans" font-size="14" font-weight="normal" fill="#444" text-anchor="middle">The M unit sits in EX beside the ALU.  Its result enters input 4 of the ALU result mux (Fig P3); a DIV/REM holds the pipeline until done.</text>
+<text x="130.7" y="174.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#c0392b" text-anchor="middle">mul_result[31:0]  (Fig P7a)</text>
+<text x="130.7" y="254.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#c0392b" text-anchor="middle">div_result[31:0]  (Fig P7b)</text>
+<text x="465.0" y="186.5" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#333" text-anchor="start">0 MUL*</text>
+<text x="465.0" y="251.5" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#333" text-anchor="start">1 DIV/REM</text>
+<line x1="286.7" y1="176.0" x2="294.7" y2="164.0" stroke="#111111" stroke-width="1.8"/>
+<text x="290.7" y="161.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#222" text-anchor="middle" stroke="#fff" stroke-width="4" paint-order="stroke" stroke-linejoin="round">[32]</text>
+<line x1="296.7" y1="256.0" x2="304.7" y2="244.0" stroke="#111111" stroke-width="1.8"/>
+<text x="300.7" y="241.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#222" text-anchor="middle" stroke="#fff" stroke-width="4" paint-order="stroke" stroke-linejoin="round">[32]</text>
+<text x="485.0" y="324.9" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#2e9d3a" text-anchor="middle">funct3[2]  (1 = DIV/REM)</text>
+<text x="750.4" y="219.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#c0392b" text-anchor="middle">m_result[31:0]</text>
+<line x1="601.0" y1="221.0" x2="609.0" y2="209.0" stroke="#111111" stroke-width="1.8"/>
+<text x="605.0" y="206.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#222" text-anchor="middle" stroke="#fff" stroke-width="4" paint-order="stroke" stroke-linejoin="round">[32]</text>
+<text x="900.0" y="200.0" font-family="DejaVu Sans" font-size="11" font-weight="normal" fill="#333" text-anchor="start">m_result -&gt; input 4 of the 8:1 ALU result mux (Fig P3).</text>
+<text x="900.0" y="214.0" font-family="DejaVu Sans" font-size="11" font-weight="normal" fill="#333" text-anchor="start">ALU select = 3'b100 when m_ext = 1.</text>
+<text x="40.0" y="400.0" font-family="DejaVu Sans" font-size="11" font-weight="normal" fill="#555" text-anchor="start">funct3 map:  000 MUL  001 MULH  010 MULHSU  011 MULHU   |   100 DIV  101 DIVU  110 REM  111 REMU</text>
+<text x="124.5" y="604.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#c0392b" text-anchor="middle">pipeline_stall  (Fig P7b)</text>
+<circle cx="300.0" cy="600.0" r="3.8" fill="#2e9d3a"/>
+<text x="582.8" y="664.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#2e9d3a" text-anchor="middle">PC hold mux select</text>
+<text x="659.6" y="664.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#555" text-anchor="start">-&gt; Fig P1 (stall_read_i OR pipeline_stall)</text>
+<text x="632.4" y="744.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#2e9d3a" text-anchor="middle">IF/ID hold  (instruction register)</text>
+<text x="758.8" y="744.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#555" text-anchor="start">-&gt; Fig P1/P2 hold muxes</text>
+<text x="558.0" y="824.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#2e9d3a" text-anchor="middle">ID/EX hold</text>
+<text x="610.0" y="824.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#555" text-anchor="start">-&gt; Fig P2 pipeline register: keeps the DIV in EX</text>
+<circle cx="300.0" cy="660.0" r="3.8" fill="#2e9d3a"/>
+<circle cx="300.0" cy="740.0" r="3.8" fill="#2e9d3a"/>
+<text x="552.1" y="894.0" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#2e9d3a" text-anchor="middle">reg_write</text>
+<text x="510.0" y="938.0" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#c0392b" text-anchor="middle">pipeline_stall</text>
+<text x="1072.7" y="924.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#2e9d3a" text-anchor="middle">reg_write_to_WB  (0 while stalled = NOP bubble)</text>
+<text x="40.0" y="990.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#555" text-anchor="start">While the divider runs, the DIV stays in EX and the instruction behind it is held in ID: WB sees a bubble (writes disabled) so nothing wrong is committed.</text>
+</svg>

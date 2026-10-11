@@ -40,6 +40,8 @@
 <path d="M1173.2,795.0 L1296.0,795.0 L1296.0,686.2 L1500.0,686.2" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a111111)"/>
 <path d="M1160.8,925.0 L1318.0,925.0 L1318.0,773.8 L1500.0,773.8" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a111111)"/>
 <path d="M1198.0,1055.0 L1340.0,1055.0 L1340.0,861.2 L1500.0,861.2" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a111111)"/>
+<path d="M1424.0,948.8 L1500.0,948.8" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a111111)"/>
+<path d="M1424.0,1036.2 L1500.0,1036.2" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a111111)"/>
 <path d="M1535.0,1300.0 L1535.0,1078.0" fill="none" stroke="#2e9d3a" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a2e9d3a)"/>
 <path d="M1570.0,730.0 L1700.0,730.0" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a111111)"/>
 <rect x="40.0" y="139.0" width="113.2" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
@@ -70,6 +72,8 @@
 <rect x="40.0" y="1061.0" width="119.4" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
 <rect x="1060.0" y="1044.0" width="138.0" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
 <path d="M1500,380 L1570,478.0 L1570,982.0 L1500,1080 Z" fill="#fff" stroke="#000" stroke-width="1.9"/>
+<rect x="1380.0" y="937.8" width="44.0" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<rect x="1380.0" y="1025.2" width="44.0" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
 <rect x="1450.0" y="1300.0" width="200.0" height="120.0" rx="4" fill="#fff3c4" stroke="#000" stroke-width="2"/>
 <rect x="1700.0" y="719.0" width="116.3" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
 <text x="1000.0" y="36.0" font-family="DejaVu Sans" font-size="26" font-weight="bold" fill="#000" text-anchor="middle">Fig P3 - Pipeline Stage 2 (EX): operand select and ALU core with 8:1 result mux</text>
@@ -149,6 +153,8 @@
 <text x="1505.0" y="865.2" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#333" text-anchor="start">5 special</text>
 <text x="1505.0" y="952.8" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#333" text-anchor="start">6 spare</text>
 <text x="1505.0" y="1040.2" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#333" text-anchor="start">7 spare</text>
+<text x="1402.0" y="952.8" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#000" text-anchor="middle">32'h0</text>
+<text x="1402.0" y="1040.2" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#000" text-anchor="middle">32'h0</text>
 <text x="1550.0" y="1320.0" font-family="DejaVu Sans" font-size="11" font-weight="bold" fill="#000" text-anchor="middle">ALU Operation Decoder</text>
 <text x="1550.0" y="1332.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#444" text-anchor="middle" font-style="italic">alu_op[2:0] + lui / auipc /</text>
 <text x="1550.0" y="1345.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#444" text-anchor="middle" font-style="italic">jal / jalr / mem_write</text>

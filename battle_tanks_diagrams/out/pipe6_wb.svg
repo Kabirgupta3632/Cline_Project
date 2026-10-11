@@ -1,0 +1,276 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2000" height="1960" viewBox="0 0 2000 1960"><defs><marker id="a111111" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#111111"/></marker><marker id="a2e9d3a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#2e9d3a"/></marker><marker id="ad62828" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#d62828"/></marker></defs><rect width="100%" height="100%" fill="#fff"/>
+<rect x="20.0" y="90.0" width="1960.0" height="400.0" rx="10" fill="none" stroke="#3b5bdb" stroke-width="2" stroke-dasharray="10 6"/>
+<text x="32.0" y="110.0" font-family="DejaVu Sans" font-size="15" font-weight="bold" fill="#3b5bdb" text-anchor="start">PART A - store data:  replicate byte / half so it lands in the right lane (select = alu_operation_i[2:0])</text>
+<path d="M620.0,161.2 L760.0,161.2" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a111111)"/>
+<path d="M620.0,223.8 L760.0,223.8" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a111111)"/>
+<path d="M620.0,286.2 L760.0,286.2" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a111111)"/>
+<path d="M620.0,348.8 L760.0,348.8" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a111111)"/>
+<path d="M233.8,150.0 L330.0,150.0 L330.0,190.0" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round"/>
+<path d="M790.0,401.5 L790.0,362.5" fill="none" stroke="#2e9d3a" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a2e9d3a)"/>
+<path d="M1044.0,212.5 L1100.0,212.5" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a111111)"/>
+<path d="M820.0,255.0 L1060.0,255.0 L1060.0,257.5 L1100.0,257.5" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a111111)"/>
+<path d="M1120.0,312.7 L1120.0,273.7" fill="none" stroke="#2e9d3a" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a2e9d3a)"/>
+<path d="M1140.0,235.0 L1300.0,212.5" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a111111)"/>
+<path d="M1254.0,257.5 L1300.0,257.5" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a111111)"/>
+<path d="M1320.0,312.7 L1320.0,273.7" fill="none" stroke="#2e9d3a" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a2e9d3a)"/>
+<path d="M1340.0,235.0 L1450.0,235.0" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a111111)"/>
+<path d="M121.0,380.0 L200.0,380.0" fill="none" stroke="#2e9d3a" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a2e9d3a)"/>
+<path d="M230.0,380.0 L300.0,380.0 L300.0,405.8 L330.0,405.8" fill="none" stroke="#2e9d3a" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a2e9d3a)"/>
+<path d="M115.4,430.0 L310.0,430.0 L310.0,424.2 L330.0,424.2" fill="none" stroke="#2e9d3a" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a2e9d3a)"/>
+<path d="M370.0,415.0 L450.0,415.0" fill="none" stroke="#2e9d3a" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a2e9d3a)"/>
+<rect x="20.0" y="520.0" width="1960.0" height="560.0" rx="10" fill="none" stroke="#3b5bdb" stroke-width="2" stroke-dasharray="10 6"/>
+<text x="32.0" y="540.0" font-family="DejaVu Sans" font-size="15" font-weight="bold" fill="#3b5bdb" text-anchor="start">PART B - byte enables (wb_write_byte_o[3:0]):  by width and by address bits [1:0]</text>
+<path d="M470.0,605.0 L540.0,605.0" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a111111)"/>
+<path d="M470.0,655.0 L540.0,655.0" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a111111)"/>
+<path d="M470.0,705.0 L540.0,705.0" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a111111)"/>
+<path d="M470.0,755.0 L540.0,755.0" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a111111)"/>
+<path d="M178.0,600.0 L300.0,600.0" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round"/>
+<path d="M565.0,800.0 L565.0,766.0" fill="none" stroke="#2e9d3a" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a2e9d3a)"/>
+<path d="M470.0,880.0 L540.0,880.0" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a111111)"/>
+<path d="M470.0,920.0 L540.0,920.0" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a111111)"/>
+<path d="M565.0,968.4 L565.0,934.4" fill="none" stroke="#2e9d3a" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a2e9d3a)"/>
+<path d="M590.0,680.0 L810.0,680.0 L810.0,730.0 L860.0,730.0" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a111111)"/>
+<path d="M590.0,900.0 L830.0,900.0 L830.0,790.0 L860.0,790.0" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a111111)"/>
+<path d="M830.0,850.0 L860.0,850.0" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a111111)"/>
+<path d="M810.0,910.0 L860.0,910.0" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a111111)"/>
+<path d="M890.0,962.2 L890.0,923.2" fill="none" stroke="#2e9d3a" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a2e9d3a)"/>
+<path d="M1024.0,782.5 L1060.0,782.5" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a111111)"/>
+<path d="M920.0,820.0 L1010.0,820.0 L1010.0,827.5 L1060.0,827.5" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a111111)"/>
+<path d="M1080.0,882.7 L1080.0,843.7" fill="none" stroke="#2e9d3a" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a2e9d3a)"/>
+<path d="M1100.0,805.0 L1220.0,782.5" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a111111)"/>
+<path d="M1184.0,827.5 L1220.0,827.5" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a111111)"/>
+<path d="M1240.0,882.7 L1240.0,843.7" fill="none" stroke="#2e9d3a" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a2e9d3a)"/>
+<path d="M1260.0,805.0 L1380.0,805.0" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a111111)"/>
+<rect x="20.0" y="1110.0" width="1960.0" height="820.0" rx="10" fill="none" stroke="#3b5bdb" stroke-width="2" stroke-dasharray="10 6"/>
+<text x="32.0" y="1130.0" font-family="DejaVu Sans" font-size="15" font-weight="bold" fill="#3b5bdb" text-anchor="start">PART C - load path: pick the byte / half from the read word, sign- or zero-extend, then write-back result mux</text>
+<path d="M400.0,1182.5 L560.0,1182.5" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a111111)"/>
+<path d="M400.0,1207.5 L560.0,1207.5" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a111111)"/>
+<path d="M400.0,1232.5 L560.0,1232.5" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a111111)"/>
+<path d="M400.0,1257.5 L560.0,1257.5" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a111111)"/>
+<path d="M258.6,1190.0 L300.0,1190.0" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round"/>
+<path d="M585.0,1297.0 L585.0,1263.0" fill="none" stroke="#2e9d3a" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a2e9d3a)"/>
+<path d="M610.0,1220.0 L720.0,1220.0 L720.0,1210.0 L780.0,1210.0" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a111111)"/>
+<path d="M400.0,1400.0 L560.0,1400.0" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a111111)"/>
+<path d="M400.0,1440.0 L560.0,1440.0" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a111111)"/>
+<path d="M585.0,1488.4 L585.0,1454.4" fill="none" stroke="#2e9d3a" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a2e9d3a)"/>
+<path d="M610.0,1420.0 L780.0,1420.0" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a111111)"/>
+<path d="M300.0,1190.0 L300.0,1190.0" fill="none" stroke="#111111" stroke-width="0.1" stroke-linejoin="round"/>
+<path d="M720.0,1190.0 L720.0,1277.0 L780.0,1277.0" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a111111)"/>
+<path d="M950.0,1210.0 L1050.0,1210.0 L1050.0,1283.3 L1150.0,1283.3" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a111111)"/>
+<path d="M950.0,1277.0 L1060.0,1277.0 L1060.0,1330.0 L1150.0,1330.0" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a111111)"/>
+<path d="M950.0,1420.0 L1070.0,1420.0 L1070.0,1376.7 L1150.0,1376.7" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a111111)"/>
+<path d="M610.0,1420.0 L700.0,1420.0 L700.0,1487.0 L780.0,1487.0" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a111111)"/>
+<path d="M950.0,1487.0 L1080.0,1487.0 L1080.0,1423.3 L1150.0,1423.3" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a111111)"/>
+<path d="M1010.0,1516.7 L1150.0,1516.7" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a111111)"/>
+<path d="M1070.0,1500.0 L1100.0,1500.0 L1100.0,1470.0 L1150.0,1470.0" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a111111)"/>
+<path d="M1180.0,1559.4 L1180.0,1520.4" fill="none" stroke="#2e9d3a" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a2e9d3a)"/>
+<path d="M1210.0,1400.0 L1300.0,1400.0" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a111111)"/>
+<path d="M1560.0,1355.0 L1560.0,1355.0" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a111111)"/>
+<path d="M1419.4,1400.0 L1520.0,1400.0 L1520.0,1405.0 L1560.0,1405.0" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a111111)"/>
+<path d="M1585.0,1462.0 L1585.0,1423.0" fill="none" stroke="#2e9d3a" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a2e9d3a)"/>
+<path d="M1610.0,1380.0 L1660.0,1380.0" fill="none" stroke="#d62828" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#ad62828)"/>
+<rect x="40.0" y="139.0" width="193.8" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<path d="M760,130 L820,165.0 L820,345.0 L760,380 Z" fill="#fff" stroke="#000" stroke-width="1.9"/>
+<rect x="420.0" y="150.2" width="200.0" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<rect x="420.0" y="212.8" width="200.0" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<rect x="420.0" y="275.2" width="200.0" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<rect x="420.0" y="337.8" width="200.0" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<rect x="727.2" y="401.5" width="125.6" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<path d="M1100,190 L1140,202.6 L1140,267.4 L1100,280 Z" fill="#fff" stroke="#000" stroke-width="1.9"/>
+<rect x="1020.0" y="201.5" width="24.0" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<rect x="1090.7" y="312.7" width="58.6" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<path d="M1300,190 L1340,202.6 L1340,267.4 L1300,280 Z" fill="#fff" stroke="#000" stroke-width="1.9"/>
+<rect x="1230.0" y="246.5" width="24.0" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<rect x="1299.0" y="312.7" width="41.9" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<rect x="1450.0" y="224.0" width="266.3" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<rect x="40.0" y="369.0" width="81.0" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<rect x="40.0" y="419.0" width="75.4" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<path d="M200,366 L222,380.0 L200,394 Z" fill="#fff" stroke="#000" stroke-width="1.9"/>
+<circle cx="226.0" cy="380.0" r="4" fill="#fff" stroke="#000" stroke-width="1.6"/>
+<path d="M330,395 H350.0 A20.0,20.0 0 0 1 350.0,435 H330 Z" fill="#fff" stroke="#000" stroke-width="1.9"/>
+<rect x="450.0" y="404.0" width="249.6" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<rect x="40.0" y="589.0" width="138.0" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<path d="M540,580 L590,608.0 L590,752.0 L540,780 Z" fill="#fff" stroke="#000" stroke-width="1.9"/>
+<rect x="400.0" y="594.0" width="70.0" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<rect x="400.0" y="644.0" width="70.0" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<rect x="400.0" y="694.0" width="70.0" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<rect x="400.0" y="744.0" width="70.0" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<rect x="502.2" y="800.0" width="125.6" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<path d="M540,860 L590,871.2 L590,928.8 L540,940 Z" fill="#fff" stroke="#000" stroke-width="1.9"/>
+<rect x="400.0" y="869.0" width="70.0" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<rect x="400.0" y="909.0" width="70.0" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<rect x="507.8" y="968.4" width="114.4" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<path d="M860,700 L920,733.6 L920,906.4 L860,940 Z" fill="#fff" stroke="#000" stroke-width="1.9"/>
+<rect x="760.0" y="839.0" width="70.0" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<rect x="760.0" y="899.0" width="50.0" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<rect x="827.2" y="962.2" width="125.6" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<path d="M1060,760 L1100,772.6 L1100,837.4 L1060,850 Z" fill="#fff" stroke="#000" stroke-width="1.9"/>
+<rect x="980.0" y="771.5" width="44.0" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<rect x="1050.7" y="882.7" width="58.6" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<path d="M1220,760 L1260,772.6 L1260,837.4 L1220,850 Z" fill="#fff" stroke="#000" stroke-width="1.9"/>
+<rect x="1140.0" y="816.5" width="44.0" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<rect x="1219.0" y="882.7" width="41.9" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<rect x="1380.0" y="794.0" width="259.5" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<rect x="1380.0" y="629.0" width="336.4" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<rect x="40.0" y="1179.0" width="218.6" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<path d="M560,1170 L610,1184.0 L610,1256.0 L560,1270 Z" fill="#fff" stroke="#000" stroke-width="1.9"/>
+<rect x="330.0" y="1171.5" width="70.0" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<rect x="330.0" y="1196.5" width="70.0" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<rect x="330.0" y="1221.5" width="70.0" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<rect x="330.0" y="1246.5" width="70.0" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<rect x="544.5" y="1297.0" width="81.0" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<rect x="780.0" y="1190.0" width="170.0" height="40.0" rx="18" fill="#fff3c4" stroke="#000" stroke-width="2"/>
+<path d="M560,1380 L610,1391.2 L610,1448.8 L560,1460 Z" fill="#fff" stroke="#000" stroke-width="1.9"/>
+<rect x="330.0" y="1389.0" width="70.0" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<rect x="330.0" y="1429.0" width="70.0" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<rect x="550.1" y="1488.4" width="69.8" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<rect x="780.0" y="1400.0" width="170.0" height="40.0" rx="18" fill="#fff3c4" stroke="#000" stroke-width="2"/>
+<path d="M1150,1260 L1210,1299.2 L1210,1500.8 L1150,1540 Z" fill="#fff" stroke="#000" stroke-width="1.9"/>
+<rect x="780.0" y="1260.0" width="170.0" height="36.0" rx="18" fill="#fff3c4" stroke="#000" stroke-width="2"/>
+<rect x="780.0" y="1470.0" width="170.0" height="36.0" rx="18" fill="#fff3c4" stroke="#000" stroke-width="2"/>
+<rect x="960.0" y="1505.7" width="50.0" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<rect x="960.0" y="1489.0" width="110.0" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<rect x="1083.7" y="1559.4" width="192.6" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<rect x="1300.0" y="1389.0" width="119.4" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<path d="M1560,1330 L1610,1344.0 L1610,1416.0 L1560,1430 Z" fill="#fff" stroke="#000" stroke-width="1.9"/>
+<rect x="1480.0" y="1344.0" width="80.0" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<rect x="1541.7" y="1462.0" width="86.5" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<rect x="1660.0" y="1369.0" width="116.3" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<rect x="1000.0" y="1759.0" width="386.0" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<text x="1000.0" y="36.0" font-family="DejaVu Sans" font-size="26" font-weight="bold" fill="#000" text-anchor="middle">Fig P6 - WB stage: store byte-lane alignment, byte enables, load alignment / sign-extension, result mux</text>
+<text x="1000.0" y="60.0" font-family="DejaVu Sans" font-size="14" font-weight="normal" fill="#444" text-anchor="middle">From your 'wb_write_data / wb_write_byte' mux sketch.  SB / SH / SW decide how data and the 4 byte enables are placed in the 32-bit word.</text>
+<text x="136.9" y="154.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#000" text-anchor="middle">alu_op2_i[31:0]  (store data)</text>
+<text x="765.0" y="165.2" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#333" text-anchor="start">SB</text>
+<text x="765.0" y="227.8" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#333" text-anchor="start">SH</text>
+<text x="765.0" y="290.2" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#333" text-anchor="start">SW</text>
+<text x="765.0" y="352.8" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#333" text-anchor="start">default</text>
+<text x="520.0" y="165.2" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#000" text-anchor="middle">{4{alu_op2_i[7:0]}}</text>
+<text x="520.0" y="227.8" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#000" text-anchor="middle">{2{alu_op2_i[15:0]}}</text>
+<text x="520.0" y="290.2" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#000" text-anchor="middle">alu_op2_i[31:0]</text>
+<text x="520.0" y="352.8" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#000" text-anchor="middle">32'hx</text>
+<text x="60.0" y="215.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#333" text-anchor="start" font-style="italic">(op2 feeds the three replicate blocks - wiring only)</text>
+<text x="790.0" y="416.5" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#2e9d3a" text-anchor="middle">alu_operation_i[2:0]</text>
+<text x="1105.0" y="216.5" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#333" text-anchor="start">0</text>
+<text x="1105.0" y="261.5" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#333" text-anchor="start">1</text>
+<text x="1032.0" y="216.5" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#000" text-anchor="middle">0</text>
+<line x1="936.0" y1="261.0" x2="944.0" y2="249.0" stroke="#111111" stroke-width="1.8"/>
+<text x="940.0" y="246.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#222" text-anchor="middle" stroke="#fff" stroke-width="4" paint-order="stroke" stroke-linejoin="round">[32]</text>
+<text x="1120.0" y="327.7" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#2e9d3a" text-anchor="middle">store_en</text>
+<text x="1305.0" y="216.5" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#333" text-anchor="start">0</text>
+<text x="1305.0" y="261.5" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#333" text-anchor="start">1</text>
+<line x1="1216.0" y1="229.8" x2="1224.0" y2="217.8" stroke="#111111" stroke-width="1.8"/>
+<text x="1220.0" y="214.8" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#222" text-anchor="middle" stroke="#fff" stroke-width="4" paint-order="stroke" stroke-linejoin="round">[32]</text>
+<text x="1242.0" y="261.5" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#000" text-anchor="middle">0</text>
+<text x="1320.0" y="327.7" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#2e9d3a" text-anchor="middle">reset</text>
+<text x="1583.2" y="239.0" font-family="DejaVu Sans" font-size="11" font-weight="normal" fill="#3b5bdb" text-anchor="middle">wb_write_data_o[31:0]  -&gt; data memory</text>
+<line x1="1391.0" y1="241.0" x2="1399.0" y2="229.0" stroke="#111111" stroke-width="1.8"/>
+<text x="1395.0" y="226.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#222" text-anchor="middle" stroke="#fff" stroke-width="4" paint-order="stroke" stroke-linejoin="round">[32]</text>
+<text x="80.5" y="384.0" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#2e9d3a" text-anchor="middle">stall_read_i</text>
+<text x="77.7" y="434.0" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#2e9d3a" text-anchor="middle">mem_write_i</text>
+<text x="574.8" y="419.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#2e9d3a" text-anchor="middle">store_en = ~stall_read_i &amp; mem_write_i</text>
+<text x="900.0" y="400.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#555" text-anchor="start">store_en is the select of the 'store gating' mux (and of the byte-enable mux in Part B);</text>
+<text x="900.0" y="413.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#555" text-anchor="start">only a real, non-stalled store may drive data/enables.</text>
+<text x="109.0" y="604.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#000" text-anchor="middle">write_address_i[1:0]</text>
+<text x="545.0" y="609.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#333" text-anchor="start">2'b00</text>
+<text x="545.0" y="659.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#333" text-anchor="start">2'b01</text>
+<text x="545.0" y="709.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#333" text-anchor="start">2'b10</text>
+<text x="545.0" y="759.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#333" text-anchor="start">2'b11</text>
+<text x="435.0" y="609.0" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#000" text-anchor="middle">4'b0001</text>
+<text x="435.0" y="659.0" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#000" text-anchor="middle">4'b0010</text>
+<text x="435.0" y="709.0" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#000" text-anchor="middle">4'b0100</text>
+<text x="435.0" y="759.0" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#000" text-anchor="middle">4'b1000</text>
+<text x="565.0" y="815.0" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#2e9d3a" text-anchor="middle">write_address_i[1:0]</text>
+<text x="545.0" y="884.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#333" text-anchor="start">0</text>
+<text x="545.0" y="924.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#333" text-anchor="start">1</text>
+<text x="435.0" y="884.0" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#000" text-anchor="middle">4'b0011</text>
+<text x="435.0" y="924.0" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#000" text-anchor="middle">4'b1100</text>
+<text x="565.0" y="983.4" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#2e9d3a" text-anchor="middle">write_address_i[1]</text>
+<text x="865.0" y="734.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#333" text-anchor="start">SB</text>
+<text x="865.0" y="794.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#333" text-anchor="start">SH</text>
+<text x="865.0" y="854.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#333" text-anchor="start">SW</text>
+<text x="865.0" y="914.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#333" text-anchor="start">default</text>
+<line x1="696.0" y1="686.0" x2="704.0" y2="674.0" stroke="#111111" stroke-width="1.8"/>
+<text x="700.0" y="671.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#222" text-anchor="middle" stroke="#fff" stroke-width="4" paint-order="stroke" stroke-linejoin="round">[4]</text>
+<line x1="706.0" y1="906.0" x2="714.0" y2="894.0" stroke="#111111" stroke-width="1.8"/>
+<text x="710.0" y="891.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#222" text-anchor="middle" stroke="#fff" stroke-width="4" paint-order="stroke" stroke-linejoin="round">[4]</text>
+<text x="795.0" y="854.0" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#000" text-anchor="middle">4'b1111</text>
+<text x="785.0" y="914.0" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#000" text-anchor="middle">4'bx</text>
+<text x="890.0" y="977.2" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#2e9d3a" text-anchor="middle">alu_operation_i[2:0]</text>
+<text x="1065.0" y="786.5" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#333" text-anchor="start">0</text>
+<text x="1065.0" y="831.5" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#333" text-anchor="start">1</text>
+<text x="1002.0" y="786.5" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#000" text-anchor="middle">4'b0</text>
+<line x1="961.0" y1="826.0" x2="969.0" y2="814.0" stroke="#111111" stroke-width="1.8"/>
+<text x="965.0" y="811.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#222" text-anchor="middle" stroke="#fff" stroke-width="4" paint-order="stroke" stroke-linejoin="round">[4]</text>
+<text x="1080.0" y="897.7" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#2e9d3a" text-anchor="middle">store_en</text>
+<text x="1225.0" y="786.5" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#333" text-anchor="start">0</text>
+<text x="1225.0" y="831.5" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#333" text-anchor="start">1</text>
+<line x1="1156.0" y1="799.8" x2="1164.0" y2="787.8" stroke="#111111" stroke-width="1.8"/>
+<text x="1160.0" y="784.8" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#222" text-anchor="middle" stroke="#fff" stroke-width="4" paint-order="stroke" stroke-linejoin="round">[4]</text>
+<text x="1162.0" y="831.5" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#000" text-anchor="middle">4'b0</text>
+<text x="1240.0" y="897.7" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#2e9d3a" text-anchor="middle">reset</text>
+<text x="1509.8" y="809.0" font-family="DejaVu Sans" font-size="11" font-weight="normal" fill="#3b5bdb" text-anchor="middle">wb_write_byte_o[3:0]  -&gt; data memory</text>
+<line x1="1316.0" y1="811.0" x2="1324.0" y2="799.0" stroke="#111111" stroke-width="1.8"/>
+<text x="1320.0" y="796.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#222" text-anchor="middle" stroke="#fff" stroke-width="4" paint-order="stroke" stroke-linejoin="round">[4]</text>
+<text x="1548.2" y="644.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#3b5bdb" text-anchor="middle">wb_write_address_o[31:0] = ex_result  (word address)</text>
+<text x="1400.0" y="1000.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#555" text-anchor="start">write enables for SB: one-hot by address [1:0];</text>
+<text x="1400.0" y="1013.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#555" text-anchor="start">SH: low pair if addr[1]=0, high pair if addr[1]=1;</text>
+<text x="1400.0" y="1026.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#555" text-anchor="start">SW: all four.</text>
+<text x="149.3" y="1194.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#1f6fe0" text-anchor="middle">wb_read_data[31:0]  (from Fig 2b)</text>
+<text x="565.0" y="1186.5" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#333" text-anchor="start">0</text>
+<text x="565.0" y="1211.5" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#333" text-anchor="start">1</text>
+<text x="565.0" y="1236.5" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#333" text-anchor="start">2</text>
+<text x="565.0" y="1261.5" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#333" text-anchor="start">3</text>
+<text x="365.0" y="1186.5" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#000" text-anchor="middle">rd[7:0]</text>
+<text x="365.0" y="1211.5" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#000" text-anchor="middle">rd[15:8]</text>
+<text x="365.0" y="1236.5" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#000" text-anchor="middle">rd[23:16]</text>
+<text x="365.0" y="1261.5" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#000" text-anchor="middle">rd[31:24]</text>
+<text x="585.0" y="1312.0" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#2e9d3a" text-anchor="middle">wb_addr[1:0]</text>
+<text x="865.0" y="1210.0" font-family="DejaVu Sans" font-size="10" font-weight="bold" fill="#000" text-anchor="middle">sign-extend 8-&gt;32</text>
+<line x1="661.0" y1="1226.0" x2="669.0" y2="1214.0" stroke="#111111" stroke-width="1.8"/>
+<text x="665.0" y="1211.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#222" text-anchor="middle" stroke="#fff" stroke-width="4" paint-order="stroke" stroke-linejoin="round">[8]</text>
+<text x="565.0" y="1404.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#333" text-anchor="start">0</text>
+<text x="565.0" y="1444.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#333" text-anchor="start">1</text>
+<text x="365.0" y="1404.0" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#000" text-anchor="middle">rd[15:0]</text>
+<text x="365.0" y="1444.0" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#000" text-anchor="middle">rd[31:16]</text>
+<text x="585.0" y="1503.4" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#2e9d3a" text-anchor="middle">wb_addr[1]</text>
+<text x="865.0" y="1420.0" font-family="DejaVu Sans" font-size="10" font-weight="bold" fill="#000" text-anchor="middle">sign-extend 16-&gt;32</text>
+<line x1="691.0" y1="1426.0" x2="699.0" y2="1414.0" stroke="#111111" stroke-width="1.8"/>
+<text x="695.0" y="1411.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#222" text-anchor="middle" stroke="#fff" stroke-width="4" paint-order="stroke" stroke-linejoin="round">[16]</text>
+<text x="1155.0" y="1287.3" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#333" text-anchor="start">LB</text>
+<text x="1155.0" y="1334.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#333" text-anchor="start">LBU</text>
+<text x="1155.0" y="1380.7" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#333" text-anchor="start">LH</text>
+<text x="1155.0" y="1427.3" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#333" text-anchor="start">LHU</text>
+<text x="1155.0" y="1474.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#333" text-anchor="start">LW</text>
+<text x="1155.0" y="1520.7" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#333" text-anchor="start">-</text>
+<text x="865.0" y="1280.0" font-family="DejaVu Sans" font-size="10" font-weight="bold" fill="#000" text-anchor="middle">zero-extend 8</text>
+<circle cx="720.0" cy="1190.0" r="3.8" fill="#111111"/>
+<line x1="996.0" y1="1216.0" x2="1004.0" y2="1204.0" stroke="#111111" stroke-width="1.8"/>
+<text x="1000.0" y="1201.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#222" text-anchor="middle" stroke="#fff" stroke-width="4" paint-order="stroke" stroke-linejoin="round">[32]</text>
+<line x1="1001.0" y1="1283.0" x2="1009.0" y2="1271.0" stroke="#111111" stroke-width="1.8"/>
+<text x="1005.0" y="1268.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#222" text-anchor="middle" stroke="#fff" stroke-width="4" paint-order="stroke" stroke-linejoin="round">[32]</text>
+<line x1="1006.0" y1="1426.0" x2="1014.0" y2="1414.0" stroke="#111111" stroke-width="1.8"/>
+<text x="1010.0" y="1411.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#222" text-anchor="middle" stroke="#fff" stroke-width="4" paint-order="stroke" stroke-linejoin="round">[32]</text>
+<text x="865.0" y="1490.0" font-family="DejaVu Sans" font-size="10" font-weight="bold" fill="#000" text-anchor="middle">zero-extend 16</text>
+<circle cx="700.0" cy="1420.0" r="3.8" fill="#111111"/>
+<line x1="1011.0" y1="1493.0" x2="1019.0" y2="1481.0" stroke="#111111" stroke-width="1.8"/>
+<text x="1015.0" y="1478.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#222" text-anchor="middle" stroke="#fff" stroke-width="4" paint-order="stroke" stroke-linejoin="round">[32]</text>
+<text x="985.0" y="1520.7" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#000" text-anchor="middle">32'hx</text>
+<text x="1015.0" y="1504.0" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#000" text-anchor="middle">rd[31:0]  (word)</text>
+<text x="1180.0" y="1574.4" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#2e9d3a" text-anchor="middle">load_type = alu_operation_i[2:0]</text>
+<text x="1359.7" y="1404.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#3b5bdb" text-anchor="middle">load_result[31:0]</text>
+<line x1="1251.0" y1="1406.0" x2="1259.0" y2="1394.0" stroke="#111111" stroke-width="1.8"/>
+<text x="1255.0" y="1391.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#222" text-anchor="middle" stroke="#fff" stroke-width="4" paint-order="stroke" stroke-linejoin="round">[32]</text>
+<text x="1565.0" y="1359.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#333" text-anchor="start">0 ex_result</text>
+<text x="1565.0" y="1409.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#333" text-anchor="start">1 load_result</text>
+<text x="1520.0" y="1359.0" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#000" text-anchor="middle">ex_result_wb</text>
+<line x1="1465.7" y1="1406.0" x2="1473.7" y2="1394.0" stroke="#111111" stroke-width="1.8"/>
+<text x="1469.7" y="1391.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#222" text-anchor="middle" stroke="#fff" stroke-width="4" paint-order="stroke" stroke-linejoin="round">[32]</text>
+<text x="1585.0" y="1477.0" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#2e9d3a" text-anchor="middle">wb_mem_to_reg</text>
+<text x="1718.2" y="1384.0" font-family="DejaVu Sans" font-size="11" font-weight="normal" fill="#d62828" text-anchor="middle">wb_result[31:0]</text>
+<text x="1660.0" y="1410.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#555" text-anchor="start">-&gt; regfile + forwarding (Fig P4)</text>
+<line x1="1631.0" y1="1386.0" x2="1639.0" y2="1374.0" stroke="#d62828" stroke-width="1.8"/>
+<text x="1635.0" y="1371.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#d62828" text-anchor="middle" stroke="#fff" stroke-width="4" paint-order="stroke" stroke-linejoin="round">[32]</text>
+<text x="1000.0" y="1650.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#555" text-anchor="start">Only loads use the read data; every other instruction writes ex_result.</text>
+<text x="1000.0" y="1663.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#555" text-anchor="start">Squashed instructions (wb_stall_first / second, Fig P1) have reg write-enable forced to 0 here.</text>
+<text x="1193.0" y="1774.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#d62828" text-anchor="middle">wb_write_en = reg_write &amp; ~wb_stall_first &amp; ~wb_stall_second</text>
+</svg>

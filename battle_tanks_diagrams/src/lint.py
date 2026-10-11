@@ -119,3 +119,59 @@ if __name__ == '__main__':
     for p in sys.argv[1:]:
         d = dangling(p)
         print(p, len(d), 'dangling arrows', d[:8])
+
+
+def unwired_mux_inputs(path):
+    """mux = trapezoid path with 4 points 'M x,y L x+w,y+k L x+w,y+h-k L x,y+h Z'.  Inputs are on the left edge;
+    count wire endpoints landing on the left edge."""
+    s = open(path).read()
+    wires = []
+    for m in re.finditer(r'<path d="(M[^"]*)" fill="none" stroke="(#[0-9a-f]+)" stroke-width="([\d.]+)"', s):
+        pts = [tuple(map(float, p.split(','))) for p in re.findall(r'[\d.\-]+,[\d.\-]+', m[1])]
+        if float(m[3]) >= 1: wires.append(pts)
+    ends = [p[-1] for p in wires] + [p[0] for p in wires]
+    bad = []
+    for m in re.finditer(r'<path d="M([\d.\-]+),([\d.\-]+) L([\d.\-]+),([\d.\-]+) L([\d.\-]+),([\d.\-]+) L([\d.\-]+),([\d.\-]+) Z" fill="#fff"', s):
+        x0, y0, x1, y1, x2, y2, x3, y3 = map(float, m.groups())
+        if abs(x0 - x3) > 0.1 or abs(x1 - x2) > 0.1: continue
+        h = y3 - y0
+        left_hit = [e for e in ends if abs(e[0] - x0) < 3 and y0 - 2 <= e[1] <= y3 + 2]
+        right_hit = [e for e in ends if abs(e[0] - x1) < 3 and y1 - 2 <= e[1] <= y2 + 2]
+        sel_hit = [e for e in ends if y0 - 2 <= e[1] <= y3 + 2 and x0 <= e[0] <= x1 and abs(e[0] - x0) > 3 and abs(e[0] - x1) > 3]
+        if not left_hit:
+            bad.append(('mux-no-input', (x0, y0, h)))
+        elif not right_hit:
+            bad.append(('mux-no-output', (x0, y0, h)))
+    return bad
+
+
+if __name__ == '__main__':
+    for p in sys.argv[1:]:
+        u = unwired_mux_inputs(p)
+        print(p, len(u), 'unwired muxes', u[:6])
+
+
+def mux_pin_check(path):
+    """For every mux, find input label texts on its left edge ('0','1','SB',...) and require a wire endpoint at that y."""
+    s = open(path).read()
+    wires = []
+    for m in re.finditer(r'<path d="(M[^"]*)" fill="none" stroke="(#[0-9a-f]+)" stroke-width="([\d.]+)"', s):
+        pts = [tuple(map(float, p.split(','))) for p in re.findall(r'[\d.\-]+,[\d.\-]+', m[1])]
+        if float(m[3]) >= 1: wires.append(pts)
+    ends = [p[-1] for p in wires] + [p[0] for p in wires]
+    bad = []
+    for m in re.finditer(r'<path d="M([\d.\-]+),([\d.\-]+) L([\d.\-]+),([\d.\-]+) L([\d.\-]+),([\d.\-]+) L([\d.\-]+),([\d.\-]+) Z" fill="#fff"', s):
+        x0, y0, x1, y1, x2, y2, x3, y3 = map(float, m.groups())
+        if abs(x0 - x3) > 0.1 or abs(x1 - x2) > 0.1: continue
+        for t in re.finditer(r'<text x="([\d.\-]+)" y="([\d.\-]+)"[^>]*text-anchor="start"[^>]*>([^<]*)</text>', s):
+            tx, ty = float(t[1]), float(t[2]) - 4
+            if abs(tx - (x0 + 5)) < 0.6 and y0 <= ty <= y3:
+                if not any(abs(e[0] - x0) < 3 and abs(e[1] - ty) < 3 for e in ends):
+                    bad.append(('mux-input-unwired', t[3], (x0, round(ty, 1))))
+    return bad
+
+
+if __name__ == '__main__':
+    for p in sys.argv[1:]:
+        u = mux_pin_check(p)
+        print(p, len(u), 'unwired mux pins', u[:12])
