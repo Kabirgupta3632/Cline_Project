@@ -7,7 +7,7 @@ PX, PW = 1060, 330                            # peripheral column
 def build():
     f = Fig(2760, 1260, "Fig 1 - Battle Tanks: Top-Level System Block Diagram (FPGA fabric)",
             "RV32IM 3-stage CPU runs the game rules in C; everything per-pixel / per-cycle / per-deadline is hardware.  "
-            "Block internals: Figs 2-8.")
+            "Block internals: Figs 2-7.")
     cpu_part(f)
     periph_part(f)
     vga_part(f)
@@ -57,7 +57,7 @@ def cpu_part(f):
     f.wire([ic["d_rdata"], core["d_rdata"]], "rd", bus="32", label="d_rdata", ldy=-1)
     pin(f, ic, "dmem_wr", "T", 50, show=False)
     pin(f, ic, "dmem_rd", "T", 140, show=False)
-    f.wire([ic["dmem_wr"], dm["wr"]], "data", bus="+", label="addr,wdata,we", ldx=-100)
+    f.wire([ic["dmem_wr"], dm["wr"]], "data", bus=True, label="addr, wdata, we", ldx=-100)
     f.wire([dm["rd"], ic["dmem_rd"]], "rd", bus="32", label="rdata", ldx=28)
     f.text(785, 640, "addr[31]=0 -> Data Mem\naddr[31]=1 -> MMIO window\naddr[11:2] -> cs_* decode\nread mux selects source\nfrom registered cs", 11, color="#333")
     pin(f, ic, "bus_out", "R", 30, show=False)
@@ -149,7 +149,7 @@ def vga_part(f):
     pin(f, tg, "sync", "R", 50)
     pin(f, tg, "x, y", "R", 130)
     p = f.PIXCE
-    f.wire([p, (500, p[1]), (500, 80), (1580, 80), (1580, tg["pix_ce"][1]), tg["pix_ce"]], "clk", label="pix_ce (25 MHz enable)", seg=2, ldy=22)
+    f.wire([p, (500, p[1]), (500, 84), (1580, 84), (1580, tg["pix_ce"][1]), tg["pix_ce"]], "clk", label="pix_ce (25 MHz enable)", seg=2, lpos=0.12, ldy=-1)
     f.wire([tg["x, y"], (XY, tg["x, y"][1])], "vid", arrow=False)
     f.text(1868, tg["x, y"][1] - 8, "x[9:0], y[9:0]", 10, anchor="end", color="#008a8a", halo=True)
 
