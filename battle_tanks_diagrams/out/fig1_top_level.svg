@@ -86,7 +86,7 @@
 <rect x="2510.0" y="270.0" width="200.0" height="560.0" rx="4" fill="#ffe0e0" stroke="#000" stroke-width="2"/>
 <rect x="2510.0" y="890.0" width="200.0" height="90.0" rx="4" fill="#ffe0e0" stroke="#000" stroke-width="2"/>
 <text x="1380.0" y="36.0" font-family="DejaVu Sans" font-size="26" font-weight="bold" fill="#000" text-anchor="middle">Fig 1 - Battle Tanks: Top-Level System Block Diagram (FPGA fabric)</text>
-<text x="1380.0" y="60.0" font-family="DejaVu Sans" font-size="14" font-weight="normal" fill="#444" text-anchor="middle">RV32IM 3-stage CPU runs the game rules in C; everything per-pixel / per-cycle / per-deadline is hardware.  Block internals: Figs 2-7.</text>
+<text x="1380.0" y="60.0" font-family="DejaVu Sans" font-size="14" font-weight="normal" fill="#444" text-anchor="middle">RV32IM 3-stage CPU runs the game rules in C; everything per-pixel / per-cycle / per-deadline is hardware.  Top-level view only.</text>
 <text x="105.0" y="110.0" font-family="DejaVu Sans" font-size="15" font-weight="bold" fill="#000" text-anchor="middle">Board Oscillator</text>
 <text x="105.0" y="126.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#444" text-anchor="middle" font-style="italic">100 MHz</text>
 <text x="105.0" y="200.0" font-family="DejaVu Sans" font-size="15" font-weight="bold" fill="#000" text-anchor="middle">Reset Button</text>

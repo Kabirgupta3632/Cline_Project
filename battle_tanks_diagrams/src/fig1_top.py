@@ -7,7 +7,7 @@ PX, PW = 1060, 330                            # peripheral column
 def build():
     f = Fig(2760, 1260, "Fig 1 - Battle Tanks: Top-Level System Block Diagram (FPGA fabric)",
             "RV32IM 3-stage CPU runs the game rules in C; everything per-pixel / per-cycle / per-deadline is hardware.  "
-            "Block internals: Figs 2-7.")
+            "Top-level view only.")
     cpu_part(f)
     periph_part(f)
     vga_part(f)
