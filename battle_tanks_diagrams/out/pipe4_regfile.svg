@@ -1,0 +1,181 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1900" height="1230" viewBox="0 0 1900 1230"><defs><marker id="a111111" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#111111"/></marker><marker id="a2e9d3a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#2e9d3a"/></marker><marker id="ad62828" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#d62828"/></marker></defs><rect width="100%" height="100%" fill="#fff"/>
+<rect x="20.0" y="90.0" width="1860.0" height="360.0" rx="10" fill="none" stroke="#3b5bdb" stroke-width="2" stroke-dasharray="10 6"/>
+<text x="32.0" y="110.0" font-family="DejaVu Sans" font-size="15" font-weight="bold" fill="#3b5bdb" text-anchor="start">PART A - the register file itself</text>
+<path d="M367.0,220.0 L560.0,220.0" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a111111)"/>
+<path d="M367.0,267.0 L560.0,267.0" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a111111)"/>
+<path d="M398.0,314.0 L560.0,314.0" fill="none" stroke="#d62828" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#ad62828)"/>
+<path d="M367.0,361.0 L560.0,361.0" fill="none" stroke="#d62828" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#ad62828)"/>
+<path d="M342.2,408.0 L560.0,408.0" fill="none" stroke="#d62828" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#ad62828)"/>
+<path d="M900.0,220.0 L1000.0,220.0" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a111111)"/>
+<path d="M900.0,408.0 L1000.0,408.0" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a111111)"/>
+<rect x="20.0" y="470.0" width="1860.0" height="320.0" rx="10" fill="none" stroke="#3b5bdb" stroke-width="2" stroke-dasharray="10 6"/>
+<text x="32.0" y="490.0" font-family="DejaVu Sans" font-size="15" font-weight="bold" fill="#3b5bdb" text-anchor="start">PART B - read port 1</text>
+<path d="M165.6,550.0 L260.0,550.0 L260.0,571.0 L300.0,571.0" fill="none" stroke="#d62828" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#ad62828)"/>
+<path d="M137.7,590.0 L270.0,590.0 L270.0,583.0 L300.0,583.0" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a111111)"/>
+<path d="M400.0,577.0 L440.0,577.0 L440.0,575.8 L480.0,575.8" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a111111)"/>
+<path d="M375.4,630.0 L460.0,630.0 L460.0,594.2 L480.0,594.2" fill="none" stroke="#d62828" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#ad62828)"/>
+<path d="M520.0,585.0 L580.0,585.0" fill="none" stroke="#2e9d3a" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a2e9d3a)"/>
+<path d="M137.7,688.0 L300.0,687.0" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a111111)"/>
+<path d="M430.0,687.0 L500.0,687.0" fill="none" stroke="#2e9d3a" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a2e9d3a)"/>
+<path d="M984.8,570.0 L990.0,570.0 L990.0,565.0 L1010.0,565.0" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a111111)"/>
+<path d="M867.0,615.0 L1010.0,615.0" fill="none" stroke="#d62828" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#ad62828)"/>
+<path d="M1030.0,672.0 L1030.0,633.0" fill="none" stroke="#2e9d3a" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a2e9d3a)"/>
+<path d="M1050.0,590.0 L1210.0,565.0" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a111111)"/>
+<path d="M1174.0,615.0 L1210.0,615.0" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a111111)"/>
+<path d="M1230.0,672.0 L1230.0,633.0" fill="none" stroke="#2e9d3a" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a2e9d3a)"/>
+<path d="M1250.0,590.0 L1380.0,590.0" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a111111)"/>
+<rect x="20.0" y="810.0" width="1860.0" height="320.0" rx="10" fill="none" stroke="#3b5bdb" stroke-width="2" stroke-dasharray="10 6"/>
+<text x="32.0" y="830.0" font-family="DejaVu Sans" font-size="15" font-weight="bold" fill="#3b5bdb" text-anchor="start">PART C - read port 2  (same structure)</text>
+<path d="M165.6,890.0 L260.0,890.0 L260.0,911.0 L300.0,911.0" fill="none" stroke="#d62828" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#ad62828)"/>
+<path d="M137.7,930.0 L270.0,930.0 L270.0,923.0 L300.0,923.0" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a111111)"/>
+<path d="M400.0,917.0 L440.0,917.0 L440.0,915.8 L480.0,915.8" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a111111)"/>
+<path d="M375.4,970.0 L460.0,970.0 L460.0,934.2 L480.0,934.2" fill="none" stroke="#d62828" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#ad62828)"/>
+<path d="M520.0,925.0 L580.0,925.0" fill="none" stroke="#2e9d3a" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a2e9d3a)"/>
+<path d="M137.7,1028.0 L300.0,1027.0" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a111111)"/>
+<path d="M430.0,1027.0 L500.0,1027.0" fill="none" stroke="#2e9d3a" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a2e9d3a)"/>
+<path d="M984.8,910.0 L990.0,910.0 L990.0,905.0 L1010.0,905.0" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a111111)"/>
+<path d="M867.0,955.0 L1010.0,955.0" fill="none" stroke="#d62828" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#ad62828)"/>
+<path d="M1030.0,1012.0 L1030.0,973.0" fill="none" stroke="#2e9d3a" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a2e9d3a)"/>
+<path d="M1050.0,930.0 L1210.0,905.0" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a111111)"/>
+<path d="M1174.0,955.0 L1210.0,955.0" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a111111)"/>
+<path d="M1230.0,1012.0 L1230.0,973.0" fill="none" stroke="#2e9d3a" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a2e9d3a)"/>
+<path d="M1250.0,930.0 L1380.0,930.0" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a111111)"/>
+<rect x="560.0" y="130.0" width="340.0" height="290.0" rx="4" fill="#d9f2d9" stroke="#000" stroke-width="2"/>
+<rect x="260.0" y="209.0" width="107.0" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<rect x="260.0" y="256.0" width="107.0" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<rect x="260.0" y="303.0" width="138.0" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<rect x="260.0" y="350.0" width="107.0" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<rect x="260.0" y="397.0" width="82.2" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<rect x="1000.0" y="209.0" width="187.6" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<rect x="1000.0" y="397.0" width="187.6" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<rect x="40.0" y="539.0" width="125.6" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<rect x="40.0" y="579.0" width="97.7" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<rect x="300.0" y="555.0" width="100.0" height="40.0" rx="18" fill="#fff3c4" stroke="#000" stroke-width="2"/>
+<rect x="300.0" y="619.0" width="75.4" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<path d="M480,565 H500.0 A20.0,20.0 0 0 1 500.0,605 H480 Z" fill="#fff" stroke="#000" stroke-width="1.9"/>
+<rect x="580.0" y="574.0" width="63.6" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<rect x="300.0" y="670.0" width="130.0" height="36.0" rx="18" fill="#fff3c4" stroke="#000" stroke-width="2"/>
+<rect x="40.0" y="677.0" width="97.7" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<rect x="500.0" y="676.0" width="45.0" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<rect x="760.0" y="559.0" width="224.8" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<path d="M1010,540 L1050,554.0 L1050,626.0 L1010,640 Z" fill="#fff" stroke="#000" stroke-width="1.9"/>
+<rect x="760.0" y="604.0" width="107.0" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<rect x="1000.7" y="672.0" width="58.6" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<path d="M1210,540 L1250,554.0 L1250,626.0 L1210,640 Z" fill="#fff" stroke="#000" stroke-width="1.9"/>
+<rect x="1130.0" y="604.0" width="44.0" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<rect x="1209.0" y="672.0" width="41.9" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<rect x="1380.0" y="579.0" width="300.4" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<rect x="40.0" y="879.0" width="125.6" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<rect x="40.0" y="919.0" width="97.7" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<rect x="300.0" y="895.0" width="100.0" height="40.0" rx="18" fill="#fff3c4" stroke="#000" stroke-width="2"/>
+<rect x="300.0" y="959.0" width="75.4" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<path d="M480,905 H500.0 A20.0,20.0 0 0 1 500.0,945 H480 Z" fill="#fff" stroke="#000" stroke-width="1.9"/>
+<rect x="580.0" y="914.0" width="63.6" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<rect x="300.0" y="1010.0" width="130.0" height="36.0" rx="18" fill="#fff3c4" stroke="#000" stroke-width="2"/>
+<rect x="40.0" y="1017.0" width="97.7" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<rect x="500.0" y="1016.0" width="45.0" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<rect x="760.0" y="899.0" width="224.8" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<path d="M1010,880 L1050,894.0 L1050,966.0 L1010,980 Z" fill="#fff" stroke="#000" stroke-width="1.9"/>
+<rect x="760.0" y="944.0" width="107.0" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<rect x="1000.7" y="1012.0" width="58.6" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<path d="M1210,880 L1250,894.0 L1250,966.0 L1210,980 Z" fill="#fff" stroke="#000" stroke-width="1.9"/>
+<rect x="1130.0" y="944.0" width="44.0" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<rect x="1209.0" y="1012.0" width="41.9" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<rect x="1380.0" y="919.0" width="300.4" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<text x="950.0" y="36.0" font-family="DejaVu Sans" font-size="26" font-weight="bold" fill="#000" text-anchor="middle">Fig P4 - Register File and read-port logic: write-back forwarding + x0 forced to zero</text>
+<text x="950.0" y="60.0" font-family="DejaVu Sans" font-size="14" font-weight="normal" fill="#444" text-anchor="middle">Each read port = register-file output -&gt; forward mux (take wb_result if the same register is being written back) -&gt; x0 mux.  Select polarity read from your pipeline sketch: verify.</text>
+<text x="730.0" y="150.0" font-family="DejaVu Sans" font-size="14" font-weight="bold" fill="#000" text-anchor="middle">Register File  32 x 32</text>
+<text x="730.0" y="165.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#444" text-anchor="middle" font-style="italic">x0..x31 flip-flops; 2 combinational read ports;</text>
+<text x="730.0" y="178.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#444" text-anchor="middle" font-style="italic">1 synchronous write port</text>
+<text x="566.0" y="224.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#222" text-anchor="start">read_reg_1</text>
+<text x="566.0" y="271.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#222" text-anchor="start">read_reg_2</text>
+<text x="566.0" y="318.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#222" text-anchor="start">write_reg</text>
+<text x="566.0" y="365.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#222" text-anchor="start">write_data</text>
+<text x="566.0" y="412.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#222" text-anchor="start">write_en</text>
+<text x="894.0" y="224.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#222" text-anchor="end">read_data_1</text>
+<text x="894.0" y="412.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#222" text-anchor="end">read_data_2</text>
+<path d="M560,398 L571,409 L560,420" fill="none" stroke="#000" stroke-width="1.5"/>
+<text x="313.5" y="224.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#000" text-anchor="middle">rs1_select[4:0]</text>
+<line x1="459.5" y1="226.0" x2="467.5" y2="214.0" stroke="#111111" stroke-width="1.8"/>
+<text x="463.5" y="211.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#222" text-anchor="middle" stroke="#fff" stroke-width="4" paint-order="stroke" stroke-linejoin="round">[5]</text>
+<text x="313.5" y="271.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#000" text-anchor="middle">rs2_select[4:0]</text>
+<line x1="459.5" y1="273.0" x2="467.5" y2="261.0" stroke="#111111" stroke-width="1.8"/>
+<text x="463.5" y="258.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#222" text-anchor="middle" stroke="#fff" stroke-width="4" paint-order="stroke" stroke-linejoin="round">[5]</text>
+<text x="329.0" y="318.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#d62828" text-anchor="middle">wb_dest_reg_sel[4:0]</text>
+<line x1="475.0" y1="320.0" x2="483.0" y2="308.0" stroke="#d62828" stroke-width="1.8"/>
+<text x="479.0" y="305.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#d62828" text-anchor="middle" stroke="#fff" stroke-width="4" paint-order="stroke" stroke-linejoin="round">[5]</text>
+<text x="313.5" y="365.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#d62828" text-anchor="middle">wb_result[31:0]</text>
+<line x1="459.5" y1="367.0" x2="467.5" y2="355.0" stroke="#d62828" stroke-width="1.8"/>
+<text x="463.5" y="352.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#d62828" text-anchor="middle" stroke="#fff" stroke-width="4" paint-order="stroke" stroke-linejoin="round">[32]</text>
+<text x="301.1" y="412.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#d62828" text-anchor="middle">wb_write_en</text>
+<text x="1093.8" y="224.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#3b5bdb" text-anchor="middle">read_data_1[31:0]  -&gt; Part B</text>
+<line x1="946.0" y1="226.0" x2="954.0" y2="214.0" stroke="#111111" stroke-width="1.8"/>
+<text x="950.0" y="211.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#222" text-anchor="middle" stroke="#fff" stroke-width="4" paint-order="stroke" stroke-linejoin="round">[32]</text>
+<text x="1093.8" y="412.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#3b5bdb" text-anchor="middle">read_data_2[31:0]  -&gt; Part B</text>
+<line x1="946.0" y1="414.0" x2="954.0" y2="402.0" stroke="#111111" stroke-width="1.8"/>
+<text x="950.0" y="399.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#222" text-anchor="middle" stroke="#fff" stroke-width="4" paint-order="stroke" stroke-linejoin="round">[32]</text>
+<text x="1300.0" y="200.0" font-family="DejaVu Sans" font-size="11" font-weight="normal" fill="#333" text-anchor="start">Write happens at the end of WB, so a value written in</text>
+<text x="1300.0" y="214.0" font-family="DejaVu Sans" font-size="11" font-weight="normal" fill="#333" text-anchor="start">the same cycle it is read has not reached the flip-flops yet:</text>
+<text x="1300.0" y="228.0" font-family="DejaVu Sans" font-size="11" font-weight="normal" fill="#333" text-anchor="start">that is why the forward mux exists.</text>
+<text x="40.0" y="502.0" font-family="DejaVu Sans" font-size="13" font-weight="bold" fill="#3b5bdb" text-anchor="start">READ PORT 1</text>
+<text x="102.8" y="554.0" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#d62828" text-anchor="middle">wb_dest_reg_sel[4:0]</text>
+<text x="88.8" y="594.0" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#000" text-anchor="middle">rs1_select[4:0]</text>
+<text x="350.0" y="575.0" font-family="DejaVu Sans" font-size="11" font-weight="bold" fill="#000" text-anchor="middle">a == b</text>
+<text x="306.0" y="575.0" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#222" text-anchor="start">a</text>
+<text x="306.0" y="587.0" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#222" text-anchor="start">b</text>
+<text x="394.0" y="581.0" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#222" text-anchor="end">y</text>
+<text x="337.7" y="634.0" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#d62828" text-anchor="middle">wb_write_en</text>
+<text x="611.8" y="589.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#2e9d3a" text-anchor="middle">fwd_sel1</text>
+<text x="365.0" y="690.0" font-family="DejaVu Sans" font-size="10" font-weight="bold" fill="#000" text-anchor="middle">rs1_select == 0</text>
+<text x="88.8" y="692.0" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#000" text-anchor="middle">rs1_select[4:0]</text>
+<text x="522.5" y="691.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#2e9d3a" text-anchor="middle">zero1</text>
+<text x="872.4" y="574.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#3b5bdb" text-anchor="middle">read_data_1[31:0]  (Register File)</text>
+<text x="1015.0" y="569.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#333" text-anchor="start">0</text>
+<text x="1015.0" y="619.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#333" text-anchor="start">1</text>
+<text x="813.5" y="619.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#d62828" text-anchor="middle">wb_result[31:0]</text>
+<line x1="996.0" y1="571.0" x2="1004.0" y2="559.0" stroke="#111111" stroke-width="1.8"/>
+<text x="1000.0" y="556.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#222" text-anchor="middle" stroke="#fff" stroke-width="4" paint-order="stroke" stroke-linejoin="round">[32]</text>
+<line x1="934.5" y1="621.0" x2="942.5" y2="609.0" stroke="#d62828" stroke-width="1.8"/>
+<text x="938.5" y="606.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#d62828" text-anchor="middle" stroke="#fff" stroke-width="4" paint-order="stroke" stroke-linejoin="round">[32]</text>
+<text x="1030.0" y="687.0" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#2e9d3a" text-anchor="middle">fwd_sel1</text>
+<text x="1215.0" y="569.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#333" text-anchor="start">0</text>
+<text x="1215.0" y="619.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#333" text-anchor="start">1</text>
+<line x1="1126.0" y1="583.5" x2="1134.0" y2="571.5" stroke="#111111" stroke-width="1.8"/>
+<text x="1130.0" y="568.5" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#222" text-anchor="middle" stroke="#fff" stroke-width="4" paint-order="stroke" stroke-linejoin="round">[32]</text>
+<text x="1152.0" y="619.0" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#000" text-anchor="middle">32'h0</text>
+<text x="1230.0" y="687.0" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#2e9d3a" text-anchor="middle">zero1</text>
+<text x="1530.2" y="594.0" font-family="DejaVu Sans" font-size="11" font-weight="normal" fill="#3b5bdb" text-anchor="middle">reg_rdata1[31:0]  -&gt; Fig P3 operand select</text>
+<line x1="1311.0" y1="596.0" x2="1319.0" y2="584.0" stroke="#111111" stroke-width="1.8"/>
+<text x="1315.0" y="581.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#222" text-anchor="middle" stroke="#fff" stroke-width="4" paint-order="stroke" stroke-linejoin="round">[32]</text>
+<text x="40.0" y="842.0" font-family="DejaVu Sans" font-size="13" font-weight="bold" fill="#3b5bdb" text-anchor="start">READ PORT 2</text>
+<text x="102.8" y="894.0" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#d62828" text-anchor="middle">wb_dest_reg_sel[4:0]</text>
+<text x="88.8" y="934.0" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#000" text-anchor="middle">rs2_select[4:0]</text>
+<text x="350.0" y="915.0" font-family="DejaVu Sans" font-size="11" font-weight="bold" fill="#000" text-anchor="middle">a == b</text>
+<text x="306.0" y="915.0" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#222" text-anchor="start">a</text>
+<text x="306.0" y="927.0" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#222" text-anchor="start">b</text>
+<text x="394.0" y="921.0" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#222" text-anchor="end">y</text>
+<text x="337.7" y="974.0" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#d62828" text-anchor="middle">wb_write_en</text>
+<text x="611.8" y="929.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#2e9d3a" text-anchor="middle">fwd_sel2</text>
+<text x="365.0" y="1030.0" font-family="DejaVu Sans" font-size="10" font-weight="bold" fill="#000" text-anchor="middle">rs2_select == 0</text>
+<text x="88.8" y="1032.0" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#000" text-anchor="middle">rs2_select[4:0]</text>
+<text x="522.5" y="1031.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#2e9d3a" text-anchor="middle">zero2</text>
+<text x="872.4" y="914.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#3b5bdb" text-anchor="middle">read_data_2[31:0]  (Register File)</text>
+<text x="1015.0" y="909.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#333" text-anchor="start">0</text>
+<text x="1015.0" y="959.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#333" text-anchor="start">1</text>
+<text x="813.5" y="959.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#d62828" text-anchor="middle">wb_result[31:0]</text>
+<line x1="996.0" y1="911.0" x2="1004.0" y2="899.0" stroke="#111111" stroke-width="1.8"/>
+<text x="1000.0" y="896.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#222" text-anchor="middle" stroke="#fff" stroke-width="4" paint-order="stroke" stroke-linejoin="round">[32]</text>
+<line x1="934.5" y1="961.0" x2="942.5" y2="949.0" stroke="#d62828" stroke-width="1.8"/>
+<text x="938.5" y="946.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#d62828" text-anchor="middle" stroke="#fff" stroke-width="4" paint-order="stroke" stroke-linejoin="round">[32]</text>
+<text x="1030.0" y="1027.0" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#2e9d3a" text-anchor="middle">fwd_sel2</text>
+<text x="1215.0" y="909.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#333" text-anchor="start">0</text>
+<text x="1215.0" y="959.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#333" text-anchor="start">1</text>
+<line x1="1126.0" y1="923.5" x2="1134.0" y2="911.5" stroke="#111111" stroke-width="1.8"/>
+<text x="1130.0" y="908.5" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#222" text-anchor="middle" stroke="#fff" stroke-width="4" paint-order="stroke" stroke-linejoin="round">[32]</text>
+<text x="1152.0" y="959.0" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#000" text-anchor="middle">32'h0</text>
+<text x="1230.0" y="1027.0" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#2e9d3a" text-anchor="middle">zero2</text>
+<text x="1530.2" y="934.0" font-family="DejaVu Sans" font-size="11" font-weight="normal" fill="#3b5bdb" text-anchor="middle">reg_rdata2[31:0]  -&gt; Fig P3 operand select</text>
+<line x1="1311.0" y1="936.0" x2="1319.0" y2="924.0" stroke="#111111" stroke-width="1.8"/>
+<text x="1315.0" y="921.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#222" text-anchor="middle" stroke="#fff" stroke-width="4" paint-order="stroke" stroke-linejoin="round">[32]</text>
+<text x="40.0" y="1170.0" font-family="DejaVu Sans" font-size="11" font-weight="normal" fill="#555" text-anchor="start">Red wires = write-back signals coming from the WB stage (Fig P6).  Green = select signals.</text>
+</svg>

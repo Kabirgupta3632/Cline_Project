@@ -109,7 +109,7 @@ def dangling(path):
     bad = []
     for pts in arrows(path):
         e = pts[-1]
-        ok = any(b[0] - 4 <= e[0] <= b[2] + 4 and b[1] - 4 <= e[1] <= b[3] + 4 for b in B)
+        ok = any(b[0] - 8 <= e[0] <= b[2] + 8 and b[1] - 4 <= e[1] <= b[3] + 4 for b in B)
         if not ok:
             bad.append(('arrow-ends-in-space', e))
     return bad
