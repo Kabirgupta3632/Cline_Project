@@ -8,7 +8,7 @@ def _spread(n, lo, hi):
 
 class Fig(_Fig):
     def block(s, x, y, w, h, title, L=(), R=(), T=(), B=(), fill="#eaf1ff", sub=None, ps=10, ts=15,
-              stroke="#000", rx=4, pad=None, clk=False, tcolor="#000"):
+              stroke="#000", rx=4, pad=None, clk=False, tcolor="#000", showpins=True):
         b = Box(x, y, w, h)
         s.rect(x, y, w, h, fill=fill, stroke=stroke, sw=2, rx=rx)
         tl = title.split("\n")
@@ -20,10 +20,12 @@ class Fig(_Fig):
         top = min(y + (pad if pad is not None else used + 22), y + h - 16)
         for nm, yy in zip(L, _spread(len(L), top, y + h - 12) if L else []):
             b.p[nm] = (x, yy)
-            s.text(x + 6, yy + 4, nm, ps, anchor="start", color="#222")
+            if showpins:
+                s.text(x + 6, yy + 4, nm, ps, anchor="start", color="#222")
         for nm, yy in zip(R, _spread(len(R), top, y + h - 12) if R else []):
             b.p[nm] = (x + w, yy)
-            s.text(x + w - 6, yy + 4, nm, ps, anchor="end", color="#222")
+            if showpins:
+                s.text(x + w - 6, yy + 4, nm, ps, anchor="end", color="#222")
         for nm, xx in zip(T, _spread(len(T), x + 30, x + w - 30) if T else []):
             b.p[nm] = (xx, y)
             s.text(xx, y + 14, nm, ps, color="#222")
@@ -100,9 +102,9 @@ class Fig(_Fig):
         g.p["out"] = (ox, y + h / 2)
         return g
 
-    def op(s, x, y, label, w=74, h=36, ins=("a", "b")):
+    def op(s, x, y, label, w=74, h=36, ins=("a", "b"), ts=12, showpins=False):
         """Combinational operator bubble (comparator, adder...)."""
-        return s.block(x, y, w, h, label, L=ins, R=("y",), ps=9, ts=12, fill="#fff3c4", rx=18, pad=h * 0.3 + 4)
+        return s.block(x, y, w, h, label, L=ins, R=("y",), ps=9, ts=ts, fill="#fff3c4", rx=18, pad=h * 0.5 - 8 if len(ins) == 1 else h * 0.3 + 4, showpins=showpins)
 
 
 def HVH(a, b, xm):
