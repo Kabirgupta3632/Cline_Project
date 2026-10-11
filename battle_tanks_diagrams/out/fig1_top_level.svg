@@ -86,7 +86,7 @@
 <rect x="2510.0" y="270.0" width="200.0" height="560.0" rx="4" fill="#ffe0e0" stroke="#000" stroke-width="2"/>
 <rect x="2510.0" y="890.0" width="200.0" height="90.0" rx="4" fill="#ffe0e0" stroke="#000" stroke-width="2"/>
 <text x="1380.0" y="36.0" font-family="DejaVu Sans" font-size="26" font-weight="bold" fill="#000" text-anchor="middle">Fig 1 - Battle Tanks: Top-Level System Block Diagram (FPGA fabric)</text>
-<text x="1380.0" y="60.0" font-family="DejaVu Sans" font-size="14" font-weight="normal" fill="#444" text-anchor="middle">RV32IM 3-stage CPU runs the game rules in C; everything per-pixel / per-cycle / per-deadline is hardware.  Top-level view only.</text>
+<text x="1380.0" y="60.0" font-family="DejaVu Sans" font-size="14" font-weight="normal" fill="#444" text-anchor="middle">RV32IM 3-stage CPU runs the game rules in C; everything per-pixel / per-cycle / per-deadline is hardware.  Top-level view only; gate-level detail is in Figs 2-10.</text>
 <text x="105.0" y="110.0" font-family="DejaVu Sans" font-size="15" font-weight="bold" fill="#000" text-anchor="middle">Board Oscillator</text>
 <text x="105.0" y="126.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#444" text-anchor="middle" font-style="italic">100 MHz</text>
 <text x="105.0" y="200.0" font-family="DejaVu Sans" font-size="15" font-weight="bold" fill="#000" text-anchor="middle">Reset Button</text>
@@ -183,23 +183,23 @@
 <text x="1225.0" y="619.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#444" text-anchor="middle" font-style="italic">P1/P2_TANK_POS  {y[15:0], x[15:0]}</text>
 <text x="1225.0" y="632.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#444" text-anchor="middle" font-style="italic">BULLET_REG_0..7  x, y, active, big</text>
 <text x="1225.0" y="645.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#444" text-anchor="middle" font-style="italic">HEALTH_BAR_REG  P1[7:0]  P2[15:8]</text>
-<text x="1225.0" y="658.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#444" text-anchor="middle" font-style="italic">(+ tank angle index for sprite ROM)</text>
+<text x="1225.0" y="658.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#444" text-anchor="middle" font-style="italic">TANK_ANGLE_REG 0x84 (added, Fig 5)</text>
 <path d="M1060,758 L1071,769 L1060,780" fill="none" stroke="#000" stroke-width="1.5"/>
 <text x="1066.0" y="744.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#222" text-anchor="start">cs / wdata</text>
 <text x="1382.0" y="684.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#a36000" text-anchor="end">shadow regs</text>
 <text x="1225.0" y="830.0" font-family="DejaVu Sans" font-size="15" font-weight="bold" fill="#000" text-anchor="middle">Collision Engine</text>
-<text x="1225.0" y="846.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#444" text-anchor="middle" font-style="italic">COLLISION_FLAG 0x8000_0020 (R)</text>
-<text x="1225.0" y="859.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#444" text-anchor="middle" font-style="italic">parallel bbox comparators:</text>
-<text x="1225.0" y="872.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#444" text-anchor="middle" font-style="italic">bullet-wall x8, bullet-bullet x28,</text>
-<text x="1225.0" y="885.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#444" text-anchor="middle" font-style="italic">bullet-tank x16 -&gt; flags [2:0]</text>
+<text x="1225.0" y="846.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#444" text-anchor="middle" font-style="italic">COLLISION_FLAG 0x8000_0020 + masks</text>
+<text x="1225.0" y="859.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#444" text-anchor="middle" font-style="italic">AABB cells (Fig 6): wall scan x8 (1 port),</text>
+<text x="1225.0" y="872.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#444" text-anchor="middle" font-style="italic">bullet-bullet x28, bullet-tank x16</text>
+<text x="1225.0" y="885.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#444" text-anchor="middle" font-style="italic">sticky W1C masks 0x20..0x2C</text>
 <text x="1066.0" y="944.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#222" text-anchor="start">cs / addr</text>
 <text x="1066.0" y="969.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#222" text-anchor="start">rdata</text>
 <text x="1384.0" y="904.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#222" text-anchor="end">regs</text>
 <text x="1225.0" y="1060.0" font-family="DejaVu Sans" font-size="15" font-weight="bold" fill="#000" text-anchor="middle">Maze Tile RAM (20 x 20)</text>
 <text x="1225.0" y="1076.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#444" text-anchor="middle" font-style="italic">MAZE_RAM_BASE 0x8000_0100 (R/W)</text>
-<text x="1225.0" y="1089.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#444" text-anchor="middle" font-style="italic">true dual-port BRAM, 2-bit tile / cell</text>
-<text x="1225.0" y="1102.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#444" text-anchor="middle" font-style="italic">A: CPU R/W    B: VGA tile fetch</text>
-<text x="1225.0" y="1115.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#444" text-anchor="middle" font-style="italic">C: collision wall lookup</text>
+<text x="1225.0" y="1089.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#444" text-anchor="middle" font-style="italic">two mirrored dual-port BRAMs (Fig 7)</text>
+<text x="1225.0" y="1102.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#444" text-anchor="middle" font-style="italic">V: CPU + VGA fetch   C: CPU + collision</text>
+<text x="1225.0" y="1115.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#444" text-anchor="middle" font-style="italic">CPU writes both copies</text>
 <text x="1066.0" y="1169.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#222" text-anchor="start">cs / addr / wdata</text>
 <text x="1066.0" y="1194.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#222" text-anchor="start">rdata</text>
 <text x="1384.0" y="1134.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#222" text-anchor="end">b_addr</text>
@@ -209,7 +209,7 @@
 <line x1="1294.0" y1="1019.0" x2="1306.0" y2="1011.0" stroke="#1f6fe0" stroke-width="1.8"/>
 <text x="1309.0" y="1019.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#1f6fe0" text-anchor="start" stroke="#fff" stroke-width="4" paint-order="stroke" stroke-linejoin="round">wall_bit [2]</text>
 <text transform="translate(967,900) rotate(-90)" font-family="DejaVu Sans" font-size="11" font-weight="bold" fill="#2e9d3a" text-anchor="middle">MMIO bus: addr, wdata, we, wstrb, cs_*</text>
-<text transform="translate(1026,595) rotate(-90)" font-family="DejaVu Sans" font-size="11" font-weight="bold" fill="#1f6fe0" text-anchor="middle">mmio_rdata (read return)</text>
+<text transform="translate(1026,595) rotate(-90)" font-family="DejaVu Sans" font-size="11" font-weight="bold" fill="#1f6fe0" text-anchor="middle">per-peripheral rdata -> AND-OR mux (Fig 2b)</text>
 <line x1="941.0" y1="1186.0" x2="949.0" y2="1174.0" stroke="#1f6fe0" stroke-width="1.8"/>
 <text x="945.0" y="1171.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#1f6fe0" text-anchor="middle" stroke="#fff" stroke-width="4" paint-order="stroke" stroke-linejoin="round">[32]</text>
 <circle cx="975.0" cy="300.0" r="3.8" fill="#2e9d3a"/>

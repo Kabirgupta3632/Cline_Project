@@ -7,7 +7,7 @@ PX, PW = 1060, 330                            # peripheral column
 def build():
     f = Fig(2760, 1260, "Fig 1 - Battle Tanks: Top-Level System Block Diagram (FPGA fabric)",
             "RV32IM 3-stage CPU runs the game rules in C; everything per-pixel / per-cycle / per-deadline is hardware.  "
-            "Top-level view only.")
+            "Top-level view only; gate-level detail is in Figs 2-10.")
     cpu_part(f)
     periph_part(f)
     vga_part(f)
@@ -97,19 +97,19 @@ def periph_part(f):
     pin(f, tm, "cs / wdata", "L", 120)
     pin(f, tm, "rdata", "L", 150)
     sr = f.seq(PX, 570, PW, 210, "Sprite & HUD Register File", fill="#fdeacc",
-               sub="write-only (0x8000_0040 ..)\nP1/P2_TANK_POS  {y[15:0], x[15:0]}\nBULLET_REG_0..7  x, y, active, big\nHEALTH_BAR_REG  P1[7:0]  P2[15:8]\n(+ tank angle index for sprite ROM)")
+               sub="write-only (0x8000_0040 ..)\nP1/P2_TANK_POS  {y[15:0], x[15:0]}\nBULLET_REG_0..7  x, y, active, big\nHEALTH_BAR_REG  P1[7:0]  P2[15:8]\nTANK_ANGLE_REG 0x84 (added, Fig 5)")
     pin(f, sr, "cs / wdata", "L", 170)
     pin(f, sr, "shadow", "R", 110, show=False)
     f.text(PX + PW - 8, 570 + 114, "shadow regs", 10, anchor="end", color="#a36000")
     co = f.comb(PX, 810, PW, 180, "Collision Engine", fill="#fff3c4",
-                sub="COLLISION_FLAG 0x8000_0020 (R)\nparallel bbox comparators:\nbullet-wall x8, bullet-bullet x28,\nbullet-tank x16 -> flags [2:0]")
+                sub="COLLISION_FLAG 0x8000_0020 + masks\nAABB cells (Fig 6): wall scan x8 (1 port),\nbullet-bullet x28, bullet-tank x16\nsticky W1C masks 0x20..0x2C")
     pin(f, co, "cs / addr", "L", 130)
     pin(f, co, "rdata", "L", 155)
     pin(f, co, "regs", "R", 90)
     pin(f, co, "tile_addr", "B", 90, show=False)
     pin(f, co, "wall_bit", "B", 240, show=False)
     mz = f.mem(PX, 1040, PW, 170, "Maze Tile RAM (20 x 20)",
-               sub="MAZE_RAM_BASE 0x8000_0100 (R/W)\ntrue dual-port BRAM, 2-bit tile / cell\nA: CPU R/W    B: VGA tile fetch\nC: collision wall lookup")
+               sub="MAZE_RAM_BASE 0x8000_0100 (R/W)\ntwo mirrored dual-port BRAMs (Fig 7)\nV: CPU + VGA fetch   C: CPU + collision\nCPU writes both copies")
     pin(f, mz, "cs / addr / wdata", "L", 125)
     pin(f, mz, "rdata", "L", 150)
     pin(f, mz, "b_addr", "R", 90)
@@ -123,7 +123,7 @@ def periph_part(f):
     y0 = ic["bus_out"][1]
     f.wire([ic["bus_out"], (BUS, y0)], "ctrl", arrow=False, width=2.2)
     vtext(f, BUS - 8, 900, "MMIO bus: addr, wdata, we, wstrb, cs_*", 11, "#2e9d3a", "bold")
-    vtext(f, RD + 16, 595, "mmio_rdata (read return)", 11, "#1f6fe0", "bold")
+    vtext(f, RD + 16, 595, "per-peripheral rdata -> AND-OR mux (Fig 2b)", 11, "#1f6fe0", "bold")
     y1 = ic["rd_in"][1]
     f.wire([(RD, y1), ic["rd_in"]], "rd", bus="32", label="", width=2.2)
     busline(f, BUS, y0, mz["cs / addr / wdata"][1], "ctrl", 3)
