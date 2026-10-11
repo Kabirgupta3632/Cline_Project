@@ -1,0 +1,123 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1900" height="1330" viewBox="0 0 1900 1330"><defs><marker id="a111111" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#111111"/></marker><marker id="a1f6fe0" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#1f6fe0"/></marker><marker id="a2e9d3a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#2e9d3a"/></marker><marker id="af08c00" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#f08c00"/></marker></defs><rect width="100%" height="100%" fill="#fff"/>
+<rect x="20.0" y="90.0" width="1860.0" height="380.0" rx="10" fill="none" stroke="#8a6d00" stroke-width="2" stroke-dasharray="10 6"/>
+<text x="32.0" y="110.0" font-family="DejaVu Sans" font-size="15" font-weight="bold" fill="#8a6d00" text-anchor="start">PART A - one sticky bit  (instantiate for every bit of WALL_MASK[7:0], BB_MASK[7:0], BTK_MASK[7:0], TANK_MASK[1:0])</text>
+<path d="M345.4,200.0 L440.0,200.0 L440.0,200.8 L480.0,200.8" fill="none" stroke="#2e9d3a" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a2e9d3a)"/>
+<path d="M524.0,210.0 L660.0,210.0 L660.0,205.8 L700.0,205.8" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a111111)"/>
+<path d="M634.0,294.0 L680.0,294.0 L680.0,224.2 L700.0,224.2" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a111111)"/>
+<path d="M744.0,215.0 L820.0,215.0" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a111111)"/>
+<path d="M930.0,215.0 L970.0,215.0" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round"/>
+<path d="M970.0,215.0 L970.0,140.0 L440.0,140.0 L440.0,219.2 L480.0,219.2" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a111111)"/>
+<path d="M970.0,215.0 L1040.0,215.0" fill="none" stroke="#1f6fe0" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a1f6fe0)"/>
+<path d="M171.8,280.0 L300.0,280.0 L300.0,305.8 L340.0,305.8" fill="none" stroke="#2e9d3a" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a2e9d3a)"/>
+<path d="M196.6,330.0 L320.0,330.0 L320.0,324.2 L340.0,324.2" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a111111)"/>
+<path d="M376.0,315.0 L410.0,315.0 L410.0,315.8 L450.0,315.8" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a111111)"/>
+<path d="M128.4,380.0 L430.0,380.0 L430.0,334.2 L450.0,334.2" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a111111)"/>
+<path d="M486.0,325.0 L560.0,325.0 L560.0,294.0 L600.0,294.0" fill="none" stroke="#111111" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a111111)"/>
+<rect x="20.0" y="500.0" width="1860.0" height="800.0" rx="10" fill="none" stroke="#8a6d00" stroke-width="2" stroke-dasharray="10 6"/>
+<text x="32.0" y="520.0" font-family="DejaVu Sans" font-size="15" font-weight="bold" fill="#8a6d00" text-anchor="start">PART B - packing and MMIO read   (word index = d_addr[3:2];  rd_col goes to Fig 2b)</text>
+<path d="M630.0,625.0 L880.0,625.0 L880.0,641.2 L1100.0,641.2" fill="none" stroke="#1f6fe0" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a1f6fe0)"/>
+<path d="M630.0,785.0 L900.0,785.0 L900.0,723.8 L1100.0,723.8" fill="none" stroke="#1f6fe0" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a1f6fe0)"/>
+<path d="M630.0,945.0 L920.0,945.0 L920.0,806.2 L1100.0,806.2" fill="none" stroke="#1f6fe0" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a1f6fe0)"/>
+<path d="M630.0,1105.0 L940.0,1105.0 L940.0,888.8 L1100.0,888.8" fill="none" stroke="#1f6fe0" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a1f6fe0)"/>
+<path d="M205.4,1235.0 L220.4,1235.0 L220.4,1225.8 L235.4,1225.8" fill="none" stroke="#f08c00" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#af08c00)"/>
+<path d="M275.4,1235.0 L295.4,1235.0" fill="none" stroke="#2e9d3a" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a2e9d3a)"/>
+<path d="M394.2,1235.0 L409.2,1235.0 L409.2,1225.8 L424.2,1225.8" fill="none" stroke="#f08c00" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#af08c00)"/>
+<path d="M464.2,1235.0 L484.2,1235.0" fill="none" stroke="#2e9d3a" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a2e9d3a)"/>
+<path d="M599.8,1235.0 L614.8,1235.0 L614.8,1225.8 L629.8,1225.8" fill="none" stroke="#f08c00" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#af08c00)"/>
+<path d="M669.8,1235.0 L689.8,1235.0" fill="none" stroke="#2e9d3a" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a2e9d3a)"/>
+<path d="M1146.0,765.0 L1300.0,765.0" fill="none" stroke="#1f6fe0" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a1f6fe0)"/>
+<rect x="40.0" y="189.0" width="305.4" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<path d="M480,190 Q508.6,190 524,210.0 Q508.6,230 480,230 Q493.2,210.0 480,190 Z" fill="#fff" stroke="#000" stroke-width="1.9"/>
+<path d="M600,280 L626,294.0 L600,308 Z" fill="#fff" stroke="#000" stroke-width="1.9"/>
+<circle cx="630.0" cy="294.0" r="4" fill="#fff" stroke="#000" stroke-width="1.6"/>
+<path d="M700,195 H722.0 A22.0,20.0 0 0 1 722.0,235 H700 Z" fill="#fff" stroke="#000" stroke-width="1.9"/>
+<rect x="820.0" y="190.0" width="110.0" height="50.0" rx="4" fill="#d9f2d9" stroke="#000" stroke-width="2"/>
+<rect x="1040.0" y="204.0" width="193.8" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<rect x="40.0" y="269.0" width="131.8" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<rect x="40.0" y="319.0" width="156.6" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<rect x="40.0" y="369.0" width="88.4" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<path d="M340,295 H358.0 A18.0,20.0 0 0 1 358.0,335 H340 Z" fill="#fff" stroke="#000" stroke-width="1.9"/>
+<path d="M450,305 H468.0 A18.0,20.0 0 0 1 468.0,345 H450 Z" fill="#fff" stroke="#000" stroke-width="1.9"/>
+<path d="M1100,600 L1146,646.2 L1146,883.8 L1100,930 Z" fill="#fff" stroke="#000" stroke-width="1.9"/>
+<rect x="110.0" y="580.0" width="520.0" height="90.0" rx="4" fill="#fff3c4" stroke="#000" stroke-width="2"/>
+<rect x="110.0" y="740.0" width="520.0" height="90.0" rx="4" fill="#fff3c4" stroke="#000" stroke-width="2"/>
+<rect x="110.0" y="900.0" width="520.0" height="90.0" rx="4" fill="#fff3c4" stroke="#000" stroke-width="2"/>
+<rect x="110.0" y="1060.0" width="520.0" height="90.0" rx="4" fill="#fff3c4" stroke="#000" stroke-width="2"/>
+<rect x="130.0" y="1224.0" width="75.4" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<path d="M235.38,1215 Q261.38,1215 275.38,1235.0 Q261.38,1255 235.38,1255 Q247.38,1235.0 235.38,1215 Z" fill="#fff" stroke="#000" stroke-width="1.9"/>
+<rect x="295.4" y="1224.0" width="58.6" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<rect x="330.0" y="1224.0" width="64.2" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<path d="M424.22,1215 Q450.22,1215 464.22,1235.0 Q450.22,1255 424.22,1255 Q436.22,1235.0 424.22,1215 Z" fill="#fff" stroke="#000" stroke-width="1.9"/>
+<rect x="484.2" y="1224.0" width="47.5" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<rect x="530.0" y="1224.0" width="69.8" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<path d="M629.8,1215 Q655.8,1215 669.8,1235.0 Q655.8,1255 629.8,1255 Q641.8,1235.0 629.8,1215 Z" fill="#fff" stroke="#000" stroke-width="1.9"/>
+<rect x="689.8" y="1224.0" width="81.0" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<rect x="1300.0" y="754.0" width="95.8" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<text x="950.0" y="36.0" font-family="DejaVu Sans" font-size="26" font-weight="bold" fill="#000" text-anchor="middle">Fig 6d - Collision Engine (3/3): Sticky Hit Registers (write-1-to-clear) and CPU Read Path</text>
+<text x="950.0" y="60.0" font-family="DejaVu Sans" font-size="14" font-weight="normal" fill="#444" text-anchor="middle">Hits are latched until the CPU clears them, so a hit lasting less than one software frame is never missed.  Registers 0x20..0x2C, word access.</text>
+<text x="192.7" y="204.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#2e9d3a" text-anchor="middle">set_i  (wall_set / bb_hit / btk_hit / tank_set)</text>
+<text x="875.0" y="210.0" font-family="DejaVu Sans" font-size="12" font-weight="bold" fill="#000" text-anchor="middle">bit_q</text>
+<path d="M820,218 L831,229 L820,240" fill="none" stroke="#000" stroke-width="1.5"/>
+<circle cx="970.0" cy="215.0" r="3.8" fill="#111111"/>
+<text x="705.0" y="129.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#222" text-anchor="middle" stroke="#fff" stroke-width="4" paint-order="stroke" stroke-linejoin="round">hold (sticky)</text>
+<text x="1136.9" y="219.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#1f6fe0" text-anchor="middle">bit_q  (-&gt; read path, Part B)</text>
+<text x="105.9" y="284.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#2e9d3a" text-anchor="middle">wr_en_col  (Fig 2a)</text>
+<text x="118.3" y="334.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#000" text-anchor="middle">d_addr[3:2] == this reg</text>
+<text x="84.2" y="384.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#000" text-anchor="middle">d_wdata[bit]</text>
+<text x="523.0" y="314.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#222" text-anchor="middle" stroke="#fff" stroke-width="4" paint-order="stroke" stroke-linejoin="round">clr_i</text>
+<text x="1100.0" y="250.0" font-family="DejaVu Sans" font-size="11" font-weight="normal" fill="#333" text-anchor="start">Priority: clear wins over set when both occur in the same clock</text>
+<text x="1100.0" y="264.0" font-family="DejaVu Sans" font-size="11" font-weight="normal" fill="#333" text-anchor="start">(ANDing ~clr after the OR) - a persistent hit is simply re-set next clock.</text>
+<text x="1100.0" y="278.0" font-family="DejaVu Sans" font-size="11" font-weight="normal" fill="#333" text-anchor="start"></text>
+<text x="1100.0" y="292.0" font-family="DejaVu Sans" font-size="11" font-weight="normal" fill="#333" text-anchor="start">The CPU clears by writing 1s:   sw  mask, 0x8000_0024 (etc.)</text>
+<text x="1100.0" y="306.0" font-family="DejaVu Sans" font-size="11" font-weight="normal" fill="#333" text-anchor="start">Writing 0s changes nothing, so a read-modify-write is never needed.</text>
+<text x="1105.0" y="645.2" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#333" text-anchor="start">0</text>
+<text x="1105.0" y="727.8" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#333" text-anchor="start">1</text>
+<text x="1105.0" y="810.2" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#333" text-anchor="start">2</text>
+<text x="1105.0" y="892.8" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#333" text-anchor="start">3</text>
+<text x="1123.0" y="944.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#2e9d3a" text-anchor="middle" stroke="#fff" stroke-width="4" paint-order="stroke" stroke-linejoin="round">d_addr[3:2]</text>
+<text x="370.0" y="600.0" font-family="DejaVu Sans" font-size="12" font-weight="bold" fill="#000" text-anchor="middle">0x20 COLLISION_FLAG</text>
+<text x="370.0" y="613.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#444" text-anchor="middle" font-style="italic">{29'b0, tank_hit_any, bb_any, wall_any}</text>
+<text x="370.0" y="626.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#444" text-anchor="middle" font-style="italic">bit0 = any wall hit    bit1 = any bullet-bullet    bit2 = any bullet-tank</text>
+<line x1="751.0" y1="631.0" x2="759.0" y2="619.0" stroke="#1f6fe0" stroke-width="1.8"/>
+<text x="755.0" y="614.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#1f6fe0" text-anchor="middle" stroke="#fff" stroke-width="4" paint-order="stroke" stroke-linejoin="round">[32]</text>
+<text x="370.0" y="760.0" font-family="DejaVu Sans" font-size="12" font-weight="bold" fill="#000" text-anchor="middle">0x24 WALL_MASK</text>
+<text x="370.0" y="773.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#444" text-anchor="middle" font-style="italic">{24'b0, wall_q[7:0]}</text>
+<text x="370.0" y="786.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#444" text-anchor="middle" font-style="italic">bit i = bullet i touched a wall since last clear</text>
+<line x1="761.0" y1="791.0" x2="769.0" y2="779.0" stroke="#1f6fe0" stroke-width="1.8"/>
+<text x="765.0" y="774.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#1f6fe0" text-anchor="middle" stroke="#fff" stroke-width="4" paint-order="stroke" stroke-linejoin="round">[32]</text>
+<text x="370.0" y="920.0" font-family="DejaVu Sans" font-size="12" font-weight="bold" fill="#000" text-anchor="middle">0x28 BB_MASK</text>
+<text x="370.0" y="933.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#444" text-anchor="middle" font-style="italic">{24'b0, bb_q[7:0]}</text>
+<text x="370.0" y="946.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#444" text-anchor="middle" font-style="italic">bit i = bullet i hit another bullet (both bits set -&gt; cancel pair)</text>
+<line x1="771.0" y1="951.0" x2="779.0" y2="939.0" stroke="#1f6fe0" stroke-width="1.8"/>
+<text x="775.0" y="934.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#1f6fe0" text-anchor="middle" stroke="#fff" stroke-width="4" paint-order="stroke" stroke-linejoin="round">[32]</text>
+<text x="370.0" y="1080.0" font-family="DejaVu Sans" font-size="12" font-weight="bold" fill="#000" text-anchor="middle">0x2C HIT_MASK</text>
+<text x="370.0" y="1093.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#444" text-anchor="middle" font-style="italic">{22'b0, tank_q[1:0], btk_q[7:0]}</text>
+<text x="370.0" y="1106.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#444" text-anchor="middle" font-style="italic">[7:0] which bullet hit a tank    [9:8] which tank was hit (bit8=P1, bit9=P2)</text>
+<line x1="781.0" y1="1111.0" x2="789.0" y2="1099.0" stroke="#1f6fe0" stroke-width="1.8"/>
+<text x="785.0" y="1094.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#1f6fe0" text-anchor="middle" stroke="#fff" stroke-width="4" paint-order="stroke" stroke-linejoin="round">[32]</text>
+<text x="60.0" y="560.0" font-family="DejaVu Sans" font-size="11" font-weight="bold" fill="#000" text-anchor="start">0x20 bits come from three 8-input OR reductions of the sticky registers:</text>
+<text x="167.7" y="1239.0" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#a35c00" text-anchor="middle">wall_q[7:0]</text>
+<line x1="208.9" y1="1241.0" x2="216.9" y2="1229.0" stroke="#f08c00" stroke-width="1.8"/>
+<text x="212.9" y="1226.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#f08c00" text-anchor="middle" stroke="#fff" stroke-width="4" paint-order="stroke" stroke-linejoin="round">[8]</text>
+<text x="324.7" y="1239.0" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#2e9d3a" text-anchor="middle">wall_any</text>
+<text x="362.1" y="1239.0" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#a35c00" text-anchor="middle">bb_q[7:0]</text>
+<line x1="397.7" y1="1241.0" x2="405.7" y2="1229.0" stroke="#f08c00" stroke-width="1.8"/>
+<text x="401.7" y="1226.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#f08c00" text-anchor="middle" stroke="#fff" stroke-width="4" paint-order="stroke" stroke-linejoin="round">[8]</text>
+<text x="508.0" y="1239.0" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#2e9d3a" text-anchor="middle">bb_any</text>
+<text x="564.9" y="1239.0" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#a35c00" text-anchor="middle">btk_q[7:0]</text>
+<line x1="603.3" y1="1241.0" x2="611.3" y2="1229.0" stroke="#f08c00" stroke-width="1.8"/>
+<text x="607.3" y="1226.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#f08c00" text-anchor="middle" stroke="#fff" stroke-width="4" paint-order="stroke" stroke-linejoin="round">[8]</text>
+<text x="730.3" y="1239.0" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#2e9d3a" text-anchor="middle">tank_hit_any</text>
+<text x="60.0" y="1280.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#333" text-anchor="start">wall_any -&gt; bit0,  bb_any -&gt; bit1,  tank_hit_any -&gt; bit2 of COLLISION_FLAG (0x20)</text>
+<text x="1347.9" y="769.0" font-family="DejaVu Sans" font-size="11" font-weight="normal" fill="#1f6fe0" text-anchor="middle">rd_col[31:0]</text>
+<line x1="1219.0" y1="771.0" x2="1227.0" y2="759.0" stroke="#1f6fe0" stroke-width="1.8"/>
+<text x="1223.0" y="756.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#1f6fe0" text-anchor="middle" stroke="#fff" stroke-width="4" paint-order="stroke" stroke-linejoin="round">[32]</text>
+<text x="1430.0" y="769.0" font-family="DejaVu Sans" font-size="11" font-weight="normal" fill="#333" text-anchor="start">-&gt; Fig 2b (gated by cs_col_q)</text>
+<text x="1000.0" y="1000.0" font-family="DejaVu Sans" font-size="11" font-weight="normal" fill="#333" text-anchor="start">How software uses it (per frame):</text>
+<text x="1000.0" y="1014.0" font-family="DejaVu Sans" font-size="11" font-weight="normal" fill="#333" text-anchor="start">1. flags = COLLISION_FLAG;  if (flags == 0) skip everything.</text>
+<text x="1000.0" y="1028.0" font-family="DejaVu Sans" font-size="11" font-weight="normal" fill="#333" text-anchor="start">2. m = HIT_MASK;  bullet index i = lowest set bit of m[7:0];</text>
+<text x="1000.0" y="1042.0" font-family="DejaVu Sans" font-size="11" font-weight="normal" fill="#333" text-anchor="start">   big = BULLET_REG_i.big  -&gt;  damage 5 or 1 to the tank in m[9:8].</text>
+<text x="1000.0" y="1056.0" font-family="DejaVu Sans" font-size="11" font-weight="normal" fill="#333" text-anchor="start">3. bb = BB_MASK; deactivate every set bullet (both sides of a pair cancel).</text>
+<text x="1000.0" y="1070.0" font-family="DejaVu Sans" font-size="11" font-weight="normal" fill="#333" text-anchor="start">4. w = WALL_MASK; reflect those bullets (vx or vy sign flip) in C.</text>
+<text x="1000.0" y="1084.0" font-family="DejaVu Sans" font-size="11" font-weight="normal" fill="#333" text-anchor="start">5. sw all handled bits back to clear them (write-1-to-clear).</text>
+</svg>

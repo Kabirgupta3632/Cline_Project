@@ -20,7 +20,7 @@ def build():
 
     rows = [("cs_in", "addr[11:3] == 9'h000", "P1/P2_INPUT_REG 0x00,0x04 (read-only: no write enable)", False, 280),
             ("cs_tmr", "addr[11:3] == 9'h002", "TIMER_STATUS/TRIGGER 0x10,0x14", True, 390),
-            ("cs_col", "addr[11:3] == 9'h004", "COLLISION_FLAG / HIT_MASK 0x20,0x24", False, 500)]
+            ("cs_col", "addr[11:4] == 8'h02", "COLLISION_FLAG 0x20 (W1C), WALL/BB/TANK_MASK 0x24..0x2C", True, 500)]
     for nm, lab, note, we, y in rows:
         decode_row(f, A, M, WE, y, nm, lab, note, we)
     # sprite: two ranges ORed
@@ -73,14 +73,14 @@ def build():
     # to Fig 2b
     f.legend(1280, 100, [("data", "address / data slices"), ("ctrl", "control (cs, we)")], w=260)
     f.text(1290, 300, "Outputs used elsewhere:", 12, anchor="start", weight="bold")
-    f.text(1290, 322, "cs_in cs_tmr cs_col cs_spr cs_maze cs_dmem\n -> Fig 2b read-data mux select\nwr_en_tmr / wr_en_spr / wr_en_maze\n -> peripheral write ports (Figs 4,5,7)\naddr[6:2] and d_wdata go straight to peripherals\n(MMIO is word-access only: wstrb ignored)", 11, anchor="start", color="#333")
+    f.text(1290, 322, "cs_in cs_tmr cs_col cs_spr cs_maze cs_dmem\n -> Fig 2b read-data mux select\nwr_en_tmr / wr_en_col / wr_en_spr / wr_en_maze\n -> peripheral write ports (Figs 4,5,6d,7)\naddr[6:2] and d_wdata go straight to peripherals\n(MMIO is word-access only: wstrb ignored)", 11, anchor="start", color="#333")
     return f
 
 
 def decode_row(f, A, M, WE, y, nm, lab, note, we):
     c = f.op(340, y - 20, lab, w=170, h=40, ins=("a",))
     yy = c["a"][1]
-    f.wire([(A, yy), c["a"]], label="addr[11:3]", ldy=-2); f.dot((A, yy))
+    f.wire([(A, yy), c["a"]], label=lab.split(" ==")[0].split(" in")[0], ldy=-2); f.dot((A, yy))
     f.note(345, y - 28, note, 10)
     g = f.gate("and", 600, y - 14, 34, 36)
     f.wire([c["y"], (560, c["y"][1]), (560, g["in1"][1]), g["in1"]])

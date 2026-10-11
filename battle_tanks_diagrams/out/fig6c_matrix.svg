@@ -1,0 +1,372 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2200" height="1420" viewBox="0 0 2200 1420"><defs><marker id="a2e9d3a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#2e9d3a"/></marker></defs><rect width="100%" height="100%" fill="#fff"/>
+<rect x="20.0" y="90.0" width="1130.0" height="700.0" rx="10" fill="none" stroke="#8a6d00" stroke-width="2" stroke-dasharray="10 6"/>
+<text x="32.0" y="110.0" font-family="DejaVu Sans" font-size="15" font-weight="bold" fill="#8a6d00" text-anchor="start">PART A - bullet &lt;-&gt; bullet:  cell (i,j) = overlap( b_i , b_j ),  i &lt; j   -&gt;  net pIJ</text>
+<rect x="1170.0" y="90.0" width="1010.0" height="700.0" rx="10" fill="none" stroke="#8a6d00" stroke-width="2" stroke-dasharray="10 6"/>
+<text x="1182.0" y="110.0" font-family="DejaVu Sans" font-size="15" font-weight="bold" fill="#8a6d00" text-anchor="start">bb_hit[k] = OR of every pair containing bullet k   (pair (i,j) feeds both i and j)</text>
+<path d="M1296.0,154.7 L1306.0,154.7" fill="none" stroke="#111111" stroke-width="1.2" stroke-linejoin="round"/>
+<path d="M1296.0,172.1 L1306.0,172.1" fill="none" stroke="#111111" stroke-width="1.2" stroke-linejoin="round"/>
+<path d="M1296.0,189.6 L1306.0,189.6" fill="none" stroke="#111111" stroke-width="1.2" stroke-linejoin="round"/>
+<path d="M1296.0,207.0 L1306.0,207.0" fill="none" stroke="#111111" stroke-width="1.2" stroke-linejoin="round"/>
+<path d="M1296.0,224.4 L1306.0,224.4" fill="none" stroke="#111111" stroke-width="1.2" stroke-linejoin="round"/>
+<path d="M1296.0,241.9 L1306.0,241.9" fill="none" stroke="#111111" stroke-width="1.2" stroke-linejoin="round"/>
+<path d="M1296.0,259.3 L1306.0,259.3" fill="none" stroke="#111111" stroke-width="1.2" stroke-linejoin="round"/>
+<path d="M1346.0,207.0 L1380.0,207.0" fill="none" stroke="#2e9d3a" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a2e9d3a)"/>
+<path d="M1526.0,154.7 L1536.0,154.7" fill="none" stroke="#111111" stroke-width="1.2" stroke-linejoin="round"/>
+<path d="M1526.0,172.1 L1536.0,172.1" fill="none" stroke="#111111" stroke-width="1.2" stroke-linejoin="round"/>
+<path d="M1526.0,189.6 L1536.0,189.6" fill="none" stroke="#111111" stroke-width="1.2" stroke-linejoin="round"/>
+<path d="M1526.0,207.0 L1536.0,207.0" fill="none" stroke="#111111" stroke-width="1.2" stroke-linejoin="round"/>
+<path d="M1526.0,224.4 L1536.0,224.4" fill="none" stroke="#111111" stroke-width="1.2" stroke-linejoin="round"/>
+<path d="M1526.0,241.9 L1536.0,241.9" fill="none" stroke="#111111" stroke-width="1.2" stroke-linejoin="round"/>
+<path d="M1526.0,259.3 L1536.0,259.3" fill="none" stroke="#111111" stroke-width="1.2" stroke-linejoin="round"/>
+<path d="M1576.0,207.0 L1610.0,207.0" fill="none" stroke="#2e9d3a" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a2e9d3a)"/>
+<path d="M1756.0,154.7 L1766.0,154.7" fill="none" stroke="#111111" stroke-width="1.2" stroke-linejoin="round"/>
+<path d="M1756.0,172.1 L1766.0,172.1" fill="none" stroke="#111111" stroke-width="1.2" stroke-linejoin="round"/>
+<path d="M1756.0,189.6 L1766.0,189.6" fill="none" stroke="#111111" stroke-width="1.2" stroke-linejoin="round"/>
+<path d="M1756.0,207.0 L1766.0,207.0" fill="none" stroke="#111111" stroke-width="1.2" stroke-linejoin="round"/>
+<path d="M1756.0,224.4 L1766.0,224.4" fill="none" stroke="#111111" stroke-width="1.2" stroke-linejoin="round"/>
+<path d="M1756.0,241.9 L1766.0,241.9" fill="none" stroke="#111111" stroke-width="1.2" stroke-linejoin="round"/>
+<path d="M1756.0,259.3 L1766.0,259.3" fill="none" stroke="#111111" stroke-width="1.2" stroke-linejoin="round"/>
+<path d="M1806.0,207.0 L1840.0,207.0" fill="none" stroke="#2e9d3a" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a2e9d3a)"/>
+<path d="M1986.0,154.7 L1996.0,154.7" fill="none" stroke="#111111" stroke-width="1.2" stroke-linejoin="round"/>
+<path d="M1986.0,172.1 L1996.0,172.1" fill="none" stroke="#111111" stroke-width="1.2" stroke-linejoin="round"/>
+<path d="M1986.0,189.6 L1996.0,189.6" fill="none" stroke="#111111" stroke-width="1.2" stroke-linejoin="round"/>
+<path d="M1986.0,207.0 L1996.0,207.0" fill="none" stroke="#111111" stroke-width="1.2" stroke-linejoin="round"/>
+<path d="M1986.0,224.4 L1996.0,224.4" fill="none" stroke="#111111" stroke-width="1.2" stroke-linejoin="round"/>
+<path d="M1986.0,241.9 L1996.0,241.9" fill="none" stroke="#111111" stroke-width="1.2" stroke-linejoin="round"/>
+<path d="M1986.0,259.3 L1996.0,259.3" fill="none" stroke="#111111" stroke-width="1.2" stroke-linejoin="round"/>
+<path d="M2036.0,207.0 L2070.0,207.0" fill="none" stroke="#2e9d3a" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a2e9d3a)"/>
+<path d="M1296.0,474.7 L1306.0,474.7" fill="none" stroke="#111111" stroke-width="1.2" stroke-linejoin="round"/>
+<path d="M1296.0,492.1 L1306.0,492.1" fill="none" stroke="#111111" stroke-width="1.2" stroke-linejoin="round"/>
+<path d="M1296.0,509.6 L1306.0,509.6" fill="none" stroke="#111111" stroke-width="1.2" stroke-linejoin="round"/>
+<path d="M1296.0,527.0 L1306.0,527.0" fill="none" stroke="#111111" stroke-width="1.2" stroke-linejoin="round"/>
+<path d="M1296.0,544.4 L1306.0,544.4" fill="none" stroke="#111111" stroke-width="1.2" stroke-linejoin="round"/>
+<path d="M1296.0,561.9 L1306.0,561.9" fill="none" stroke="#111111" stroke-width="1.2" stroke-linejoin="round"/>
+<path d="M1296.0,579.3 L1306.0,579.3" fill="none" stroke="#111111" stroke-width="1.2" stroke-linejoin="round"/>
+<path d="M1346.0,527.0 L1380.0,527.0" fill="none" stroke="#2e9d3a" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a2e9d3a)"/>
+<path d="M1526.0,474.7 L1536.0,474.7" fill="none" stroke="#111111" stroke-width="1.2" stroke-linejoin="round"/>
+<path d="M1526.0,492.1 L1536.0,492.1" fill="none" stroke="#111111" stroke-width="1.2" stroke-linejoin="round"/>
+<path d="M1526.0,509.6 L1536.0,509.6" fill="none" stroke="#111111" stroke-width="1.2" stroke-linejoin="round"/>
+<path d="M1526.0,527.0 L1536.0,527.0" fill="none" stroke="#111111" stroke-width="1.2" stroke-linejoin="round"/>
+<path d="M1526.0,544.4 L1536.0,544.4" fill="none" stroke="#111111" stroke-width="1.2" stroke-linejoin="round"/>
+<path d="M1526.0,561.9 L1536.0,561.9" fill="none" stroke="#111111" stroke-width="1.2" stroke-linejoin="round"/>
+<path d="M1526.0,579.3 L1536.0,579.3" fill="none" stroke="#111111" stroke-width="1.2" stroke-linejoin="round"/>
+<path d="M1576.0,527.0 L1610.0,527.0" fill="none" stroke="#2e9d3a" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a2e9d3a)"/>
+<path d="M1756.0,474.7 L1766.0,474.7" fill="none" stroke="#111111" stroke-width="1.2" stroke-linejoin="round"/>
+<path d="M1756.0,492.1 L1766.0,492.1" fill="none" stroke="#111111" stroke-width="1.2" stroke-linejoin="round"/>
+<path d="M1756.0,509.6 L1766.0,509.6" fill="none" stroke="#111111" stroke-width="1.2" stroke-linejoin="round"/>
+<path d="M1756.0,527.0 L1766.0,527.0" fill="none" stroke="#111111" stroke-width="1.2" stroke-linejoin="round"/>
+<path d="M1756.0,544.4 L1766.0,544.4" fill="none" stroke="#111111" stroke-width="1.2" stroke-linejoin="round"/>
+<path d="M1756.0,561.9 L1766.0,561.9" fill="none" stroke="#111111" stroke-width="1.2" stroke-linejoin="round"/>
+<path d="M1756.0,579.3 L1766.0,579.3" fill="none" stroke="#111111" stroke-width="1.2" stroke-linejoin="round"/>
+<path d="M1806.0,527.0 L1840.0,527.0" fill="none" stroke="#2e9d3a" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a2e9d3a)"/>
+<path d="M1986.0,474.7 L1996.0,474.7" fill="none" stroke="#111111" stroke-width="1.2" stroke-linejoin="round"/>
+<path d="M1986.0,492.1 L1996.0,492.1" fill="none" stroke="#111111" stroke-width="1.2" stroke-linejoin="round"/>
+<path d="M1986.0,509.6 L1996.0,509.6" fill="none" stroke="#111111" stroke-width="1.2" stroke-linejoin="round"/>
+<path d="M1986.0,527.0 L1996.0,527.0" fill="none" stroke="#111111" stroke-width="1.2" stroke-linejoin="round"/>
+<path d="M1986.0,544.4 L1996.0,544.4" fill="none" stroke="#111111" stroke-width="1.2" stroke-linejoin="round"/>
+<path d="M1986.0,561.9 L1996.0,561.9" fill="none" stroke="#111111" stroke-width="1.2" stroke-linejoin="round"/>
+<path d="M1986.0,579.3 L1996.0,579.3" fill="none" stroke="#111111" stroke-width="1.2" stroke-linejoin="round"/>
+<path d="M2036.0,527.0 L2070.0,527.0" fill="none" stroke="#2e9d3a" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a2e9d3a)"/>
+<rect x="20.0" y="820.0" width="1130.0" height="580.0" rx="10" fill="none" stroke="#8a6d00" stroke-width="2" stroke-dasharray="10 6"/>
+<text x="32.0" y="840.0" font-family="DejaVu Sans" font-size="15" font-weight="bold" fill="#8a6d00" text-anchor="start">PART B - bullet &lt;-&gt; tank:  cell (T,i) = overlap( tank_T , b_i )  -&gt;  net tkT_i     (tank box 20x20, always alive)</text>
+<rect x="1170.0" y="820.0" width="1010.0" height="580.0" rx="10" fill="none" stroke="#8a6d00" stroke-width="2" stroke-dasharray="10 6"/>
+<text x="1182.0" y="840.0" font-family="DejaVu Sans" font-size="15" font-weight="bold" fill="#8a6d00" text-anchor="start">tank-hit reduction</text>
+<path d="M1286.0,884.8 L1296.0,884.8" fill="none" stroke="#111111" stroke-width="1.2" stroke-linejoin="round"/>
+<path d="M1286.0,902.2 L1296.0,902.2" fill="none" stroke="#111111" stroke-width="1.2" stroke-linejoin="round"/>
+<path d="M1286.0,919.8 L1296.0,919.8" fill="none" stroke="#111111" stroke-width="1.2" stroke-linejoin="round"/>
+<path d="M1286.0,937.2 L1296.0,937.2" fill="none" stroke="#111111" stroke-width="1.2" stroke-linejoin="round"/>
+<path d="M1286.0,954.8 L1296.0,954.8" fill="none" stroke="#111111" stroke-width="1.2" stroke-linejoin="round"/>
+<path d="M1286.0,972.2 L1296.0,972.2" fill="none" stroke="#111111" stroke-width="1.2" stroke-linejoin="round"/>
+<path d="M1286.0,989.8 L1296.0,989.8" fill="none" stroke="#111111" stroke-width="1.2" stroke-linejoin="round"/>
+<path d="M1286.0,1007.2 L1296.0,1007.2" fill="none" stroke="#111111" stroke-width="1.2" stroke-linejoin="round"/>
+<path d="M1336.0,946.0 L1370.0,946.0" fill="none" stroke="#2e9d3a" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a2e9d3a)"/>
+<path d="M1666.0,884.8 L1676.0,884.8" fill="none" stroke="#111111" stroke-width="1.2" stroke-linejoin="round"/>
+<path d="M1666.0,902.2 L1676.0,902.2" fill="none" stroke="#111111" stroke-width="1.2" stroke-linejoin="round"/>
+<path d="M1666.0,919.8 L1676.0,919.8" fill="none" stroke="#111111" stroke-width="1.2" stroke-linejoin="round"/>
+<path d="M1666.0,937.2 L1676.0,937.2" fill="none" stroke="#111111" stroke-width="1.2" stroke-linejoin="round"/>
+<path d="M1666.0,954.8 L1676.0,954.8" fill="none" stroke="#111111" stroke-width="1.2" stroke-linejoin="round"/>
+<path d="M1666.0,972.2 L1676.0,972.2" fill="none" stroke="#111111" stroke-width="1.2" stroke-linejoin="round"/>
+<path d="M1666.0,989.8 L1676.0,989.8" fill="none" stroke="#111111" stroke-width="1.2" stroke-linejoin="round"/>
+<path d="M1666.0,1007.2 L1676.0,1007.2" fill="none" stroke="#111111" stroke-width="1.2" stroke-linejoin="round"/>
+<path d="M1716.0,946.0 L1750.0,946.0" fill="none" stroke="#2e9d3a" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a2e9d3a)"/>
+<path d="M1270.0,1148.0 L1290.0,1148.0" fill="none" stroke="#2e9d3a" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a2e9d3a)"/>
+<path d="M1510.0,1148.0 L1530.0,1148.0" fill="none" stroke="#2e9d3a" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a2e9d3a)"/>
+<path d="M1750.0,1148.0 L1770.0,1148.0" fill="none" stroke="#2e9d3a" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a2e9d3a)"/>
+<path d="M1990.0,1148.0 L2010.0,1148.0" fill="none" stroke="#2e9d3a" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a2e9d3a)"/>
+<path d="M1270.0,1228.0 L1290.0,1228.0" fill="none" stroke="#2e9d3a" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a2e9d3a)"/>
+<path d="M1510.0,1228.0 L1530.0,1228.0" fill="none" stroke="#2e9d3a" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a2e9d3a)"/>
+<path d="M1750.0,1228.0 L1770.0,1228.0" fill="none" stroke="#2e9d3a" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a2e9d3a)"/>
+<path d="M1990.0,1228.0 L2010.0,1228.0" fill="none" stroke="#2e9d3a" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#a2e9d3a)"/>
+<rect x="80.0" y="180.0" width="90.0" height="40.0" rx="14" fill="#fff3c4" stroke="#000" stroke-width="2"/>
+<rect x="185.0" y="180.0" width="90.0" height="40.0" rx="14" fill="#fff3c4" stroke="#000" stroke-width="2"/>
+<rect x="290.0" y="180.0" width="90.0" height="40.0" rx="14" fill="#fff3c4" stroke="#000" stroke-width="2"/>
+<rect x="395.0" y="180.0" width="90.0" height="40.0" rx="14" fill="#fff3c4" stroke="#000" stroke-width="2"/>
+<rect x="500.0" y="180.0" width="90.0" height="40.0" rx="14" fill="#fff3c4" stroke="#000" stroke-width="2"/>
+<rect x="605.0" y="180.0" width="90.0" height="40.0" rx="14" fill="#fff3c4" stroke="#000" stroke-width="2"/>
+<rect x="710.0" y="180.0" width="90.0" height="40.0" rx="14" fill="#fff3c4" stroke="#000" stroke-width="2"/>
+<rect x="185.0" y="235.0" width="90.0" height="40.0" rx="14" fill="#fff3c4" stroke="#000" stroke-width="2"/>
+<rect x="290.0" y="235.0" width="90.0" height="40.0" rx="14" fill="#fff3c4" stroke="#000" stroke-width="2"/>
+<rect x="395.0" y="235.0" width="90.0" height="40.0" rx="14" fill="#fff3c4" stroke="#000" stroke-width="2"/>
+<rect x="500.0" y="235.0" width="90.0" height="40.0" rx="14" fill="#fff3c4" stroke="#000" stroke-width="2"/>
+<rect x="605.0" y="235.0" width="90.0" height="40.0" rx="14" fill="#fff3c4" stroke="#000" stroke-width="2"/>
+<rect x="710.0" y="235.0" width="90.0" height="40.0" rx="14" fill="#fff3c4" stroke="#000" stroke-width="2"/>
+<rect x="290.0" y="290.0" width="90.0" height="40.0" rx="14" fill="#fff3c4" stroke="#000" stroke-width="2"/>
+<rect x="395.0" y="290.0" width="90.0" height="40.0" rx="14" fill="#fff3c4" stroke="#000" stroke-width="2"/>
+<rect x="500.0" y="290.0" width="90.0" height="40.0" rx="14" fill="#fff3c4" stroke="#000" stroke-width="2"/>
+<rect x="605.0" y="290.0" width="90.0" height="40.0" rx="14" fill="#fff3c4" stroke="#000" stroke-width="2"/>
+<rect x="710.0" y="290.0" width="90.0" height="40.0" rx="14" fill="#fff3c4" stroke="#000" stroke-width="2"/>
+<rect x="395.0" y="345.0" width="90.0" height="40.0" rx="14" fill="#fff3c4" stroke="#000" stroke-width="2"/>
+<rect x="500.0" y="345.0" width="90.0" height="40.0" rx="14" fill="#fff3c4" stroke="#000" stroke-width="2"/>
+<rect x="605.0" y="345.0" width="90.0" height="40.0" rx="14" fill="#fff3c4" stroke="#000" stroke-width="2"/>
+<rect x="710.0" y="345.0" width="90.0" height="40.0" rx="14" fill="#fff3c4" stroke="#000" stroke-width="2"/>
+<rect x="500.0" y="400.0" width="90.0" height="40.0" rx="14" fill="#fff3c4" stroke="#000" stroke-width="2"/>
+<rect x="605.0" y="400.0" width="90.0" height="40.0" rx="14" fill="#fff3c4" stroke="#000" stroke-width="2"/>
+<rect x="710.0" y="400.0" width="90.0" height="40.0" rx="14" fill="#fff3c4" stroke="#000" stroke-width="2"/>
+<rect x="605.0" y="455.0" width="90.0" height="40.0" rx="14" fill="#fff3c4" stroke="#000" stroke-width="2"/>
+<rect x="710.0" y="455.0" width="90.0" height="40.0" rx="14" fill="#fff3c4" stroke="#000" stroke-width="2"/>
+<rect x="710.0" y="510.0" width="90.0" height="40.0" rx="14" fill="#fff3c4" stroke="#000" stroke-width="2"/>
+<path d="M1300,140 Q1329.9,140 1346,207.0 Q1329.9,274 1300,274 Q1313.8,207.0 1300,140 Z" fill="#fff" stroke="#000" stroke-width="1.9"/>
+<rect x="1380.0" y="196.0" width="69.8" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<path d="M1530,140 Q1559.9,140 1576,207.0 Q1559.9,274 1530,274 Q1543.8,207.0 1530,140 Z" fill="#fff" stroke="#000" stroke-width="1.9"/>
+<rect x="1610.0" y="196.0" width="69.8" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<path d="M1760,140 Q1789.9,140 1806,207.0 Q1789.9,274 1760,274 Q1773.8,207.0 1760,140 Z" fill="#fff" stroke="#000" stroke-width="1.9"/>
+<rect x="1840.0" y="196.0" width="69.8" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<path d="M1990,140 Q2019.9,140 2036,207.0 Q2019.9,274 1990,274 Q2003.8,207.0 1990,140 Z" fill="#fff" stroke="#000" stroke-width="1.9"/>
+<rect x="2070.0" y="196.0" width="69.8" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<path d="M1300,460 Q1329.9,460 1346,527.0 Q1329.9,594 1300,594 Q1313.8,527.0 1300,460 Z" fill="#fff" stroke="#000" stroke-width="1.9"/>
+<rect x="1380.0" y="516.0" width="69.8" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<path d="M1530,460 Q1559.9,460 1576,527.0 Q1559.9,594 1530,594 Q1543.8,527.0 1530,460 Z" fill="#fff" stroke="#000" stroke-width="1.9"/>
+<rect x="1610.0" y="516.0" width="69.8" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<path d="M1760,460 Q1789.9,460 1806,527.0 Q1789.9,594 1760,594 Q1773.8,527.0 1760,460 Z" fill="#fff" stroke="#000" stroke-width="1.9"/>
+<rect x="1840.0" y="516.0" width="69.8" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<path d="M1990,460 Q2019.9,460 2036,527.0 Q2019.9,594 1990,594 Q2003.8,527.0 1990,460 Z" fill="#fff" stroke="#000" stroke-width="1.9"/>
+<rect x="2070.0" y="516.0" width="69.8" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<rect x="120.0" y="860.0" width="112.0" height="40.0" rx="14" fill="#fff3c4" stroke="#000" stroke-width="2"/>
+<rect x="248.0" y="860.0" width="112.0" height="40.0" rx="14" fill="#fff3c4" stroke="#000" stroke-width="2"/>
+<rect x="376.0" y="860.0" width="112.0" height="40.0" rx="14" fill="#fff3c4" stroke="#000" stroke-width="2"/>
+<rect x="504.0" y="860.0" width="112.0" height="40.0" rx="14" fill="#fff3c4" stroke="#000" stroke-width="2"/>
+<rect x="632.0" y="860.0" width="112.0" height="40.0" rx="14" fill="#fff3c4" stroke="#000" stroke-width="2"/>
+<rect x="760.0" y="860.0" width="112.0" height="40.0" rx="14" fill="#fff3c4" stroke="#000" stroke-width="2"/>
+<rect x="888.0" y="860.0" width="112.0" height="40.0" rx="14" fill="#fff3c4" stroke="#000" stroke-width="2"/>
+<rect x="1016.0" y="860.0" width="112.0" height="40.0" rx="14" fill="#fff3c4" stroke="#000" stroke-width="2"/>
+<rect x="120.0" y="980.0" width="112.0" height="40.0" rx="14" fill="#fff3c4" stroke="#000" stroke-width="2"/>
+<rect x="248.0" y="980.0" width="112.0" height="40.0" rx="14" fill="#fff3c4" stroke="#000" stroke-width="2"/>
+<rect x="376.0" y="980.0" width="112.0" height="40.0" rx="14" fill="#fff3c4" stroke="#000" stroke-width="2"/>
+<rect x="504.0" y="980.0" width="112.0" height="40.0" rx="14" fill="#fff3c4" stroke="#000" stroke-width="2"/>
+<rect x="632.0" y="980.0" width="112.0" height="40.0" rx="14" fill="#fff3c4" stroke="#000" stroke-width="2"/>
+<rect x="760.0" y="980.0" width="112.0" height="40.0" rx="14" fill="#fff3c4" stroke="#000" stroke-width="2"/>
+<rect x="888.0" y="980.0" width="112.0" height="40.0" rx="14" fill="#fff3c4" stroke="#000" stroke-width="2"/>
+<rect x="1016.0" y="980.0" width="112.0" height="40.0" rx="14" fill="#fff3c4" stroke="#000" stroke-width="2"/>
+<path d="M1290,870 Q1319.9,870 1336,946.0 Q1319.9,1022 1290,1022 Q1303.8,946.0 1290,870 Z" fill="#fff" stroke="#000" stroke-width="1.9"/>
+<rect x="1370.0" y="935.0" width="69.8" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<path d="M1670,870 Q1699.9,870 1716,946.0 Q1699.9,1022 1670,1022 Q1683.8,946.0 1670,870 Z" fill="#fff" stroke="#000" stroke-width="1.9"/>
+<rect x="1750.0" y="935.0" width="69.8" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<path d="M1230,1130 Q1256.0,1130 1270,1148.0 Q1256.0,1166 1230,1166 Q1242.0,1148.0 1230,1130 Z" fill="#fff" stroke="#000" stroke-width="1.9"/>
+<rect x="1290.0" y="1137.0" width="69.8" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<path d="M1470,1130 Q1496.0,1130 1510,1148.0 Q1496.0,1166 1470,1166 Q1482.0,1148.0 1470,1130 Z" fill="#fff" stroke="#000" stroke-width="1.9"/>
+<rect x="1530.0" y="1137.0" width="69.8" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<path d="M1710,1130 Q1736.0,1130 1750,1148.0 Q1736.0,1166 1710,1166 Q1722.0,1148.0 1710,1130 Z" fill="#fff" stroke="#000" stroke-width="1.9"/>
+<rect x="1770.0" y="1137.0" width="69.8" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<path d="M1950,1130 Q1976.0,1130 1990,1148.0 Q1976.0,1166 1950,1166 Q1962.0,1148.0 1950,1130 Z" fill="#fff" stroke="#000" stroke-width="1.9"/>
+<rect x="2010.0" y="1137.0" width="69.8" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<path d="M1230,1210 Q1256.0,1210 1270,1228.0 Q1256.0,1246 1230,1246 Q1242.0,1228.0 1230,1210 Z" fill="#fff" stroke="#000" stroke-width="1.9"/>
+<rect x="1290.0" y="1217.0" width="69.8" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<path d="M1470,1210 Q1496.0,1210 1510,1228.0 Q1496.0,1246 1470,1246 Q1482.0,1228.0 1470,1210 Z" fill="#fff" stroke="#000" stroke-width="1.9"/>
+<rect x="1530.0" y="1217.0" width="69.8" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<path d="M1710,1210 Q1736.0,1210 1750,1228.0 Q1736.0,1246 1710,1246 Q1722.0,1228.0 1710,1210 Z" fill="#fff" stroke="#000" stroke-width="1.9"/>
+<rect x="1770.0" y="1217.0" width="69.8" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<path d="M1950,1210 Q1976.0,1210 1990,1228.0 Q1976.0,1246 1950,1246 Q1962.0,1228.0 1950,1210 Z" fill="#fff" stroke="#000" stroke-width="1.9"/>
+<rect x="2010.0" y="1217.0" width="69.8" height="22.0" rx="0" fill="#fff" stroke="#000" stroke-width="1.4"/>
+<text x="1100.0" y="36.0" font-family="DejaVu Sans" font-size="26" font-weight="bold" fill="#000" text-anchor="middle">Fig 6c - Collision Engine (2/3): Bullet-Bullet Pair Matrix (28 cells) and Bullet-Tank Cells (16 cells)</text>
+<text x="1100.0" y="60.0" font-family="DejaVu Sans" font-size="14" font-weight="normal" fill="#444" text-anchor="middle">Every cell is the Fig-6a overlap cell.  All 44 evaluate in parallel every clock; named nets (pIJ, tkT_I) feed the OR gates on the right.</text>
+<text x="40.0" y="130.0" font-family="DejaVu Sans" font-size="11" font-weight="normal" fill="#333" text-anchor="start">cell inputs: A = {b_i_x, b_i_y, size_i, b_i_act}   B = {b_j_x, b_j_y, size_j, b_j_act}   (size = 12 if bN_big else 6)</text>
+<text x="125.0" y="168.0" font-family="DejaVu Sans" font-size="11" font-weight="bold" fill="#8a6d00" text-anchor="middle">b1</text>
+<text x="230.0" y="168.0" font-family="DejaVu Sans" font-size="11" font-weight="bold" fill="#8a6d00" text-anchor="middle">b2</text>
+<text x="335.0" y="168.0" font-family="DejaVu Sans" font-size="11" font-weight="bold" fill="#8a6d00" text-anchor="middle">b3</text>
+<text x="440.0" y="168.0" font-family="DejaVu Sans" font-size="11" font-weight="bold" fill="#8a6d00" text-anchor="middle">b4</text>
+<text x="545.0" y="168.0" font-family="DejaVu Sans" font-size="11" font-weight="bold" fill="#8a6d00" text-anchor="middle">b5</text>
+<text x="650.0" y="168.0" font-family="DejaVu Sans" font-size="11" font-weight="bold" fill="#8a6d00" text-anchor="middle">b6</text>
+<text x="755.0" y="168.0" font-family="DejaVu Sans" font-size="11" font-weight="bold" fill="#8a6d00" text-anchor="middle">b7</text>
+<text x="48.0" y="208.0" font-family="DejaVu Sans" font-size="11" font-weight="bold" fill="#8a6d00" text-anchor="middle">b0</text>
+<text x="125.0" y="200.0" font-family="DejaVu Sans" font-size="12" font-weight="bold" fill="#000" text-anchor="middle">ovl  p01</text>
+<text x="230.0" y="200.0" font-family="DejaVu Sans" font-size="12" font-weight="bold" fill="#000" text-anchor="middle">ovl  p02</text>
+<text x="335.0" y="200.0" font-family="DejaVu Sans" font-size="12" font-weight="bold" fill="#000" text-anchor="middle">ovl  p03</text>
+<text x="440.0" y="200.0" font-family="DejaVu Sans" font-size="12" font-weight="bold" fill="#000" text-anchor="middle">ovl  p04</text>
+<text x="545.0" y="200.0" font-family="DejaVu Sans" font-size="12" font-weight="bold" fill="#000" text-anchor="middle">ovl  p05</text>
+<text x="650.0" y="200.0" font-family="DejaVu Sans" font-size="12" font-weight="bold" fill="#000" text-anchor="middle">ovl  p06</text>
+<text x="755.0" y="200.0" font-family="DejaVu Sans" font-size="12" font-weight="bold" fill="#000" text-anchor="middle">ovl  p07</text>
+<text x="48.0" y="263.0" font-family="DejaVu Sans" font-size="11" font-weight="bold" fill="#8a6d00" text-anchor="middle">b1</text>
+<text x="230.0" y="255.0" font-family="DejaVu Sans" font-size="12" font-weight="bold" fill="#000" text-anchor="middle">ovl  p12</text>
+<text x="335.0" y="255.0" font-family="DejaVu Sans" font-size="12" font-weight="bold" fill="#000" text-anchor="middle">ovl  p13</text>
+<text x="440.0" y="255.0" font-family="DejaVu Sans" font-size="12" font-weight="bold" fill="#000" text-anchor="middle">ovl  p14</text>
+<text x="545.0" y="255.0" font-family="DejaVu Sans" font-size="12" font-weight="bold" fill="#000" text-anchor="middle">ovl  p15</text>
+<text x="650.0" y="255.0" font-family="DejaVu Sans" font-size="12" font-weight="bold" fill="#000" text-anchor="middle">ovl  p16</text>
+<text x="755.0" y="255.0" font-family="DejaVu Sans" font-size="12" font-weight="bold" fill="#000" text-anchor="middle">ovl  p17</text>
+<text x="48.0" y="318.0" font-family="DejaVu Sans" font-size="11" font-weight="bold" fill="#8a6d00" text-anchor="middle">b2</text>
+<text x="335.0" y="310.0" font-family="DejaVu Sans" font-size="12" font-weight="bold" fill="#000" text-anchor="middle">ovl  p23</text>
+<text x="440.0" y="310.0" font-family="DejaVu Sans" font-size="12" font-weight="bold" fill="#000" text-anchor="middle">ovl  p24</text>
+<text x="545.0" y="310.0" font-family="DejaVu Sans" font-size="12" font-weight="bold" fill="#000" text-anchor="middle">ovl  p25</text>
+<text x="650.0" y="310.0" font-family="DejaVu Sans" font-size="12" font-weight="bold" fill="#000" text-anchor="middle">ovl  p26</text>
+<text x="755.0" y="310.0" font-family="DejaVu Sans" font-size="12" font-weight="bold" fill="#000" text-anchor="middle">ovl  p27</text>
+<text x="48.0" y="373.0" font-family="DejaVu Sans" font-size="11" font-weight="bold" fill="#8a6d00" text-anchor="middle">b3</text>
+<text x="440.0" y="365.0" font-family="DejaVu Sans" font-size="12" font-weight="bold" fill="#000" text-anchor="middle">ovl  p34</text>
+<text x="545.0" y="365.0" font-family="DejaVu Sans" font-size="12" font-weight="bold" fill="#000" text-anchor="middle">ovl  p35</text>
+<text x="650.0" y="365.0" font-family="DejaVu Sans" font-size="12" font-weight="bold" fill="#000" text-anchor="middle">ovl  p36</text>
+<text x="755.0" y="365.0" font-family="DejaVu Sans" font-size="12" font-weight="bold" fill="#000" text-anchor="middle">ovl  p37</text>
+<text x="48.0" y="428.0" font-family="DejaVu Sans" font-size="11" font-weight="bold" fill="#8a6d00" text-anchor="middle">b4</text>
+<text x="545.0" y="420.0" font-family="DejaVu Sans" font-size="12" font-weight="bold" fill="#000" text-anchor="middle">ovl  p45</text>
+<text x="650.0" y="420.0" font-family="DejaVu Sans" font-size="12" font-weight="bold" fill="#000" text-anchor="middle">ovl  p46</text>
+<text x="755.0" y="420.0" font-family="DejaVu Sans" font-size="12" font-weight="bold" fill="#000" text-anchor="middle">ovl  p47</text>
+<text x="48.0" y="483.0" font-family="DejaVu Sans" font-size="11" font-weight="bold" fill="#8a6d00" text-anchor="middle">b5</text>
+<text x="650.0" y="475.0" font-family="DejaVu Sans" font-size="12" font-weight="bold" fill="#000" text-anchor="middle">ovl  p56</text>
+<text x="755.0" y="475.0" font-family="DejaVu Sans" font-size="12" font-weight="bold" fill="#000" text-anchor="middle">ovl  p57</text>
+<text x="48.0" y="538.0" font-family="DejaVu Sans" font-size="11" font-weight="bold" fill="#8a6d00" text-anchor="middle">b6</text>
+<text x="755.0" y="530.0" font-family="DejaVu Sans" font-size="12" font-weight="bold" fill="#000" text-anchor="middle">ovl  p67</text>
+<text x="1292.0" y="157.7" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#333" text-anchor="end">p01</text>
+<text x="1292.0" y="175.1" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#333" text-anchor="end">p02</text>
+<text x="1292.0" y="192.6" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#333" text-anchor="end">p03</text>
+<text x="1292.0" y="210.0" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#333" text-anchor="end">p04</text>
+<text x="1292.0" y="227.4" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#333" text-anchor="end">p05</text>
+<text x="1292.0" y="244.9" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#333" text-anchor="end">p06</text>
+<text x="1292.0" y="262.3" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#333" text-anchor="end">p07</text>
+<text x="1414.9" y="211.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#2e9d3a" text-anchor="middle">bb_hit[0]</text>
+<text x="1522.0" y="157.7" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#333" text-anchor="end">p01</text>
+<text x="1522.0" y="175.1" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#333" text-anchor="end">p12</text>
+<text x="1522.0" y="192.6" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#333" text-anchor="end">p13</text>
+<text x="1522.0" y="210.0" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#333" text-anchor="end">p14</text>
+<text x="1522.0" y="227.4" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#333" text-anchor="end">p15</text>
+<text x="1522.0" y="244.9" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#333" text-anchor="end">p16</text>
+<text x="1522.0" y="262.3" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#333" text-anchor="end">p17</text>
+<text x="1644.9" y="211.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#2e9d3a" text-anchor="middle">bb_hit[1]</text>
+<text x="1752.0" y="157.7" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#333" text-anchor="end">p02</text>
+<text x="1752.0" y="175.1" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#333" text-anchor="end">p12</text>
+<text x="1752.0" y="192.6" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#333" text-anchor="end">p23</text>
+<text x="1752.0" y="210.0" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#333" text-anchor="end">p24</text>
+<text x="1752.0" y="227.4" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#333" text-anchor="end">p25</text>
+<text x="1752.0" y="244.9" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#333" text-anchor="end">p26</text>
+<text x="1752.0" y="262.3" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#333" text-anchor="end">p27</text>
+<text x="1874.9" y="211.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#2e9d3a" text-anchor="middle">bb_hit[2]</text>
+<text x="1982.0" y="157.7" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#333" text-anchor="end">p03</text>
+<text x="1982.0" y="175.1" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#333" text-anchor="end">p13</text>
+<text x="1982.0" y="192.6" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#333" text-anchor="end">p23</text>
+<text x="1982.0" y="210.0" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#333" text-anchor="end">p34</text>
+<text x="1982.0" y="227.4" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#333" text-anchor="end">p35</text>
+<text x="1982.0" y="244.9" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#333" text-anchor="end">p36</text>
+<text x="1982.0" y="262.3" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#333" text-anchor="end">p37</text>
+<text x="2104.9" y="211.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#2e9d3a" text-anchor="middle">bb_hit[3]</text>
+<text x="1292.0" y="477.7" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#333" text-anchor="end">p04</text>
+<text x="1292.0" y="495.1" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#333" text-anchor="end">p14</text>
+<text x="1292.0" y="512.6" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#333" text-anchor="end">p24</text>
+<text x="1292.0" y="530.0" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#333" text-anchor="end">p34</text>
+<text x="1292.0" y="547.4" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#333" text-anchor="end">p45</text>
+<text x="1292.0" y="564.9" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#333" text-anchor="end">p46</text>
+<text x="1292.0" y="582.3" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#333" text-anchor="end">p47</text>
+<text x="1414.9" y="531.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#2e9d3a" text-anchor="middle">bb_hit[4]</text>
+<text x="1522.0" y="477.7" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#333" text-anchor="end">p05</text>
+<text x="1522.0" y="495.1" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#333" text-anchor="end">p15</text>
+<text x="1522.0" y="512.6" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#333" text-anchor="end">p25</text>
+<text x="1522.0" y="530.0" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#333" text-anchor="end">p35</text>
+<text x="1522.0" y="547.4" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#333" text-anchor="end">p45</text>
+<text x="1522.0" y="564.9" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#333" text-anchor="end">p56</text>
+<text x="1522.0" y="582.3" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#333" text-anchor="end">p57</text>
+<text x="1644.9" y="531.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#2e9d3a" text-anchor="middle">bb_hit[5]</text>
+<text x="1752.0" y="477.7" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#333" text-anchor="end">p06</text>
+<text x="1752.0" y="495.1" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#333" text-anchor="end">p16</text>
+<text x="1752.0" y="512.6" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#333" text-anchor="end">p26</text>
+<text x="1752.0" y="530.0" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#333" text-anchor="end">p36</text>
+<text x="1752.0" y="547.4" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#333" text-anchor="end">p46</text>
+<text x="1752.0" y="564.9" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#333" text-anchor="end">p56</text>
+<text x="1752.0" y="582.3" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#333" text-anchor="end">p67</text>
+<text x="1874.9" y="531.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#2e9d3a" text-anchor="middle">bb_hit[6]</text>
+<text x="1982.0" y="477.7" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#333" text-anchor="end">p07</text>
+<text x="1982.0" y="495.1" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#333" text-anchor="end">p17</text>
+<text x="1982.0" y="512.6" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#333" text-anchor="end">p27</text>
+<text x="1982.0" y="530.0" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#333" text-anchor="end">p37</text>
+<text x="1982.0" y="547.4" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#333" text-anchor="end">p47</text>
+<text x="1982.0" y="564.9" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#333" text-anchor="end">p57</text>
+<text x="1982.0" y="582.3" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#333" text-anchor="end">p67</text>
+<text x="2104.9" y="531.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#2e9d3a" text-anchor="middle">bb_hit[7]</text>
+<text x="1200.0" y="780.0" font-family="DejaVu Sans" font-size="11" font-weight="bold" fill="#2e9d3a" text-anchor="start">outputs: bb_hit[7:0]  (bit k = bullet k overlaps ANOTHER live bullet)  -&gt;  Fig 6d sticky BB_MASK</text>
+<text x="48.0" y="880.0" font-family="DejaVu Sans" font-size="11" font-weight="bold" fill="#8a6d00" text-anchor="start">tank 1</text>
+<text x="176.0" y="880.0" font-family="DejaVu Sans" font-size="11" font-weight="bold" fill="#000" text-anchor="middle">ovl  tk1_0</text>
+<text x="176.0" y="918.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#555" text-anchor="middle">b0</text>
+<text x="304.0" y="880.0" font-family="DejaVu Sans" font-size="11" font-weight="bold" fill="#000" text-anchor="middle">ovl  tk1_1</text>
+<text x="304.0" y="918.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#555" text-anchor="middle">b1</text>
+<text x="432.0" y="880.0" font-family="DejaVu Sans" font-size="11" font-weight="bold" fill="#000" text-anchor="middle">ovl  tk1_2</text>
+<text x="432.0" y="918.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#555" text-anchor="middle">b2</text>
+<text x="560.0" y="880.0" font-family="DejaVu Sans" font-size="11" font-weight="bold" fill="#000" text-anchor="middle">ovl  tk1_3</text>
+<text x="560.0" y="918.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#555" text-anchor="middle">b3</text>
+<text x="688.0" y="880.0" font-family="DejaVu Sans" font-size="11" font-weight="bold" fill="#000" text-anchor="middle">ovl  tk1_4</text>
+<text x="688.0" y="918.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#555" text-anchor="middle">b4</text>
+<text x="816.0" y="880.0" font-family="DejaVu Sans" font-size="11" font-weight="bold" fill="#000" text-anchor="middle">ovl  tk1_5</text>
+<text x="816.0" y="918.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#555" text-anchor="middle">b5</text>
+<text x="944.0" y="880.0" font-family="DejaVu Sans" font-size="11" font-weight="bold" fill="#000" text-anchor="middle">ovl  tk1_6</text>
+<text x="944.0" y="918.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#555" text-anchor="middle">b6</text>
+<text x="1072.0" y="880.0" font-family="DejaVu Sans" font-size="11" font-weight="bold" fill="#000" text-anchor="middle">ovl  tk1_7</text>
+<text x="1072.0" y="918.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#555" text-anchor="middle">b7</text>
+<text x="48.0" y="1000.0" font-family="DejaVu Sans" font-size="11" font-weight="bold" fill="#8a6d00" text-anchor="start">tank 2</text>
+<text x="176.0" y="1000.0" font-family="DejaVu Sans" font-size="11" font-weight="bold" fill="#000" text-anchor="middle">ovl  tk2_0</text>
+<text x="176.0" y="1038.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#555" text-anchor="middle">b0</text>
+<text x="304.0" y="1000.0" font-family="DejaVu Sans" font-size="11" font-weight="bold" fill="#000" text-anchor="middle">ovl  tk2_1</text>
+<text x="304.0" y="1038.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#555" text-anchor="middle">b1</text>
+<text x="432.0" y="1000.0" font-family="DejaVu Sans" font-size="11" font-weight="bold" fill="#000" text-anchor="middle">ovl  tk2_2</text>
+<text x="432.0" y="1038.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#555" text-anchor="middle">b2</text>
+<text x="560.0" y="1000.0" font-family="DejaVu Sans" font-size="11" font-weight="bold" fill="#000" text-anchor="middle">ovl  tk2_3</text>
+<text x="560.0" y="1038.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#555" text-anchor="middle">b3</text>
+<text x="688.0" y="1000.0" font-family="DejaVu Sans" font-size="11" font-weight="bold" fill="#000" text-anchor="middle">ovl  tk2_4</text>
+<text x="688.0" y="1038.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#555" text-anchor="middle">b4</text>
+<text x="816.0" y="1000.0" font-family="DejaVu Sans" font-size="11" font-weight="bold" fill="#000" text-anchor="middle">ovl  tk2_5</text>
+<text x="816.0" y="1038.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#555" text-anchor="middle">b5</text>
+<text x="944.0" y="1000.0" font-family="DejaVu Sans" font-size="11" font-weight="bold" fill="#000" text-anchor="middle">ovl  tk2_6</text>
+<text x="944.0" y="1038.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#555" text-anchor="middle">b6</text>
+<text x="1072.0" y="1000.0" font-family="DejaVu Sans" font-size="11" font-weight="bold" fill="#000" text-anchor="middle">ovl  tk2_7</text>
+<text x="1072.0" y="1038.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#555" text-anchor="middle">b7</text>
+<text x="40.0" y="1120.0" font-family="DejaVu Sans" font-size="11" font-weight="normal" fill="#333" text-anchor="start">Tank operand = {P1/P2_TANK_POS x,y (Fig 5), w=h=20, act=1}.   Bullet operand = b_i.</text>
+<text x="40.0" y="1150.0" font-family="DejaVu Sans" font-size="11" font-weight="normal" fill="#333" text-anchor="start">No owner bit: a bullet that bounces back may hit its own tank (classic tank rules).</text>
+<text x="40.0" y="1164.0" font-family="DejaVu Sans" font-size="11" font-weight="normal" fill="#333" text-anchor="start">Software spawns new bullets 24 px in front of the muzzle, so they do not overlap the shooter on frame 0.</text>
+<text x="1282.0" y="887.8" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#333" text-anchor="end">tk1_0</text>
+<text x="1282.0" y="905.2" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#333" text-anchor="end">tk1_1</text>
+<text x="1282.0" y="922.8" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#333" text-anchor="end">tk1_2</text>
+<text x="1282.0" y="940.2" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#333" text-anchor="end">tk1_3</text>
+<text x="1282.0" y="957.8" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#333" text-anchor="end">tk1_4</text>
+<text x="1282.0" y="975.2" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#333" text-anchor="end">tk1_5</text>
+<text x="1282.0" y="992.8" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#333" text-anchor="end">tk1_6</text>
+<text x="1282.0" y="1010.2" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#333" text-anchor="end">tk1_7</text>
+<text x="1404.9" y="950.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#2e9d3a" text-anchor="middle">tank1_hit</text>
+<text x="1662.0" y="887.8" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#333" text-anchor="end">tk2_0</text>
+<text x="1662.0" y="905.2" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#333" text-anchor="end">tk2_1</text>
+<text x="1662.0" y="922.8" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#333" text-anchor="end">tk2_2</text>
+<text x="1662.0" y="940.2" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#333" text-anchor="end">tk2_3</text>
+<text x="1662.0" y="957.8" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#333" text-anchor="end">tk2_4</text>
+<text x="1662.0" y="975.2" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#333" text-anchor="end">tk2_5</text>
+<text x="1662.0" y="992.8" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#333" text-anchor="end">tk2_6</text>
+<text x="1662.0" y="1010.2" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#333" text-anchor="end">tk2_7</text>
+<text x="1784.9" y="950.0" font-family="DejaVu Sans" font-size="10" font-weight="normal" fill="#2e9d3a" text-anchor="middle">tank2_hit</text>
+<text x="1200.0" y="1060.0" font-family="DejaVu Sans" font-size="11" font-weight="bold" fill="#2e9d3a" text-anchor="start">tank_set[t] = tankT_hit   (tank T struck this clock)</text>
+<text x="1200.0" y="1100.0" font-family="DejaVu Sans" font-size="11" font-weight="normal" fill="#333" text-anchor="start">Which bullet landed (so software can read its big flag: 5 dmg vs 1, and deactivate it):</text>
+<text x="1224.0" y="1140.0" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#000" text-anchor="end">tk1_0</text>
+<text x="1224.0" y="1159.0" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#000" text-anchor="end">tk2_0</text>
+<text x="1324.9" y="1152.0" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#2e9d3a" text-anchor="middle">btk_hit[0]</text>
+<text x="1464.0" y="1140.0" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#000" text-anchor="end">tk1_1</text>
+<text x="1464.0" y="1159.0" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#000" text-anchor="end">tk2_1</text>
+<text x="1564.9" y="1152.0" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#2e9d3a" text-anchor="middle">btk_hit[1]</text>
+<text x="1704.0" y="1140.0" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#000" text-anchor="end">tk1_2</text>
+<text x="1704.0" y="1159.0" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#000" text-anchor="end">tk2_2</text>
+<text x="1804.9" y="1152.0" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#2e9d3a" text-anchor="middle">btk_hit[2]</text>
+<text x="1944.0" y="1140.0" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#000" text-anchor="end">tk1_3</text>
+<text x="1944.0" y="1159.0" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#000" text-anchor="end">tk2_3</text>
+<text x="2044.9" y="1152.0" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#2e9d3a" text-anchor="middle">btk_hit[3]</text>
+<text x="1224.0" y="1220.0" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#000" text-anchor="end">tk1_4</text>
+<text x="1224.0" y="1239.0" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#000" text-anchor="end">tk2_4</text>
+<text x="1324.9" y="1232.0" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#2e9d3a" text-anchor="middle">btk_hit[4]</text>
+<text x="1464.0" y="1220.0" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#000" text-anchor="end">tk1_5</text>
+<text x="1464.0" y="1239.0" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#000" text-anchor="end">tk2_5</text>
+<text x="1564.9" y="1232.0" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#2e9d3a" text-anchor="middle">btk_hit[5]</text>
+<text x="1704.0" y="1220.0" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#000" text-anchor="end">tk1_6</text>
+<text x="1704.0" y="1239.0" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#000" text-anchor="end">tk2_6</text>
+<text x="1804.9" y="1232.0" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#2e9d3a" text-anchor="middle">btk_hit[6]</text>
+<text x="1944.0" y="1220.0" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#000" text-anchor="end">tk1_7</text>
+<text x="1944.0" y="1239.0" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#000" text-anchor="end">tk2_7</text>
+<text x="2044.9" y="1232.0" font-family="DejaVu Sans" font-size="9" font-weight="normal" fill="#2e9d3a" text-anchor="middle">btk_hit[7]</text>
+<text x="40.0" y="1340.0" font-family="DejaVu Sans" font-size="11" font-weight="bold" fill="#2e9d3a" text-anchor="start">outputs: tank_set[1:0] and btk_hit[7:0] -&gt; Fig 6d sticky registers.</text>
+</svg>
