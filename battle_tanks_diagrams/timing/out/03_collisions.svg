@@ -525,7 +525,7 @@
 <path class="bus" d="M2778 1207.5 L2786 1193 H3070 L3078 1207.5 L3070 1222 H2786 Z"/>
 <text x="2928.0" y="1212.5" font-size="16" text-anchor="middle">15 / 19</text>
 <text x="24" y="1257" font-size="15" text-anchor="start">All masks initially zero; maze and bullets already initialized. No reset is asserted in this independent continuous window.</text>
-<text x="24" y="1279" font-size="15" text-anchor="start">Scan slot0 at 0 → wall_set at 2 → sticky mask at 3. After position write at 13, slot0 scan16 returns floor18.</text>
+<text x="24" y="1279" font-size="15" text-anchor="start">Scan slot0 at 0 -&gt; wall_set at 2 -&gt; sticky mask at 3. After position write at 13, slot0 scan16 returns floor18.</text>
 <text x="24" y="1301" font-size="15" text-anchor="start">At 8/16 clear wins over a still-live hit; deactivation or separation must precede the final acknowledgement to avoid re-latching.</text>
 <text x="24" y="1323" font-size="15" text-anchor="start">Travel/reflection inputs are test stimulus. No claim that a bullet traverses a maze, or software performs all these calculations, in 28 clocks.</text>
 </svg>

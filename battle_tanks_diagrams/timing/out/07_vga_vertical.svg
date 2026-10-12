@@ -1,64 +1,64 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="3102" height="939" viewBox="0 0 3102 939">
+<svg xmlns="http://www.w3.org/2000/svg" width="3102" height="986" viewBox="0 0 3102 986">
 <rect width="100%" height="100%" fill="white"/>
 <style>text{font-family:DejaVu Sans,Arial,sans-serif;fill:#182638} .grid{stroke:#d4dbe3;stroke-width:1} .wave{fill:none;stroke:#182638;stroke-width:2} .bus{fill:#f6f9fc;stroke:#29425f;stroke-width:1.4}</style>
 <text x="24" y="35" font-size="25" text-anchor="start">G. VGA vertical boundaries — vertical blank, VS low, VS high, frame wrap</text>
 <text x="24" y="65" font-size="16" text-anchor="start">Four independent seven-clock windows; // separates preconditioned boundary tests. 50 MHz clk_sys, alternating 25 MHz pix_ce.</text>
 <text x="24" y="92" font-size="15" text-anchor="start">Column = after left rising edge; outputs latch at next edge. — = not consumed. // = omitted time / independent boundary window.</text>
-<path class="grid" d="M278 115 V808"/>
+<path class="grid" d="M278 115 V855"/>
 <text x="328.0" y="135" font-size="16" text-anchor="middle">0</text>
-<path class="grid" d="M378 115 V808"/>
+<path class="grid" d="M378 115 V855"/>
 <text x="428.0" y="135" font-size="16" text-anchor="middle">1</text>
-<path class="grid" d="M478 115 V808"/>
+<path class="grid" d="M478 115 V855"/>
 <text x="528.0" y="135" font-size="16" text-anchor="middle">2</text>
-<path class="grid" d="M578 115 V808"/>
+<path class="grid" d="M578 115 V855"/>
 <text x="628.0" y="135" font-size="16" text-anchor="middle">3</text>
-<path class="grid" d="M678 115 V808"/>
+<path class="grid" d="M678 115 V855"/>
 <text x="728.0" y="135" font-size="16" text-anchor="middle">4</text>
-<path class="grid" d="M778 115 V808"/>
+<path class="grid" d="M778 115 V855"/>
 <text x="828.0" y="135" font-size="16" text-anchor="middle">5</text>
-<path class="grid" d="M878 115 V808"/>
+<path class="grid" d="M878 115 V855"/>
 <text x="928.0" y="135" font-size="16" text-anchor="middle">6</text>
-<path class="grid" d="M978 115 V808"/>
+<path class="grid" d="M978 115 V855"/>
 <text x="1028.0" y="135" font-size="16" text-anchor="middle">7</text>
-<path class="grid" d="M1078 115 V808"/>
+<path class="grid" d="M1078 115 V855"/>
 <text x="1128.0" y="135" font-size="16" text-anchor="middle">8</text>
-<path class="grid" d="M1178 115 V808"/>
+<path class="grid" d="M1178 115 V855"/>
 <text x="1228.0" y="135" font-size="16" text-anchor="middle">9</text>
-<path class="grid" d="M1278 115 V808"/>
+<path class="grid" d="M1278 115 V855"/>
 <text x="1328.0" y="135" font-size="16" text-anchor="middle">10</text>
-<path class="grid" d="M1378 115 V808"/>
+<path class="grid" d="M1378 115 V855"/>
 <text x="1428.0" y="135" font-size="16" text-anchor="middle">11</text>
-<path class="grid" d="M1478 115 V808"/>
+<path class="grid" d="M1478 115 V855"/>
 <text x="1528.0" y="135" font-size="16" text-anchor="middle">12</text>
-<path class="grid" d="M1578 115 V808"/>
+<path class="grid" d="M1578 115 V855"/>
 <text x="1628.0" y="135" font-size="16" text-anchor="middle">13</text>
-<path class="grid" d="M1678 115 V808"/>
+<path class="grid" d="M1678 115 V855"/>
 <text x="1728.0" y="135" font-size="16" text-anchor="middle">14</text>
-<path class="grid" d="M1778 115 V808"/>
+<path class="grid" d="M1778 115 V855"/>
 <text x="1828.0" y="135" font-size="16" text-anchor="middle">15</text>
-<path class="grid" d="M1878 115 V808"/>
+<path class="grid" d="M1878 115 V855"/>
 <text x="1928.0" y="135" font-size="16" text-anchor="middle">16</text>
-<path class="grid" d="M1978 115 V808"/>
+<path class="grid" d="M1978 115 V855"/>
 <text x="2028.0" y="135" font-size="16" text-anchor="middle">17</text>
-<path class="grid" d="M2078 115 V808"/>
+<path class="grid" d="M2078 115 V855"/>
 <text x="2128.0" y="135" font-size="16" text-anchor="middle">18</text>
-<path class="grid" d="M2178 115 V808"/>
+<path class="grid" d="M2178 115 V855"/>
 <text x="2228.0" y="135" font-size="16" text-anchor="middle">19</text>
-<path class="grid" d="M2278 115 V808"/>
+<path class="grid" d="M2278 115 V855"/>
 <text x="2328.0" y="135" font-size="16" text-anchor="middle">20</text>
-<path class="grid" d="M2378 115 V808"/>
+<path class="grid" d="M2378 115 V855"/>
 <text x="2428.0" y="135" font-size="16" text-anchor="middle">21</text>
-<path class="grid" d="M2478 115 V808"/>
+<path class="grid" d="M2478 115 V855"/>
 <text x="2528.0" y="135" font-size="16" text-anchor="middle">22</text>
-<path class="grid" d="M2578 115 V808"/>
+<path class="grid" d="M2578 115 V855"/>
 <text x="2628.0" y="135" font-size="16" text-anchor="middle">23</text>
-<path class="grid" d="M2678 115 V808"/>
+<path class="grid" d="M2678 115 V855"/>
 <text x="2728.0" y="135" font-size="16" text-anchor="middle">24</text>
-<path class="grid" d="M2778 115 V808"/>
+<path class="grid" d="M2778 115 V855"/>
 <text x="2828.0" y="135" font-size="16" text-anchor="middle">25</text>
-<path class="grid" d="M2878 115 V808"/>
+<path class="grid" d="M2878 115 V855"/>
 <text x="2928.0" y="135" font-size="16" text-anchor="middle">26</text>
-<path class="grid" d="M2978 115 V808"/>
+<path class="grid" d="M2978 115 V855"/>
 <text x="3028.0" y="135" font-size="16" text-anchor="middle">27</text>
 <path class="grid" d="M20 197 H3078"/>
 <text x="24" y="178.5" font-size="16" text-anchor="start">clk_sys</text>
@@ -245,7 +245,17 @@
 <text x="2678.0" y="789.5" font-size="16" text-anchor="middle">000</text>
 <path class="bus" d="M2978 784.5 L2986 770 H3070 L3078 784.5 L3070 799 H2986 Z"/>
 <text x="3028.0" y="789.5" font-size="16" text-anchor="middle">888</text>
-<rect x="972" y="115" width="12" height="693" fill="white"/>
+<path class="grid" d="M20 855 H3078"/>
+<text x="24" y="836.5" font-size="16" text-anchor="start">v_visible (y &lt; 480)</text>
+<text x="328.0" y="836.5" font-size="13" text-anchor="middle">1</text>
+<text x="2528.0" y="836.5" font-size="13" text-anchor="middle">1</text>
+<text x="2628.0" y="836.5" font-size="13" text-anchor="middle">1</text>
+<text x="2728.0" y="836.5" font-size="13" text-anchor="middle">1</text>
+<text x="2828.0" y="836.5" font-size="13" text-anchor="middle">1</text>
+<text x="2928.0" y="836.5" font-size="13" text-anchor="middle">1</text>
+<text x="3028.0" y="836.5" font-size="13" text-anchor="middle">1</text>
+<path class="wave" d="M278 817 H378 V846 H478 V846 H578 V846 H678 V846 H778 V846 H878 V846 H978 V846 H1078 V846 H1178 V846 H1278 V846 H1378 V846 H1478 V846 H1578 V846 H1678 V846 H1778 V846 H1878 V846 H1978 V846 H2078 V846 H2178 V846 H2278 V846 H2378 V846 H2478 V817 H2578 V817 H2678 V817 H2778 V817 H2878 V817 H2978 V817 H3078"/>
+<rect x="972" y="115" width="12" height="740" fill="white"/>
 <text x="978" y="142" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
 <text x="978" y="189" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
 <text x="978" y="236" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
@@ -261,7 +271,8 @@
 <text x="978" y="706" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
 <text x="978" y="753" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
 <text x="978" y="800" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
-<rect x="1672" y="115" width="12" height="693" fill="white"/>
+<text x="978" y="847" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<rect x="1672" y="115" width="12" height="740" fill="white"/>
 <text x="1678" y="142" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
 <text x="1678" y="189" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
 <text x="1678" y="236" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
@@ -277,7 +288,8 @@
 <text x="1678" y="706" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
 <text x="1678" y="753" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
 <text x="1678" y="800" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
-<rect x="2372" y="115" width="12" height="693" fill="white"/>
+<text x="1678" y="847" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<rect x="2372" y="115" width="12" height="740" fill="white"/>
 <text x="2378" y="142" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
 <text x="2378" y="189" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
 <text x="2378" y="236" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
@@ -293,7 +305,8 @@
 <text x="2378" y="706" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
 <text x="2378" y="753" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
 <text x="2378" y="800" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
-<text x="24" y="834" font-size="15" text-anchor="start">Sync pin changes five displayed clocks after window start; RGB blank change follows one clock later under literal Fig 10.</text>
-<text x="24" y="856" font-size="15" text-anchor="start">Each window has steady prehistory. // does not skip required counter values within a single continuous trace.</text>
-<text x="24" y="878" font-size="15" text-anchor="start">Exact coordinate-to-output alignment is NOT established by these conflicting drawings; verify/reset RTL before relying on pin timing.</text>
+<text x="2378" y="847" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="24" y="881" font-size="15" text-anchor="start">Sync pin changes five displayed clocks after window start; RGB blank change follows one clock later under literal Fig 10.</text>
+<text x="24" y="903" font-size="15" text-anchor="start">Each window has steady prehistory. // does not skip required counter values within a single continuous trace.</text>
+<text x="24" y="925" font-size="15" text-anchor="start">Exact coordinate-to-output alignment is NOT established by these conflicting drawings; verify/reset RTL before relying on pin timing.</text>
 </svg>

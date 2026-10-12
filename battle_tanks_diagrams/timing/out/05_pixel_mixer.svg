@@ -114,7 +114,11 @@
 <text x="2428.0" y="272.5" font-size="13" text-anchor="middle">1</text>
 <text x="2528.0" y="272.5" font-size="13" text-anchor="middle">1</text>
 <text x="2628.0" y="272.5" font-size="13" text-anchor="middle">1</text>
-<path class="wave" d="M278 282 H378 V282 H478 V253 H578 V253 H678 V253 H778 V253 H878 V253 H978 V253 H1078 V253 H1178 V253 H1278 V253 H1378 V253 H1478 V253 H1578 V253 H1678 V253 H1778 V253 H1878 V253 H1978 V253 H2078 V253 H2178 V253 H2278 V253 H2378 V253 H2478 V253 H2578 V253 H2678 V282 H2778 V282 H2878 V282 H2978 V282 H3078"/>
+<text x="2728.0" y="272.5" font-size="13" text-anchor="middle">1</text>
+<text x="2828.0" y="272.5" font-size="13" text-anchor="middle">1</text>
+<text x="2928.0" y="272.5" font-size="13" text-anchor="middle">1</text>
+<text x="3028.0" y="272.5" font-size="13" text-anchor="middle">1</text>
+<path class="wave" d="M278 282 H378 V282 H478 V253 H578 V253 H678 V253 H778 V253 H878 V253 H978 V253 H1078 V253 H1178 V253 H1278 V253 H1378 V253 H1478 V253 H1578 V253 H1678 V253 H1778 V253 H1878 V253 H1978 V253 H2078 V253 H2178 V253 H2278 V253 H2378 V253 H2478 V253 H2578 V253 H2678 V253 H2778 V253 H2878 V253 H2978 V253 H3078"/>
 <path class="grid" d="M20 338 H3078"/>
 <text x="24" y="319.5" font-size="16" text-anchor="start">tank_valid</text>
 <text x="728.0" y="319.5" font-size="13" text-anchor="middle">1</text>
@@ -137,7 +141,11 @@
 <text x="2428.0" y="319.5" font-size="13" text-anchor="middle">1</text>
 <text x="2528.0" y="319.5" font-size="13" text-anchor="middle">1</text>
 <text x="2628.0" y="319.5" font-size="13" text-anchor="middle">1</text>
-<path class="wave" d="M278 329 H378 V329 H478 V329 H578 V329 H678 V300 H778 V300 H878 V300 H978 V300 H1078 V300 H1178 V300 H1278 V300 H1378 V300 H1478 V300 H1578 V300 H1678 V300 H1778 V300 H1878 V300 H1978 V300 H2078 V300 H2178 V300 H2278 V300 H2378 V300 H2478 V300 H2578 V300 H2678 V329 H2778 V329 H2878 V329 H2978 V329 H3078"/>
+<text x="2728.0" y="319.5" font-size="13" text-anchor="middle">1</text>
+<text x="2828.0" y="319.5" font-size="13" text-anchor="middle">1</text>
+<text x="2928.0" y="319.5" font-size="13" text-anchor="middle">1</text>
+<text x="3028.0" y="319.5" font-size="13" text-anchor="middle">1</text>
+<path class="wave" d="M278 329 H378 V329 H478 V329 H578 V329 H678 V300 H778 V300 H878 V300 H978 V300 H1078 V300 H1178 V300 H1278 V300 H1378 V300 H1478 V300 H1578 V300 H1678 V300 H1778 V300 H1878 V300 H1978 V300 H2078 V300 H2178 V300 H2278 V300 H2378 V300 H2478 V300 H2578 V300 H2678 V300 H2778 V300 H2878 V300 H2978 V300 H3078"/>
 <path class="grid" d="M20 385 H3078"/>
 <text x="24" y="366.5" font-size="16" text-anchor="start">tank_valid_P2</text>
 <text x="828.0" y="366.5" font-size="13" text-anchor="middle">1</text>
@@ -159,7 +167,11 @@
 <text x="2428.0" y="366.5" font-size="13" text-anchor="middle">1</text>
 <text x="2528.0" y="366.5" font-size="13" text-anchor="middle">1</text>
 <text x="2628.0" y="366.5" font-size="13" text-anchor="middle">1</text>
-<path class="wave" d="M278 376 H378 V376 H478 V376 H578 V376 H678 V376 H778 V347 H878 V347 H978 V347 H1078 V347 H1178 V347 H1278 V347 H1378 V347 H1478 V347 H1578 V347 H1678 V347 H1778 V347 H1878 V347 H1978 V347 H2078 V347 H2178 V347 H2278 V347 H2378 V347 H2478 V347 H2578 V347 H2678 V376 H2778 V376 H2878 V376 H2978 V376 H3078"/>
+<text x="2728.0" y="366.5" font-size="13" text-anchor="middle">1</text>
+<text x="2828.0" y="366.5" font-size="13" text-anchor="middle">1</text>
+<text x="2928.0" y="366.5" font-size="13" text-anchor="middle">1</text>
+<text x="3028.0" y="366.5" font-size="13" text-anchor="middle">1</text>
+<path class="wave" d="M278 376 H378 V376 H478 V376 H578 V376 H678 V376 H778 V347 H878 V347 H978 V347 H1078 V347 H1178 V347 H1278 V347 H1378 V347 H1478 V347 H1578 V347 H1678 V347 H1778 V347 H1878 V347 H1978 V347 H2078 V347 H2178 V347 H2278 V347 H2378 V347 H2478 V347 H2578 V347 H2678 V347 H2778 V347 H2878 V347 H2978 V347 H3078"/>
 <path class="grid" d="M20 432 H3078"/>
 <text x="24" y="413.5" font-size="16" text-anchor="start">bullet_valid</text>
 <text x="928.0" y="413.5" font-size="13" text-anchor="middle">1</text>
@@ -180,7 +192,11 @@
 <text x="2428.0" y="413.5" font-size="13" text-anchor="middle">1</text>
 <text x="2528.0" y="413.5" font-size="13" text-anchor="middle">1</text>
 <text x="2628.0" y="413.5" font-size="13" text-anchor="middle">1</text>
-<path class="wave" d="M278 423 H378 V423 H478 V423 H578 V423 H678 V423 H778 V423 H878 V394 H978 V394 H1078 V394 H1178 V394 H1278 V394 H1378 V394 H1478 V394 H1578 V394 H1678 V394 H1778 V394 H1878 V394 H1978 V394 H2078 V394 H2178 V394 H2278 V394 H2378 V394 H2478 V394 H2578 V394 H2678 V423 H2778 V423 H2878 V423 H2978 V423 H3078"/>
+<text x="2728.0" y="413.5" font-size="13" text-anchor="middle">1</text>
+<text x="2828.0" y="413.5" font-size="13" text-anchor="middle">1</text>
+<text x="2928.0" y="413.5" font-size="13" text-anchor="middle">1</text>
+<text x="3028.0" y="413.5" font-size="13" text-anchor="middle">1</text>
+<path class="wave" d="M278 423 H378 V423 H478 V423 H578 V423 H678 V423 H778 V423 H878 V394 H978 V394 H1078 V394 H1178 V394 H1278 V394 H1378 V394 H1478 V394 H1578 V394 H1678 V394 H1778 V394 H1878 V394 H1978 V394 H2078 V394 H2178 V394 H2278 V394 H2378 V394 H2478 V394 H2578 V394 H2678 V394 H2778 V394 H2878 V394 H2978 V394 H3078"/>
 <path class="grid" d="M20 479 H3078"/>
 <text x="24" y="460.5" font-size="16" text-anchor="start">big_valid</text>
 <text x="1128.0" y="460.5" font-size="13" text-anchor="middle">1</text>
@@ -199,7 +215,11 @@
 <text x="2428.0" y="460.5" font-size="13" text-anchor="middle">1</text>
 <text x="2528.0" y="460.5" font-size="13" text-anchor="middle">1</text>
 <text x="2628.0" y="460.5" font-size="13" text-anchor="middle">1</text>
-<path class="wave" d="M278 470 H378 V470 H478 V470 H578 V470 H678 V470 H778 V470 H878 V470 H978 V470 H1078 V441 H1178 V441 H1278 V441 H1378 V441 H1478 V441 H1578 V441 H1678 V441 H1778 V441 H1878 V441 H1978 V441 H2078 V441 H2178 V441 H2278 V441 H2378 V441 H2478 V441 H2578 V441 H2678 V470 H2778 V470 H2878 V470 H2978 V470 H3078"/>
+<text x="2728.0" y="460.5" font-size="13" text-anchor="middle">1</text>
+<text x="2828.0" y="460.5" font-size="13" text-anchor="middle">1</text>
+<text x="2928.0" y="460.5" font-size="13" text-anchor="middle">1</text>
+<text x="3028.0" y="460.5" font-size="13" text-anchor="middle">1</text>
+<path class="wave" d="M278 470 H378 V470 H478 V470 H578 V470 H678 V470 H778 V470 H878 V470 H978 V470 H1078 V441 H1178 V441 H1278 V441 H1378 V441 H1478 V441 H1578 V441 H1678 V441 H1778 V441 H1878 V441 H1978 V441 H2078 V441 H2178 V441 H2278 V441 H2378 V441 H2478 V441 H2578 V441 H2678 V441 H2778 V441 H2878 V441 H2978 V441 H3078"/>
 <path class="grid" d="M20 526 H3078"/>
 <text x="24" y="507.5" font-size="16" text-anchor="start">hud_valid</text>
 <text x="1328.0" y="507.5" font-size="13" text-anchor="middle">1</text>

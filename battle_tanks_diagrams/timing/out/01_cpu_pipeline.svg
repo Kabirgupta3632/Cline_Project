@@ -494,7 +494,8 @@
 <text x="728.0" y="836.5" font-size="13" text-anchor="middle">1</text>
 <text x="1028.0" y="836.5" font-size="13" text-anchor="middle">1</text>
 <text x="2028.0" y="836.5" font-size="13" text-anchor="middle">1</text>
-<path class="wave" d="M278 846 H378 V846 H478 V846 H578 V846 H678 V817 H778 V846 H878 V846 H978 V817 H1078 V846 H1178 V846 H1278 V846 H1378 V846 H1478 V846 H1578 V846 H1678 V846 H1778 V846 H1878 V846 H1978 V817 H2078 V846 H2178 V846 H2278 V846 H2378 V846 H2478 V846 H2578 V846 H2678 V846 H2778 V846 H2878 V846 H2978 V846 H3078"/>
+<text x="2328.0" y="836.5" font-size="13" text-anchor="middle">1</text>
+<path class="wave" d="M278 846 H378 V846 H478 V846 H578 V846 H678 V817 H778 V846 H878 V846 H978 V817 H1078 V846 H1178 V846 H1278 V846 H1378 V846 H1478 V846 H1578 V846 H1678 V846 H1778 V846 H1878 V846 H1978 V817 H2078 V846 H2178 V846 H2278 V817 H2378 V846 H2478 V846 H2578 V846 H2678 V846 H2778 V846 H2878 V846 H2978 V846 H3078"/>
 <path class="grid" d="M20 902 H3078"/>
 <text x="24" y="883.5" font-size="16" text-anchor="start">fwd_sel2</text>
 <text x="728.0" y="883.5" font-size="13" text-anchor="middle">1</text>
@@ -703,5 +704,5 @@
 <text x="3028.0" y="1447.5" font-size="13" text-anchor="middle">1</text>
 <path class="wave" d="M278 1457 H378 V1457 H478 V1457 H578 V1457 H678 V1457 H778 V1457 H878 V1457 H978 V1457 H1078 V1457 H1178 V1457 H1278 V1457 H1378 V1457 H1478 V1457 H1578 V1457 H1678 V1457 H1778 V1457 H1878 V1457 H1978 V1457 H2078 V1457 H2178 V1457 H2278 V1457 H2378 V1457 H2478 V1457 H2578 V1428 H2678 V1457 H2778 V1457 H2878 V1457 H2978 V1428 H3078"/>
 <text x="24" y="1492" font-size="15" text-anchor="start">Initial test state: x10=0x100; x11=0x80000000; RAM[0x100]=32; P1_INPUT=0x10. Other consumed initial registers = 0.</text>
-<text x="24" y="1514" font-size="15" text-anchor="start">H is BEQ at PC 28 → PC 64. J/K must never commit. Independent illustrative sequence, not the real game software.</text>
+<text x="24" y="1514" font-size="15" text-anchor="start">H is BEQ at PC 28 -&gt; PC 64. J/K must never commit. Independent illustrative sequence, not the real game software.</text>
 </svg>

@@ -21,7 +21,7 @@ Reset, forwarding, read wait, taken / not-taken branch, squash, MUL, MMIO and by
 | `ALU operand 2` | EX register/immediate; store offset is NOT payload. Separate store payload assumed. P3. |
 | `rs1_select` | EX operand source register. x0 forced to zero. P4. |
 | `rs2_select` | Second source or store-payload register; immediate instructions have no consumed rs2. P4. |
-| `fwd_sel1` | WB-to-EX forwarding: A→B, C→D, M→N. P4; EX reads assumed. |
+| `fwd_sel1` | WB-to-EX forwarding: A→B, C→D, M→N, P→Q. P4; EX reads assumed. |
 | `fwd_sel2` | WB-to-EX source 2/store forwarding: A→B, D→E, N→O. P4. |
 | `m_ext_EX` | F is MUL. ALU mux input 4; chosen one-clock multiplier, no DIV stall. P7a/P7c. |
 | `wb_write_en` | Qualified architectural register write; zero for load request/stores/branches/squash. P4/P6. |
@@ -192,6 +192,7 @@ Four independent seven-clock windows; // separates preconditioned boundary tests
 | `hsync_n` | NOT hs_win_q delayed three clocks, exactly one inversion. Fig 10. |
 | `vsync_n` | NOT vs_win_q delayed three clocks, exactly one inversion. Fig 10. |
 | `vga_rgb_q` | RGB register consumes active_d one further clock later; steady nonblank test colour 888. Fig 10. |
+| `v_visible (y < 480)` | Diagnostic vertical-visible compare. At line479→480 it falls; active_q is already low because h=799 is horizontally blank. Fig 8. |
 
 - Sync pin changes five displayed clocks after window start; RGB blank change follows one clock later under literal Fig 10.
 - Each window has steady prehistory. // does not skip required counter values within a single continuous trace.

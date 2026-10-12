@@ -108,7 +108,7 @@ row(s,'ALU operand 1',bus(n,{k:v[0] for k,v in ops.items()}),'Consumed EX operan
 row(s,'ALU operand 2',bus(n,{k:v[1] for k,v in ops.items()}),'EX register/immediate; store offset is NOT payload. Separate store payload assumed. P3.')
 row(s,'rs1_select',bus(n,{k:v[2] for k,v in ops.items()}),'EX operand source register. x0 forced to zero. P4.')
 row(s,'rs2_select',bus(n,{k:v[3] for k,v in ops.items()}),'Second source or store-payload register; immediate instructions have no consumed rs2. P4.')
-row(s,'fwd_sel1',bits(n,[4,7,17]),'WB-to-EX forwarding: A→B, C→D, M→N. P4; EX reads assumed.')
+row(s,'fwd_sel1',bits(n,[4,7,17,20]),'WB-to-EX forwarding: A→B, C→D, M→N, P→Q. P4; EX reads assumed.')
 row(s,'fwd_sel2',bits(n,[4,8,18]),'WB-to-EX source 2/store forwarding: A→B, D→E, N→O. P4.')
 row(s,'m_ext_EX',bits(n,[9]),'F is MUL. ALU mux input 4; chosen one-clock multiplier, no DIV stall. P7a/P7c.')
 writes={4:(1,10),5:(2,20),7:(3,32),8:(4,52),10:(5,200),17:(7,16),18:(8,16),20:(9,-1),21:(12,1),22:(13,30),24:(14,'0x12345000'),25:(15,-1),26:(16,0)}
@@ -248,7 +248,7 @@ wall=bits(n,range(2,n)); tank=bits(n,range(4,n)); small=bits(n,range(6,n)); big=
 row(s,'active_d',active,'Delayed active qualifier at mixer input. Low blanks RGB regardless of layer valids. Fig 10.')
 row(s,'maze_wall',wall,'Aligned wall valid. Floor RGB computed by Fig 11 does not override BG in the pictured mixer. Figs 10/11.')
 row(s,'tank_valid',tank,'Combined tank valid after sprite ROM/combining register. Fig 9; input alignment assumed.')
-row(s,'tank_valid_P2',bits(n,range(5,24)),'Both tanks hit the test pixel: P2 wins colour selection. Supplied as aligned test stimulus. Fig 9.')
+row(s,'tank_valid_P2',bits(n,range(5,n)),'Both tanks hit the test pixel: P2 wins colour selection. Supplied as aligned test stimulus. Fig 9.')
 row(s,'bullet_valid',small,'Normal bullet pixel valid overrides tank/wall. Figs 9/10.')
 row(s,'big_valid',big,'Special bullet pixel valid overrides normal bullet. Figs 9/10.')
 row(s,'hud_valid',hud,'Heart shape pixel has highest priority. Full and empty hearts both valid; health changes colour only. Figs 10/12.')
@@ -298,6 +298,9 @@ def boundary_sheet(name,title,starts,vertical=False):
       ('vsync_n','vs','NOT vs_win_q delayed three clocks, exactly one inversion. Fig 10.'),
       ('vga_rgb_q','rgb','RGB register consumes active_d one further clock later; steady nonblank test colour 888. Fig 10.')]
     for label,key,desc in defs: row(s,label,accum[key],desc)
+    if vertical:
+        row(s,'v_visible (y < 480)',[int(y<480) for y in accum['v']],
+            'Diagnostic vertical-visible compare. At line479→480 it falls; active_q is already low because h=799 is horizontally blank. Fig 8.')
     s['notes']=['Sync pin changes five displayed clocks after window start; RGB blank change follows one clock later under literal Fig 10.',
        'Each window has steady prehistory. // does not skip required counter values within a single continuous trace.',
        'Exact coordinate-to-output alignment is NOT established by these conflicting drawings; verify/reset RTL before relying on pin timing.']

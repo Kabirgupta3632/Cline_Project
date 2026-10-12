@@ -513,7 +513,7 @@
           1,
           0,
           0,
-          0,
+          1,
           0,
           0,
           0,
@@ -522,7 +522,7 @@
           0,
           0
         ],
-        "explanation": "WB-to-EX forwarding: A→B, C→D, M→N. P4; EX reads assumed.",
+        "explanation": "WB-to-EX forwarding: A→B, C→D, M→N, P→Q. P4; EX reads assumed.",
         "kind": "bit"
       },
       {
@@ -3085,10 +3085,10 @@
           1,
           1,
           1,
-          0,
-          0,
-          0,
-          0
+          1,
+          1,
+          1,
+          1
         ],
         "explanation": "Aligned wall valid. Floor RGB computed by Fig 11 does not override BG in the pictured mixer. Figs 10/11.",
         "kind": "bit"
@@ -3120,10 +3120,10 @@
           1,
           1,
           1,
-          0,
-          0,
-          0,
-          0
+          1,
+          1,
+          1,
+          1
         ],
         "explanation": "Combined tank valid after sprite ROM/combining register. Fig 9; input alignment assumed.",
         "kind": "bit"
@@ -3155,10 +3155,10 @@
           1,
           1,
           1,
-          0,
-          0,
-          0,
-          0
+          1,
+          1,
+          1,
+          1
         ],
         "explanation": "Both tanks hit the test pixel: P2 wins colour selection. Supplied as aligned test stimulus. Fig 9.",
         "kind": "bit"
@@ -3190,10 +3190,10 @@
           1,
           1,
           1,
-          0,
-          0,
-          0,
-          0
+          1,
+          1,
+          1,
+          1
         ],
         "explanation": "Normal bullet pixel valid overrides tank/wall. Figs 9/10.",
         "kind": "bit"
@@ -3225,10 +3225,10 @@
           1,
           1,
           1,
-          0,
-          0,
-          0,
-          0
+          1,
+          1,
+          1,
+          1
         ],
         "explanation": "Special bullet pixel valid overrides normal bullet. Figs 9/10.",
         "kind": "bit"
@@ -4445,6 +4445,41 @@
         ],
         "explanation": "RGB register consumes active_d one further clock later; steady nonblank test colour 888. Fig 10.",
         "kind": "bus"
+      },
+      {
+        "name": "v_visible (y < 480)",
+        "values": [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "explanation": "Diagnostic vertical-visible compare. At line479→480 it falls; active_q is already low because h=799 is horizontally blank. Fig 8.",
+        "kind": "bit"
       }
     ],
     "notes": [
