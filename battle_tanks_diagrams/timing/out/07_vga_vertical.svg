@@ -1,0 +1,299 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="3102" height="939" viewBox="0 0 3102 939">
+<rect width="100%" height="100%" fill="white"/>
+<style>text{font-family:DejaVu Sans,Arial,sans-serif;fill:#182638} .grid{stroke:#d4dbe3;stroke-width:1} .wave{fill:none;stroke:#182638;stroke-width:2} .bus{fill:#f6f9fc;stroke:#29425f;stroke-width:1.4}</style>
+<text x="24" y="35" font-size="25" text-anchor="start">G. VGA vertical boundaries — vertical blank, VS low, VS high, frame wrap</text>
+<text x="24" y="65" font-size="16" text-anchor="start">Four independent seven-clock windows; // separates preconditioned boundary tests. 50 MHz clk_sys, alternating 25 MHz pix_ce.</text>
+<text x="24" y="92" font-size="15" text-anchor="start">Column = after left rising edge; outputs latch at next edge. — = not consumed. // = omitted time / independent boundary window.</text>
+<path class="grid" d="M278 115 V808"/>
+<text x="328.0" y="135" font-size="16" text-anchor="middle">0</text>
+<path class="grid" d="M378 115 V808"/>
+<text x="428.0" y="135" font-size="16" text-anchor="middle">1</text>
+<path class="grid" d="M478 115 V808"/>
+<text x="528.0" y="135" font-size="16" text-anchor="middle">2</text>
+<path class="grid" d="M578 115 V808"/>
+<text x="628.0" y="135" font-size="16" text-anchor="middle">3</text>
+<path class="grid" d="M678 115 V808"/>
+<text x="728.0" y="135" font-size="16" text-anchor="middle">4</text>
+<path class="grid" d="M778 115 V808"/>
+<text x="828.0" y="135" font-size="16" text-anchor="middle">5</text>
+<path class="grid" d="M878 115 V808"/>
+<text x="928.0" y="135" font-size="16" text-anchor="middle">6</text>
+<path class="grid" d="M978 115 V808"/>
+<text x="1028.0" y="135" font-size="16" text-anchor="middle">7</text>
+<path class="grid" d="M1078 115 V808"/>
+<text x="1128.0" y="135" font-size="16" text-anchor="middle">8</text>
+<path class="grid" d="M1178 115 V808"/>
+<text x="1228.0" y="135" font-size="16" text-anchor="middle">9</text>
+<path class="grid" d="M1278 115 V808"/>
+<text x="1328.0" y="135" font-size="16" text-anchor="middle">10</text>
+<path class="grid" d="M1378 115 V808"/>
+<text x="1428.0" y="135" font-size="16" text-anchor="middle">11</text>
+<path class="grid" d="M1478 115 V808"/>
+<text x="1528.0" y="135" font-size="16" text-anchor="middle">12</text>
+<path class="grid" d="M1578 115 V808"/>
+<text x="1628.0" y="135" font-size="16" text-anchor="middle">13</text>
+<path class="grid" d="M1678 115 V808"/>
+<text x="1728.0" y="135" font-size="16" text-anchor="middle">14</text>
+<path class="grid" d="M1778 115 V808"/>
+<text x="1828.0" y="135" font-size="16" text-anchor="middle">15</text>
+<path class="grid" d="M1878 115 V808"/>
+<text x="1928.0" y="135" font-size="16" text-anchor="middle">16</text>
+<path class="grid" d="M1978 115 V808"/>
+<text x="2028.0" y="135" font-size="16" text-anchor="middle">17</text>
+<path class="grid" d="M2078 115 V808"/>
+<text x="2128.0" y="135" font-size="16" text-anchor="middle">18</text>
+<path class="grid" d="M2178 115 V808"/>
+<text x="2228.0" y="135" font-size="16" text-anchor="middle">19</text>
+<path class="grid" d="M2278 115 V808"/>
+<text x="2328.0" y="135" font-size="16" text-anchor="middle">20</text>
+<path class="grid" d="M2378 115 V808"/>
+<text x="2428.0" y="135" font-size="16" text-anchor="middle">21</text>
+<path class="grid" d="M2478 115 V808"/>
+<text x="2528.0" y="135" font-size="16" text-anchor="middle">22</text>
+<path class="grid" d="M2578 115 V808"/>
+<text x="2628.0" y="135" font-size="16" text-anchor="middle">23</text>
+<path class="grid" d="M2678 115 V808"/>
+<text x="2728.0" y="135" font-size="16" text-anchor="middle">24</text>
+<path class="grid" d="M2778 115 V808"/>
+<text x="2828.0" y="135" font-size="16" text-anchor="middle">25</text>
+<path class="grid" d="M2878 115 V808"/>
+<text x="2928.0" y="135" font-size="16" text-anchor="middle">26</text>
+<path class="grid" d="M2978 115 V808"/>
+<text x="3028.0" y="135" font-size="16" text-anchor="middle">27</text>
+<path class="grid" d="M20 197 H3078"/>
+<text x="24" y="178.5" font-size="16" text-anchor="start">clk_sys</text>
+<path class="wave" d="M278 188 V159 H328.0 V188 H378 V159 H428.0 V188 H478 V159 H528.0 V188 H578 V159 H628.0 V188 H678 V159 H728.0 V188 H778 V159 H828.0 V188 H878 V159 H928.0 V188 H978 V159 H1028.0 V188 H1078 V159 H1128.0 V188 H1178 V159 H1228.0 V188 H1278 V159 H1328.0 V188 H1378 V159 H1428.0 V188 H1478 V159 H1528.0 V188 H1578 V159 H1628.0 V188 H1678 V159 H1728.0 V188 H1778 V159 H1828.0 V188 H1878 V159 H1928.0 V188 H1978 V159 H2028.0 V188 H2078 V159 H2128.0 V188 H2178 V159 H2228.0 V188 H2278 V159 H2328.0 V188 H2378 V159 H2428.0 V188 H2478 V159 H2528.0 V188 H2578 V159 H2628.0 V188 H2678 V159 H2728.0 V188 H2778 V159 H2828.0 V188 H2878 V159 H2928.0 V188 H2978 V159 H3028.0 V188 H3078"/>
+<path class="grid" d="M20 244 H3078"/>
+<text x="24" y="225.5" font-size="16" text-anchor="start">pix_ce</text>
+<text x="328.0" y="225.5" font-size="13" text-anchor="middle">1</text>
+<text x="528.0" y="225.5" font-size="13" text-anchor="middle">1</text>
+<text x="728.0" y="225.5" font-size="13" text-anchor="middle">1</text>
+<text x="928.0" y="225.5" font-size="13" text-anchor="middle">1</text>
+<text x="1028.0" y="225.5" font-size="13" text-anchor="middle">1</text>
+<text x="1228.0" y="225.5" font-size="13" text-anchor="middle">1</text>
+<text x="1428.0" y="225.5" font-size="13" text-anchor="middle">1</text>
+<text x="1628.0" y="225.5" font-size="13" text-anchor="middle">1</text>
+<text x="1728.0" y="225.5" font-size="13" text-anchor="middle">1</text>
+<text x="1928.0" y="225.5" font-size="13" text-anchor="middle">1</text>
+<text x="2128.0" y="225.5" font-size="13" text-anchor="middle">1</text>
+<text x="2328.0" y="225.5" font-size="13" text-anchor="middle">1</text>
+<text x="2428.0" y="225.5" font-size="13" text-anchor="middle">1</text>
+<text x="2628.0" y="225.5" font-size="13" text-anchor="middle">1</text>
+<text x="2828.0" y="225.5" font-size="13" text-anchor="middle">1</text>
+<text x="3028.0" y="225.5" font-size="13" text-anchor="middle">1</text>
+<path class="wave" d="M278 206 H378 V235 H478 V206 H578 V235 H678 V206 H778 V235 H878 V206 H978 V206 H1078 V235 H1178 V206 H1278 V235 H1378 V206 H1478 V235 H1578 V206 H1678 V206 H1778 V235 H1878 V206 H1978 V235 H2078 V206 H2178 V235 H2278 V206 H2378 V206 H2478 V235 H2578 V206 H2678 V235 H2778 V206 H2878 V235 H2978 V206 H3078"/>
+<path class="grid" d="M20 291 H3078"/>
+<text x="24" y="272.5" font-size="16" text-anchor="start">hcnt_q / x</text>
+<path class="bus" d="M278 267.5 L286 253 H370 L378 267.5 L370 282 H286 Z"/>
+<text x="328.0" y="272.5" font-size="16" text-anchor="middle">799</text>
+<path class="bus" d="M378 267.5 L386 253 H570 L578 267.5 L570 282 H386 Z"/>
+<text x="478.0" y="272.5" font-size="16" text-anchor="middle">0</text>
+<path class="bus" d="M578 267.5 L586 253 H770 L778 267.5 L770 282 H586 Z"/>
+<text x="678.0" y="272.5" font-size="16" text-anchor="middle">1</text>
+<path class="bus" d="M778 267.5 L786 253 H970 L978 267.5 L970 282 H786 Z"/>
+<text x="878.0" y="272.5" font-size="16" text-anchor="middle">2</text>
+<path class="bus" d="M978 267.5 L986 253 H1070 L1078 267.5 L1070 282 H986 Z"/>
+<text x="1028.0" y="272.5" font-size="16" text-anchor="middle">799</text>
+<path class="bus" d="M1078 267.5 L1086 253 H1270 L1278 267.5 L1270 282 H1086 Z"/>
+<text x="1178.0" y="272.5" font-size="16" text-anchor="middle">0</text>
+<path class="bus" d="M1278 267.5 L1286 253 H1470 L1478 267.5 L1470 282 H1286 Z"/>
+<text x="1378.0" y="272.5" font-size="16" text-anchor="middle">1</text>
+<path class="bus" d="M1478 267.5 L1486 253 H1670 L1678 267.5 L1670 282 H1486 Z"/>
+<text x="1578.0" y="272.5" font-size="16" text-anchor="middle">2</text>
+<path class="bus" d="M1678 267.5 L1686 253 H1770 L1778 267.5 L1770 282 H1686 Z"/>
+<text x="1728.0" y="272.5" font-size="16" text-anchor="middle">799</text>
+<path class="bus" d="M1778 267.5 L1786 253 H1970 L1978 267.5 L1970 282 H1786 Z"/>
+<text x="1878.0" y="272.5" font-size="16" text-anchor="middle">0</text>
+<path class="bus" d="M1978 267.5 L1986 253 H2170 L2178 267.5 L2170 282 H1986 Z"/>
+<text x="2078.0" y="272.5" font-size="16" text-anchor="middle">1</text>
+<path class="bus" d="M2178 267.5 L2186 253 H2370 L2378 267.5 L2370 282 H2186 Z"/>
+<text x="2278.0" y="272.5" font-size="16" text-anchor="middle">2</text>
+<path class="bus" d="M2378 267.5 L2386 253 H2470 L2478 267.5 L2470 282 H2386 Z"/>
+<text x="2428.0" y="272.5" font-size="16" text-anchor="middle">799</text>
+<path class="bus" d="M2478 267.5 L2486 253 H2670 L2678 267.5 L2670 282 H2486 Z"/>
+<text x="2578.0" y="272.5" font-size="16" text-anchor="middle">0</text>
+<path class="bus" d="M2678 267.5 L2686 253 H2870 L2878 267.5 L2870 282 H2686 Z"/>
+<text x="2778.0" y="272.5" font-size="16" text-anchor="middle">1</text>
+<path class="bus" d="M2878 267.5 L2886 253 H3070 L3078 267.5 L3070 282 H2886 Z"/>
+<text x="2978.0" y="272.5" font-size="16" text-anchor="middle">2</text>
+<path class="grid" d="M20 338 H3078"/>
+<text x="24" y="319.5" font-size="16" text-anchor="start">vcnt_q / y</text>
+<path class="bus" d="M278 314.5 L286 300 H370 L378 314.5 L370 329 H286 Z"/>
+<text x="328.0" y="319.5" font-size="16" text-anchor="middle">479</text>
+<path class="bus" d="M378 314.5 L386 300 H970 L978 314.5 L970 329 H386 Z"/>
+<text x="678.0" y="319.5" font-size="16" text-anchor="middle">480</text>
+<path class="bus" d="M978 314.5 L986 300 H1070 L1078 314.5 L1070 329 H986 Z"/>
+<text x="1028.0" y="319.5" font-size="16" text-anchor="middle">489</text>
+<path class="bus" d="M1078 314.5 L1086 300 H1670 L1678 314.5 L1670 329 H1086 Z"/>
+<text x="1378.0" y="319.5" font-size="16" text-anchor="middle">490</text>
+<path class="bus" d="M1678 314.5 L1686 300 H1770 L1778 314.5 L1770 329 H1686 Z"/>
+<text x="1728.0" y="319.5" font-size="16" text-anchor="middle">491</text>
+<path class="bus" d="M1778 314.5 L1786 300 H2370 L2378 314.5 L2370 329 H1786 Z"/>
+<text x="2078.0" y="319.5" font-size="16" text-anchor="middle">492</text>
+<path class="bus" d="M2378 314.5 L2386 300 H2470 L2478 314.5 L2470 329 H2386 Z"/>
+<text x="2428.0" y="319.5" font-size="16" text-anchor="middle">524</text>
+<path class="bus" d="M2478 314.5 L2486 300 H3070 L3078 314.5 L3070 329 H2486 Z"/>
+<text x="2778.0" y="319.5" font-size="16" text-anchor="middle">0</text>
+<path class="grid" d="M20 385 H3078"/>
+<text x="24" y="366.5" font-size="16" text-anchor="start">h_end</text>
+<text x="328.0" y="366.5" font-size="13" text-anchor="middle">1</text>
+<text x="1028.0" y="366.5" font-size="13" text-anchor="middle">1</text>
+<text x="1728.0" y="366.5" font-size="13" text-anchor="middle">1</text>
+<text x="2428.0" y="366.5" font-size="13" text-anchor="middle">1</text>
+<path class="wave" d="M278 347 H378 V376 H478 V376 H578 V376 H678 V376 H778 V376 H878 V376 H978 V347 H1078 V376 H1178 V376 H1278 V376 H1378 V376 H1478 V376 H1578 V376 H1678 V347 H1778 V376 H1878 V376 H1978 V376 H2078 V376 H2178 V376 H2278 V376 H2378 V347 H2478 V376 H2578 V376 H2678 V376 H2778 V376 H2878 V376 H2978 V376 H3078"/>
+<path class="grid" d="M20 432 H3078"/>
+<text x="24" y="413.5" font-size="16" text-anchor="start">v_end</text>
+<text x="2428.0" y="413.5" font-size="13" text-anchor="middle">1</text>
+<path class="wave" d="M278 423 H378 V423 H478 V423 H578 V423 H678 V423 H778 V423 H878 V423 H978 V423 H1078 V423 H1178 V423 H1278 V423 H1378 V423 H1478 V423 H1578 V423 H1678 V423 H1778 V423 H1878 V423 H1978 V423 H2078 V423 H2178 V423 H2278 V423 H2378 V394 H2478 V423 H2578 V423 H2678 V423 H2778 V423 H2878 V423 H2978 V423 H3078"/>
+<path class="grid" d="M20 479 H3078"/>
+<text x="24" y="460.5" font-size="16" text-anchor="start">line_tick</text>
+<text x="328.0" y="460.5" font-size="13" text-anchor="middle">1</text>
+<text x="1028.0" y="460.5" font-size="13" text-anchor="middle">1</text>
+<text x="1728.0" y="460.5" font-size="13" text-anchor="middle">1</text>
+<text x="2428.0" y="460.5" font-size="13" text-anchor="middle">1</text>
+<path class="wave" d="M278 441 H378 V470 H478 V470 H578 V470 H678 V470 H778 V470 H878 V470 H978 V441 H1078 V470 H1178 V470 H1278 V470 H1378 V470 H1478 V470 H1578 V470 H1678 V441 H1778 V470 H1878 V470 H1978 V470 H2078 V470 H2178 V470 H2278 V470 H2378 V441 H2478 V470 H2578 V470 H2678 V470 H2778 V470 H2878 V470 H2978 V470 H3078"/>
+<path class="grid" d="M20 526 H3078"/>
+<text x="24" y="507.5" font-size="16" text-anchor="start">active_q</text>
+<text x="2628.0" y="507.5" font-size="13" text-anchor="middle">1</text>
+<text x="2728.0" y="507.5" font-size="13" text-anchor="middle">1</text>
+<text x="2828.0" y="507.5" font-size="13" text-anchor="middle">1</text>
+<text x="2928.0" y="507.5" font-size="13" text-anchor="middle">1</text>
+<text x="3028.0" y="507.5" font-size="13" text-anchor="middle">1</text>
+<path class="wave" d="M278 517 H378 V517 H478 V517 H578 V517 H678 V517 H778 V517 H878 V517 H978 V517 H1078 V517 H1178 V517 H1278 V517 H1378 V517 H1478 V517 H1578 V517 H1678 V517 H1778 V517 H1878 V517 H1978 V517 H2078 V517 H2178 V517 H2278 V517 H2378 V517 H2478 V517 H2578 V488 H2678 V488 H2778 V488 H2878 V488 H2978 V488 H3078"/>
+<path class="grid" d="M20 573 H3078"/>
+<text x="24" y="554.5" font-size="16" text-anchor="start">hs_win_q</text>
+<path class="wave" d="M278 564 H378 V564 H478 V564 H578 V564 H678 V564 H778 V564 H878 V564 H978 V564 H1078 V564 H1178 V564 H1278 V564 H1378 V564 H1478 V564 H1578 V564 H1678 V564 H1778 V564 H1878 V564 H1978 V564 H2078 V564 H2178 V564 H2278 V564 H2378 V564 H2478 V564 H2578 V564 H2678 V564 H2778 V564 H2878 V564 H2978 V564 H3078"/>
+<path class="grid" d="M20 620 H3078"/>
+<text x="24" y="601.5" font-size="16" text-anchor="start">vs_win_q</text>
+<text x="1228.0" y="601.5" font-size="13" text-anchor="middle">1</text>
+<text x="1328.0" y="601.5" font-size="13" text-anchor="middle">1</text>
+<text x="1428.0" y="601.5" font-size="13" text-anchor="middle">1</text>
+<text x="1528.0" y="601.5" font-size="13" text-anchor="middle">1</text>
+<text x="1628.0" y="601.5" font-size="13" text-anchor="middle">1</text>
+<text x="1728.0" y="601.5" font-size="13" text-anchor="middle">1</text>
+<text x="1828.0" y="601.5" font-size="13" text-anchor="middle">1</text>
+<path class="wave" d="M278 611 H378 V611 H478 V611 H578 V611 H678 V611 H778 V611 H878 V611 H978 V611 H1078 V611 H1178 V582 H1278 V582 H1378 V582 H1478 V582 H1578 V582 H1678 V582 H1778 V582 H1878 V611 H1978 V611 H2078 V611 H2178 V611 H2278 V611 H2378 V611 H2478 V611 H2578 V611 H2678 V611 H2778 V611 H2878 V611 H2978 V611 H3078"/>
+<path class="grid" d="M20 667 H3078"/>
+<text x="24" y="648.5" font-size="16" text-anchor="start">active_d</text>
+<text x="2928.0" y="648.5" font-size="13" text-anchor="middle">1</text>
+<text x="3028.0" y="648.5" font-size="13" text-anchor="middle">1</text>
+<path class="wave" d="M278 658 H378 V658 H478 V658 H578 V658 H678 V658 H778 V658 H878 V658 H978 V658 H1078 V658 H1178 V658 H1278 V658 H1378 V658 H1478 V658 H1578 V658 H1678 V658 H1778 V658 H1878 V658 H1978 V658 H2078 V658 H2178 V658 H2278 V658 H2378 V658 H2478 V658 H2578 V658 H2678 V658 H2778 V658 H2878 V629 H2978 V629 H3078"/>
+<path class="grid" d="M20 714 H3078"/>
+<text x="24" y="695.5" font-size="16" text-anchor="start">hsync_n</text>
+<text x="328.0" y="695.5" font-size="13" text-anchor="middle">1</text>
+<text x="428.0" y="695.5" font-size="13" text-anchor="middle">1</text>
+<text x="528.0" y="695.5" font-size="13" text-anchor="middle">1</text>
+<text x="628.0" y="695.5" font-size="13" text-anchor="middle">1</text>
+<text x="728.0" y="695.5" font-size="13" text-anchor="middle">1</text>
+<text x="828.0" y="695.5" font-size="13" text-anchor="middle">1</text>
+<text x="928.0" y="695.5" font-size="13" text-anchor="middle">1</text>
+<text x="1028.0" y="695.5" font-size="13" text-anchor="middle">1</text>
+<text x="1128.0" y="695.5" font-size="13" text-anchor="middle">1</text>
+<text x="1228.0" y="695.5" font-size="13" text-anchor="middle">1</text>
+<text x="1328.0" y="695.5" font-size="13" text-anchor="middle">1</text>
+<text x="1428.0" y="695.5" font-size="13" text-anchor="middle">1</text>
+<text x="1528.0" y="695.5" font-size="13" text-anchor="middle">1</text>
+<text x="1628.0" y="695.5" font-size="13" text-anchor="middle">1</text>
+<text x="1728.0" y="695.5" font-size="13" text-anchor="middle">1</text>
+<text x="1828.0" y="695.5" font-size="13" text-anchor="middle">1</text>
+<text x="1928.0" y="695.5" font-size="13" text-anchor="middle">1</text>
+<text x="2028.0" y="695.5" font-size="13" text-anchor="middle">1</text>
+<text x="2128.0" y="695.5" font-size="13" text-anchor="middle">1</text>
+<text x="2228.0" y="695.5" font-size="13" text-anchor="middle">1</text>
+<text x="2328.0" y="695.5" font-size="13" text-anchor="middle">1</text>
+<text x="2428.0" y="695.5" font-size="13" text-anchor="middle">1</text>
+<text x="2528.0" y="695.5" font-size="13" text-anchor="middle">1</text>
+<text x="2628.0" y="695.5" font-size="13" text-anchor="middle">1</text>
+<text x="2728.0" y="695.5" font-size="13" text-anchor="middle">1</text>
+<text x="2828.0" y="695.5" font-size="13" text-anchor="middle">1</text>
+<text x="2928.0" y="695.5" font-size="13" text-anchor="middle">1</text>
+<text x="3028.0" y="695.5" font-size="13" text-anchor="middle">1</text>
+<path class="wave" d="M278 676 H378 V676 H478 V676 H578 V676 H678 V676 H778 V676 H878 V676 H978 V676 H1078 V676 H1178 V676 H1278 V676 H1378 V676 H1478 V676 H1578 V676 H1678 V676 H1778 V676 H1878 V676 H1978 V676 H2078 V676 H2178 V676 H2278 V676 H2378 V676 H2478 V676 H2578 V676 H2678 V676 H2778 V676 H2878 V676 H2978 V676 H3078"/>
+<path class="grid" d="M20 761 H3078"/>
+<text x="24" y="742.5" font-size="16" text-anchor="start">vsync_n</text>
+<text x="328.0" y="742.5" font-size="13" text-anchor="middle">1</text>
+<text x="428.0" y="742.5" font-size="13" text-anchor="middle">1</text>
+<text x="528.0" y="742.5" font-size="13" text-anchor="middle">1</text>
+<text x="628.0" y="742.5" font-size="13" text-anchor="middle">1</text>
+<text x="728.0" y="742.5" font-size="13" text-anchor="middle">1</text>
+<text x="828.0" y="742.5" font-size="13" text-anchor="middle">1</text>
+<text x="928.0" y="742.5" font-size="13" text-anchor="middle">1</text>
+<text x="1028.0" y="742.5" font-size="13" text-anchor="middle">1</text>
+<text x="1128.0" y="742.5" font-size="13" text-anchor="middle">1</text>
+<text x="1228.0" y="742.5" font-size="13" text-anchor="middle">1</text>
+<text x="1328.0" y="742.5" font-size="13" text-anchor="middle">1</text>
+<text x="1428.0" y="742.5" font-size="13" text-anchor="middle">1</text>
+<text x="2228.0" y="742.5" font-size="13" text-anchor="middle">1</text>
+<text x="2328.0" y="742.5" font-size="13" text-anchor="middle">1</text>
+<text x="2428.0" y="742.5" font-size="13" text-anchor="middle">1</text>
+<text x="2528.0" y="742.5" font-size="13" text-anchor="middle">1</text>
+<text x="2628.0" y="742.5" font-size="13" text-anchor="middle">1</text>
+<text x="2728.0" y="742.5" font-size="13" text-anchor="middle">1</text>
+<text x="2828.0" y="742.5" font-size="13" text-anchor="middle">1</text>
+<text x="2928.0" y="742.5" font-size="13" text-anchor="middle">1</text>
+<text x="3028.0" y="742.5" font-size="13" text-anchor="middle">1</text>
+<path class="wave" d="M278 723 H378 V723 H478 V723 H578 V723 H678 V723 H778 V723 H878 V723 H978 V723 H1078 V723 H1178 V723 H1278 V723 H1378 V723 H1478 V752 H1578 V752 H1678 V752 H1778 V752 H1878 V752 H1978 V752 H2078 V752 H2178 V723 H2278 V723 H2378 V723 H2478 V723 H2578 V723 H2678 V723 H2778 V723 H2878 V723 H2978 V723 H3078"/>
+<path class="grid" d="M20 808 H3078"/>
+<text x="24" y="789.5" font-size="16" text-anchor="start">vga_rgb_q</text>
+<path class="bus" d="M278 784.5 L286 770 H970 L978 784.5 L970 799 H286 Z"/>
+<text x="628.0" y="789.5" font-size="16" text-anchor="middle">000</text>
+<path class="bus" d="M978 784.5 L986 770 H1670 L1678 784.5 L1670 799 H986 Z"/>
+<text x="1328.0" y="789.5" font-size="16" text-anchor="middle">000</text>
+<path class="bus" d="M1678 784.5 L1686 770 H2370 L2378 784.5 L2370 799 H1686 Z"/>
+<text x="2028.0" y="789.5" font-size="16" text-anchor="middle">000</text>
+<path class="bus" d="M2378 784.5 L2386 770 H2970 L2978 784.5 L2970 799 H2386 Z"/>
+<text x="2678.0" y="789.5" font-size="16" text-anchor="middle">000</text>
+<path class="bus" d="M2978 784.5 L2986 770 H3070 L3078 784.5 L3070 799 H2986 Z"/>
+<text x="3028.0" y="789.5" font-size="16" text-anchor="middle">888</text>
+<rect x="972" y="115" width="12" height="693" fill="white"/>
+<text x="978" y="142" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="978" y="189" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="978" y="236" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="978" y="283" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="978" y="330" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="978" y="377" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="978" y="424" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="978" y="471" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="978" y="518" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="978" y="565" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="978" y="612" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="978" y="659" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="978" y="706" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="978" y="753" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="978" y="800" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<rect x="1672" y="115" width="12" height="693" fill="white"/>
+<text x="1678" y="142" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="1678" y="189" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="1678" y="236" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="1678" y="283" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="1678" y="330" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="1678" y="377" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="1678" y="424" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="1678" y="471" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="1678" y="518" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="1678" y="565" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="1678" y="612" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="1678" y="659" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="1678" y="706" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="1678" y="753" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="1678" y="800" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<rect x="2372" y="115" width="12" height="693" fill="white"/>
+<text x="2378" y="142" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="2378" y="189" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="2378" y="236" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="2378" y="283" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="2378" y="330" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="2378" y="377" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="2378" y="424" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="2378" y="471" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="2378" y="518" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="2378" y="565" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="2378" y="612" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="2378" y="659" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="2378" y="706" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="2378" y="753" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="2378" y="800" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="24" y="834" font-size="15" text-anchor="start">Sync pin changes five displayed clocks after window start; RGB blank change follows one clock later under literal Fig 10.</text>
+<text x="24" y="856" font-size="15" text-anchor="start">Each window has steady prehistory. // does not skip required counter values within a single continuous trace.</text>
+<text x="24" y="878" font-size="15" text-anchor="start">Exact coordinate-to-output alignment is NOT established by these conflicting drawings; verify/reset RTL before relying on pin timing.</text>
+</svg>

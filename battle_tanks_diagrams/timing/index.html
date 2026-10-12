@@ -1,0 +1,12 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Battle Tanks timing diagrams</title>
+<style>body{font:16px sans-serif;margin:24px;color:#182638}img{width:100%;min-width:1600px}section{overflow:auto;border:1px solid #ccd5df;margin:24px 0}a{color:#006e99}</style></head><body>
+<h1>Battle Tanks — diagram-derived timing examples</h1><p>Read <a href="README.md">scope and assumptions</a> and <a href="SIGNALS.md">every signal definition</a>. These are not simulation traces.</p>
+<h2>A. RV32IM pipeline — 28 continuous clk_sys cycles</h2><p><a href="out/01_cpu_pipeline.svg">Open scalable SVG</a></p><section><img src="out/01_cpu_pipeline.svg"></section>
+<h2>B. RV32M — normal division and immediate special-case bypass</h2><p><a href="out/02_rv32m.svg">Open scalable SVG</a></p><section><img src="out/02_rv32m.svg"></section>
+<h2>C. Collision engine and software response — 28 continuous clocks</h2><p><a href="out/03_collisions.svg">Open scalable SVG</a></p><section><img src="out/03_collisions.svg"></section>
+<h2>D. Button conditioning, cooldown trigger and expiry — 28 visible columns</h2><p><a href="out/04_input_timers.svg">Open scalable SVG</a></p><section><img src="out/04_input_timers.svg"></section>
+<h2>E. Display pixel priority and blanking — 28 continuous clocks</h2><p><a href="out/05_pixel_mixer.svg">Open scalable SVG</a></p><section><img src="out/05_pixel_mixer.svg"></section>
+<h2>F. VGA horizontal boundaries — visible blank, HS low, HS high, line wrap</h2><p><a href="out/06_vga_horizontal.svg">Open scalable SVG</a></p><section><img src="out/06_vga_horizontal.svg"></section>
+<h2>G. VGA vertical boundaries — vertical blank, VS low, VS high, frame wrap</h2><p><a href="out/07_vga_vertical.svg">Open scalable SVG</a></p><section><img src="out/07_vga_vertical.svg"></section>
+<h2>H. Maze coherence, tile boundary, sprite ROM and health HUD — 28 visible columns</h2><p><a href="out/08_memory_render.svg">Open scalable SVG</a></p><section><img src="out/08_memory_render.svg"></section>
+<h2>I. CPU corner cases — loads, halfword lanes, x0, jump and exception detect</h2><p><a href="out/09_cpu_corner_cases.svg">Open scalable SVG</a></p><section><img src="out/09_cpu_corner_cases.svg"></section></body></html>

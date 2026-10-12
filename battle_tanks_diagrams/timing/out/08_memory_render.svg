@@ -1,0 +1,441 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="3102" height="1691" viewBox="0 0 3102 1691">
+<rect width="100%" height="100%" fill="white"/>
+<style>text{font-family:DejaVu Sans,Arial,sans-serif;fill:#182638} .grid{stroke:#d4dbe3;stroke-width:1} .wave{fill:none;stroke:#182638;stroke-width:2} .bus{fill:#f6f9fc;stroke:#29425f;stroke-width:1.4}</style>
+<text x="24" y="35" font-size="25" text-anchor="start">H. Maze coherence, tile boundary, sprite ROM and health HUD — 28 visible columns</text>
+<text x="24" y="65" font-size="16" text-anchor="start">Independent windows: mirrored maze write/read | 24-pixel tile crossing | bullet visibility | HUD heart valid/colour. No same-address read/write collision tested.</text>
+<text x="24" y="92" font-size="15" text-anchor="start">Column = after left rising edge; outputs latch at next edge. — = not consumed. // = omitted time / independent boundary window.</text>
+<path class="grid" d="M278 115 V1560"/>
+<text x="328.0" y="135" font-size="16" text-anchor="middle">0</text>
+<path class="grid" d="M378 115 V1560"/>
+<text x="428.0" y="135" font-size="16" text-anchor="middle">1</text>
+<path class="grid" d="M478 115 V1560"/>
+<text x="528.0" y="135" font-size="16" text-anchor="middle">2</text>
+<path class="grid" d="M578 115 V1560"/>
+<text x="628.0" y="135" font-size="16" text-anchor="middle">3</text>
+<path class="grid" d="M678 115 V1560"/>
+<text x="728.0" y="135" font-size="16" text-anchor="middle">4</text>
+<path class="grid" d="M778 115 V1560"/>
+<text x="828.0" y="135" font-size="16" text-anchor="middle">5</text>
+<path class="grid" d="M878 115 V1560"/>
+<text x="928.0" y="135" font-size="16" text-anchor="middle">6</text>
+<path class="grid" d="M978 115 V1560"/>
+<text x="1028.0" y="135" font-size="16" text-anchor="middle">7</text>
+<path class="grid" d="M1078 115 V1560"/>
+<text x="1128.0" y="135" font-size="16" text-anchor="middle">8</text>
+<path class="grid" d="M1178 115 V1560"/>
+<text x="1228.0" y="135" font-size="16" text-anchor="middle">9</text>
+<path class="grid" d="M1278 115 V1560"/>
+<text x="1328.0" y="135" font-size="16" text-anchor="middle">10</text>
+<path class="grid" d="M1378 115 V1560"/>
+<text x="1428.0" y="135" font-size="16" text-anchor="middle">11</text>
+<path class="grid" d="M1478 115 V1560"/>
+<text x="1528.0" y="135" font-size="16" text-anchor="middle">12</text>
+<path class="grid" d="M1578 115 V1560"/>
+<text x="1628.0" y="135" font-size="16" text-anchor="middle">13</text>
+<path class="grid" d="M1678 115 V1560"/>
+<text x="1728.0" y="135" font-size="16" text-anchor="middle">14</text>
+<path class="grid" d="M1778 115 V1560"/>
+<text x="1828.0" y="135" font-size="16" text-anchor="middle">15</text>
+<path class="grid" d="M1878 115 V1560"/>
+<text x="1928.0" y="135" font-size="16" text-anchor="middle">16</text>
+<path class="grid" d="M1978 115 V1560"/>
+<text x="2028.0" y="135" font-size="16" text-anchor="middle">17</text>
+<path class="grid" d="M2078 115 V1560"/>
+<text x="2128.0" y="135" font-size="16" text-anchor="middle">18</text>
+<path class="grid" d="M2178 115 V1560"/>
+<text x="2228.0" y="135" font-size="16" text-anchor="middle">19</text>
+<path class="grid" d="M2278 115 V1560"/>
+<text x="2328.0" y="135" font-size="16" text-anchor="middle">20</text>
+<path class="grid" d="M2378 115 V1560"/>
+<text x="2428.0" y="135" font-size="16" text-anchor="middle">21</text>
+<path class="grid" d="M2478 115 V1560"/>
+<text x="2528.0" y="135" font-size="16" text-anchor="middle">22</text>
+<path class="grid" d="M2578 115 V1560"/>
+<text x="2628.0" y="135" font-size="16" text-anchor="middle">23</text>
+<path class="grid" d="M2678 115 V1560"/>
+<text x="2728.0" y="135" font-size="16" text-anchor="middle">24</text>
+<path class="grid" d="M2778 115 V1560"/>
+<text x="2828.0" y="135" font-size="16" text-anchor="middle">25</text>
+<path class="grid" d="M2878 115 V1560"/>
+<text x="2928.0" y="135" font-size="16" text-anchor="middle">26</text>
+<path class="grid" d="M2978 115 V1560"/>
+<text x="3028.0" y="135" font-size="16" text-anchor="middle">27</text>
+<path class="grid" d="M20 197 H3078"/>
+<text x="24" y="178.5" font-size="16" text-anchor="start">clk_sys</text>
+<path class="wave" d="M278 188 V159 H328.0 V188 H378 V159 H428.0 V188 H478 V159 H528.0 V188 H578 V159 H628.0 V188 H678 V159 H728.0 V188 H778 V159 H828.0 V188 H878 V159 H928.0 V188 H978 V159 H1028.0 V188 H1078 V159 H1128.0 V188 H1178 V159 H1228.0 V188 H1278 V159 H1328.0 V188 H1378 V159 H1428.0 V188 H1478 V159 H1528.0 V188 H1578 V159 H1628.0 V188 H1678 V159 H1728.0 V188 H1778 V159 H1828.0 V188 H1878 V159 H1928.0 V188 H1978 V159 H2028.0 V188 H2078 V159 H2128.0 V188 H2178 V159 H2228.0 V188 H2278 V159 H2328.0 V188 H2378 V159 H2428.0 V188 H2478 V159 H2528.0 V188 H2578 V159 H2628.0 V188 H2678 V159 H2728.0 V188 H2778 V159 H2828.0 V188 H2878 V159 H2928.0 V188 H2978 V159 H3028.0 V188 H3078"/>
+<path class="grid" d="M20 244 H3078"/>
+<text x="24" y="225.5" font-size="16" text-anchor="start">wr_en_maze</text>
+<text x="328.0" y="225.5" font-size="13" text-anchor="middle">1</text>
+<path class="wave" d="M278 206 H378 V235 H478 V235 H578 V235 H678 V235 H778 V235 H878 V235 H978 V235 H1078 V235 H1178 V235 H1278 V235 H1378 V235 H1478 V235 H1578 V235 H1678 V235 H1778 V235 H1878 V235 H1978 V235 H2078 V235 H2178 V235 H2278 V235 H2378 V235 H2478 V235 H2578 V235 H2678 V235 H2778 V235 H2878 V235 H2978 V235 H3078"/>
+<path class="grid" d="M20 291 H3078"/>
+<text x="24" y="272.5" font-size="16" text-anchor="start">we_cpu (V and C)</text>
+<text x="328.0" y="272.5" font-size="13" text-anchor="middle">1</text>
+<path class="wave" d="M278 253 H378 V282 H478 V282 H578 V282 H678 V282 H778 V282 H878 V282 H978 V282 H1078 V282 H1178 V282 H1278 V282 H1378 V282 H1478 V282 H1578 V282 H1678 V282 H1778 V282 H1878 V282 H1978 V282 H2078 V282 H2178 V282 H2278 V282 H2378 V282 H2478 V282 H2578 V282 H2678 V282 H2778 V282 H2878 V282 H2978 V282 H3078"/>
+<path class="grid" d="M20 338 H3078"/>
+<text x="24" y="319.5" font-size="16" text-anchor="start">CPU maze address</text>
+<path class="bus" d="M278 314.5 L286 300 H370 L378 314.5 L370 329 H286 Z"/>
+<text x="328.0" y="319.5" font-size="13" text-anchor="middle">0x80000114</text>
+<path class="bus" d="M378 314.5 L386 300 H470 L478 314.5 L470 329 H386 Z"/>
+<text x="428.0" y="319.5" font-size="16" text-anchor="middle">—</text>
+<path class="bus" d="M478 314.5 L486 300 H670 L678 314.5 L670 329 H486 Z"/>
+<text x="578.0" y="319.5" font-size="16" text-anchor="middle">0x80000114</text>
+<path class="bus" d="M678 314.5 L686 300 H970 L978 314.5 L970 329 H686 Z"/>
+<text x="828.0" y="319.5" font-size="16" text-anchor="middle">—</text>
+<path class="bus" d="M978 314.5 L986 300 H1670 L1678 314.5 L1670 329 H986 Z"/>
+<text x="1328.0" y="319.5" font-size="16" text-anchor="middle">—</text>
+<path class="bus" d="M1678 314.5 L1686 300 H2370 L2378 314.5 L2370 329 H1686 Z"/>
+<text x="2028.0" y="319.5" font-size="16" text-anchor="middle">—</text>
+<path class="bus" d="M2378 314.5 L2386 300 H3070 L3078 314.5 L3070 329 H2386 Z"/>
+<text x="2728.0" y="319.5" font-size="16" text-anchor="middle">—</text>
+<path class="grid" d="M20 385 H3078"/>
+<text x="24" y="366.5" font-size="16" text-anchor="start">CPU maze wdata</text>
+<path class="bus" d="M278 361.5 L286 347 H370 L378 361.5 L370 376 H286 Z"/>
+<text x="328.0" y="366.5" font-size="16" text-anchor="middle">2</text>
+<path class="bus" d="M378 361.5 L386 347 H970 L978 361.5 L970 376 H386 Z"/>
+<text x="678.0" y="366.5" font-size="16" text-anchor="middle">—</text>
+<path class="bus" d="M978 361.5 L986 347 H1670 L1678 361.5 L1670 376 H986 Z"/>
+<text x="1328.0" y="366.5" font-size="16" text-anchor="middle">—</text>
+<path class="bus" d="M1678 361.5 L1686 347 H2370 L2378 361.5 L2370 376 H1686 Z"/>
+<text x="2028.0" y="366.5" font-size="16" text-anchor="middle">—</text>
+<path class="bus" d="M2378 361.5 L2386 347 H3070 L3078 361.5 L3070 376 H2386 Z"/>
+<text x="2728.0" y="366.5" font-size="16" text-anchor="middle">—</text>
+<path class="grid" d="M20 432 H3078"/>
+<text x="24" y="413.5" font-size="16" text-anchor="start">RAM V[5] / C[5]</text>
+<path class="bus" d="M278 408.5 L286 394 H370 L378 408.5 L370 423 H286 Z"/>
+<text x="328.0" y="413.5" font-size="16" text-anchor="middle">0 / 0</text>
+<path class="bus" d="M378 408.5 L386 394 H970 L978 408.5 L970 423 H386 Z"/>
+<text x="678.0" y="413.5" font-size="16" text-anchor="middle">2 / 2</text>
+<path class="bus" d="M978 408.5 L986 394 H1670 L1678 408.5 L1670 423 H986 Z"/>
+<text x="1328.0" y="413.5" font-size="16" text-anchor="middle">—</text>
+<path class="bus" d="M1678 408.5 L1686 394 H2370 L2378 408.5 L2370 423 H1686 Z"/>
+<text x="2028.0" y="413.5" font-size="16" text-anchor="middle">—</text>
+<path class="bus" d="M2378 408.5 L2386 394 H3070 L3078 408.5 L3070 423 H2386 Z"/>
+<text x="2728.0" y="413.5" font-size="16" text-anchor="middle">—</text>
+<path class="grid" d="M20 479 H3078"/>
+<text x="24" y="460.5" font-size="16" text-anchor="start">cs_maze</text>
+<text x="528.0" y="460.5" font-size="13" text-anchor="middle">1</text>
+<text x="628.0" y="460.5" font-size="13" text-anchor="middle">1</text>
+<path class="wave" d="M278 470 H378 V470 H478 V441 H578 V441 H678 V470 H778 V470 H878 V470 H978 V470 H1078 V470 H1178 V470 H1278 V470 H1378 V470 H1478 V470 H1578 V470 H1678 V470 H1778 V470 H1878 V470 H1978 V470 H2078 V470 H2178 V470 H2278 V470 H2378 V470 H2478 V470 H2578 V470 H2678 V470 H2778 V470 H2878 V470 H2978 V470 H3078"/>
+<path class="grid" d="M20 526 H3078"/>
+<text x="24" y="507.5" font-size="16" text-anchor="start">cs_maze_q</text>
+<text x="628.0" y="507.5" font-size="13" text-anchor="middle">1</text>
+<text x="728.0" y="507.5" font-size="13" text-anchor="middle">1</text>
+<path class="wave" d="M278 517 H378 V517 H478 V517 H578 V488 H678 V488 H778 V517 H878 V517 H978 V517 H1078 V517 H1178 V517 H1278 V517 H1378 V517 H1478 V517 H1578 V517 H1678 V517 H1778 V517 H1878 V517 H1978 V517 H2078 V517 H2178 V517 H2278 V517 H2378 V517 H2478 V517 H2578 V517 H2678 V517 H2778 V517 H2878 V517 H2978 V517 H3078"/>
+<path class="grid" d="M20 573 H3078"/>
+<text x="24" y="554.5" font-size="16" text-anchor="start">CPU d_rdata</text>
+<path class="bus" d="M278 549.5 L286 535 H570 L578 549.5 L570 564 H286 Z"/>
+<text x="428.0" y="554.5" font-size="16" text-anchor="middle">—</text>
+<path class="bus" d="M578 549.5 L586 535 H670 L678 549.5 L670 564 H586 Z"/>
+<text x="628.0" y="554.5" font-size="13" text-anchor="middle">0x00000002</text>
+<path class="bus" d="M678 549.5 L686 535 H970 L978 549.5 L970 564 H686 Z"/>
+<text x="828.0" y="554.5" font-size="16" text-anchor="middle">—</text>
+<path class="bus" d="M978 549.5 L986 535 H1670 L1678 549.5 L1670 564 H986 Z"/>
+<text x="1328.0" y="554.5" font-size="16" text-anchor="middle">—</text>
+<path class="bus" d="M1678 549.5 L1686 535 H2370 L2378 549.5 L2370 564 H1686 Z"/>
+<text x="2028.0" y="554.5" font-size="16" text-anchor="middle">—</text>
+<path class="bus" d="M2378 549.5 L2386 535 H3070 L3078 549.5 L3070 564 H2386 Z"/>
+<text x="2728.0" y="554.5" font-size="16" text-anchor="middle">—</text>
+<path class="grid" d="M20 620 H3078"/>
+<text x="24" y="601.5" font-size="16" text-anchor="start">VGA / collision addr</text>
+<path class="bus" d="M278 596.5 L286 582 H470 L478 596.5 L470 611 H286 Z"/>
+<text x="378.0" y="601.5" font-size="16" text-anchor="middle">—</text>
+<path class="bus" d="M478 596.5 L486 582 H670 L678 596.5 L670 611 H486 Z"/>
+<text x="578.0" y="601.5" font-size="16" text-anchor="middle">5 / 5</text>
+<path class="bus" d="M678 596.5 L686 582 H970 L978 596.5 L970 611 H686 Z"/>
+<text x="828.0" y="601.5" font-size="16" text-anchor="middle">—</text>
+<path class="bus" d="M978 596.5 L986 582 H1670 L1678 596.5 L1670 611 H986 Z"/>
+<text x="1328.0" y="601.5" font-size="16" text-anchor="middle">—</text>
+<path class="bus" d="M1678 596.5 L1686 582 H2370 L2378 596.5 L2370 611 H1686 Z"/>
+<text x="2028.0" y="601.5" font-size="16" text-anchor="middle">—</text>
+<path class="bus" d="M2378 596.5 L2386 582 H3070 L3078 596.5 L3070 611 H2386 Z"/>
+<text x="2728.0" y="601.5" font-size="16" text-anchor="middle">—</text>
+<path class="grid" d="M20 667 H3078"/>
+<text x="24" y="648.5" font-size="16" text-anchor="start">VGA / collision data</text>
+<path class="bus" d="M278 643.5 L286 629 H570 L578 643.5 L570 658 H286 Z"/>
+<text x="428.0" y="648.5" font-size="16" text-anchor="middle">—</text>
+<path class="bus" d="M578 643.5 L586 629 H770 L778 643.5 L770 658 H586 Z"/>
+<text x="678.0" y="648.5" font-size="16" text-anchor="middle">2 / 2</text>
+<path class="bus" d="M778 643.5 L786 629 H970 L978 643.5 L970 658 H786 Z"/>
+<text x="878.0" y="648.5" font-size="16" text-anchor="middle">—</text>
+<path class="bus" d="M978 643.5 L986 629 H1670 L1678 643.5 L1670 658 H986 Z"/>
+<text x="1328.0" y="648.5" font-size="16" text-anchor="middle">—</text>
+<path class="bus" d="M1678 643.5 L1686 629 H2370 L2378 643.5 L2370 658 H1686 Z"/>
+<text x="2028.0" y="648.5" font-size="16" text-anchor="middle">—</text>
+<path class="bus" d="M2378 643.5 L2386 629 H3070 L3078 643.5 L3070 658 H2386 Z"/>
+<text x="2728.0" y="648.5" font-size="16" text-anchor="middle">—</text>
+<path class="grid" d="M20 714 H3078"/>
+<text x="24" y="695.5" font-size="16" text-anchor="start">pix_ce</text>
+<text x="1028.0" y="695.5" font-size="13" text-anchor="middle">1</text>
+<text x="1228.0" y="695.5" font-size="13" text-anchor="middle">1</text>
+<text x="1428.0" y="695.5" font-size="13" text-anchor="middle">1</text>
+<text x="1628.0" y="695.5" font-size="13" text-anchor="middle">1</text>
+<path class="wave" d="M278 705 H378 V705 H478 V705 H578 V705 H678 V705 H778 V705 H878 V705 H978 V676 H1078 V705 H1178 V676 H1278 V705 H1378 V676 H1478 V705 H1578 V676 H1678 V705 H1778 V705 H1878 V705 H1978 V705 H2078 V705 H2178 V705 H2278 V705 H2378 V705 H2478 V705 H2578 V705 H2678 V705 H2778 V705 H2878 V705 H2978 V705 H3078"/>
+<path class="grid" d="M20 761 H3078"/>
+<text x="24" y="742.5" font-size="16" text-anchor="start">pixel x</text>
+<path class="bus" d="M278 737.5 L286 723 H970 L978 737.5 L970 752 H286 Z"/>
+<text x="628.0" y="742.5" font-size="16" text-anchor="middle">—</text>
+<path class="bus" d="M978 737.5 L986 723 H1070 L1078 737.5 L1070 752 H986 Z"/>
+<text x="1028.0" y="742.5" font-size="16" text-anchor="middle">23</text>
+<path class="bus" d="M1078 737.5 L1086 723 H1270 L1278 737.5 L1270 752 H1086 Z"/>
+<text x="1178.0" y="742.5" font-size="16" text-anchor="middle">24</text>
+<path class="bus" d="M1278 737.5 L1286 723 H1470 L1478 737.5 L1470 752 H1286 Z"/>
+<text x="1378.0" y="742.5" font-size="16" text-anchor="middle">25</text>
+<path class="bus" d="M1478 737.5 L1486 723 H1670 L1678 737.5 L1670 752 H1486 Z"/>
+<text x="1578.0" y="742.5" font-size="16" text-anchor="middle">26</text>
+<path class="bus" d="M1678 737.5 L1686 723 H2370 L2378 737.5 L2370 752 H1686 Z"/>
+<text x="2028.0" y="742.5" font-size="16" text-anchor="middle">—</text>
+<path class="bus" d="M2378 737.5 L2386 723 H3070 L3078 737.5 L3070 752 H2386 Z"/>
+<text x="2728.0" y="742.5" font-size="16" text-anchor="middle">—</text>
+<path class="grid" d="M20 808 H3078"/>
+<text x="24" y="789.5" font-size="16" text-anchor="start">sub_x / tile_col</text>
+<path class="bus" d="M278 784.5 L286 770 H970 L978 784.5 L970 799 H286 Z"/>
+<text x="628.0" y="789.5" font-size="16" text-anchor="middle">—</text>
+<path class="bus" d="M978 784.5 L986 770 H1070 L1078 784.5 L1070 799 H986 Z"/>
+<text x="1028.0" y="789.5" font-size="16" text-anchor="middle">23 / 0</text>
+<path class="bus" d="M1078 784.5 L1086 770 H1270 L1278 784.5 L1270 799 H1086 Z"/>
+<text x="1178.0" y="789.5" font-size="16" text-anchor="middle">0 / 1</text>
+<path class="bus" d="M1278 784.5 L1286 770 H1470 L1478 784.5 L1470 799 H1286 Z"/>
+<text x="1378.0" y="789.5" font-size="16" text-anchor="middle">1 / 1</text>
+<path class="bus" d="M1478 784.5 L1486 770 H1670 L1678 784.5 L1670 799 H1486 Z"/>
+<text x="1578.0" y="789.5" font-size="16" text-anchor="middle">2 / 1</text>
+<path class="bus" d="M1678 784.5 L1686 770 H2370 L2378 784.5 L2370 799 H1686 Z"/>
+<text x="2028.0" y="789.5" font-size="16" text-anchor="middle">—</text>
+<path class="bus" d="M2378 784.5 L2386 770 H3070 L3078 784.5 L3070 799 H2386 Z"/>
+<text x="2728.0" y="789.5" font-size="16" text-anchor="middle">—</text>
+<path class="grid" d="M20 855 H3078"/>
+<text x="24" y="836.5" font-size="16" text-anchor="start">vga_tile_addr</text>
+<path class="bus" d="M278 831.5 L286 817 H970 L978 831.5 L970 846 H286 Z"/>
+<text x="628.0" y="836.5" font-size="16" text-anchor="middle">—</text>
+<path class="bus" d="M978 831.5 L986 817 H1070 L1078 831.5 L1070 846 H986 Z"/>
+<text x="1028.0" y="836.5" font-size="16" text-anchor="middle">0</text>
+<path class="bus" d="M1078 831.5 L1086 817 H1670 L1678 831.5 L1670 846 H1086 Z"/>
+<text x="1378.0" y="836.5" font-size="16" text-anchor="middle">1</text>
+<path class="bus" d="M1678 831.5 L1686 817 H2370 L2378 831.5 L2370 846 H1686 Z"/>
+<text x="2028.0" y="836.5" font-size="16" text-anchor="middle">—</text>
+<path class="bus" d="M2378 831.5 L2386 817 H3070 L3078 831.5 L3070 846 H2386 Z"/>
+<text x="2728.0" y="836.5" font-size="16" text-anchor="middle">—</text>
+<path class="grid" d="M20 902 H3078"/>
+<text x="24" y="883.5" font-size="16" text-anchor="start">vga_tile_data</text>
+<path class="bus" d="M278 878.5 L286 864 H970 L978 878.5 L970 893 H286 Z"/>
+<text x="628.0" y="883.5" font-size="16" text-anchor="middle">—</text>
+<path class="bus" d="M978 878.5 L986 864 H1170 L1178 878.5 L1170 893 H986 Z"/>
+<text x="1078.0" y="883.5" font-size="16" text-anchor="middle">0</text>
+<path class="bus" d="M1178 878.5 L1186 864 H1670 L1678 878.5 L1670 893 H1186 Z"/>
+<text x="1428.0" y="883.5" font-size="16" text-anchor="middle">1</text>
+<path class="bus" d="M1678 878.5 L1686 864 H2370 L2378 878.5 L2370 893 H1686 Z"/>
+<text x="2028.0" y="883.5" font-size="16" text-anchor="middle">—</text>
+<path class="bus" d="M2378 878.5 L2386 864 H3070 L3078 878.5 L3070 893 H2386 Z"/>
+<text x="2728.0" y="883.5" font-size="16" text-anchor="middle">—</text>
+<path class="grid" d="M20 949 H3078"/>
+<text x="24" y="930.5" font-size="16" text-anchor="start">maze_wall_q</text>
+<text x="1328.0" y="930.5" font-size="13" text-anchor="middle">1</text>
+<text x="1428.0" y="930.5" font-size="13" text-anchor="middle">1</text>
+<text x="1528.0" y="930.5" font-size="13" text-anchor="middle">1</text>
+<text x="1628.0" y="930.5" font-size="13" text-anchor="middle">1</text>
+<path class="wave" d="M278 940 H378 V940 H478 V940 H578 V940 H678 V940 H778 V940 H878 V940 H978 V940 H1078 V940 H1178 V940 H1278 V911 H1378 V911 H1478 V911 H1578 V911 H1678 V940 H1778 V940 H1878 V940 H1978 V940 H2078 V940 H2178 V940 H2278 V940 H2378 V940 H2478 V940 H2578 V940 H2678 V940 H2778 V940 H2878 V940 H2978 V940 H3078"/>
+<path class="grid" d="M20 996 H3078"/>
+<text x="24" y="977.5" font-size="16" text-anchor="start">maze_rgb_q</text>
+<path class="bus" d="M278 972.5 L286 958 H970 L978 972.5 L970 987 H286 Z"/>
+<text x="628.0" y="977.5" font-size="16" text-anchor="middle">—</text>
+<path class="bus" d="M978 972.5 L986 958 H1270 L1278 972.5 L1270 987 H986 Z"/>
+<text x="1128.0" y="977.5" font-size="16" text-anchor="middle">222</text>
+<path class="bus" d="M1278 972.5 L1286 958 H1670 L1678 972.5 L1670 987 H1286 Z"/>
+<text x="1478.0" y="977.5" font-size="16" text-anchor="middle">888</text>
+<path class="bus" d="M1678 972.5 L1686 958 H2370 L2378 972.5 L2370 987 H1686 Z"/>
+<text x="2028.0" y="977.5" font-size="16" text-anchor="middle">—</text>
+<path class="bus" d="M2378 972.5 L2386 958 H3070 L3078 972.5 L3070 987 H2386 Z"/>
+<text x="2728.0" y="977.5" font-size="16" text-anchor="middle">—</text>
+<path class="grid" d="M20 1043 H3078"/>
+<text x="24" y="1024.5" font-size="16" text-anchor="start">bullet in_box</text>
+<text x="1728.0" y="1024.5" font-size="13" text-anchor="middle">1</text>
+<text x="1828.0" y="1024.5" font-size="13" text-anchor="middle">1</text>
+<text x="1928.0" y="1024.5" font-size="13" text-anchor="middle">1</text>
+<text x="2028.0" y="1024.5" font-size="13" text-anchor="middle">1</text>
+<path class="wave" d="M278 1034 H378 V1034 H478 V1034 H578 V1034 H678 V1034 H778 V1034 H878 V1034 H978 V1034 H1078 V1034 H1178 V1034 H1278 V1034 H1378 V1034 H1478 V1034 H1578 V1034 H1678 V1005 H1778 V1005 H1878 V1005 H1978 V1005 H2078 V1034 H2178 V1034 H2278 V1034 H2378 V1034 H2478 V1034 H2578 V1034 H2678 V1034 H2778 V1034 H2878 V1034 H2978 V1034 H3078"/>
+<path class="grid" d="M20 1090 H3078"/>
+<text x="24" y="1071.5" font-size="16" text-anchor="start">bullet act</text>
+<text x="1728.0" y="1071.5" font-size="13" text-anchor="middle">1</text>
+<text x="1828.0" y="1071.5" font-size="13" text-anchor="middle">1</text>
+<path class="wave" d="M278 1081 H378 V1081 H478 V1081 H578 V1081 H678 V1081 H778 V1081 H878 V1081 H978 V1081 H1078 V1081 H1178 V1081 H1278 V1081 H1378 V1081 H1478 V1081 H1578 V1081 H1678 V1052 H1778 V1052 H1878 V1081 H1978 V1081 H2078 V1081 H2178 V1081 H2278 V1081 H2378 V1081 H2478 V1081 H2578 V1081 H2678 V1081 H2778 V1081 H2878 V1081 H2978 V1081 H3078"/>
+<path class="grid" d="M20 1137 H3078"/>
+<text x="24" y="1118.5" font-size="16" text-anchor="start">in_box_d / shape</text>
+<path class="bus" d="M278 1113.5 L286 1099 H970 L978 1113.5 L970 1128 H286 Z"/>
+<text x="628.0" y="1118.5" font-size="16" text-anchor="middle">—</text>
+<path class="bus" d="M978 1113.5 L986 1099 H1670 L1678 1113.5 L1670 1128 H986 Z"/>
+<text x="1328.0" y="1118.5" font-size="16" text-anchor="middle">—</text>
+<path class="bus" d="M1678 1113.5 L1686 1099 H1770 L1778 1113.5 L1770 1128 H1686 Z"/>
+<text x="1728.0" y="1118.5" font-size="16" text-anchor="middle">0 / 0</text>
+<path class="bus" d="M1778 1113.5 L1786 1099 H2170 L2178 1113.5 L2170 1128 H1786 Z"/>
+<text x="1978.0" y="1118.5" font-size="16" text-anchor="middle">1 / 1</text>
+<path class="bus" d="M2178 1113.5 L2186 1099 H2370 L2378 1113.5 L2370 1128 H2186 Z"/>
+<text x="2278.0" y="1118.5" font-size="16" text-anchor="middle">0 / 0</text>
+<path class="bus" d="M2378 1113.5 L2386 1099 H3070 L3078 1113.5 L3070 1128 H2386 Z"/>
+<text x="2728.0" y="1118.5" font-size="16" text-anchor="middle">—</text>
+<path class="grid" d="M20 1184 H3078"/>
+<text x="24" y="1165.5" font-size="16" text-anchor="start">sprite act_d</text>
+<text x="1828.0" y="1165.5" font-size="13" text-anchor="middle">1</text>
+<text x="1928.0" y="1165.5" font-size="13" text-anchor="middle">1</text>
+<path class="wave" d="M278 1175 H378 V1175 H478 V1175 H578 V1175 H678 V1175 H778 V1175 H878 V1175 H978 V1175 H1078 V1175 H1178 V1175 H1278 V1175 H1378 V1175 H1478 V1175 H1578 V1175 H1678 V1175 H1778 V1146 H1878 V1146 H1978 V1175 H2078 V1175 H2178 V1175 H2278 V1175 H2378 V1175 H2478 V1175 H2578 V1175 H2678 V1175 H2778 V1175 H2878 V1175 H2978 V1175 H3078"/>
+<path class="grid" d="M20 1231 H3078"/>
+<text x="24" y="1212.5" font-size="16" text-anchor="start">bN_small_hit</text>
+<text x="1828.0" y="1212.5" font-size="13" text-anchor="middle">1</text>
+<text x="1928.0" y="1212.5" font-size="13" text-anchor="middle">1</text>
+<path class="wave" d="M278 1222 H378 V1222 H478 V1222 H578 V1222 H678 V1222 H778 V1222 H878 V1222 H978 V1222 H1078 V1222 H1178 V1222 H1278 V1222 H1378 V1222 H1478 V1222 H1578 V1222 H1678 V1222 H1778 V1193 H1878 V1193 H1978 V1222 H2078 V1222 H2178 V1222 H2278 V1222 H2378 V1222 H2478 V1222 H2578 V1222 H2678 V1222 H2778 V1222 H2878 V1222 H2978 V1222 H3078"/>
+<path class="grid" d="M20 1278 H3078"/>
+<text x="24" y="1259.5" font-size="16" text-anchor="start">bullet_valid (combined)</text>
+<text x="1928.0" y="1259.5" font-size="13" text-anchor="middle">1</text>
+<text x="2028.0" y="1259.5" font-size="13" text-anchor="middle">1</text>
+<path class="wave" d="M278 1269 H378 V1269 H478 V1269 H578 V1269 H678 V1269 H778 V1269 H878 V1269 H978 V1269 H1078 V1269 H1178 V1269 H1278 V1269 H1378 V1269 H1478 V1269 H1578 V1269 H1678 V1269 H1778 V1269 H1878 V1240 H1978 V1240 H2078 V1269 H2178 V1269 H2278 V1269 H2378 V1269 H2478 V1269 H2578 V1269 H2678 V1269 H2778 V1269 H2878 V1269 H2978 V1269 H3078"/>
+<path class="grid" d="M20 1325 H3078"/>
+<text x="24" y="1306.5" font-size="16" text-anchor="start">HUD slot / hp</text>
+<path class="bus" d="M278 1301.5 L286 1287 H970 L978 1301.5 L970 1316 H286 Z"/>
+<text x="628.0" y="1306.5" font-size="16" text-anchor="middle">—</text>
+<path class="bus" d="M978 1301.5 L986 1287 H1670 L1678 1301.5 L1670 1316 H986 Z"/>
+<text x="1328.0" y="1306.5" font-size="16" text-anchor="middle">—</text>
+<path class="bus" d="M1678 1301.5 L1686 1287 H2370 L2378 1301.5 L2370 1316 H1686 Z"/>
+<text x="2028.0" y="1306.5" font-size="16" text-anchor="middle">—</text>
+<path class="bus" d="M2378 1301.5 L2386 1287 H2470 L2478 1301.5 L2470 1316 H2386 Z"/>
+<text x="2428.0" y="1306.5" font-size="16" text-anchor="middle">18 / 19</text>
+<path class="bus" d="M2478 1301.5 L2486 1287 H3070 L3078 1301.5 L3070 1316 H2486 Z"/>
+<text x="2778.0" y="1306.5" font-size="16" text-anchor="middle">19 / 19</text>
+<path class="grid" d="M20 1372 H3078"/>
+<text x="24" y="1353.5" font-size="16" text-anchor="start">HUD in_hud</text>
+<text x="2428.0" y="1353.5" font-size="13" text-anchor="middle">1</text>
+<text x="2528.0" y="1353.5" font-size="13" text-anchor="middle">1</text>
+<text x="2628.0" y="1353.5" font-size="13" text-anchor="middle">1</text>
+<text x="2728.0" y="1353.5" font-size="13" text-anchor="middle">1</text>
+<path class="wave" d="M278 1363 H378 V1363 H478 V1363 H578 V1363 H678 V1363 H778 V1363 H878 V1363 H978 V1363 H1078 V1363 H1178 V1363 H1278 V1363 H1378 V1363 H1478 V1363 H1578 V1363 H1678 V1363 H1778 V1363 H1878 V1363 H1978 V1363 H2078 V1363 H2178 V1363 H2278 V1363 H2378 V1334 H2478 V1334 H2578 V1334 H2678 V1334 H2778 V1363 H2878 V1363 H2978 V1363 H3078"/>
+<path class="grid" d="M20 1419 H3078"/>
+<text x="24" y="1400.5" font-size="16" text-anchor="start">HUD lit_d</text>
+<text x="2428.0" y="1400.5" font-size="13" text-anchor="middle">1</text>
+<text x="2528.0" y="1400.5" font-size="13" text-anchor="middle">1</text>
+<path class="wave" d="M278 1410 H378 V1410 H478 V1410 H578 V1410 H678 V1410 H778 V1410 H878 V1410 H978 V1410 H1078 V1410 H1178 V1410 H1278 V1410 H1378 V1410 H1478 V1410 H1578 V1410 H1678 V1410 H1778 V1410 H1878 V1410 H1978 V1410 H2078 V1410 H2178 V1410 H2278 V1410 H2378 V1381 H2478 V1381 H2578 V1410 H2678 V1410 H2778 V1410 H2878 V1410 H2978 V1410 H3078"/>
+<path class="grid" d="M20 1466 H3078"/>
+<text x="24" y="1447.5" font-size="16" text-anchor="start">HUD shape (ROM)</text>
+<text x="2428.0" y="1447.5" font-size="13" text-anchor="middle">1</text>
+<text x="2528.0" y="1447.5" font-size="13" text-anchor="middle">1</text>
+<text x="2628.0" y="1447.5" font-size="13" text-anchor="middle">1</text>
+<text x="2728.0" y="1447.5" font-size="13" text-anchor="middle">1</text>
+<text x="2828.0" y="1447.5" font-size="13" text-anchor="middle">1</text>
+<path class="wave" d="M278 1457 H378 V1457 H478 V1457 H578 V1457 H678 V1457 H778 V1457 H878 V1457 H978 V1457 H1078 V1457 H1178 V1457 H1278 V1457 H1378 V1457 H1478 V1457 H1578 V1457 H1678 V1457 H1778 V1457 H1878 V1457 H1978 V1457 H2078 V1457 H2178 V1457 H2278 V1457 H2378 V1428 H2478 V1428 H2578 V1428 H2678 V1428 H2778 V1428 H2878 V1457 H2978 V1457 H3078"/>
+<path class="grid" d="M20 1513 H3078"/>
+<text x="24" y="1494.5" font-size="16" text-anchor="start">hud_valid_q</text>
+<text x="2428.0" y="1494.5" font-size="13" text-anchor="middle">1</text>
+<text x="2528.0" y="1494.5" font-size="13" text-anchor="middle">1</text>
+<text x="2628.0" y="1494.5" font-size="13" text-anchor="middle">1</text>
+<text x="2728.0" y="1494.5" font-size="13" text-anchor="middle">1</text>
+<text x="2828.0" y="1494.5" font-size="13" text-anchor="middle">1</text>
+<text x="2928.0" y="1494.5" font-size="13" text-anchor="middle">1</text>
+<path class="wave" d="M278 1504 H378 V1504 H478 V1504 H578 V1504 H678 V1504 H778 V1504 H878 V1504 H978 V1504 H1078 V1504 H1178 V1504 H1278 V1504 H1378 V1504 H1478 V1504 H1578 V1504 H1678 V1504 H1778 V1504 H1878 V1504 H1978 V1504 H2078 V1504 H2178 V1504 H2278 V1504 H2378 V1475 H2478 V1475 H2578 V1475 H2678 V1475 H2778 V1475 H2878 V1475 H2978 V1504 H3078"/>
+<path class="grid" d="M20 1560 H3078"/>
+<text x="24" y="1541.5" font-size="16" text-anchor="start">hud_rgb_q</text>
+<path class="bus" d="M278 1536.5 L286 1522 H970 L978 1536.5 L970 1551 H286 Z"/>
+<text x="628.0" y="1541.5" font-size="16" text-anchor="middle">—</text>
+<path class="bus" d="M978 1536.5 L986 1522 H1670 L1678 1536.5 L1670 1551 H986 Z"/>
+<text x="1328.0" y="1541.5" font-size="16" text-anchor="middle">—</text>
+<path class="bus" d="M1678 1536.5 L1686 1522 H2370 L2378 1536.5 L2370 1551 H1686 Z"/>
+<text x="2028.0" y="1541.5" font-size="16" text-anchor="middle">—</text>
+<path class="bus" d="M2378 1536.5 L2386 1522 H2670 L2678 1536.5 L2670 1551 H2386 Z"/>
+<text x="2528.0" y="1541.5" font-size="16" text-anchor="middle">F00</text>
+<path class="bus" d="M2678 1536.5 L2686 1522 H3070 L3078 1536.5 L3070 1551 H2686 Z"/>
+<text x="2878.0" y="1541.5" font-size="16" text-anchor="middle">444</text>
+<rect x="972" y="115" width="12" height="1445" fill="white"/>
+<text x="978" y="142" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="978" y="189" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="978" y="236" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="978" y="283" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="978" y="330" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="978" y="377" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="978" y="424" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="978" y="471" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="978" y="518" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="978" y="565" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="978" y="612" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="978" y="659" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="978" y="706" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="978" y="753" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="978" y="800" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="978" y="847" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="978" y="894" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="978" y="941" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="978" y="988" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="978" y="1035" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="978" y="1082" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="978" y="1129" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="978" y="1176" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="978" y="1223" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="978" y="1270" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="978" y="1317" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="978" y="1364" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="978" y="1411" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="978" y="1458" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="978" y="1505" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="978" y="1552" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<rect x="1672" y="115" width="12" height="1445" fill="white"/>
+<text x="1678" y="142" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="1678" y="189" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="1678" y="236" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="1678" y="283" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="1678" y="330" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="1678" y="377" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="1678" y="424" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="1678" y="471" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="1678" y="518" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="1678" y="565" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="1678" y="612" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="1678" y="659" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="1678" y="706" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="1678" y="753" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="1678" y="800" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="1678" y="847" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="1678" y="894" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="1678" y="941" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="1678" y="988" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="1678" y="1035" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="1678" y="1082" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="1678" y="1129" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="1678" y="1176" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="1678" y="1223" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="1678" y="1270" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="1678" y="1317" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="1678" y="1364" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="1678" y="1411" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="1678" y="1458" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="1678" y="1505" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="1678" y="1552" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<rect x="2372" y="115" width="12" height="1445" fill="white"/>
+<text x="2378" y="142" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="2378" y="189" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="2378" y="236" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="2378" y="283" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="2378" y="330" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="2378" y="377" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="2378" y="424" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="2378" y="471" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="2378" y="518" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="2378" y="565" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="2378" y="612" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="2378" y="659" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="2378" y="706" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="2378" y="753" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="2378" y="800" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="2378" y="847" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="2378" y="894" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="2378" y="941" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="2378" y="988" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="2378" y="1035" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="2378" y="1082" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="2378" y="1129" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="2378" y="1176" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="2378" y="1223" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="2378" y="1270" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="2378" y="1317" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="2378" y="1364" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="2378" y="1411" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="2378" y="1458" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="2378" y="1505" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="2378" y="1552" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="24" y="1586" font-size="15" text-anchor="start">ROM outputs use illustrative shape bits since block diagrams contain no ROM image data. Streams are independent diagnostic tests.</text>
+<text x="24" y="1608" font-size="15" text-anchor="start">RAM same-address cross-port write/read mode and RAM reset contents are unspecified; this test avoids that collision and assumes preloaded tiles.</text>
+<text x="24" y="1630" font-size="15" text-anchor="start">Unqualified X tile restart at h_end in Fig11 must be checked when pix_ce=0; boundary tests use a qualified restart convention.</text>
+</svg>

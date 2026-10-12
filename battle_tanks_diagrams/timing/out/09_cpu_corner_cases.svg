@@ -1,0 +1,433 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="3102" height="1105" viewBox="0 0 3102 1105">
+<rect width="100%" height="100%" fill="white"/>
+<style>text{font-family:DejaVu Sans,Arial,sans-serif;fill:#182638} .grid{stroke:#d4dbe3;stroke-width:1} .wave{fill:none;stroke:#182638;stroke-width:2} .bus{fill:#f6f9fc;stroke:#29425f;stroke-width:1.4}</style>
+<text x="24" y="35" font-size="25" text-anchor="start">I. CPU corner cases — loads, halfword lanes, x0, jump and exception detect</text>
+<text x="24" y="65" font-size="16" text-anchor="start">Seven independent four-clock tests; // separates transactions. Valid inputs established before window. Trap/recovery not specified by diagrams.</text>
+<text x="24" y="92" font-size="15" text-anchor="start">Column = after left rising edge; outputs latch at next edge. — = not consumed. // = omitted time / independent boundary window.</text>
+<path class="grid" d="M278 115 V996"/>
+<text x="328.0" y="135" font-size="16" text-anchor="middle">0</text>
+<path class="grid" d="M378 115 V996"/>
+<text x="428.0" y="135" font-size="16" text-anchor="middle">1</text>
+<path class="grid" d="M478 115 V996"/>
+<text x="528.0" y="135" font-size="16" text-anchor="middle">2</text>
+<path class="grid" d="M578 115 V996"/>
+<text x="628.0" y="135" font-size="16" text-anchor="middle">3</text>
+<path class="grid" d="M678 115 V996"/>
+<text x="728.0" y="135" font-size="16" text-anchor="middle">4</text>
+<path class="grid" d="M778 115 V996"/>
+<text x="828.0" y="135" font-size="16" text-anchor="middle">5</text>
+<path class="grid" d="M878 115 V996"/>
+<text x="928.0" y="135" font-size="16" text-anchor="middle">6</text>
+<path class="grid" d="M978 115 V996"/>
+<text x="1028.0" y="135" font-size="16" text-anchor="middle">7</text>
+<path class="grid" d="M1078 115 V996"/>
+<text x="1128.0" y="135" font-size="16" text-anchor="middle">8</text>
+<path class="grid" d="M1178 115 V996"/>
+<text x="1228.0" y="135" font-size="16" text-anchor="middle">9</text>
+<path class="grid" d="M1278 115 V996"/>
+<text x="1328.0" y="135" font-size="16" text-anchor="middle">10</text>
+<path class="grid" d="M1378 115 V996"/>
+<text x="1428.0" y="135" font-size="16" text-anchor="middle">11</text>
+<path class="grid" d="M1478 115 V996"/>
+<text x="1528.0" y="135" font-size="16" text-anchor="middle">12</text>
+<path class="grid" d="M1578 115 V996"/>
+<text x="1628.0" y="135" font-size="16" text-anchor="middle">13</text>
+<path class="grid" d="M1678 115 V996"/>
+<text x="1728.0" y="135" font-size="16" text-anchor="middle">14</text>
+<path class="grid" d="M1778 115 V996"/>
+<text x="1828.0" y="135" font-size="16" text-anchor="middle">15</text>
+<path class="grid" d="M1878 115 V996"/>
+<text x="1928.0" y="135" font-size="16" text-anchor="middle">16</text>
+<path class="grid" d="M1978 115 V996"/>
+<text x="2028.0" y="135" font-size="16" text-anchor="middle">17</text>
+<path class="grid" d="M2078 115 V996"/>
+<text x="2128.0" y="135" font-size="16" text-anchor="middle">18</text>
+<path class="grid" d="M2178 115 V996"/>
+<text x="2228.0" y="135" font-size="16" text-anchor="middle">19</text>
+<path class="grid" d="M2278 115 V996"/>
+<text x="2328.0" y="135" font-size="16" text-anchor="middle">20</text>
+<path class="grid" d="M2378 115 V996"/>
+<text x="2428.0" y="135" font-size="16" text-anchor="middle">21</text>
+<path class="grid" d="M2478 115 V996"/>
+<text x="2528.0" y="135" font-size="16" text-anchor="middle">22</text>
+<path class="grid" d="M2578 115 V996"/>
+<text x="2628.0" y="135" font-size="16" text-anchor="middle">23</text>
+<path class="grid" d="M2678 115 V996"/>
+<text x="2728.0" y="135" font-size="16" text-anchor="middle">24</text>
+<path class="grid" d="M2778 115 V996"/>
+<text x="2828.0" y="135" font-size="16" text-anchor="middle">25</text>
+<path class="grid" d="M2878 115 V996"/>
+<text x="2928.0" y="135" font-size="16" text-anchor="middle">26</text>
+<path class="grid" d="M2978 115 V996"/>
+<text x="3028.0" y="135" font-size="16" text-anchor="middle">27</text>
+<path class="grid" d="M20 197 H3078"/>
+<text x="24" y="178.5" font-size="16" text-anchor="start">clk_sys</text>
+<path class="wave" d="M278 188 V159 H328.0 V188 H378 V159 H428.0 V188 H478 V159 H528.0 V188 H578 V159 H628.0 V188 H678 V159 H728.0 V188 H778 V159 H828.0 V188 H878 V159 H928.0 V188 H978 V159 H1028.0 V188 H1078 V159 H1128.0 V188 H1178 V159 H1228.0 V188 H1278 V159 H1328.0 V188 H1378 V159 H1428.0 V188 H1478 V159 H1528.0 V188 H1578 V159 H1628.0 V188 H1678 V159 H1728.0 V188 H1778 V159 H1828.0 V188 H1878 V159 H1928.0 V188 H1978 V159 H2028.0 V188 H2078 V159 H2128.0 V188 H2178 V159 H2228.0 V188 H2278 V159 H2328.0 V188 H2378 V159 H2428.0 V188 H2478 V159 H2528.0 V188 H2578 V159 H2628.0 V188 H2678 V159 H2728.0 V188 H2778 V159 H2828.0 V188 H2878 V159 H2928.0 V188 H2978 V159 H3028.0 V188 H3078"/>
+<path class="grid" d="M20 244 H3078"/>
+<text x="24" y="225.5" font-size="16" text-anchor="start">WB transaction</text>
+<path class="bus" d="M278 220.5 L286 206 H670 L678 220.5 L670 235 H286 Z"/>
+<text x="478.0" y="225.5" font-size="16" text-anchor="middle">LB @0x101</text>
+<path class="bus" d="M678 220.5 L686 206 H1070 L1078 220.5 L1070 235 H686 Z"/>
+<text x="878.0" y="225.5" font-size="16" text-anchor="middle">LBU @0x101</text>
+<path class="bus" d="M1078 220.5 L1086 206 H1470 L1478 220.5 L1470 235 H1086 Z"/>
+<text x="1278.0" y="225.5" font-size="16" text-anchor="middle">LH @0x102</text>
+<path class="bus" d="M1478 220.5 L1486 206 H1870 L1878 220.5 L1870 235 H1486 Z"/>
+<text x="1678.0" y="225.5" font-size="16" text-anchor="middle">LHU @0x102</text>
+<path class="bus" d="M1878 220.5 L1886 206 H2270 L2278 220.5 L2270 235 H1886 Z"/>
+<text x="2078.0" y="225.5" font-size="16" text-anchor="middle">SH @0x102</text>
+<path class="bus" d="M2278 220.5 L2286 206 H2670 L2678 220.5 L2670 235 H2286 Z"/>
+<text x="2478.0" y="225.5" font-size="16" text-anchor="middle">write x0</text>
+<path class="bus" d="M2678 220.5 L2686 206 H3070 L3078 220.5 L3070 235 H2686 Z"/>
+<text x="2878.0" y="225.5" font-size="16" text-anchor="middle">JALR / detect</text>
+<path class="grid" d="M20 291 H3078"/>
+<text x="24" y="272.5" font-size="16" text-anchor="start">stall_read_i</text>
+<text x="328.0" y="272.5" font-size="13" text-anchor="middle">1</text>
+<text x="728.0" y="272.5" font-size="13" text-anchor="middle">1</text>
+<text x="1128.0" y="272.5" font-size="13" text-anchor="middle">1</text>
+<text x="1528.0" y="272.5" font-size="13" text-anchor="middle">1</text>
+<path class="wave" d="M278 253 H378 V282 H478 V282 H578 V282 H678 V253 H778 V282 H878 V282 H978 V282 H1078 V253 H1178 V282 H1278 V282 H1378 V282 H1478 V253 H1578 V282 H1678 V282 H1778 V282 H1878 V282 H1978 V282 H2078 V282 H2178 V282 H2278 V282 H2378 V282 H2478 V282 H2578 V282 H2678 V282 H2778 V282 H2878 V282 H2978 V282 H3078"/>
+<path class="grid" d="M20 338 H3078"/>
+<text x="24" y="319.5" font-size="16" text-anchor="start">wb_read_data</text>
+<path class="bus" d="M278 314.5 L286 300 H470 L478 314.5 L470 329 H286 Z"/>
+<text x="378.0" y="319.5" font-size="16" text-anchor="middle">0x80008000</text>
+<path class="bus" d="M478 314.5 L486 300 H670 L678 314.5 L670 329 H486 Z"/>
+<text x="578.0" y="319.5" font-size="16" text-anchor="middle">—</text>
+<path class="bus" d="M678 314.5 L686 300 H870 L878 314.5 L870 329 H686 Z"/>
+<text x="778.0" y="319.5" font-size="16" text-anchor="middle">0x80008000</text>
+<path class="bus" d="M878 314.5 L886 300 H1070 L1078 314.5 L1070 329 H886 Z"/>
+<text x="978.0" y="319.5" font-size="16" text-anchor="middle">—</text>
+<path class="bus" d="M1078 314.5 L1086 300 H1270 L1278 314.5 L1270 329 H1086 Z"/>
+<text x="1178.0" y="319.5" font-size="16" text-anchor="middle">0x80008000</text>
+<path class="bus" d="M1278 314.5 L1286 300 H1470 L1478 314.5 L1470 329 H1286 Z"/>
+<text x="1378.0" y="319.5" font-size="16" text-anchor="middle">—</text>
+<path class="bus" d="M1478 314.5 L1486 300 H1670 L1678 314.5 L1670 329 H1486 Z"/>
+<text x="1578.0" y="319.5" font-size="16" text-anchor="middle">0x80008000</text>
+<path class="bus" d="M1678 314.5 L1686 300 H1870 L1878 314.5 L1870 329 H1686 Z"/>
+<text x="1778.0" y="319.5" font-size="16" text-anchor="middle">—</text>
+<path class="bus" d="M1878 314.5 L1886 300 H2270 L2278 314.5 L2270 329 H1886 Z"/>
+<text x="2078.0" y="319.5" font-size="16" text-anchor="middle">—</text>
+<path class="bus" d="M2278 314.5 L2286 300 H2670 L2678 314.5 L2670 329 H2286 Z"/>
+<text x="2478.0" y="319.5" font-size="16" text-anchor="middle">—</text>
+<path class="bus" d="M2678 314.5 L2686 300 H3070 L3078 314.5 L3070 329 H2686 Z"/>
+<text x="2878.0" y="319.5" font-size="16" text-anchor="middle">—</text>
+<path class="grid" d="M20 385 H3078"/>
+<text x="24" y="366.5" font-size="16" text-anchor="start">wb_write_en</text>
+<text x="428.0" y="366.5" font-size="13" text-anchor="middle">1</text>
+<text x="828.0" y="366.5" font-size="13" text-anchor="middle">1</text>
+<text x="1228.0" y="366.5" font-size="13" text-anchor="middle">1</text>
+<text x="1628.0" y="366.5" font-size="13" text-anchor="middle">1</text>
+<text x="2328.0" y="366.5" font-size="13" text-anchor="middle">1</text>
+<path class="wave" d="M278 376 H378 V347 H478 V376 H578 V376 H678 V376 H778 V347 H878 V376 H978 V376 H1078 V376 H1178 V347 H1278 V376 H1378 V376 H1478 V376 H1578 V347 H1678 V376 H1778 V376 H1878 V376 H1978 V376 H2078 V376 H2178 V376 H2278 V347 H2378 V376 H2478 V376 H2578 V376 H2678 V376 H2778 V376 H2878 V376 H2978 V376 H3078"/>
+<path class="grid" d="M20 432 H3078"/>
+<text x="24" y="413.5" font-size="16" text-anchor="start">wb_result</text>
+<path class="bus" d="M278 408.5 L286 394 H370 L378 408.5 L370 423 H286 Z"/>
+<text x="328.0" y="413.5" font-size="16" text-anchor="middle">—</text>
+<path class="bus" d="M378 408.5 L386 394 H470 L478 408.5 L470 423 H386 Z"/>
+<text x="428.0" y="413.5" font-size="13" text-anchor="middle">0xFFFFFF80</text>
+<path class="bus" d="M478 408.5 L486 394 H670 L678 408.5 L670 423 H486 Z"/>
+<text x="578.0" y="413.5" font-size="16" text-anchor="middle">—</text>
+<path class="bus" d="M678 408.5 L686 394 H770 L778 408.5 L770 423 H686 Z"/>
+<text x="728.0" y="413.5" font-size="16" text-anchor="middle">—</text>
+<path class="bus" d="M778 408.5 L786 394 H870 L878 408.5 L870 423 H786 Z"/>
+<text x="828.0" y="413.5" font-size="13" text-anchor="middle">0x00000080</text>
+<path class="bus" d="M878 408.5 L886 394 H1070 L1078 408.5 L1070 423 H886 Z"/>
+<text x="978.0" y="413.5" font-size="16" text-anchor="middle">—</text>
+<path class="bus" d="M1078 408.5 L1086 394 H1170 L1178 408.5 L1170 423 H1086 Z"/>
+<text x="1128.0" y="413.5" font-size="16" text-anchor="middle">—</text>
+<path class="bus" d="M1178 408.5 L1186 394 H1270 L1278 408.5 L1270 423 H1186 Z"/>
+<text x="1228.0" y="413.5" font-size="13" text-anchor="middle">0xFFFF8000</text>
+<path class="bus" d="M1278 408.5 L1286 394 H1470 L1478 408.5 L1470 423 H1286 Z"/>
+<text x="1378.0" y="413.5" font-size="16" text-anchor="middle">—</text>
+<path class="bus" d="M1478 408.5 L1486 394 H1570 L1578 408.5 L1570 423 H1486 Z"/>
+<text x="1528.0" y="413.5" font-size="16" text-anchor="middle">—</text>
+<path class="bus" d="M1578 408.5 L1586 394 H1670 L1678 408.5 L1670 423 H1586 Z"/>
+<text x="1628.0" y="413.5" font-size="13" text-anchor="middle">0x00008000</text>
+<path class="bus" d="M1678 408.5 L1686 394 H1870 L1878 408.5 L1870 423 H1686 Z"/>
+<text x="1778.0" y="413.5" font-size="16" text-anchor="middle">—</text>
+<path class="bus" d="M1878 408.5 L1886 394 H2270 L2278 408.5 L2270 423 H1886 Z"/>
+<text x="2078.0" y="413.5" font-size="16" text-anchor="middle">—</text>
+<path class="bus" d="M2278 408.5 L2286 394 H2370 L2378 408.5 L2370 423 H2286 Z"/>
+<text x="2328.0" y="413.5" font-size="16" text-anchor="middle">99</text>
+<path class="bus" d="M2378 408.5 L2386 394 H2670 L2678 408.5 L2670 423 H2386 Z"/>
+<text x="2528.0" y="413.5" font-size="16" text-anchor="middle">—</text>
+<path class="bus" d="M2678 408.5 L2686 394 H3070 L3078 408.5 L3070 423 H2686 Z"/>
+<text x="2878.0" y="413.5" font-size="16" text-anchor="middle">—</text>
+<path class="grid" d="M20 479 H3078"/>
+<text x="24" y="460.5" font-size="16" text-anchor="start">d_we / store_en</text>
+<text x="1928.0" y="460.5" font-size="13" text-anchor="middle">1</text>
+<path class="wave" d="M278 470 H378 V470 H478 V470 H578 V470 H678 V470 H778 V470 H878 V470 H978 V470 H1078 V470 H1178 V470 H1278 V470 H1378 V470 H1478 V470 H1578 V470 H1678 V470 H1778 V470 H1878 V441 H1978 V470 H2078 V470 H2178 V470 H2278 V470 H2378 V470 H2478 V470 H2578 V470 H2678 V470 H2778 V470 H2878 V470 H2978 V470 H3078"/>
+<path class="grid" d="M20 526 H3078"/>
+<text x="24" y="507.5" font-size="16" text-anchor="start">d_addr</text>
+<path class="bus" d="M278 502.5 L286 488 H670 L678 502.5 L670 517 H286 Z"/>
+<text x="478.0" y="507.5" font-size="16" text-anchor="middle">—</text>
+<path class="bus" d="M678 502.5 L686 488 H1070 L1078 502.5 L1070 517 H686 Z"/>
+<text x="878.0" y="507.5" font-size="16" text-anchor="middle">—</text>
+<path class="bus" d="M1078 502.5 L1086 488 H1470 L1478 502.5 L1470 517 H1086 Z"/>
+<text x="1278.0" y="507.5" font-size="16" text-anchor="middle">—</text>
+<path class="bus" d="M1478 502.5 L1486 488 H1870 L1878 502.5 L1870 517 H1486 Z"/>
+<text x="1678.0" y="507.5" font-size="16" text-anchor="middle">—</text>
+<path class="bus" d="M1878 502.5 L1886 488 H1970 L1978 502.5 L1970 517 H1886 Z"/>
+<text x="1928.0" y="507.5" font-size="13" text-anchor="middle">0x00000102</text>
+<path class="bus" d="M1978 502.5 L1986 488 H2270 L2278 502.5 L2270 517 H1986 Z"/>
+<text x="2128.0" y="507.5" font-size="16" text-anchor="middle">—</text>
+<path class="bus" d="M2278 502.5 L2286 488 H2670 L2678 502.5 L2670 517 H2286 Z"/>
+<text x="2478.0" y="507.5" font-size="16" text-anchor="middle">—</text>
+<path class="bus" d="M2678 502.5 L2686 488 H3070 L3078 502.5 L3070 517 H2686 Z"/>
+<text x="2878.0" y="507.5" font-size="16" text-anchor="middle">—</text>
+<path class="grid" d="M20 573 H3078"/>
+<text x="24" y="554.5" font-size="16" text-anchor="start">d_wdata</text>
+<path class="bus" d="M278 549.5 L286 535 H670 L678 549.5 L670 564 H286 Z"/>
+<text x="478.0" y="554.5" font-size="16" text-anchor="middle">—</text>
+<path class="bus" d="M678 549.5 L686 535 H1070 L1078 549.5 L1070 564 H686 Z"/>
+<text x="878.0" y="554.5" font-size="16" text-anchor="middle">—</text>
+<path class="bus" d="M1078 549.5 L1086 535 H1470 L1478 549.5 L1470 564 H1086 Z"/>
+<text x="1278.0" y="554.5" font-size="16" text-anchor="middle">—</text>
+<path class="bus" d="M1478 549.5 L1486 535 H1870 L1878 549.5 L1870 564 H1486 Z"/>
+<text x="1678.0" y="554.5" font-size="16" text-anchor="middle">—</text>
+<path class="bus" d="M1878 549.5 L1886 535 H1970 L1978 549.5 L1970 564 H1886 Z"/>
+<text x="1928.0" y="554.5" font-size="13" text-anchor="middle">0xABCDABCD</text>
+<path class="bus" d="M1978 549.5 L1986 535 H2270 L2278 549.5 L2270 564 H1986 Z"/>
+<text x="2128.0" y="554.5" font-size="16" text-anchor="middle">—</text>
+<path class="bus" d="M2278 549.5 L2286 535 H2670 L2678 549.5 L2670 564 H2286 Z"/>
+<text x="2478.0" y="554.5" font-size="16" text-anchor="middle">—</text>
+<path class="bus" d="M2678 549.5 L2686 535 H3070 L3078 549.5 L3070 564 H2686 Z"/>
+<text x="2878.0" y="554.5" font-size="16" text-anchor="middle">—</text>
+<path class="grid" d="M20 620 H3078"/>
+<text x="24" y="601.5" font-size="16" text-anchor="start">d_wstrb</text>
+<path class="bus" d="M278 596.5 L286 582 H670 L678 596.5 L670 611 H286 Z"/>
+<text x="478.0" y="601.5" font-size="16" text-anchor="middle">0000</text>
+<path class="bus" d="M678 596.5 L686 582 H1070 L1078 596.5 L1070 611 H686 Z"/>
+<text x="878.0" y="601.5" font-size="16" text-anchor="middle">0000</text>
+<path class="bus" d="M1078 596.5 L1086 582 H1470 L1478 596.5 L1470 611 H1086 Z"/>
+<text x="1278.0" y="601.5" font-size="16" text-anchor="middle">0000</text>
+<path class="bus" d="M1478 596.5 L1486 582 H1870 L1878 596.5 L1870 611 H1486 Z"/>
+<text x="1678.0" y="601.5" font-size="16" text-anchor="middle">0000</text>
+<path class="bus" d="M1878 596.5 L1886 582 H1970 L1978 596.5 L1970 611 H1886 Z"/>
+<text x="1928.0" y="601.5" font-size="16" text-anchor="middle">1100</text>
+<path class="bus" d="M1978 596.5 L1986 582 H2270 L2278 596.5 L2270 611 H1986 Z"/>
+<text x="2128.0" y="601.5" font-size="16" text-anchor="middle">0000</text>
+<path class="bus" d="M2278 596.5 L2286 582 H2670 L2678 596.5 L2670 611 H2286 Z"/>
+<text x="2478.0" y="601.5" font-size="16" text-anchor="middle">0000</text>
+<path class="bus" d="M2678 596.5 L2686 582 H3070 L3078 596.5 L3070 611 H2686 Z"/>
+<text x="2878.0" y="601.5" font-size="16" text-anchor="middle">0000</text>
+<path class="grid" d="M20 667 H3078"/>
+<text x="24" y="648.5" font-size="16" text-anchor="start">zero1 / zero2</text>
+<path class="bus" d="M278 643.5 L286 629 H670 L678 643.5 L670 658 H286 Z"/>
+<text x="478.0" y="648.5" font-size="16" text-anchor="middle">—</text>
+<path class="bus" d="M678 643.5 L686 629 H1070 L1078 643.5 L1070 658 H686 Z"/>
+<text x="878.0" y="648.5" font-size="16" text-anchor="middle">—</text>
+<path class="bus" d="M1078 643.5 L1086 629 H1470 L1478 643.5 L1470 658 H1086 Z"/>
+<text x="1278.0" y="648.5" font-size="16" text-anchor="middle">—</text>
+<path class="bus" d="M1478 643.5 L1486 629 H1870 L1878 643.5 L1870 658 H1486 Z"/>
+<text x="1678.0" y="648.5" font-size="16" text-anchor="middle">—</text>
+<path class="bus" d="M1878 643.5 L1886 629 H2270 L2278 643.5 L2270 658 H1886 Z"/>
+<text x="2078.0" y="648.5" font-size="16" text-anchor="middle">—</text>
+<path class="bus" d="M2278 643.5 L2286 629 H2670 L2678 643.5 L2670 658 H2286 Z"/>
+<text x="2478.0" y="648.5" font-size="16" text-anchor="middle">1 / 1</text>
+<path class="bus" d="M2678 643.5 L2686 629 H3070 L3078 643.5 L3070 658 H2686 Z"/>
+<text x="2878.0" y="648.5" font-size="16" text-anchor="middle">—</text>
+<path class="grid" d="M20 714 H3078"/>
+<text x="24" y="695.5" font-size="16" text-anchor="start">reg_rdata1 / 2</text>
+<path class="bus" d="M278 690.5 L286 676 H670 L678 690.5 L670 705 H286 Z"/>
+<text x="478.0" y="695.5" font-size="16" text-anchor="middle">—</text>
+<path class="bus" d="M678 690.5 L686 676 H1070 L1078 690.5 L1070 705 H686 Z"/>
+<text x="878.0" y="695.5" font-size="16" text-anchor="middle">—</text>
+<path class="bus" d="M1078 690.5 L1086 676 H1470 L1478 690.5 L1470 705 H1086 Z"/>
+<text x="1278.0" y="695.5" font-size="16" text-anchor="middle">—</text>
+<path class="bus" d="M1478 690.5 L1486 676 H1870 L1878 690.5 L1870 705 H1486 Z"/>
+<text x="1678.0" y="695.5" font-size="16" text-anchor="middle">—</text>
+<path class="bus" d="M1878 690.5 L1886 676 H2270 L2278 690.5 L2270 705 H1886 Z"/>
+<text x="2078.0" y="695.5" font-size="16" text-anchor="middle">—</text>
+<path class="bus" d="M2278 690.5 L2286 676 H2670 L2678 690.5 L2670 705 H2286 Z"/>
+<text x="2478.0" y="695.5" font-size="16" text-anchor="middle">0 / 0</text>
+<path class="bus" d="M2678 690.5 L2686 676 H3070 L3078 690.5 L3070 705 H2686 Z"/>
+<text x="2878.0" y="695.5" font-size="16" text-anchor="middle">—</text>
+<path class="grid" d="M20 761 H3078"/>
+<text x="24" y="742.5" font-size="16" text-anchor="start">branch_taken</text>
+<text x="2728.0" y="742.5" font-size="13" text-anchor="middle">1</text>
+<path class="wave" d="M278 752 H378 V752 H478 V752 H578 V752 H678 V752 H778 V752 H878 V752 H978 V752 H1078 V752 H1178 V752 H1278 V752 H1378 V752 H1478 V752 H1578 V752 H1678 V752 H1778 V752 H1878 V752 H1978 V752 H2078 V752 H2178 V752 H2278 V752 H2378 V752 H2478 V752 H2578 V752 H2678 V723 H2778 V752 H2878 V752 H2978 V752 H3078"/>
+<path class="grid" d="M20 808 H3078"/>
+<text x="24" y="789.5" font-size="16" text-anchor="start">fetch_pc_o (JALR)</text>
+<path class="bus" d="M278 784.5 L286 770 H670 L678 784.5 L670 799 H286 Z"/>
+<text x="478.0" y="789.5" font-size="16" text-anchor="middle">—</text>
+<path class="bus" d="M678 784.5 L686 770 H1070 L1078 784.5 L1070 799 H686 Z"/>
+<text x="878.0" y="789.5" font-size="16" text-anchor="middle">—</text>
+<path class="bus" d="M1078 784.5 L1086 770 H1470 L1478 784.5 L1470 799 H1086 Z"/>
+<text x="1278.0" y="789.5" font-size="16" text-anchor="middle">—</text>
+<path class="bus" d="M1478 784.5 L1486 770 H1870 L1878 784.5 L1870 799 H1486 Z"/>
+<text x="1678.0" y="789.5" font-size="16" text-anchor="middle">—</text>
+<path class="bus" d="M1878 784.5 L1886 770 H2270 L2278 784.5 L2270 799 H1886 Z"/>
+<text x="2078.0" y="789.5" font-size="16" text-anchor="middle">—</text>
+<path class="bus" d="M2278 784.5 L2286 770 H2670 L2678 784.5 L2670 799 H2286 Z"/>
+<text x="2478.0" y="789.5" font-size="16" text-anchor="middle">—</text>
+<path class="bus" d="M2678 784.5 L2686 770 H2770 L2778 784.5 L2770 799 H2686 Z"/>
+<text x="2728.0" y="789.5" font-size="13" text-anchor="middle">0x000000C8</text>
+<path class="bus" d="M2778 784.5 L2786 770 H3070 L3078 784.5 L3070 799 H2786 Z"/>
+<text x="2928.0" y="789.5" font-size="16" text-anchor="middle">—</text>
+<path class="grid" d="M20 855 H3078"/>
+<text x="24" y="836.5" font-size="16" text-anchor="start">reset_n</text>
+<text x="328.0" y="836.5" font-size="13" text-anchor="middle">1</text>
+<text x="428.0" y="836.5" font-size="13" text-anchor="middle">1</text>
+<text x="528.0" y="836.5" font-size="13" text-anchor="middle">1</text>
+<text x="628.0" y="836.5" font-size="13" text-anchor="middle">1</text>
+<text x="728.0" y="836.5" font-size="13" text-anchor="middle">1</text>
+<text x="828.0" y="836.5" font-size="13" text-anchor="middle">1</text>
+<text x="928.0" y="836.5" font-size="13" text-anchor="middle">1</text>
+<text x="1028.0" y="836.5" font-size="13" text-anchor="middle">1</text>
+<text x="1128.0" y="836.5" font-size="13" text-anchor="middle">1</text>
+<text x="1228.0" y="836.5" font-size="13" text-anchor="middle">1</text>
+<text x="1328.0" y="836.5" font-size="13" text-anchor="middle">1</text>
+<text x="1428.0" y="836.5" font-size="13" text-anchor="middle">1</text>
+<text x="1528.0" y="836.5" font-size="13" text-anchor="middle">1</text>
+<text x="1628.0" y="836.5" font-size="13" text-anchor="middle">1</text>
+<text x="1728.0" y="836.5" font-size="13" text-anchor="middle">1</text>
+<text x="1828.0" y="836.5" font-size="13" text-anchor="middle">1</text>
+<text x="1928.0" y="836.5" font-size="13" text-anchor="middle">1</text>
+<text x="2028.0" y="836.5" font-size="13" text-anchor="middle">1</text>
+<text x="2128.0" y="836.5" font-size="13" text-anchor="middle">1</text>
+<text x="2228.0" y="836.5" font-size="13" text-anchor="middle">1</text>
+<text x="2328.0" y="836.5" font-size="13" text-anchor="middle">1</text>
+<text x="2428.0" y="836.5" font-size="13" text-anchor="middle">1</text>
+<text x="2528.0" y="836.5" font-size="13" text-anchor="middle">1</text>
+<text x="2628.0" y="836.5" font-size="13" text-anchor="middle">1</text>
+<text x="2728.0" y="836.5" font-size="13" text-anchor="middle">1</text>
+<text x="2828.0" y="836.5" font-size="13" text-anchor="middle">1</text>
+<text x="3028.0" y="836.5" font-size="13" text-anchor="middle">1</text>
+<path class="wave" d="M278 817 H378 V817 H478 V817 H578 V817 H678 V817 H778 V817 H878 V817 H978 V817 H1078 V817 H1178 V817 H1278 V817 H1378 V817 H1478 V817 H1578 V817 H1678 V817 H1778 V817 H1878 V817 H1978 V817 H2078 V817 H2178 V817 H2278 V817 H2378 V817 H2478 V817 H2578 V817 H2678 V817 H2778 V817 H2878 V846 H2978 V817 H3078"/>
+<path class="grid" d="M20 902 H3078"/>
+<text x="24" y="883.5" font-size="16" text-anchor="start">illegal_inst</text>
+<text x="2828.0" y="883.5" font-size="13" text-anchor="middle">1</text>
+<text x="2928.0" y="883.5" font-size="13" text-anchor="middle">1</text>
+<path class="wave" d="M278 893 H378 V893 H478 V893 H578 V893 H678 V893 H778 V893 H878 V893 H978 V893 H1078 V893 H1178 V893 H1278 V893 H1378 V893 H1478 V893 H1578 V893 H1678 V893 H1778 V893 H1878 V893 H1978 V893 H2078 V893 H2178 V893 H2278 V893 H2378 V893 H2478 V893 H2578 V893 H2678 V893 H2778 V864 H2878 V864 H2978 V893 H3078"/>
+<path class="grid" d="M20 949 H3078"/>
+<text x="24" y="930.5" font-size="16" text-anchor="start">instruction_i == 0</text>
+<text x="3028.0" y="930.5" font-size="13" text-anchor="middle">1</text>
+<path class="wave" d="M278 940 H378 V940 H478 V940 H578 V940 H678 V940 H778 V940 H878 V940 H978 V940 H1078 V940 H1178 V940 H1278 V940 H1378 V940 H1478 V940 H1578 V940 H1678 V940 H1778 V940 H1878 V940 H1978 V940 H2078 V940 H2178 V940 H2278 V940 H2378 V940 H2478 V940 H2578 V940 H2678 V940 H2778 V940 H2878 V940 H2978 V911 H3078"/>
+<path class="grid" d="M20 996 H3078"/>
+<text x="24" y="977.5" font-size="16" text-anchor="start">exception</text>
+<text x="2828.0" y="977.5" font-size="13" text-anchor="middle">1</text>
+<text x="3028.0" y="977.5" font-size="13" text-anchor="middle">1</text>
+<path class="wave" d="M278 987 H378 V987 H478 V987 H578 V987 H678 V987 H778 V987 H878 V987 H978 V987 H1078 V987 H1178 V987 H1278 V987 H1378 V987 H1478 V987 H1578 V987 H1678 V987 H1778 V987 H1878 V987 H1978 V987 H2078 V987 H2178 V987 H2278 V987 H2378 V987 H2478 V987 H2578 V987 H2678 V987 H2778 V958 H2878 V987 H2978 V958 H3078"/>
+<rect x="672" y="115" width="12" height="881" fill="white"/>
+<text x="678" y="142" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="678" y="189" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="678" y="236" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="678" y="283" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="678" y="330" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="678" y="377" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="678" y="424" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="678" y="471" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="678" y="518" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="678" y="565" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="678" y="612" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="678" y="659" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="678" y="706" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="678" y="753" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="678" y="800" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="678" y="847" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="678" y="894" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="678" y="941" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="678" y="988" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<rect x="1072" y="115" width="12" height="881" fill="white"/>
+<text x="1078" y="142" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="1078" y="189" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="1078" y="236" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="1078" y="283" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="1078" y="330" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="1078" y="377" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="1078" y="424" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="1078" y="471" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="1078" y="518" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="1078" y="565" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="1078" y="612" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="1078" y="659" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="1078" y="706" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="1078" y="753" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="1078" y="800" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="1078" y="847" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="1078" y="894" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="1078" y="941" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="1078" y="988" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<rect x="1472" y="115" width="12" height="881" fill="white"/>
+<text x="1478" y="142" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="1478" y="189" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="1478" y="236" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="1478" y="283" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="1478" y="330" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="1478" y="377" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="1478" y="424" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="1478" y="471" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="1478" y="518" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="1478" y="565" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="1478" y="612" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="1478" y="659" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="1478" y="706" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="1478" y="753" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="1478" y="800" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="1478" y="847" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="1478" y="894" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="1478" y="941" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="1478" y="988" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<rect x="1872" y="115" width="12" height="881" fill="white"/>
+<text x="1878" y="142" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="1878" y="189" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="1878" y="236" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="1878" y="283" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="1878" y="330" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="1878" y="377" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="1878" y="424" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="1878" y="471" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="1878" y="518" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="1878" y="565" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="1878" y="612" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="1878" y="659" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="1878" y="706" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="1878" y="753" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="1878" y="800" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="1878" y="847" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="1878" y="894" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="1878" y="941" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="1878" y="988" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<rect x="2272" y="115" width="12" height="881" fill="white"/>
+<text x="2278" y="142" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="2278" y="189" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="2278" y="236" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="2278" y="283" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="2278" y="330" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="2278" y="377" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="2278" y="424" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="2278" y="471" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="2278" y="518" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="2278" y="565" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="2278" y="612" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="2278" y="659" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="2278" y="706" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="2278" y="753" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="2278" y="800" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="2278" y="847" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="2278" y="894" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="2278" y="941" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="2278" y="988" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<rect x="2672" y="115" width="12" height="881" fill="white"/>
+<text x="2678" y="142" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="2678" y="189" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="2678" y="236" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="2678" y="283" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="2678" y="330" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="2678" y="377" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="2678" y="424" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="2678" y="471" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="2678" y="518" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="2678" y="565" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="2678" y="612" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="2678" y="659" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="2678" y="706" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="2678" y="753" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="2678" y="800" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="2678" y="847" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="2678" y="894" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="2678" y="941" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="2678" y="988" font-size="16" text-anchor="middle" style="fill:#b35c13">//</text>
+<text x="24" y="1022" font-size="15" text-anchor="start">Aligned data-memory tests only. MMIO is word-only; SB/SH MMIO behaviour should not be inferred from data-memory lane tests.</text>
+<text x="24" y="1044" font-size="15" text-anchor="start">Normal ALU add/shift/logic/compare are selected combinationally; numeric examples in sheet A cover ADD, MUL, SLT, OR, LUI, SRAI and XOR.</text>
+</svg>

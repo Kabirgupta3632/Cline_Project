@@ -1,0 +1,286 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="3102" height="870" viewBox="0 0 3102 870">
+<rect width="100%" height="100%" fill="white"/>
+<style>text{font-family:DejaVu Sans,Arial,sans-serif;fill:#182638} .grid{stroke:#d4dbe3;stroke-width:1} .wave{fill:none;stroke:#182638;stroke-width:2} .bus{fill:#f6f9fc;stroke:#29425f;stroke-width:1.4}</style>
+<text x="24" y="35" font-size="25" text-anchor="start">E. Display pixel priority and blanking — 28 continuous clocks</text>
+<text x="24" y="65" font-size="16" text-anchor="start">Aligned Fig 10 input test: HUD &gt; big bullet &gt; normal bullet &gt; tank &gt; wall &gt; background. Final RGB registered once.</text>
+<text x="24" y="92" font-size="15" text-anchor="start">Column = after left rising edge; outputs latch at next edge. — = not consumed. // = omitted time / independent boundary window.</text>
+<path class="grid" d="M278 115 V761"/>
+<text x="328.0" y="135" font-size="16" text-anchor="middle">0</text>
+<path class="grid" d="M378 115 V761"/>
+<text x="428.0" y="135" font-size="16" text-anchor="middle">1</text>
+<path class="grid" d="M478 115 V761"/>
+<text x="528.0" y="135" font-size="16" text-anchor="middle">2</text>
+<path class="grid" d="M578 115 V761"/>
+<text x="628.0" y="135" font-size="16" text-anchor="middle">3</text>
+<path class="grid" d="M678 115 V761"/>
+<text x="728.0" y="135" font-size="16" text-anchor="middle">4</text>
+<path class="grid" d="M778 115 V761"/>
+<text x="828.0" y="135" font-size="16" text-anchor="middle">5</text>
+<path class="grid" d="M878 115 V761"/>
+<text x="928.0" y="135" font-size="16" text-anchor="middle">6</text>
+<path class="grid" d="M978 115 V761"/>
+<text x="1028.0" y="135" font-size="16" text-anchor="middle">7</text>
+<path class="grid" d="M1078 115 V761"/>
+<text x="1128.0" y="135" font-size="16" text-anchor="middle">8</text>
+<path class="grid" d="M1178 115 V761"/>
+<text x="1228.0" y="135" font-size="16" text-anchor="middle">9</text>
+<path class="grid" d="M1278 115 V761"/>
+<text x="1328.0" y="135" font-size="16" text-anchor="middle">10</text>
+<path class="grid" d="M1378 115 V761"/>
+<text x="1428.0" y="135" font-size="16" text-anchor="middle">11</text>
+<path class="grid" d="M1478 115 V761"/>
+<text x="1528.0" y="135" font-size="16" text-anchor="middle">12</text>
+<path class="grid" d="M1578 115 V761"/>
+<text x="1628.0" y="135" font-size="16" text-anchor="middle">13</text>
+<path class="grid" d="M1678 115 V761"/>
+<text x="1728.0" y="135" font-size="16" text-anchor="middle">14</text>
+<path class="grid" d="M1778 115 V761"/>
+<text x="1828.0" y="135" font-size="16" text-anchor="middle">15</text>
+<path class="grid" d="M1878 115 V761"/>
+<text x="1928.0" y="135" font-size="16" text-anchor="middle">16</text>
+<path class="grid" d="M1978 115 V761"/>
+<text x="2028.0" y="135" font-size="16" text-anchor="middle">17</text>
+<path class="grid" d="M2078 115 V761"/>
+<text x="2128.0" y="135" font-size="16" text-anchor="middle">18</text>
+<path class="grid" d="M2178 115 V761"/>
+<text x="2228.0" y="135" font-size="16" text-anchor="middle">19</text>
+<path class="grid" d="M2278 115 V761"/>
+<text x="2328.0" y="135" font-size="16" text-anchor="middle">20</text>
+<path class="grid" d="M2378 115 V761"/>
+<text x="2428.0" y="135" font-size="16" text-anchor="middle">21</text>
+<path class="grid" d="M2478 115 V761"/>
+<text x="2528.0" y="135" font-size="16" text-anchor="middle">22</text>
+<path class="grid" d="M2578 115 V761"/>
+<text x="2628.0" y="135" font-size="16" text-anchor="middle">23</text>
+<path class="grid" d="M2678 115 V761"/>
+<text x="2728.0" y="135" font-size="16" text-anchor="middle">24</text>
+<path class="grid" d="M2778 115 V761"/>
+<text x="2828.0" y="135" font-size="16" text-anchor="middle">25</text>
+<path class="grid" d="M2878 115 V761"/>
+<text x="2928.0" y="135" font-size="16" text-anchor="middle">26</text>
+<path class="grid" d="M2978 115 V761"/>
+<text x="3028.0" y="135" font-size="16" text-anchor="middle">27</text>
+<path class="grid" d="M20 197 H3078"/>
+<text x="24" y="178.5" font-size="16" text-anchor="start">clk_sys</text>
+<path class="wave" d="M278 188 V159 H328.0 V188 H378 V159 H428.0 V188 H478 V159 H528.0 V188 H578 V159 H628.0 V188 H678 V159 H728.0 V188 H778 V159 H828.0 V188 H878 V159 H928.0 V188 H978 V159 H1028.0 V188 H1078 V159 H1128.0 V188 H1178 V159 H1228.0 V188 H1278 V159 H1328.0 V188 H1378 V159 H1428.0 V188 H1478 V159 H1528.0 V188 H1578 V159 H1628.0 V188 H1678 V159 H1728.0 V188 H1778 V159 H1828.0 V188 H1878 V159 H1928.0 V188 H1978 V159 H2028.0 V188 H2078 V159 H2128.0 V188 H2178 V159 H2228.0 V188 H2278 V159 H2328.0 V188 H2378 V159 H2428.0 V188 H2478 V159 H2528.0 V188 H2578 V159 H2628.0 V188 H2678 V159 H2728.0 V188 H2778 V159 H2828.0 V188 H2878 V159 H2928.0 V188 H2978 V159 H3028.0 V188 H3078"/>
+<path class="grid" d="M20 244 H3078"/>
+<text x="24" y="225.5" font-size="16" text-anchor="start">active_d</text>
+<text x="328.0" y="225.5" font-size="13" text-anchor="middle">1</text>
+<text x="428.0" y="225.5" font-size="13" text-anchor="middle">1</text>
+<text x="528.0" y="225.5" font-size="13" text-anchor="middle">1</text>
+<text x="628.0" y="225.5" font-size="13" text-anchor="middle">1</text>
+<text x="728.0" y="225.5" font-size="13" text-anchor="middle">1</text>
+<text x="828.0" y="225.5" font-size="13" text-anchor="middle">1</text>
+<text x="928.0" y="225.5" font-size="13" text-anchor="middle">1</text>
+<text x="1028.0" y="225.5" font-size="13" text-anchor="middle">1</text>
+<text x="1128.0" y="225.5" font-size="13" text-anchor="middle">1</text>
+<text x="1228.0" y="225.5" font-size="13" text-anchor="middle">1</text>
+<text x="1328.0" y="225.5" font-size="13" text-anchor="middle">1</text>
+<text x="1428.0" y="225.5" font-size="13" text-anchor="middle">1</text>
+<text x="1528.0" y="225.5" font-size="13" text-anchor="middle">1</text>
+<text x="1628.0" y="225.5" font-size="13" text-anchor="middle">1</text>
+<text x="1728.0" y="225.5" font-size="13" text-anchor="middle">1</text>
+<text x="1828.0" y="225.5" font-size="13" text-anchor="middle">1</text>
+<text x="1928.0" y="225.5" font-size="13" text-anchor="middle">1</text>
+<text x="2028.0" y="225.5" font-size="13" text-anchor="middle">1</text>
+<text x="2128.0" y="225.5" font-size="13" text-anchor="middle">1</text>
+<text x="2228.0" y="225.5" font-size="13" text-anchor="middle">1</text>
+<text x="2328.0" y="225.5" font-size="13" text-anchor="middle">1</text>
+<text x="2428.0" y="225.5" font-size="13" text-anchor="middle">1</text>
+<text x="2528.0" y="225.5" font-size="13" text-anchor="middle">1</text>
+<text x="2628.0" y="225.5" font-size="13" text-anchor="middle">1</text>
+<path class="wave" d="M278 206 H378 V206 H478 V206 H578 V206 H678 V206 H778 V206 H878 V206 H978 V206 H1078 V206 H1178 V206 H1278 V206 H1378 V206 H1478 V206 H1578 V206 H1678 V206 H1778 V206 H1878 V206 H1978 V206 H2078 V206 H2178 V206 H2278 V206 H2378 V206 H2478 V206 H2578 V206 H2678 V235 H2778 V235 H2878 V235 H2978 V235 H3078"/>
+<path class="grid" d="M20 291 H3078"/>
+<text x="24" y="272.5" font-size="16" text-anchor="start">maze_wall</text>
+<text x="528.0" y="272.5" font-size="13" text-anchor="middle">1</text>
+<text x="628.0" y="272.5" font-size="13" text-anchor="middle">1</text>
+<text x="728.0" y="272.5" font-size="13" text-anchor="middle">1</text>
+<text x="828.0" y="272.5" font-size="13" text-anchor="middle">1</text>
+<text x="928.0" y="272.5" font-size="13" text-anchor="middle">1</text>
+<text x="1028.0" y="272.5" font-size="13" text-anchor="middle">1</text>
+<text x="1128.0" y="272.5" font-size="13" text-anchor="middle">1</text>
+<text x="1228.0" y="272.5" font-size="13" text-anchor="middle">1</text>
+<text x="1328.0" y="272.5" font-size="13" text-anchor="middle">1</text>
+<text x="1428.0" y="272.5" font-size="13" text-anchor="middle">1</text>
+<text x="1528.0" y="272.5" font-size="13" text-anchor="middle">1</text>
+<text x="1628.0" y="272.5" font-size="13" text-anchor="middle">1</text>
+<text x="1728.0" y="272.5" font-size="13" text-anchor="middle">1</text>
+<text x="1828.0" y="272.5" font-size="13" text-anchor="middle">1</text>
+<text x="1928.0" y="272.5" font-size="13" text-anchor="middle">1</text>
+<text x="2028.0" y="272.5" font-size="13" text-anchor="middle">1</text>
+<text x="2128.0" y="272.5" font-size="13" text-anchor="middle">1</text>
+<text x="2228.0" y="272.5" font-size="13" text-anchor="middle">1</text>
+<text x="2328.0" y="272.5" font-size="13" text-anchor="middle">1</text>
+<text x="2428.0" y="272.5" font-size="13" text-anchor="middle">1</text>
+<text x="2528.0" y="272.5" font-size="13" text-anchor="middle">1</text>
+<text x="2628.0" y="272.5" font-size="13" text-anchor="middle">1</text>
+<path class="wave" d="M278 282 H378 V282 H478 V253 H578 V253 H678 V253 H778 V253 H878 V253 H978 V253 H1078 V253 H1178 V253 H1278 V253 H1378 V253 H1478 V253 H1578 V253 H1678 V253 H1778 V253 H1878 V253 H1978 V253 H2078 V253 H2178 V253 H2278 V253 H2378 V253 H2478 V253 H2578 V253 H2678 V282 H2778 V282 H2878 V282 H2978 V282 H3078"/>
+<path class="grid" d="M20 338 H3078"/>
+<text x="24" y="319.5" font-size="16" text-anchor="start">tank_valid</text>
+<text x="728.0" y="319.5" font-size="13" text-anchor="middle">1</text>
+<text x="828.0" y="319.5" font-size="13" text-anchor="middle">1</text>
+<text x="928.0" y="319.5" font-size="13" text-anchor="middle">1</text>
+<text x="1028.0" y="319.5" font-size="13" text-anchor="middle">1</text>
+<text x="1128.0" y="319.5" font-size="13" text-anchor="middle">1</text>
+<text x="1228.0" y="319.5" font-size="13" text-anchor="middle">1</text>
+<text x="1328.0" y="319.5" font-size="13" text-anchor="middle">1</text>
+<text x="1428.0" y="319.5" font-size="13" text-anchor="middle">1</text>
+<text x="1528.0" y="319.5" font-size="13" text-anchor="middle">1</text>
+<text x="1628.0" y="319.5" font-size="13" text-anchor="middle">1</text>
+<text x="1728.0" y="319.5" font-size="13" text-anchor="middle">1</text>
+<text x="1828.0" y="319.5" font-size="13" text-anchor="middle">1</text>
+<text x="1928.0" y="319.5" font-size="13" text-anchor="middle">1</text>
+<text x="2028.0" y="319.5" font-size="13" text-anchor="middle">1</text>
+<text x="2128.0" y="319.5" font-size="13" text-anchor="middle">1</text>
+<text x="2228.0" y="319.5" font-size="13" text-anchor="middle">1</text>
+<text x="2328.0" y="319.5" font-size="13" text-anchor="middle">1</text>
+<text x="2428.0" y="319.5" font-size="13" text-anchor="middle">1</text>
+<text x="2528.0" y="319.5" font-size="13" text-anchor="middle">1</text>
+<text x="2628.0" y="319.5" font-size="13" text-anchor="middle">1</text>
+<path class="wave" d="M278 329 H378 V329 H478 V329 H578 V329 H678 V300 H778 V300 H878 V300 H978 V300 H1078 V300 H1178 V300 H1278 V300 H1378 V300 H1478 V300 H1578 V300 H1678 V300 H1778 V300 H1878 V300 H1978 V300 H2078 V300 H2178 V300 H2278 V300 H2378 V300 H2478 V300 H2578 V300 H2678 V329 H2778 V329 H2878 V329 H2978 V329 H3078"/>
+<path class="grid" d="M20 385 H3078"/>
+<text x="24" y="366.5" font-size="16" text-anchor="start">tank_valid_P2</text>
+<text x="828.0" y="366.5" font-size="13" text-anchor="middle">1</text>
+<text x="928.0" y="366.5" font-size="13" text-anchor="middle">1</text>
+<text x="1028.0" y="366.5" font-size="13" text-anchor="middle">1</text>
+<text x="1128.0" y="366.5" font-size="13" text-anchor="middle">1</text>
+<text x="1228.0" y="366.5" font-size="13" text-anchor="middle">1</text>
+<text x="1328.0" y="366.5" font-size="13" text-anchor="middle">1</text>
+<text x="1428.0" y="366.5" font-size="13" text-anchor="middle">1</text>
+<text x="1528.0" y="366.5" font-size="13" text-anchor="middle">1</text>
+<text x="1628.0" y="366.5" font-size="13" text-anchor="middle">1</text>
+<text x="1728.0" y="366.5" font-size="13" text-anchor="middle">1</text>
+<text x="1828.0" y="366.5" font-size="13" text-anchor="middle">1</text>
+<text x="1928.0" y="366.5" font-size="13" text-anchor="middle">1</text>
+<text x="2028.0" y="366.5" font-size="13" text-anchor="middle">1</text>
+<text x="2128.0" y="366.5" font-size="13" text-anchor="middle">1</text>
+<text x="2228.0" y="366.5" font-size="13" text-anchor="middle">1</text>
+<text x="2328.0" y="366.5" font-size="13" text-anchor="middle">1</text>
+<text x="2428.0" y="366.5" font-size="13" text-anchor="middle">1</text>
+<text x="2528.0" y="366.5" font-size="13" text-anchor="middle">1</text>
+<text x="2628.0" y="366.5" font-size="13" text-anchor="middle">1</text>
+<path class="wave" d="M278 376 H378 V376 H478 V376 H578 V376 H678 V376 H778 V347 H878 V347 H978 V347 H1078 V347 H1178 V347 H1278 V347 H1378 V347 H1478 V347 H1578 V347 H1678 V347 H1778 V347 H1878 V347 H1978 V347 H2078 V347 H2178 V347 H2278 V347 H2378 V347 H2478 V347 H2578 V347 H2678 V376 H2778 V376 H2878 V376 H2978 V376 H3078"/>
+<path class="grid" d="M20 432 H3078"/>
+<text x="24" y="413.5" font-size="16" text-anchor="start">bullet_valid</text>
+<text x="928.0" y="413.5" font-size="13" text-anchor="middle">1</text>
+<text x="1028.0" y="413.5" font-size="13" text-anchor="middle">1</text>
+<text x="1128.0" y="413.5" font-size="13" text-anchor="middle">1</text>
+<text x="1228.0" y="413.5" font-size="13" text-anchor="middle">1</text>
+<text x="1328.0" y="413.5" font-size="13" text-anchor="middle">1</text>
+<text x="1428.0" y="413.5" font-size="13" text-anchor="middle">1</text>
+<text x="1528.0" y="413.5" font-size="13" text-anchor="middle">1</text>
+<text x="1628.0" y="413.5" font-size="13" text-anchor="middle">1</text>
+<text x="1728.0" y="413.5" font-size="13" text-anchor="middle">1</text>
+<text x="1828.0" y="413.5" font-size="13" text-anchor="middle">1</text>
+<text x="1928.0" y="413.5" font-size="13" text-anchor="middle">1</text>
+<text x="2028.0" y="413.5" font-size="13" text-anchor="middle">1</text>
+<text x="2128.0" y="413.5" font-size="13" text-anchor="middle">1</text>
+<text x="2228.0" y="413.5" font-size="13" text-anchor="middle">1</text>
+<text x="2328.0" y="413.5" font-size="13" text-anchor="middle">1</text>
+<text x="2428.0" y="413.5" font-size="13" text-anchor="middle">1</text>
+<text x="2528.0" y="413.5" font-size="13" text-anchor="middle">1</text>
+<text x="2628.0" y="413.5" font-size="13" text-anchor="middle">1</text>
+<path class="wave" d="M278 423 H378 V423 H478 V423 H578 V423 H678 V423 H778 V423 H878 V394 H978 V394 H1078 V394 H1178 V394 H1278 V394 H1378 V394 H1478 V394 H1578 V394 H1678 V394 H1778 V394 H1878 V394 H1978 V394 H2078 V394 H2178 V394 H2278 V394 H2378 V394 H2478 V394 H2578 V394 H2678 V423 H2778 V423 H2878 V423 H2978 V423 H3078"/>
+<path class="grid" d="M20 479 H3078"/>
+<text x="24" y="460.5" font-size="16" text-anchor="start">big_valid</text>
+<text x="1128.0" y="460.5" font-size="13" text-anchor="middle">1</text>
+<text x="1228.0" y="460.5" font-size="13" text-anchor="middle">1</text>
+<text x="1328.0" y="460.5" font-size="13" text-anchor="middle">1</text>
+<text x="1428.0" y="460.5" font-size="13" text-anchor="middle">1</text>
+<text x="1528.0" y="460.5" font-size="13" text-anchor="middle">1</text>
+<text x="1628.0" y="460.5" font-size="13" text-anchor="middle">1</text>
+<text x="1728.0" y="460.5" font-size="13" text-anchor="middle">1</text>
+<text x="1828.0" y="460.5" font-size="13" text-anchor="middle">1</text>
+<text x="1928.0" y="460.5" font-size="13" text-anchor="middle">1</text>
+<text x="2028.0" y="460.5" font-size="13" text-anchor="middle">1</text>
+<text x="2128.0" y="460.5" font-size="13" text-anchor="middle">1</text>
+<text x="2228.0" y="460.5" font-size="13" text-anchor="middle">1</text>
+<text x="2328.0" y="460.5" font-size="13" text-anchor="middle">1</text>
+<text x="2428.0" y="460.5" font-size="13" text-anchor="middle">1</text>
+<text x="2528.0" y="460.5" font-size="13" text-anchor="middle">1</text>
+<text x="2628.0" y="460.5" font-size="13" text-anchor="middle">1</text>
+<path class="wave" d="M278 470 H378 V470 H478 V470 H578 V470 H678 V470 H778 V470 H878 V470 H978 V470 H1078 V441 H1178 V441 H1278 V441 H1378 V441 H1478 V441 H1578 V441 H1678 V441 H1778 V441 H1878 V441 H1978 V441 H2078 V441 H2178 V441 H2278 V441 H2378 V441 H2478 V441 H2578 V441 H2678 V470 H2778 V470 H2878 V470 H2978 V470 H3078"/>
+<path class="grid" d="M20 526 H3078"/>
+<text x="24" y="507.5" font-size="16" text-anchor="start">hud_valid</text>
+<text x="1328.0" y="507.5" font-size="13" text-anchor="middle">1</text>
+<text x="1428.0" y="507.5" font-size="13" text-anchor="middle">1</text>
+<text x="1528.0" y="507.5" font-size="13" text-anchor="middle">1</text>
+<text x="1628.0" y="507.5" font-size="13" text-anchor="middle">1</text>
+<path class="wave" d="M278 517 H378 V517 H478 V517 H578 V517 H678 V517 H778 V517 H878 V517 H978 V517 H1078 V517 H1178 V517 H1278 V488 H1378 V488 H1478 V488 H1578 V488 H1678 V517 H1778 V517 H1878 V517 H1978 V517 H2078 V517 H2178 V517 H2278 V517 H2378 V517 H2478 V517 H2578 V517 H2678 V517 H2778 V517 H2878 V517 H2978 V517 H3078"/>
+<path class="grid" d="M20 573 H3078"/>
+<text x="24" y="554.5" font-size="16" text-anchor="start">hud_rgb</text>
+<path class="bus" d="M278 549.5 L286 535 H1270 L1278 549.5 L1270 564 H286 Z"/>
+<text x="778.0" y="554.5" font-size="16" text-anchor="middle">—</text>
+<path class="bus" d="M1278 549.5 L1286 535 H1470 L1478 549.5 L1470 564 H1286 Z"/>
+<text x="1378.0" y="554.5" font-size="16" text-anchor="middle">F00</text>
+<path class="bus" d="M1478 549.5 L1486 535 H1670 L1678 549.5 L1670 564 H1486 Z"/>
+<text x="1578.0" y="554.5" font-size="16" text-anchor="middle">444</text>
+<path class="bus" d="M1678 549.5 L1686 535 H3070 L3078 549.5 L3070 564 H1686 Z"/>
+<text x="2378.0" y="554.5" font-size="16" text-anchor="middle">—</text>
+<path class="grid" d="M20 620 H3078"/>
+<text x="24" y="601.5" font-size="16" text-anchor="start">tank_rgb</text>
+<path class="bus" d="M278 596.5 L286 582 H770 L778 596.5 L770 611 H286 Z"/>
+<text x="528.0" y="601.5" font-size="16" text-anchor="middle">0F0</text>
+<path class="bus" d="M778 596.5 L786 582 H3070 L3078 596.5 L3070 611 H786 Z"/>
+<text x="1928.0" y="601.5" font-size="16" text-anchor="middle">00F</text>
+<path class="grid" d="M20 667 H3078"/>
+<text x="24" y="648.5" font-size="16" text-anchor="start">selected layer</text>
+<path class="bus" d="M278 643.5 L286 629 H470 L478 643.5 L470 658 H286 Z"/>
+<text x="378.0" y="648.5" font-size="16" text-anchor="middle">BG</text>
+<path class="bus" d="M478 643.5 L486 629 H670 L678 643.5 L670 658 H486 Z"/>
+<text x="578.0" y="648.5" font-size="16" text-anchor="middle">WALL</text>
+<path class="bus" d="M678 643.5 L686 629 H870 L878 643.5 L870 658 H686 Z"/>
+<text x="778.0" y="648.5" font-size="16" text-anchor="middle">TANK</text>
+<path class="bus" d="M878 643.5 L886 629 H1070 L1078 643.5 L1070 658 H886 Z"/>
+<text x="978.0" y="648.5" font-size="16" text-anchor="middle">BULLET</text>
+<path class="bus" d="M1078 643.5 L1086 629 H1270 L1278 643.5 L1270 658 H1086 Z"/>
+<text x="1178.0" y="648.5" font-size="16" text-anchor="middle">BIG</text>
+<path class="bus" d="M1278 643.5 L1286 629 H1670 L1678 643.5 L1670 658 H1286 Z"/>
+<text x="1478.0" y="648.5" font-size="16" text-anchor="middle">HUD</text>
+<path class="bus" d="M1678 643.5 L1686 629 H2670 L2678 643.5 L2670 658 H1686 Z"/>
+<text x="2178.0" y="648.5" font-size="16" text-anchor="middle">BIG</text>
+<path class="bus" d="M2678 643.5 L2686 629 H3070 L3078 643.5 L3070 658 H2686 Z"/>
+<text x="2878.0" y="648.5" font-size="16" text-anchor="middle">BLANK</text>
+<path class="grid" d="M20 714 H3078"/>
+<text x="24" y="695.5" font-size="16" text-anchor="start">pixel RGB (pre-FF)</text>
+<path class="bus" d="M278 690.5 L286 676 H470 L478 690.5 L470 705 H286 Z"/>
+<text x="378.0" y="695.5" font-size="16" text-anchor="middle">000</text>
+<path class="bus" d="M478 690.5 L486 676 H670 L678 690.5 L670 705 H486 Z"/>
+<text x="578.0" y="695.5" font-size="16" text-anchor="middle">888</text>
+<path class="bus" d="M678 690.5 L686 676 H770 L778 690.5 L770 705 H686 Z"/>
+<text x="728.0" y="695.5" font-size="16" text-anchor="middle">0F0</text>
+<path class="bus" d="M778 690.5 L786 676 H870 L878 690.5 L870 705 H786 Z"/>
+<text x="828.0" y="695.5" font-size="16" text-anchor="middle">00F</text>
+<path class="bus" d="M878 690.5 L886 676 H1070 L1078 690.5 L1070 705 H886 Z"/>
+<text x="978.0" y="695.5" font-size="16" text-anchor="middle">FF0</text>
+<path class="bus" d="M1078 690.5 L1086 676 H1470 L1478 690.5 L1470 705 H1086 Z"/>
+<text x="1278.0" y="695.5" font-size="16" text-anchor="middle">F00</text>
+<path class="bus" d="M1478 690.5 L1486 676 H1670 L1678 690.5 L1670 705 H1486 Z"/>
+<text x="1578.0" y="695.5" font-size="16" text-anchor="middle">444</text>
+<path class="bus" d="M1678 690.5 L1686 676 H2670 L2678 690.5 L2670 705 H1686 Z"/>
+<text x="2178.0" y="695.5" font-size="16" text-anchor="middle">F00</text>
+<path class="bus" d="M2678 690.5 L2686 676 H3070 L3078 690.5 L3070 705 H2686 Z"/>
+<text x="2878.0" y="695.5" font-size="16" text-anchor="middle">000</text>
+<path class="grid" d="M20 761 H3078"/>
+<text x="24" y="742.5" font-size="16" text-anchor="start">vga_rgb_q</text>
+<path class="bus" d="M278 737.5 L286 723 H570 L578 737.5 L570 752 H286 Z"/>
+<text x="428.0" y="742.5" font-size="16" text-anchor="middle">000</text>
+<path class="bus" d="M578 737.5 L586 723 H770 L778 737.5 L770 752 H586 Z"/>
+<text x="678.0" y="742.5" font-size="16" text-anchor="middle">888</text>
+<path class="bus" d="M778 737.5 L786 723 H870 L878 737.5 L870 752 H786 Z"/>
+<text x="828.0" y="742.5" font-size="16" text-anchor="middle">0F0</text>
+<path class="bus" d="M878 737.5 L886 723 H970 L978 737.5 L970 752 H886 Z"/>
+<text x="928.0" y="742.5" font-size="16" text-anchor="middle">00F</text>
+<path class="bus" d="M978 737.5 L986 723 H1170 L1178 737.5 L1170 752 H986 Z"/>
+<text x="1078.0" y="742.5" font-size="16" text-anchor="middle">FF0</text>
+<path class="bus" d="M1178 737.5 L1186 723 H1570 L1578 737.5 L1570 752 H1186 Z"/>
+<text x="1378.0" y="742.5" font-size="16" text-anchor="middle">F00</text>
+<path class="bus" d="M1578 737.5 L1586 723 H1770 L1778 737.5 L1770 752 H1586 Z"/>
+<text x="1678.0" y="742.5" font-size="16" text-anchor="middle">444</text>
+<path class="bus" d="M1778 737.5 L1786 723 H2770 L2778 737.5 L2770 752 H1786 Z"/>
+<text x="2278.0" y="742.5" font-size="16" text-anchor="middle">F00</text>
+<path class="bus" d="M2778 737.5 L2786 723 H3070 L3078 737.5 L3070 752 H2786 Z"/>
+<text x="2928.0" y="742.5" font-size="16" text-anchor="middle">000</text>
+<text x="24" y="787" font-size="15" text-anchor="start">Overlapping valid streams prove priority without claiming a fast full-screen scan. This is a mixer-input test.</text>
+<text x="24" y="809" font-size="15" text-anchor="start">Transparent ROM pixels have valid=0 and reveal lower layers. Actual shape ROM bits are not specified in the block diagrams.</text>
+</svg>
