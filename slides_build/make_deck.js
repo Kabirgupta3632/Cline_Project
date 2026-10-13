@@ -90,11 +90,11 @@ function label(s, text, x, y, w, h, o = {}) {
   s.addShape(pptx.ShapeType.roundRect, { x: 0.35, y: 1.05, w: 8.55, h: 1.85, rectRadius: 0.08, fill: { color: 'FFFFFF' }, line: { color: C.blue, width: 1.5, dashType: 'dash' } });
   label(s, 'RV32IM CPU (3 stages)', 0.45, 1.03, 2.6, 0.22, { pt: 11, color: C.blue, bold: true, align: 'left' });
   box(s, 0.5, 1.35, 1.5, 0.75, 'Instr. Mem\n(BRAM)', { fill: C.lblue, pt: 13 });
-  box(s, 2.3, 1.35, 1.9, 0.75, '1 · IF/ID\nPC · Decode · RegFile', { pt: 13 });
+  box(s, 2.3, 1.35, 1.9, 0.75, '1 · IF/ID\nDecode · RegFile', { pt: 13 });
   box(s, 4.5, 1.35, 1.9, 0.75, '2 · EX\nALU · Branch', { pt: 13 });
-  box(s, 6.7, 1.35, 1.9, 0.75, '3 · WB\nLoad/Store · Write-back', { pt: 13 });
+  box(s, 6.7, 1.35, 1.9, 0.75, '3 · WB\nLoad/Store · Result', { pt: 13 });
   arrow(s, 2.0, 1.72, 2.3, 1.72); arrow(s, 4.2, 1.72, 4.5, 1.72); arrow(s, 6.4, 1.72, 6.7, 1.72);
-  box(s, 4.5, 2.3, 1.9, 0.38, 'NEW  RV32M: MUL · DIV/REM', { fill: C.lred, line: C.red, lw: 3, pt: 12, color: C.red });
+  box(s, 4.5, 2.3, 1.9, 0.38, 'NEW: RV32M unit', { fill: C.lred, line: C.red, lw: 3, pt: 13, color: C.red });
   arrow(s, 5.45, 2.3, 5.45, 2.1, { color: C.red, width: 3, both: true });
   // stall (red dashed) RV32M -> IF/ID
   arrow(s, 4.5, 2.49, 3.4, 2.49, { color: C.red, noHead: true, dash: 'dash' });
@@ -143,7 +143,7 @@ function label(s, text, x, y, w, h, o = {}) {
 /* ---------------- Slide 3 (timing) ---------------- */
 {
   const s = pptx.addSlide();
-  title(s, 'Timing Diagram: 28 cycles, real instruction sequence', 3);
+  title(s, 'Timing Diagram: 28 cycles, instruction sequence', 3);
   const NC = 28, gx = 2.3, gw = 10.65, cw = gw / NC, rh = 0.37, y0 = 1.1;
   const R = {}; timing.rows.forEach(r => R[r.name] = r.values);
   const rowsDef = ['cycle', 'clk_sys', 'IF/ID', 'EX', 'WB', 'stall_read_i', 'branch_taken', 'fwd_sel1', 'fwd_sel2', 'm_ext_EX (MUL)'];
